@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583245560172</updated>
       <workItem from="1583245562922" duration="3589000" />
-      <workItem from="1583249295708" duration="949000" />
+      <workItem from="1583249295708" duration="1927000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -109,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583249148858</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added first route to the api">
+      <created>1583250281910</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583250281910</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,17 +126,18 @@
     <MESSAGE value="started the server on port 5000" />
     <MESSAGE value="connected to the database sucess" />
     <MESSAGE value="adding user schema" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding user schema" />
+    <MESSAGE value="added first route to the api" />
+    <option name="LAST_COMMIT_MESSAGE" value="added first route to the api" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583247434046">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1583247434046" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583249148112">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583250281191">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583249148112" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583250281191" />
     <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1583249156385">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

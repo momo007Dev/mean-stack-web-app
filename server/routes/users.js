@@ -7,9 +7,15 @@ const config = require('../config/database');
 
 
 router.get('/profile', (req, res) => {
+    //console.log(res);
     return res.json({
         "Username" : "Test"
     });
+});
+
+router.post('/register', (req, res) => {
+    // console.log(req.body);
+    return res.json( req.body);
 });
 
 
