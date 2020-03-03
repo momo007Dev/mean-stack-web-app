@@ -6,7 +6,7 @@ const passport = require('passport');
 const path = require('path');
 
 // Bring in the database object
-const config = require('./config/database')
+const config = require('./config/database');
 
 // Mongodb config
 mongoose.set('useCreateIndex', true);
