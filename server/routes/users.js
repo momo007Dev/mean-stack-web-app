@@ -24,7 +24,6 @@ router.post('/register', (req, res) => {
         password: req.body.password
     });
     User.addUser(newUser, (err, user) => {
-        console.log(user);
         if (err) {
             let message = "";
             if (err.errors.username) message = "Username is already taken";
@@ -80,7 +79,13 @@ router.post('/login', (req, res) => {
             }
         })
     })
+});
 
+// get auth user profile
+router.get('/profile-auth', passport.authenticate('jwt'),  (req, res) => {
+    return res.json({
+        "hello": "test"
+    })
 });
 
 

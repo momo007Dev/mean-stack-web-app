@@ -38,6 +38,9 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
+// bring the passport auth strategy
+require('./config/passport')(passport);
+
 app.get('/', (req, res) => {
     return res.json({
         message: "This is node.js backend system"
