@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +50,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.14.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../LEARN-JAVA" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RunManager">
     <configuration name="app.js" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$">
@@ -70,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583245560172</updated>
       <workItem from="1583245562922" duration="3589000" />
-      <workItem from="1583249295708" duration="1927000" />
+      <workItem from="1583249295708" duration="2604000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -114,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583250281910</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added post method">
+      <created>1583251328316</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1583251328316</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,17 +134,22 @@
     <MESSAGE value="connected to the database sucess" />
     <MESSAGE value="adding user schema" />
     <MESSAGE value="added first route to the api" />
-    <option name="LAST_COMMIT_MESSAGE" value="added first route to the api" />
+    <MESSAGE value="added post method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added post method" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="233" y="4" key="#Usage_Scope" timestamp="1583251875342">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="233" y="4" key="#Usage_Scope/0.0.1280.689@0.0.1280.689" timestamp="1583251875342" />
     <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583247434046">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1583247434046" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583250281191">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583251327546">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583250281191" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583251327546" />
     <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1583249156385">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -154,10 +166,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1583249156385" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1583247165985">
+    <state x="142" y="0" key="SettingsEditor" timestamp="1583251902004">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1583247165985" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1583251902004" />
     <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583248001200">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

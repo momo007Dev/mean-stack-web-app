@@ -34,3 +34,28 @@ const UserSchema = mongoose.Schema({
 UserSchema.plugin(uniqueValidator);
 
 const User = module.exports = mongoose.model('User', UserSchema);
+
+// Find the user by id
+module.exports.getUserById = (id, callback) => {
+    User.findById(id, callback);
+};
+
+// Find the user by username
+module.exports.getUserByUsername = (username, callback) => {
+    const query = {
+        username: username
+    };
+    User.findOne(query, callback);
+};
+
+// register the user
+module.exports.addUser = (id, callback) => {
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser, password, salt, (err, hash) => {
+            if (err) return err;
+            newUser.password = hash;
+            newUser.save(callback);
+        })
+    });
+    User.findById(id, callback);
+};
