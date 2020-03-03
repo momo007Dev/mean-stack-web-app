@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +31,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -50,8 +58,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LEARN-JAVA" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.14.1" />
+    <property name="last_opened_file_path" value="C:/Program Files/nodejs/node_modules/npm" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RunManager">
@@ -70,7 +80,10 @@
       <option name="presentableId" value="Default" />
       <updated>1583245560172</updated>
       <workItem from="1583245562922" duration="3589000" />
-      <workItem from="1583249295708" duration="2604000" />
+      <workItem from="1583249295708" duration="2934000" />
+      <workItem from="1583252276686" duration="130000" />
+      <workItem from="1583252575719" duration="655000" />
+      <workItem from="1583253300911" duration="1224000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -121,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583251328316</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="user schema methods">
+      <created>1583252043719</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583252043719</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,21 +155,38 @@
     <MESSAGE value="adding user schema" />
     <MESSAGE value="added first route to the api" />
     <MESSAGE value="added post method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added post method" />
+    <MESSAGE value="user schema methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="user schema methods" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="233" y="4" key="#Usage_Scope" timestamp="1583251875342">
+    <state x="233" y="4" key="#Usage_Scope" timestamp="1583254023415">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="4" key="#Usage_Scope/0.0.1280.689@0.0.1280.689" timestamp="1583251875342" />
+    <state x="233" y="4" key="#Usage_Scope/0.0.1280.689@0.0.1280.689" timestamp="1583254023415" />
     <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583247434046">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1583247434046" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583251327546">
+    <state x="321" y="74" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583252224155">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583251327546" />
+    <state x="321" y="74" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.689@0.0.1280.689" timestamp="1583252224155" />
+    <state width="941" height="519" key="#com.intellij.structuralsearch.plugin.ui.StructuralReplaceDialog" timestamp="1583253654061">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="941" height="519" key="#com.intellij.structuralsearch.plugin.ui.StructuralReplaceDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654061" />
+    <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1583253654060">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583252042463">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583252042463" />
+    <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583253926651">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="358" y="86" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1583253926651" />
     <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1583249156385">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -166,17 +203,17 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1583249156385" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1583251902004">
+    <state x="79" y="0" key="SettingsEditor" timestamp="1583254051657">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1583251902004" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583248001200">
+    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1583254051657" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583252053529">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583248001200" />
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1583246170718">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583252053529" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1583253231800">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1583246170718" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1583253231800" />
   </component>
 </project>

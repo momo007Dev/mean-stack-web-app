@@ -49,13 +49,20 @@ module.exports.getUserByUsername = (username, callback) => {
 };
 
 // register the user
-module.exports.addUser = (id, callback) => {
+module.exports.addUser = (newUser, callback) => {
     bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newUser, password, salt, (err, hash) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) return err;
             newUser.password = hash;
             newUser.save(callback);
-        })
+        });
     });
-    User.findById(id, callback);
+};
+
+// compare passwords
+module.exports.comparePassword = (password, hash, callback) => {
+    bcrypt.compare(password, hash, (err, isMatch) => {
+        if (err) throw err;
+        callback(null, isMatch);
+    });
 };
