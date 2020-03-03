@@ -5,6 +5,20 @@ const cors = require('cors');
 const passport = require('passport');
 const path = require('path');
 
+// Bring in the database object
+const config = require('./config/database')
+
+// Mongodb config
+mongoose.set('useCreateIndex', true);
+
+//connect with the database
+mongoose.connect(config.database, {useNewUrlParser: true})
+    .then(() => {
+        console.log('Database connected successfully ' + config.database);
+    }).catch(err => {
+    console.log(err);
+});
+
 // Initialize the app
 const app = express();
 
@@ -26,7 +40,7 @@ app.use(passport.session());
 
 app.get('/', (req, res) => {
     return res.json({
-        message : "This is node.js backend system"
+        message: "This is node.js backend system"
     });
 });
 
