@@ -82,10 +82,10 @@ router.post('/login', (req, res) => {
 });
 
 // get auth user profile
-router.get('/profile-auth', passport.authenticate('jwt'),  (req, res) => {
+router.get('/profile-auth', passport.authenticate('jwt', {session: false}), (req, res) => {
     return res.json({
         "hello": "test"
-    })
+    });
 });
 
 
