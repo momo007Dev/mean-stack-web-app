@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-const config = require('../config/database');
+const Users = require('../models/User').User;
 
 
 router.get('/profile', (req, res) => {
@@ -16,7 +16,7 @@ router.get('/profile', (req, res) => {
 router.post('/register', (req, res) => {
     // console.log(req.body);
     //return res.json( req.body);
-    let newUser = new User({
+    let newUser = new Users({
         name: req.body.name,
         username: req.body.username,
         email: req.body.email,
@@ -66,7 +66,7 @@ router.post('/login', (req, res) => {
                         email: user.email,
                         contact: user.contact
                     }
-                }, config.secret, {
+                }, process.env.DB_PASS, {
                     expiresIn: 604800 // for 1 week time in milleseconds
                 });
                 return res.json({

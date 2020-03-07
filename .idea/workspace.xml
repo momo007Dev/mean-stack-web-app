@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +93,9 @@
       <workItem from="1583481850898" duration="903000" />
       <workItem from="1583602553265" duration="789000" />
       <workItem from="1583603425332" duration="570000" />
-      <workItem from="1583604041293" duration="1745000" />
+      <workItem from="1583604041293" duration="2092000" />
+      <workItem from="1583606188453" duration="3913000" />
+      <workItem from="1583610160322" duration="3935000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -180,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583605370071</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added a http server status error if registration failed">
+      <created>1583605901811</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1583605901812</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +215,8 @@
     <MESSAGE value="added some protection on some urls" />
     <MESSAGE value="modified some files" />
     <MESSAGE value="removed the unresolved error" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed the unresolved error" />
+    <MESSAGE value="added a http server status error if registration failed" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a http server status error if registration failed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -211,6 +227,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1583247434046" />
+    <state x="416" y="135" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583610084021">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="416" y="135" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.689@0.0.1280.689" timestamp="1583610084021" />
     <state x="308" y="124" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1583604912120">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -227,10 +247,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583605368178">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583605900921">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583605368178" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583605900921" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583604246952">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -251,17 +271,17 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1583249156385" />
-    <state x="79" y="0" key="SettingsEditor" timestamp="1583605789284">
+    <state x="79" y="0" key="SettingsEditor" timestamp="1583607221643">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1583605789284" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583605371891">
+    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1583607221643" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583605903463">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583605371891" />
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1583253231800">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583605903463" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1583611414868">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1583253231800" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1583611414868" />
   </component>
 </project>

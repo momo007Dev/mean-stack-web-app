@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const uniqueValidator = require('mongoose-unique-validator');
 
 // User Schema
-const UserSchema = mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     name: {
         type: String,
         unique: true,
@@ -32,15 +32,15 @@ const UserSchema = mongoose.Schema({
 
 UserSchema.plugin(uniqueValidator);
 
-const User = module.exports = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 // Find the user by id
-module.exports.getUserById = (id, callback) => {
+const getUserById = (id, callback) => {
     User.findById(id, callback);
 };
 
 // Find the user by username
-module.exports.getUserByUsername = (username, callback) => {
+const getUserByUsername = (username, callback) => {
     const query = {
         username: username
     };
@@ -48,7 +48,7 @@ module.exports.getUserByUsername = (username, callback) => {
 };
 
 // register the user
-module.exports.addUser = (newUser, callback) => {
+const addUser = (newUser, callback) => {
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) return err;
@@ -59,9 +59,17 @@ module.exports.addUser = (newUser, callback) => {
 };
 
 // compare passwords
-module.exports.comparePassword = (password, hash, callback) => {
+const comparePassword = (password, hash, callback) => {
     bcrypt.compare(password, hash, (err, isMatch) => {
         if (err) throw err;
         callback(null, isMatch);
     });
+};
+
+module.exports = {
+    getUserById,
+    getUserByUsername,
+    addUser,
+    comparePassword,
+    User
 };

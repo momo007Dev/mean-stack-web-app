@@ -4,20 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
 const path = require('path');
-
-// Bring in the database object
-const config = require('./config/database');
-
-// Mongodb config
-mongoose.set('useCreateIndex', true);
-
-//connect with the database
-mongoose.connect(config.database, {useNewUrlParser: true})
-    .then(() => {
-        console.log('Database connected successfully ' + config.database);
-    }).catch(err => {
-    console.log(err);
-});
+require('dotenv').config();
+require('./config/database');
 
 // Initialize the app
 const app = express();
@@ -53,5 +41,22 @@ app.use('/api/users', users);
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
+});
+
+// catch 404 and forward to error handler
+app.use((req, res, next) => {
+    const error = new Error("Not found");
+    error.status = 404;
+    next(error);
+});
+
+// Error Handler
+app.use((error, req, res) => {
+    res.status(error.status || 500);
+    res.json({
+        error: {
+            message: error.message
+        }
+    });
 });
 
