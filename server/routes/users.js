@@ -28,7 +28,9 @@ router.post('/register', (req, res) => {
             let message = "";
             if (err.errors.username) message = "Username is already taken";
             if (err.errors.email) message += " and Email already exists";
-            return res.json({
+            return res
+                .status(500)
+                .json({
                 success: false,
                 message
             });
