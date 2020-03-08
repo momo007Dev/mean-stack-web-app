@@ -11,7 +11,10 @@ const question_get_all = (req, res) => {
             //console.log(docs[0].question);
             //console.log(docs[0].answers[0].option);
             //docs[0].answers.forEach(x => console.log(x));
-            if (docs.length === 0) return res.status(204).json(response);
+            if (docs.length === 0)
+                return res
+                    .status(204)
+                    .json({message: "No documents found in the database"});
 
             docs.forEach(x => response.push(x));
             res.status(200).json(response);
@@ -27,7 +30,8 @@ const question_get_all = (req, res) => {
 };
 
 const question_get_one = (req, res) => {
-    Question.findById(req.params.questionId)
+    const {questionId} = req.params;
+    Question.findById(questionId)
         .select("question answers _id")
         .exec()
         .then(doc => {
@@ -60,6 +64,35 @@ const question_get_one = (req, res) => {
         });
 };
 
+const question_update_one = (req, res) => {
+    const {questionId} = req.params;
+    const updateOps = {};
+    for (const ops of req.body) {
+        updateOps[ops.propName] = ops.value;
+    }
+    Question.updateOne({_id: questionId}, {$set: updateOps})
+        .exec()
+        .then(result => {
+            console.log(result);
+            res.status(200).json({
+                message: "Question updated",
+                modifiedDocs: result.nModified,
+                request: {
+                    type: "GET",
+                    url: `http://localhost:5000/api/questions/${questionId}`
+                }
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res
+                .status(500)
+                .json({
+                    errorMessage: err.message,
+                    errorName: err.name
+                });
+        });
+};
 
 const questionCreate = (req, res) => {
     const question = new Question({
@@ -115,8 +148,34 @@ const questionCreate = (req, res) => {
         });
 };
 
+const question_delete_one = (req, res) => {
+    const {questionId} = req.params;
+    Question.remove({ _id: questionId })
+        .exec()
+        .then(result => {
+            res.status(200).json({
+                message: "Question deleted",
+                request: {
+                    type: "POST",
+                    url: "http://localhost:5000/api/questions",
+                    body: { name: "String", price: "Number" }
+                }
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res
+                .status(500)
+                .json({
+                    error: err
+                });
+        });
+};
+
 module.exports = {
     questionCreate,
     question_get_all,
-    question_get_one
+    question_get_one,
+    question_update_one,
+    question_delete_one
 };

@@ -10,7 +10,8 @@ router
 
 router
     .route('/questions/:questionId')
-    .get(ctrlQuestions.question_get_one);
+    .get(ctrlQuestions.question_get_one)
+    .patch(ctrlQuestions.question_update_one);
 
 
 module.exports = router;
