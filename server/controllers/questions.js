@@ -11,44 +11,52 @@ const question_get_all = (req, res) => {
             //console.log(docs[0].question);
             //console.log(docs[0].answers[0].option);
             //docs[0].answers.forEach(x => console.log(x));
-            if(docs.length === 0) return res.status(204).json(response);
+            if (docs.length === 0) return res.status(204).json(response);
 
             docs.forEach(x => response.push(x));
-            res.status(302).json(response);
+            res.status(200).json(response);
         })
         .catch(err => {
             res
                 .status(500)
                 .json({
-                error: err
-            });
+                    errorMessage: err.message,
+                    errorName: err.name
+                });
         });
 };
 
-const question_get_one = (req, res, next) => {
-    const id = req.params.questionId;
-    Question.findById(id)
-        .select("name price _id productImage")
+const question_get_one = (req, res) => {
+    Question.findById(req.params.questionId)
+        .select("question answers _id")
         .exec()
         .then(doc => {
-            console.log("From database", doc);
+            //console.log("From database", doc);
             if (doc) {
-                res.status(200).json({
-                    product: doc,
-                    request: {
-                        type: "GET",
-                        url: "http://localhost:3000/products"
-                    }
-                });
+                res
+                    .status(200)
+                    .json(new Array({
+                        question: doc.question,
+                        answers: doc.answers,
+                        request: {
+                            type: "GET",
+                            url: `http://localhost:5000/api/questions/${doc._id}`
+                        }
+                    }));
             } else {
                 res
                     .status(404)
-                    .json({ message: "No valid entry found for provided ID" });
+                    .json({message: "No valid entry found for provided ID"});
             }
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json({ error: err });
+            res
+                .status(500)
+                .json({
+                    errorMessage: err.message,
+                    errorName: err.name
+                });
         });
 };
 
@@ -85,17 +93,17 @@ const questionCreate = (req, res) => {
             //console.log(result.answers.filter(x=> x.isCorrect === "true")[0].option);
             res
                 .status(201)
-                .json({
-                message: "Created question successfully",
-                createdQuestion: {
-                    name: result.question,
-                    answer : result.answers.filter(x=> x.isCorrect === "true")[0].option,
-                    request: {
-                        type: "GET",
-                        url: "http://localhost:5000/api/questions/" + result._id
+                .json(new Array({
+                    message: "Created question successfully",
+                    createdQuestion: {
+                        name: result.question,
+                        answer: result.answers.filter(x => x.isCorrect === "true")[0].option,
+                        request: {
+                            type: "GET",
+                            url: `http://localhost:5000/api/questions/${result._id}`
+                        }
                     }
-                }
-            });
+                }));
         })
         .catch(err => {
             console.log(err);
