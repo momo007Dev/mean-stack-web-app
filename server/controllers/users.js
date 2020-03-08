@@ -8,7 +8,9 @@ const user_signup = (req, res) => {
         .then(user => {
             //console.log(user + "toto");
             if (user.length >= 1) {
-                return res.status(409).json({
+                return res
+                    .status(409)
+                    .json({
                     message: "Mail already exists"
                 });
             } else {
@@ -38,9 +40,9 @@ const user_signup = (req, res) => {
                                 });
                             })
                             .catch(err => {
-                                console.log(err);
+                                console.log(err.name);
                                 res.status(500).json({
-                                    error: err
+                                    error: err.message,
                                 });
                             });
                     }
@@ -49,7 +51,23 @@ const user_signup = (req, res) => {
         });
 };
 
+const user_delete = (req, res) => {
+    User.remove({ _id: req.params.userId })
+        .exec()
+        .then(result => {
+            console.log(result);
+            res.status(200).json({
+                message: "User deleted successfully"
+            });
+        })
+        .catch(err => {
+            res.status(500).json({
+                error: err
+            });
+        });
+};
 
 module.exports = {
-    user_signup
+    user_signup,
+    user_delete
 };
