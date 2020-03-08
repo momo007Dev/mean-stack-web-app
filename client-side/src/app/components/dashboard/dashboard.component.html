@@ -1,1 +1,16 @@
-<p>dashboard works!</p>
+<mat-sidenav-container style="min-height: 100%" fxFlex>
+  <mat-sidenav [mode]="'side'" [opened]="true"
+               fxLayoutAlign="center" fxLayout="column">
+    <app-dashboard-sidenav></app-dashboard-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-grid-list [cols]="cols">
+      <mat-grid-tile *ngFor="let card of cards"
+                     [colspan]="card.inputs.cols.value"
+                     [rowspan]="card.inputs.rows.value">
+        <app-dashboard-card-spawner [card]="card">
+        </app-dashboard-card-spawner>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-sidenav-content>
+</mat-sidenav-container>

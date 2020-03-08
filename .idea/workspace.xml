@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client-side/src/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mean-stack-web-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mean-stack-web-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/validate.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/validate.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +126,7 @@
       <workItem from="1583610160322" duration="20846000" />
       <workItem from="1583631767773" duration="1184000" />
       <workItem from="1583665509350" duration="29439000" />
-      <workItem from="1583701096962" duration="8869000" />
+      <workItem from="1583701096962" duration="10294000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -353,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583702473106</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added many components">
+      <created>1583710158605</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1583710158605</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,10 +420,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583702471895">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583710157705">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583702471895" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583710157705" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -453,10 +452,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583697564528" />
-    <state x="297" y="153" key="run.anything.popup" timestamp="1583625523652">
+    <state x="297" y="153" key="run.anything.popup" timestamp="1583710226659">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1583625523652" />
+    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1583710226659" />
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1583623911787">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

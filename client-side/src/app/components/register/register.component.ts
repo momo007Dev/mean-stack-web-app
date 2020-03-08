@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ValidateService} from "../../services/validate.service";
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ export class RegisterComponent implements OnInit {
   email: string;
   password: string;
 
-  constructor() { }
+  constructor(private validateService: ValidateService) { }
 
   ngOnInit() {
   }
@@ -21,4 +22,5 @@ export class RegisterComponent implements OnInit {
       password: this.password
     };
   }
+
 }
