@@ -6,7 +6,6 @@ const user_signup = (req, res) => {
     User.find({ email: req.body.email })
         .exec()
         .then(user => {
-            //console.log(user + "toto");
             if (user.length >= 1) {
                 return res
                     .status(409)
@@ -51,6 +50,41 @@ const user_signup = (req, res) => {
         });
 };
 
+const user_login = (req, res) => {
+    User.find({ email: req.body.email })
+        .exec()
+        .then(user => {
+            if (user.length < 1) {
+                return res
+                    .status(401)
+                    .json({
+                    message: "Auth failed"
+                });
+            }
+            bcrypt.compare(req.body.password, user[0].password, (err, result) => {
+                if (err) {
+                    return res.status(401).json({
+                        message: "Auth failed"
+                    });
+                }
+                if (result) {
+                    return res.status(200).json({
+                        message: "Auth successful"
+                    });
+                }
+                res.status(401).json({
+                    message: "Auth failed"
+                });
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error: err
+            });
+        });
+};
+
 const user_delete = (req, res) => {
     User.remove({ _id: req.params.userId })
         .exec()
@@ -69,5 +103,6 @@ const user_delete = (req, res) => {
 
 module.exports = {
     user_signup,
-    user_delete
+    user_delete,
+    user_login
 };
