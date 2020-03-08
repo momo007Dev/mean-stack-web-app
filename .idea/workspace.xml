@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/database.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/questions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/questions.js" afterDir="false" />
     </list>
@@ -92,7 +93,7 @@
       <workItem from="1583606188453" duration="3913000" />
       <workItem from="1583610160322" duration="20846000" />
       <workItem from="1583631767773" duration="1184000" />
-      <workItem from="1583665509350" duration="8290000" />
+      <workItem from="1583665509350" duration="10119000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -227,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583671331148</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added update route">
+      <created>1583674027794</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1583674027794</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +261,8 @@
     <MESSAGE value="added get route" />
     <MESSAGE value="cleaned some routes" />
     <MESSAGE value="added better erros messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="added better erros messages" />
+    <MESSAGE value="added update route" />
+    <option name="LAST_COMMIT_MESSAGE" value="added update route" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -284,10 +293,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583671330173">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583674026858">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583671330173" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583674026858" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

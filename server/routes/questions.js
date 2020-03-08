@@ -11,7 +11,8 @@ router
 router
     .route('/questions/:questionId')
     .get(ctrlQuestions.question_get_one)
-    .patch(ctrlQuestions.question_update_one);
+    .patch(ctrlQuestions.question_update_one)
+    .delete(ctrlQuestions.question_delete_one);
 
 
 module.exports = router;

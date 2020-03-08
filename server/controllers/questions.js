@@ -73,7 +73,6 @@ const question_update_one = (req, res) => {
     Question.updateOne({_id: questionId}, {$set: updateOps})
         .exec()
         .then(result => {
-            console.log(result);
             res.status(200).json({
                 message: "Question updated",
                 modifiedDocs: result.nModified,
@@ -150,25 +149,31 @@ const questionCreate = (req, res) => {
 
 const question_delete_one = (req, res) => {
     const {questionId} = req.params;
-    Question.remove({ _id: questionId })
+    Question.findByIdAndRemove(questionId)
         .exec()
-        .then(result => {
+        .then(() => {
+            //console.log(result);
+            // console.log(questionId + result);
             res.status(200).json({
-                message: "Question deleted",
+                message: "Question deleted successfully",
                 request: {
                     type: "POST",
                     url: "http://localhost:5000/api/questions",
-                    body: { name: "String", price: "Number" }
+                    body: {
+                        question: "String",
+                        price: {
+                            option : "String",
+                            isCorrect : "Boolean",
+                        }
+                    }
                 }
             });
         })
         .catch(err => {
             console.log(err);
             res
-                .status(500)
-                .json({
-                    error: err
-                });
+                .status(404)
+                .json({message: "No valid entry found for provided ID"});
         });
 };
 

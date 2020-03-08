@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 const host = process.env.DB_HOST;
 const dbURL = `mongodb://${host}/web_app`;
-const readLine = require('readline');
-
 
 //connect with the database
 mongoose.connect(dbURL,
-    {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
+    {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
+        useFindAndModify : false})
     .then(() => {
         console.log(`Database connected successfully to ${dbURL}`);
     }).catch(err => {
