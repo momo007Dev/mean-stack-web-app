@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
-const answerSchema = new mongoose.Schema({
-
-});
-
 const questionSchema = new mongoose.Schema({
     question: {
             type: String,

@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 // Bring in the user routers
 const users = require('./routes/users');
 const questions = require('./routes/questions');
-app.use('/api/users', users);
+app.use('/api', users);
 app.use('/api', questions);
 
 app.listen(process.env.PORT, () => {

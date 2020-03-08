@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="added all crud ops on question entity">
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/controllers/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +96,7 @@
       <workItem from="1583606188453" duration="3913000" />
       <workItem from="1583610160322" duration="20846000" />
       <workItem from="1583631767773" duration="1184000" />
-      <workItem from="1583665509350" duration="10957000" />
+      <workItem from="1583665509350" duration="19507000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -240,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583675813431</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="catching better erros in delete route">
+      <created>1583676501978</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1583676501978</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +280,8 @@
     <MESSAGE value="added better erros messages" />
     <MESSAGE value="added update route" />
     <MESSAGE value="added all crud ops on question entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="added all crud ops on question entity" />
+    <MESSAGE value="catching better erros in delete route" />
+    <option name="LAST_COMMIT_MESSAGE" value="catching better erros in delete route" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -291,6 +304,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="321" y="74" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.689@0.0.1280.689" timestamp="1583252224155" />
+    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583681068842">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1583681068842" />
     <state width="941" height="519" key="#com.intellij.structuralsearch.plugin.ui.StructuralReplaceDialog" timestamp="1583253654061">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -299,10 +316,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583675821103">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583676501223">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583675821103" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583676501223" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -327,10 +344,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1583607221643" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583675828334">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583676503343">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583675828334" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583676503343" />
     <state x="297" y="153" key="run.anything.popup" timestamp="1583625523652">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
