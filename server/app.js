@@ -10,9 +10,6 @@ require('./config/database');
 // Initialize the app
 const app = express();
 
-// Defining the PORT
-const PORT = process.env.PORT || 5000;
-
 // Defining the Middlewares
 app.use(cors());
 
@@ -37,10 +34,12 @@ app.get('/', (req, res) => {
 
 // Bring in the user routers
 const users = require('./routes/users');
+const questions = require('./routes/questions');
 app.use('/api/users', users);
+app.use('/api', questions);
 
-app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server started on port ${process.env.PORT}`);
 });
 
 // catch 404 and forward to error handler

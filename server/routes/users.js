@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');
-const Users = require('../models/User').User;
+const User = require('../models/users');
+const Users = require('../models/users').Users;
 
 
 router.get('/profile', (req, res) => {
@@ -47,7 +47,9 @@ router.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     User.getUserByUsername(username, (err, user) => {
-        if (err) throw err;
+        if (err) {
+            return console.log(err);
+        }
         if (!user) {
             res.json({
                 success: false,
@@ -55,8 +57,9 @@ router.post('/login', (req, res) => {
             });
         }
         User.comparePassword(password, user.password, (err, isMatch) => {
-            if (err) throw err;
-            if (isMatch) {
+            if (err) {
+                return console.log("toto ");
+            } else if (isMatch) {
                 const token = jwt.sign({
                     type: "user",
                     data: {

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const uniqueValidator = require('mongoose-unique-validator');
 
-// User Schema
+// Users Schema
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -32,11 +32,11 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.plugin(uniqueValidator);
 
-const User = mongoose.model('User', UserSchema);
+const Users = mongoose.model('user', UserSchema, 'users');
 
 // Find the user by id
 const getUserById = (id, callback) => {
-    User.findById(id, callback);
+    Users.findById(id, callback);
 };
 
 // Find the user by username
@@ -44,14 +44,14 @@ const getUserByUsername = (username, callback) => {
     const query = {
         username: username
     };
-    User.findOne(query, callback);
+    Users.findOne(query, callback);
 };
 
 // register the user
 const addUser = (newUser, callback) => {
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
-            if (err) return err;
+            if (err) console.log(err);
             newUser.password = hash;
             newUser.save(callback);
         });
@@ -61,7 +61,7 @@ const addUser = (newUser, callback) => {
 // compare passwords
 const comparePassword = (password, hash, callback) => {
     bcrypt.compare(password, hash, (err, isMatch) => {
-        if (err) throw err;
+        if (err) console.log(err);
         callback(null, isMatch);
     });
 };
@@ -71,5 +71,5 @@ module.exports = {
     getUserByUsername,
     addUser,
     comparePassword,
-    User
+    Users
 };

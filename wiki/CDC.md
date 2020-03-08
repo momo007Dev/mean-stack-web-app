@@ -26,7 +26,7 @@ Ce site permettra au client :
    - test en ligne permettant d’éviter d’en préparer un pour chaque clients potentiel,
    - un planning permettant aux futur clients de voir les disponibilités du professeur afin de faciliter la prise de rdv.
 
-## User Stories : 
+## Users Stories : 
 
 Plusieurs types de personnes navigueront sur ce site :
 

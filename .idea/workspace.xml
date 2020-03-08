@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/controllers/questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/questions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/database.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/passport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/CDC.md" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/CDC.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,7 @@
       <workItem from="1583603425332" duration="570000" />
       <workItem from="1583604041293" duration="2092000" />
       <workItem from="1583606188453" duration="3913000" />
-      <workItem from="1583610160322" duration="3935000" />
+      <workItem from="1583610160322" duration="20184000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -195,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583605901812</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added some config in db file">
+      <created>1583614317043</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1583614317044</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +224,8 @@
     <MESSAGE value="modified some files" />
     <MESSAGE value="removed the unresolved error" />
     <MESSAGE value="added a http server status error if registration failed" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a http server status error if registration failed" />
+    <MESSAGE value="added some config in db file" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some config in db file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -247,14 +256,14 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583605900921">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583614315936">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583605900921" />
-    <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583604246952">
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583614315936" />
+    <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="358" y="86" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1583604246952" />
+    <state x="358" y="86" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1583618889720" />
     <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1583249156385">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -279,9 +288,13 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583605903463" />
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1583611414868">
+    <state x="297" y="153" key="run.anything.popup" timestamp="1583625523652">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1583611414868" />
+    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1583625523652" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1583623911787">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1583623911787" />
   </component>
 </project>
