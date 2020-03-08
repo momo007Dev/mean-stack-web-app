@@ -10,15 +10,15 @@ const user_signup = (req, res) => {
             .json({message: "All fields required"});
     }
 
-    User.find({ email: req.body.email })
+    User.find({email: req.body.email})
         .exec()
         .then(user => {
             if (user.length >= 1) {
                 return res
                     .status(409)
                     .json({
-                    message: "Mail already exists"
-                });
+                        message: "Mail already exists"
+                    });
             } else {
                 bcrypt.hash(req.body.password, 10, (err, hash) => {
                     if (err) {
@@ -37,13 +37,13 @@ const user_signup = (req, res) => {
                                 res
                                     .status(201)
                                     .json({
-                                    message: "User created successfully",
-                                    user : {
-                                        userId : result._id,
-                                        userEmail : result.email,
-                                        userPassword : result.password
-                                    }
-                                });
+                                        message: "User created successfully",
+                                        user: {
+                                            userId: result._id,
+                                            userEmail: result.email,
+                                            userPassword: result.password
+                                        }
+                                    });
                             })
                             .catch(err => {
                                 console.log(err.name);
@@ -65,16 +65,16 @@ const user_login = (req, res) => {
             .json({message: "All fields required"});
     }
 
-    User.findOne({ email: req.body.email })
+    User.findOne({email: req.body.email})
         .exec()
         .then(user => {
-            //console.log(user);
+            console.log(user);
             if (!user) {
                 return res
                     .status(401)
                     .json({
-                    message: "Auth failed !"
-                });
+                        message: "Auth failed !"
+                    });
             }
             bcrypt.compare(req.body.password, user.password, (err, result) => {
                 if (err) {
@@ -95,7 +95,11 @@ const user_login = (req, res) => {
                     );
                     return res.status(200).json({
                         message: "Auth successful",
-                        token: token
+                        token: token,
+                        user: {
+                            userId: user._id,
+                            userEmail: user.email
+                        }
                     });
                 }
                 res.status(401).json({
@@ -112,7 +116,7 @@ const user_login = (req, res) => {
 };
 
 const user_delete = (req, res) => {
-    User.remove({ _id: req.params.userId })
+    User.remove({_id: req.params.userId})
         .exec()
         .then(result => {
             console.log(result);
@@ -127,8 +131,46 @@ const user_delete = (req, res) => {
         });
 };
 
+const getUserById = (req, res) => {
+    const {userId} = req.params;
+    User.findById(userId)
+        .select("_id email password")
+        .exec()
+        .then(doc => {
+            //console.log("From database", doc);
+            if (doc) {
+                res
+                    .status(200)
+                    .json(new Array({
+                        user: {
+                            userId: doc._id,
+                            email: doc.email,
+                        },
+                        request: {
+                            type: "GET",
+                            url: `http://localhost:5000/api/users/${doc._id}`
+                        }
+                    }));
+            } else {
+                res
+                    .status(404)
+                    .json({message: "No valid entry found for provided ID"});
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res
+                .status(500)
+                .json({
+                    errorMessage: err.message,
+                    errorName: err.name
+                });
+        });
+};
+
 module.exports = {
     user_signup,
     user_delete,
-    user_login
+    user_login,
+    getUserById
 };
