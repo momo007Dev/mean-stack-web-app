@@ -8,4 +8,9 @@ router
     .get(ctrlQuestions.question_get_all)
     .post(ctrlQuestions.questionCreate);
 
+router
+    .route('/questions/:questionId')
+    .get(ctrlQuestions.question_get_one);
+
+
 module.exports = router;
