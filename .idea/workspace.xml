@@ -2,10 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client-side/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/browserslist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/tslint.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/passport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +92,29 @@
     <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="E2E Tests (client-side)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/client-side/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
     <configuration name="app.js" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/client-side/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
   </component>
@@ -94,7 +142,8 @@
       <workItem from="1583606188453" duration="3913000" />
       <workItem from="1583610160322" duration="20846000" />
       <workItem from="1583631767773" duration="1184000" />
-      <workItem from="1583665509350" duration="28801000" />
+      <workItem from="1583665509350" duration="29439000" />
+      <workItem from="1583701096962" duration="265000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -285,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583697557305</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="added protected routes">
+      <created>1583700226535</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1583700226535</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +349,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added npm init" />
     <MESSAGE value="started the server on port 5000" />
     <MESSAGE value="connected to the database sucess" />
     <MESSAGE value="adding user schema" />
@@ -318,7 +373,8 @@
     <MESSAGE value="added login features" />
     <MESSAGE value="added jwt tokens" />
     <MESSAGE value="added get user by id" />
-    <option name="LAST_COMMIT_MESSAGE" value="added get user by id" />
+    <MESSAGE value="added protected routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added protected routes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -353,10 +409,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583697556073">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583700225255">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583697556073" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583700225255" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
