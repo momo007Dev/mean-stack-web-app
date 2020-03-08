@@ -3,6 +3,13 @@ const bcrypt = require('bcryptjs');
 const User = require("../models/users");
 
 const user_signup = (req, res) => {
+
+    if (!req.body.email || !req.body.password) {
+        return res
+            .status(400)
+            .json({message: "All fields required"});
+    }
+
     User.find({ email: req.body.email })
         .exec()
         .then(user => {
@@ -51,25 +58,44 @@ const user_signup = (req, res) => {
 };
 
 const user_login = (req, res) => {
-    User.find({ email: req.body.email })
+
+    if (!req.body.email || !req.body.password) {
+        return res
+            .status(400)
+            .json({message: "All fields required"});
+    }
+
+    User.findOne({ email: req.body.email })
         .exec()
         .then(user => {
-            if (user.length < 1) {
+            //console.log(user);
+            if (!user) {
                 return res
                     .status(401)
                     .json({
-                    message: "Auth failed"
+                    message: "Auth failed !"
                 });
             }
-            bcrypt.compare(req.body.password, user[0].password, (err, result) => {
+            bcrypt.compare(req.body.password, user.password, (err, result) => {
                 if (err) {
                     return res.status(401).json({
                         message: "Auth failed"
                     });
                 }
                 if (result) {
+                    const token = jwt.sign(
+                        {
+                            email: user.email,
+                            userId: user._id
+                        },
+                        process.env.JWT_KEY,
+                        {
+                            expiresIn: "1h"
+                        }
+                    );
                     return res.status(200).json({
-                        message: "Auth successful"
+                        message: "Auth successful",
+                        token: token
                     });
                 }
                 res.status(401).json({
