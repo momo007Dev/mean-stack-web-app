@@ -16,5 +16,6 @@
     <orderEntry type="library" name="@types/passport-jwt" level="application" />
     <orderEntry type="library" name="@types/bcryptjs" level="application" />
     <orderEntry type="library" name="@types/mongoose-unique-validator" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
 </module>
