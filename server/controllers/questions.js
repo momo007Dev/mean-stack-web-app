@@ -151,9 +151,11 @@ const question_delete_one = (req, res) => {
     const {questionId} = req.params;
     Question.findByIdAndRemove(questionId)
         .exec()
-        .then(() => {
-            //console.log(result);
-            // console.log(questionId + result);
+        .then((doc) => {
+            if (doc === null) return res
+                .status(404)
+                .json({message: "No valid entry found for provided ID"});
+
             res.status(200).json({
                 message: "Question deleted successfully",
                 request: {
@@ -162,8 +164,8 @@ const question_delete_one = (req, res) => {
                     body: {
                         question: "String",
                         price: {
-                            option : "String",
-                            isCorrect : "Boolean",
+                            option: "String",
+                            isCorrect: "Boolean",
                         }
                     }
                 }
@@ -173,7 +175,7 @@ const question_delete_one = (req, res) => {
             console.log(err);
             res
                 .status(404)
-                .json({message: "No valid entry found for provided ID"});
+                .json({message: "An error occored while trying to delete the question"});
         });
 };
 
