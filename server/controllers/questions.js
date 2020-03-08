@@ -1,6 +1,39 @@
 const mongoose = require('mongoose');
 const Question = require("../models/questions");
 
+const question_get_all = (req, res) => {
+    let response = [];
+    Question.find()
+        .select("question answers _id")
+        .exec()
+        .then(docs => {
+            //docs.forEach(x => console.log(x.question));
+            //console.log(docs[0].question);
+            //console.log(docs[0].answers[0].option);
+            //docs[0].answers.forEach(x => console.log(x));
+            if(docs.length === 0) {
+                res
+                    .status(204)
+                    .json(response);
+            }
+            docs.forEach(x => {
+                response.push(x);
+            });
+            //docs.forEach(x => console.log(x.answers));
+            res
+                .status(302)
+                .json(response);
+        })
+        .catch(err => {
+            res
+                .status(500)
+                .json({
+                error: err
+            });
+        });
+};
+
+
 const questionCreate = (req, res) => {
     const question = new Question({
         question: req.body.question,
@@ -24,9 +57,9 @@ const questionCreate = (req, res) => {
 
         ]
     });
-    console.log((req.body.question).question);
+    //console.log((req.body.question).question);
     //req.body.answers.forEach(x => console.log(x.option));
-    console.log(req.body.isCorrect);
+    //console.log(req.body.isCorrect);
     question
         .save()
         .then(result => {
@@ -56,5 +89,6 @@ const questionCreate = (req, res) => {
 };
 
 module.exports = {
-    questionCreate
+    questionCreate,
+    question_get_all
 };
