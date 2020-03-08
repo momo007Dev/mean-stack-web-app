@@ -5,10 +5,12 @@ const User = require('../models/users');
 // to auth the user by JWT Startegy
 module.exports = (passport) => {
     let opts = {};
-    opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
-    opts.secretOrKey = process.env.DB_PASS;
+    opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("JWT");
+    opts.secretOrKey = process.env.JWT_KEY;
     passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-        User.getUserById(jwt_payload.data._id, (err, user) => {
+        //console.log(jwt_payload);
+        User.findById(jwt_payload.userId, (err, user) => {
+            console.log(err);
             if(err) return done(err, false);
             if(user) return done(null, user);
             return done(null, false);

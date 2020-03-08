@@ -95,7 +95,7 @@ const user_login = (req, res) => {
                     );
                     return res.status(200).json({
                         message: "Auth successful",
-                        token: token,
+                        token: "JWT " + token,
                         user: {
                             userId: user._id,
                             userEmail: user.email
@@ -137,7 +137,6 @@ const getUserById = (req, res) => {
         .select("_id email password")
         .exec()
         .then(doc => {
-            //console.log("From database", doc);
             if (doc) {
                 res
                     .status(200)
@@ -145,6 +144,7 @@ const getUserById = (req, res) => {
                         user: {
                             userId: doc._id,
                             email: doc.email,
+                            password : doc.password
                         },
                         request: {
                             type: "GET",
