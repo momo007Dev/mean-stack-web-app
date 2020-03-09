@@ -7,7 +7,10 @@ const user_signup = (req, res) => {
     if (!req.body.email || !req.body.password) {
         return res
             .status(400)
-            .json({message: "All fields required"});
+            .json({
+                success: false,
+                message: "All fields required"
+            });
     }
 
     User.find({email: req.body.email})
@@ -17,6 +20,7 @@ const user_signup = (req, res) => {
                 return res
                     .status(409)
                     .json({
+                        success: false,
                         message: "Mail already exists"
                     });
             } else {
@@ -37,6 +41,7 @@ const user_signup = (req, res) => {
                                 res
                                     .status(201)
                                     .json({
+                                        success: true,
                                         message: "User created successfully",
                                         user: {
                                             userId: result._id,
@@ -48,6 +53,7 @@ const user_signup = (req, res) => {
                             .catch(err => {
                                 console.log(err.name);
                                 res.status(500).json({
+                                    success: false,
                                     error: err.message,
                                 });
                             });
@@ -144,7 +150,7 @@ const getUserById = (req, res) => {
                         user: {
                             userId: doc._id,
                             email: doc.email,
-                            password : doc.password
+                            password: doc.password
                         },
                         request: {
                             type: "GET",
