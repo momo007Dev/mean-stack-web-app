@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client-side/proxy.conf.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/services/auth.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/validate.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/validate.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +123,7 @@
       <workItem from="1583665509350" duration="29439000" />
       <workItem from="1583701096962" duration="12038000" />
       <workItem from="1583746854701" duration="4100000" />
-      <workItem from="1583781277595" duration="7864000" />
+      <workItem from="1583781277595" duration="11192000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -384,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583749537095</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="can register users through angular app">
+      <created>1583790694863</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1583790694863</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +392,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added some protection on some urls" />
     <MESSAGE value="modified some files" />
     <MESSAGE value="removed the unresolved error" />
     <MESSAGE value="added a http server status error if registration failed" />
@@ -417,7 +416,8 @@
     <MESSAGE value="work done for today" />
     <MESSAGE value="added a working navbar" />
     <MESSAGE value="added flash messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="added flash messages" />
+    <MESSAGE value="can register users through angular app" />
+    <option name="LAST_COMMIT_MESSAGE" value="can register users through angular app" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -456,10 +456,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583749535430">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583790693535">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583749535430" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583790693535" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -484,10 +484,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1583607221643" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583712713021">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583790704155">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583712713021" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583790704155" />
     <state x="297" y="153" key="run.anything.popup" timestamp="1583784881209">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
