@@ -39,7 +39,8 @@ enableProdMode();
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+
   ],
   providers: [
     ValidateService
