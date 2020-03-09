@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/validate.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/validate.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +126,7 @@
       <workItem from="1583631767773" duration="1184000" />
       <workItem from="1583665509350" duration="29439000" />
       <workItem from="1583701096962" duration="12038000" />
-      <workItem from="1583746854701" duration="525000" />
+      <workItem from="1583746854701" duration="2510000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -361,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583712709264</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="added a working navbar">
+      <created>1583747607204</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1583747607204</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,7 +381,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="user schema methods" />
     <MESSAGE value="registering users" />
     <MESSAGE value="added some protection on some urls" />
     <MESSAGE value="modified some files" />
@@ -394,7 +405,8 @@
     <MESSAGE value="added many components" />
     <MESSAGE value="added some services" />
     <MESSAGE value="work done for today" />
-    <option name="LAST_COMMIT_MESSAGE" value="work done for today" />
+    <MESSAGE value="added a working navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a working navbar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -429,10 +441,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583712708529">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583747605012">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583712708529" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583747605012" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

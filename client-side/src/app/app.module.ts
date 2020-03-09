@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FlashMessagesModule } from "angular2-flash-messages";
 
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
@@ -32,7 +33,8 @@ enableProdMode();
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+
   ],
 
   imports: [
@@ -40,7 +42,7 @@ enableProdMode();
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-
+    FlashMessagesModule.forRoot(),
   ],
   providers: [
     ValidateService

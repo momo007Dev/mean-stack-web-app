@@ -9,6 +9,10 @@ export class ValidateService {
   }
 
   validateRegister(user) {
-    return !(user.email === undefined || user.password === undefined);
+    if ( user.email === undefined || user.password === undefined) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }
