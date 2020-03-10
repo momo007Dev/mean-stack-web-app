@@ -22,13 +22,24 @@ export class NavbarComponent implements OnInit {
 
   onLogOutClick() {
 
-    this.authService.logout();
-    this._flashMessagesService.show("You are logged out", {
-      cssClass: "alert-success",
-      timeout: 3000
-    });
-    this.router.navigate(["/login"]);
-    return false;
+    if(!localStorage.getItem('id_token')) {
+      this.authService.logout();
+      this._flashMessagesService.show("Please log in first", {
+        cssClass: "alert-danger",
+        timeout: 3000
+      });
+      return false;
+    } else {
+      this.authService.logout();
+      this._flashMessagesService.show("You are logged out", {
+        cssClass: "alert-success",
+        timeout: 3000
+      });
+      this.router.navigate(["/login"]);
+      return false;
+    }
+
+
 
   }
 }
