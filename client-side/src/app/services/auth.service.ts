@@ -7,6 +7,8 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json; charset
   providedIn: 'root'
 })
 export class AuthService {
+  authToken: any;
+  user: any;
 
   constructor(private _http: HttpClient) { }
 
@@ -16,5 +18,18 @@ export class AuthService {
 
   loginUser(user){
     return this._http.post('/server/api/login', user, {headers});
+  }
+
+  storeUserData(data) {
+    localStorage.setItem("id_token", data.token);
+    localStorage.setItem("user", JSON.stringify(data.user));
+    this.authToken = data.token;
+    this.user = data.user;
+  }
+
+  logout() {
+    this.authToken = null;
+    this.user = null;
+    localStorage.clear();
   }
 }

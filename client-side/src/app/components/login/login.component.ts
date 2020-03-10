@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
 
     this.authService.loginUser(JSON.stringify(user))
       .toPromise()
-      .then((data:any) => {
-           console.log(data.token);
+      .then((data: any) => {
+         this.authService.storeUserData(data);
           this._flashMessagesService.show("You are now logged in", {
             cssClass: "alert-success",
             timeout: 5000
