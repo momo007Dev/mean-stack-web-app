@@ -79,12 +79,14 @@ const user_login = (req, res) => {
                 return res
                     .status(401)
                     .json({
+                        success: false,
                         message: "Auth failed !"
                     });
             }
             bcrypt.compare(req.body.password, user.password, (err, result) => {
                 if (err) {
                     return res.status(401).json({
+                        success: false,
                         message: "Auth failed"
                     });
                 }
@@ -99,7 +101,10 @@ const user_login = (req, res) => {
                             expiresIn: "1h"
                         }
                     );
-                    return res.status(200).json({
+                    return res
+                        .status(200)
+                        .json({
+                        success: true,
                         message: "Auth successful",
                         token: "JWT " + token,
                         user: {
@@ -109,13 +114,17 @@ const user_login = (req, res) => {
                     });
                 }
                 res.status(401).json({
+                    success: false,
                     message: "Auth failed"
                 });
             });
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json({
+            res
+                .status(500)
+                .json({
+                success: false,
                 error: err
             });
         });

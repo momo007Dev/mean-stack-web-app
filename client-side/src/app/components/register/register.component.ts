@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
 
     if (!this.validateService.validateRegister(user)) {
 
-      this._flashMessagesService.show("please fill in all fields", {
+      this._flashMessagesService.show("Please fill in all fields", {
         cssClass: "alert-danger",
         timeout: 3000
       });
@@ -49,14 +49,14 @@ export class RegisterComponent implements OnInit {
             timeout: 3000
           });
           this.router.navigate(['/login']).then(nav => {
-            console.log(nav); // true if navigation is successful
+            //console.log(nav); // true if navigation is successful
           }, err => {
-            console.log(err) // when there's an error
+            //console.log(err) // when there's an error
           });
         }
       )
       .catch(err => {
-        console.log(err.error);
+        //console.log(err.error);
         console.log(err);
         this._flashMessagesService.show("Something went wrong", {
           cssClass: "alert-danger",
