@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
@@ -10,13 +10,14 @@ export class AuthService {
   authToken: any;
   user: any;
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) {
+  }
 
- registerUser(user) {
+  registerUser(user) {
     return this._http.post('/server/api/signup', user, {headers});
   }
 
-  loginUser(user){
+  loginUser(user) {
     return this._http.post('/server/api/login', user, {headers});
   }
 
@@ -25,7 +26,21 @@ export class AuthService {
     localStorage.setItem("user", JSON.stringify(data.user));
     this.authToken = data.token;
     this.user = data.user;
+    console.log(this.authToken);
   }
+
+  getProfile() {
+   // const head = new HttpHeaders().set('Authorization', this.authToken);
+    //headers.append('Authorization', ` ${this.authToken}`);
+    //const httpOptions : { headers: HttpHeaders } = {headers: new HttpHeaders().set('Authorization', ` ${this.authToken}`)};
+     return this._http.get('/server/api/user/profile/5e679888d503b41c34c35446',
+       {headers});
+  }
+
+  getToken() {
+    return this.authToken;
+  }
+
 
   logout() {
     this.authToken = null;
@@ -34,4 +49,5 @@ export class AuthService {
     localStorage.removeItem('user');
     //localStorage.clear();
   }
+
 }
