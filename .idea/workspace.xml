@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +127,8 @@
       <workItem from="1583781277595" duration="11607000" />
       <workItem from="1583824173648" duration="27553000" />
       <workItem from="1583910860840" duration="3041000" />
-      <workItem from="1583959180100" duration="12706000" />
+      <workItem from="1583959180100" duration="12815000" />
+      <workItem from="1584027603840" duration="1272000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -429,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583967478603</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="able to access protected routes but some work still to be done">
+      <created>1583975745772</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1583975745773</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +446,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="cleaned some routes" />
     <MESSAGE value="added better erros messages" />
     <MESSAGE value="added update route" />
     <MESSAGE value="added all crud ops on question entity" />
@@ -462,7 +470,8 @@
     <MESSAGE value="secured a little more the logout feature" />
     <MESSAGE value="added a better log in UI" />
     <MESSAGE value="added better routing with flash messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="added better routing with flash messages" />
+    <MESSAGE value="able to access protected routes but some work still to be done" />
+    <option name="LAST_COMMIT_MESSAGE" value="able to access protected routes but some work still to be done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -501,10 +510,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583967477492">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1583975744870">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583967477492" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1583975744870" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -529,10 +538,14 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1583607221643" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583970474569">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583975758365">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583970474569" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1583975758365" />
+    <state x="336" y="118" key="git4idea.merge.GitPullDialog" timestamp="1583975751831">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="336" y="118" key="git4idea.merge.GitPullDialog/0.0.1280.689@0.0.1280.689" timestamp="1583975751831" />
     <state x="439" y="187" key="git4idea.rebase.GitRebaseDialog" timestamp="1583970467921">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

@@ -23,6 +23,20 @@ export class AuthService {
     return this._http.post('/server/api/login', user, {headers});
   }
 
+  getProfile() {
+    //console.log(localStorage.getItem('id_token'));
+    // const head = new HttpHeaders().set('Authorization', this.authToken);
+    //headers.append('Authorization', ` ${this.authToken}`);
+    //const httpOptions : { headers: HttpHeaders } = {headers: new HttpHeaders().set('Authorization', ` ${this.authToken}`)};
+    this.getToken();
+    //console.log(this.authToken);
+    //console.log(JSON.parse(this.user).userId);
+    const httpAuthHeaders = new HttpHeaders()
+      .set('Authorization', this.authToken);
+    return this._http.get(`/server/api/user/profile/${JSON.parse(this.user).userId}`,
+      {headers: httpAuthHeaders});
+  }
+
   storeUserData(data) {
     localStorage.setItem("id_token", data.token);
     localStorage.setItem("user", JSON.stringify(data.user));
@@ -31,20 +45,9 @@ export class AuthService {
     console.log(this.authToken);
   }
 
-
-  getProfile() {
-    console.log(localStorage.getItem('id_token'));
-   // const head = new HttpHeaders().set('Authorization', this.authToken);
-    //headers.append('Authorization', ` ${this.authToken}`);
-    //const httpOptions : { headers: HttpHeaders } = {headers: new HttpHeaders().set('Authorization', ` ${this.authToken}`)};
-    const httpHeaders = new HttpHeaders()
-      .set('Authorization', localStorage.getItem('id_token'));
-    return this._http.get('/server/api/user/profile/5e679888d503b41c34c35446',
-       {headers :httpHeaders});
-  }
-
   getToken() {
-    return this.authToken;
+    this.authToken = localStorage.getItem("id_token");
+    this.user = localStorage.getItem("user");
   }
 
 

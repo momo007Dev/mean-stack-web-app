@@ -155,7 +155,7 @@ const getUserById = (req, res) => {
             if (doc) {
                 res
                     .status(200)
-                    .json(new Array({
+                    .json({
                         user: {
                             userId: doc._id,
                             email: doc.email,
@@ -165,7 +165,7 @@ const getUserById = (req, res) => {
                             type: "GET",
                             url: `http://localhost:5000/api/users/${doc._id}`
                         }
-                    }));
+                    });
             } else {
                 res
                     .status(404)
