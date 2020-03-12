@@ -3,12 +3,14 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   authToken: any;
   user: any;
+
 
   constructor(private _http: HttpClient) {
   }
@@ -29,12 +31,16 @@ export class AuthService {
     console.log(this.authToken);
   }
 
+
   getProfile() {
+    console.log(localStorage.getItem('id_token'));
    // const head = new HttpHeaders().set('Authorization', this.authToken);
     //headers.append('Authorization', ` ${this.authToken}`);
     //const httpOptions : { headers: HttpHeaders } = {headers: new HttpHeaders().set('Authorization', ` ${this.authToken}`)};
-     return this._http.get('/server/api/user/profile/5e679888d503b41c34c35446',
-       {headers});
+    const httpHeaders = new HttpHeaders()
+      .set('Authorization', localStorage.getItem('id_token'));
+    return this._http.get('/server/api/user/profile/5e679888d503b41c34c35446',
+       {headers :httpHeaders});
   }
 
   getToken() {
