@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FlashMessagesModule } from "angular2-flash-messages";
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 import { AppComponent } from './app.component';
@@ -27,6 +28,8 @@ const appRoutes : Routes = [
 ];
 
 enableProdMode();
+
+
 @NgModule({
   declarations: [
     AppComponent,

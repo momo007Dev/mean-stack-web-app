@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/token-interceptor.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/token-interceptor.service.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +135,7 @@
       <workItem from="1583824173648" duration="27553000" />
       <workItem from="1583910860840" duration="3041000" />
       <workItem from="1583959180100" duration="12815000" />
-      <workItem from="1584027603840" duration="1826000" />
+      <workItem from="1584027603840" duration="11889000" />
     </task>
     <task id="LOCAL-00001" summary="added npm init">
       <created>1583245656245</created>
@@ -444,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584028937444</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="better profile ui">
+      <created>1584029520077</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1584029520077</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,8 +467,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added update route" />
-    <MESSAGE value="added all crud ops on question entity" />
     <MESSAGE value="catching better erros in delete route" />
     <MESSAGE value="added signup route" />
     <MESSAGE value="added delete user route features" />
@@ -477,7 +490,9 @@
     <MESSAGE value="added better routing with flash messages" />
     <MESSAGE value="able to access protected routes but some work still to be done" />
     <MESSAGE value="working profile component" />
-    <option name="LAST_COMMIT_MESSAGE" value="working profile component" />
+    <MESSAGE value="better profile ui" />
+    <MESSAGE value="added stable nav features based on log in" />
+    <option name="LAST_COMMIT_MESSAGE" value="added stable nav features based on log in" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -504,10 +519,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="321" y="74" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.689@0.0.1280.689" timestamp="1583252224155" />
-    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583681068842">
+    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584034515550">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1583681068842" />
+    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1584034515550" />
     <state width="941" height="519" key="#com.intellij.structuralsearch.plugin.ui.StructuralReplaceDialog" timestamp="1583253654061">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -516,10 +531,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1584028935999">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1584039599562">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1584028935999" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1584039599562" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -544,6 +559,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1583607221643" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1584033127826">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
     <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1583975758365">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
