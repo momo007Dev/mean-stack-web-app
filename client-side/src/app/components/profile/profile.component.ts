@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  user: Object;
   constructor(
     private authService: AuthService,
     private router: Router) { }
@@ -16,9 +16,12 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   this.authService.getProfile().subscribe(
     (profile : any) => {
-        const {user} = profile;
-        console.log(profile);
-        console.log(user.userId);
+        //const {user} = profile;
+        this.user = profile.user;
+        //console.log(profile);
+       // console.log(user.userId);
+       // console.log(user.email);
+        //console.log(user.password);
       },
       err => {
         console.log(err);

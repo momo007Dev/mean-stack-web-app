@@ -1,1 +1,11 @@
-<p>profile works!</p>
+<div *ngIf="user">
+  <h4 class="page-header">Id : {{user["userId"]}}</h4>
+  <ul class="list-group">
+    <li class="list-group-item">
+      Email: {{user["email"]}}
+    </li>
+    <li class="list-group-item">
+      Password: {{user["password"]}}
+    </li>
+  </ul>
+</div>
