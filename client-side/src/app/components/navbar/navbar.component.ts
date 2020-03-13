@@ -20,6 +20,24 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelect(){
+      this.authService.getProfile().subscribe(
+        (profile: any) => {
+          //const {user} = profile;
+          //console.log(profile.user.userId);
+          this.router.navigate(['/profile', profile.user.userId]);
+          //console.log(profile);
+          // console.log(user.userId);
+          // console.log(user.email);
+          //console.log(user.password);
+        },
+        err => {
+          console.log(err);
+          return false;
+        }
+      );
+    }
+
   onLogOutClick() {
 
     if(!localStorage.getItem('id_token')) {
@@ -33,7 +51,7 @@ export class NavbarComponent implements OnInit {
       this.authService.logout();
       this._flashMessagesService.show("You are logged out", {
         cssClass: "alert-success",
-        timeout: 3000,
+        timeout: 2000,
         navigate: `${this.router.navigate(['/login'])}`
       });
       return false;

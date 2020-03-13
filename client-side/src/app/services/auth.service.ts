@@ -10,16 +10,17 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json; charset
 export class AuthService {
   authToken: any;
   user: any;
+  currentUser : any;
 
 
   constructor(private _http: HttpClient) {
   }
 
-  registerUser(user) {
+  registerUser(user : any) {
     return this._http.post('/server/api/signup', user, {headers});
   }
 
-  loginUser(user) {
+  loginUser(user : any) {
     return this._http.post('/server/api/login', user, {headers});
   }
 
@@ -40,6 +41,7 @@ export class AuthService {
     localStorage.setItem("user", JSON.stringify(data.user));
     this.authToken = data.token;
     this.user = data.user;
+    this.currentUser = data.user.userId;
   }
 
   getToken() {
@@ -47,6 +49,9 @@ export class AuthService {
     this.user = localStorage.getItem("user");
   }
 
+  getId(){
+    return this.user.userId;
+  }
 
   logout() {
     this.authToken = null;
@@ -57,8 +62,17 @@ export class AuthService {
   }
 
   loggedIn() {
+    //let keys = Object.keys(localStorage);
+   // console.log(this.user);
     return !!this.authToken;
   }
+}
+
+/*
+function mkBt(id) {
+    return '<button id="' + id + '" onclick="affich(\'' + id + '\');">'
+    + "Details" + '</button>';
 
 }
+ */
 

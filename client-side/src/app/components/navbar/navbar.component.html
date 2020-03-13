@@ -3,19 +3,17 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item " [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" [routerLink]="['/']">Home</a>
+        <a class="nav-link" [routerLink]="['/home']">Home</a>
       </li>
       <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/register']">Register</a>
       </li>
-      <li class="nav-item" [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" href="#">Contact</a>
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/home']">Contact</a>
       </li>
-      <li class="nav-item" [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" href="#">About</a>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/home']">About</a>
       </li>
     </ul>
   </div>
@@ -32,16 +30,15 @@
           [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
       </li>
-      <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+      <li *ngIf="authService.loggedIn()" class="nav-item ">
+        <a class="nav-link " style="cursor:pointer;" (click)="onSelect()">Profile</a>
       </li>
       <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/login']">Login</a>
       </li>
       <li *ngIf="authService.loggedIn()" class="nav-item">
-        <a class="nav-link" (click)="onLogOutClick()" href="#">Logout</a>
+        <a id=`${authService.getId()}` class="nav-link" (click)="onLogOutClick()" href="#">Logout</a>
       </li>
     </ul>
   </div>

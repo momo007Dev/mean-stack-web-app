@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
       this._flashMessagesService.show("Please fill in all fields", {
         cssClass: "alert-danger",
-        timeout: 3000,
+        timeout: 2000,
         navigate: ''
       });
 
@@ -43,10 +43,12 @@ export class LoginComponent implements OnInit {
     this.authService.loginUser(JSON.stringify(user))
       .toPromise()
       .then((data: any) => {
+        //console.log(data.user.userId);
+        //console.log(data.token);
          this.authService.storeUserData(data);
           this._flashMessagesService.show("You are now logged in", {
             cssClass: "alert-success",
-            timeout: 2000,
+            timeout: 1000,
             navigate: `${this.router.navigate(['/dashboard'])}`
           });
         }

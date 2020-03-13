@@ -17,11 +17,13 @@ export class ProfileComponent implements OnInit {
     private _flashMessagesService: FlashMessagesService) {
   }
 
+
   ngOnInit() {
     if (this.authService.getProfile() === undefined) {
-      return this._flashMessagesService.show("No profile found !", {
+      return this._flashMessagesService.show("You need to log in !", {
         cssClass: "alert-danger",
-        timeout: 5000
+        timeout: 2000,
+        navigate: `${this.router.navigate(['/login'])}`
       });
     } else {
       this.authService.getProfile().subscribe(
@@ -41,9 +43,12 @@ export class ProfileComponent implements OnInit {
     }
 
   }
-}
+  /*
+    onClick(event : any){
+    console.log(event);
+    console.log(event.srcElement.formAction);
+  }
+   */
 
-export function tokenGetter() {
-  return localStorage.getItem("access_token");
 }
 

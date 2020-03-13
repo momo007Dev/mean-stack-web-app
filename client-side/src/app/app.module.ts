@@ -19,12 +19,13 @@ import {ValidateService} from './services/validate.service';
 import { AuthService } from "./services/auth.service";
 
 const appRoutes : Routes = [
-  { path: "", component: HomeComponent },
+  {path: '', redirectTo : '/home', pathMatch: 'full'},
+  { path: "home", component: HomeComponent },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
   { path: "dashboard", component: DashboardComponent},
-  { path: "profile", component: ProfileComponent},
-  { path: "*", component: HomeComponent }
+  { path: "profile/:id", component: ProfileComponent},
+  { path: "**", component: HomeComponent }
 ];
 
 enableProdMode();
