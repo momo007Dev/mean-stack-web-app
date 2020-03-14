@@ -48,9 +48,8 @@ export class QuestionsComponent implements OnInit {
 
   Answer(qID, choice) {
     this.question.qns[this.question.qnProgress].answer = choice;
-    localStorage.setItem('qns', JSON.stringify(this.question.qns));
+    console.log(qID, choice);
     this.question.qnProgress++;
-    localStorage.setItem('qnProgress', this.question.qnProgress.toString());
     if (this.question.qnProgress == 10) {
       clearInterval(this.question.timer);
       this.router.navigate(['/result']);
