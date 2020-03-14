@@ -1,0 +1,43 @@
+<p>questions works!</p>
+
+
+<div class="row" *ngIf="question.qns">
+  <div class="col s8 offset-s2">
+    <span>Time Elapsed : {{question.displayTimeElapsed()}}</span>>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 25%;"
+           aria-valuenow="25" aria-valuemin="0"
+           aria-valuemax="100">25
+      </div>
+    </div>
+    <div class="list-group">
+      <div class="card-body">
+        <span>{{question.qnProgress + 1}} / {{(question.qns).length}} </span>
+        <p class="card-header" style="background-color: cornflowerblue">
+          <strong>{{question.qns[question.qnProgress].question}}</strong></p>
+        <div class="custom-control custom-radio">
+
+          <ng-container *ngFor="let option of question.qns[question.qnProgress]['answers'];
+           let i = index">
+            <input type="checkbox" id="customRadio" name="customRadio"
+                   class="custom-control-input">
+            <label *ngIf="option != null" class="custom-control-label" for="customRadio"
+                   (click)="Answer(question.qns[question.qnProgress]['_id'],i)"
+            >{{option.option}}</label>
+            <br>
+          </ng-container>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="custom-control custom-radio">
+  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+  <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+</div>
+<div class="custom-control custom-radio">
+  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+  <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+</div>

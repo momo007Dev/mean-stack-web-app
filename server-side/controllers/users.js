@@ -37,7 +37,7 @@ const user_signup = (req, res) => {
                         user
                             .save()
                             .then(result => {
-                                console.log(result);
+                               // console.log(result);
                                 res
                                     .status(201)
                                     .json({
@@ -51,7 +51,7 @@ const user_signup = (req, res) => {
                                     });
                             })
                             .catch(err => {
-                                console.log(err.name);
+                              //  console.log(err.name);
                                 res.status(500).json({
                                     success: false,
                                     error: err.message,
@@ -74,7 +74,7 @@ const user_login = (req, res) => {
     User.findOne({email: req.body.email})
         .exec()
         .then(user => {
-            console.log(user);
+            //console.log(user);
             if (!user) {
                 return res
                     .status(401)
@@ -120,7 +120,7 @@ const user_login = (req, res) => {
             });
         })
         .catch(err => {
-            console.log(err);
+            //console.log(err);
             res
                 .status(500)
                 .json({
@@ -173,7 +173,7 @@ const getUserById = (req, res) => {
             }
         })
         .catch(err => {
-            console.log(err);
+           // console.log(err);
             res
                 .status(500)
                 .json({

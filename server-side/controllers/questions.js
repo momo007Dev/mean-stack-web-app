@@ -54,7 +54,7 @@ const question_get_one = (req, res) => {
             }
         })
         .catch(err => {
-            console.log(err);
+            //console.log(err);
             res
                 .status(500)
                 .json({
@@ -83,7 +83,7 @@ const question_update_one = (req, res) => {
             });
         })
         .catch(err => {
-            console.log(err);
+            //console.log(err);
             res
                 .status(500)
                 .json({
@@ -138,7 +138,7 @@ const questionCreate = (req, res) => {
                 }));
         })
         .catch(err => {
-            console.log(err);
+            //console.log(err);
             res
                 .status(500)
                 .json({
@@ -172,7 +172,7 @@ const question_delete_one = (req, res) => {
             });
         })
         .catch(err => {
-            console.log(err);
+            //console.log(err);
             res
                 .status(404)
                 .json({message: "An error occored while trying to delete the question"});

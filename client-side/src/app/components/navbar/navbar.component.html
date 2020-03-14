@@ -30,6 +30,10 @@
           [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
       </li>
+      <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" [routerLink]="['/questions']">QCM</a>
+      </li>
       <li *ngIf="authService.loggedIn()" class="nav-item ">
         <a class="nav-link " style="cursor:pointer;" (click)="onSelect()">Profile</a>
       </li>

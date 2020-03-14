@@ -2,14 +2,18 @@
   <p></p>
   <div class="card" style="width: 25rem; margin-left: 10px">
     <div class="card-body">
+      <i class="fa fa-user-circle-o fa-4x" aria-hidden="true"
+         style="text-align: center"></i>
       <h5 class="card-title">Id : {{user["userId"]}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Username : Danny</h6>
       <ul class="list-group align-self-auto">
         <li class="list-group-item active">
-          Email: {{user["email"]}}
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <strong> Email</strong>: {{user["email"]}}
         </li>
         <li class="list-group-item">
-          Password: {{user["password"]}}
+          <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+          <strong> Password</strong>: {{user["password"]}}
         </li>
       </ul>
     </div>
