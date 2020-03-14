@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FlashMessagesModule } from "angular2-flash-messages";
 import { JwtModule } from '@auth0/angular-jwt';
+import {ChartModule} from "angular2-chartjs";
 
 
 import { AppComponent } from './app.component';
@@ -17,6 +18,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import {ValidateService} from './services/validate.service';
 import { AuthService } from "./services/auth.service";
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ChartsComponent } from './components/charts/charts.component';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -40,6 +43,8 @@ enableProdMode();
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
+    SidebarComponent,
+    ChartsComponent,
 
   ],
 
@@ -49,6 +54,7 @@ enableProdMode();
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
+    ChartModule
   ],
   providers: [
     ValidateService,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {Router} from "@angular/router";
@@ -10,10 +10,12 @@ import {Router} from "@angular/router";
 })
 export class DashboardComponent implements OnInit {
 
+
   constructor(private authService: AuthService,
               private _flashMessagesService: FlashMessagesService,
               private router: Router
-              ) { }
+  ) {
+  }
 
   ngOnInit() {
     if (this.authService.getProfile() === undefined) {
@@ -22,7 +24,6 @@ export class DashboardComponent implements OnInit {
       });
     }
   }
-
 
 
 }
