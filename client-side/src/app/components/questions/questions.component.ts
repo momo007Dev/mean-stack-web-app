@@ -24,6 +24,12 @@ export class QuestionsComponent implements OnInit {
     this.showQuestion();
     this.startTimer();
 
+    if (this.authService.getProfile() === undefined) {
+      return this._flashMessagesService.show("", {
+        navigate: `${this.router.navigate(['/login'])}`
+      });
+    }
+
   }
 
   showQuestion(){
