@@ -18,7 +18,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import {ValidateService} from './services/validate.service';
 import { AuthService } from "./services/auth.service";
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ChartsComponent } from './components/charts/charts.component';
 
 const appRoutes : Routes = [
@@ -43,7 +42,6 @@ enableProdMode();
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    SidebarComponent,
     ChartsComponent,
 
   ],
