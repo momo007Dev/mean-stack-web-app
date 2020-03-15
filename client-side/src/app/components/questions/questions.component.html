@@ -25,6 +25,7 @@
             <a *ngIf="option != null"
                class="list-group-item list-group-item-action "
                onmouseover="this.style.color='red';" onmouseout="this.style.color='';"
+               style="cursor:pointer;"
                (click)="answer(question.qns[question.qnProgress]['_id'],
                 option['isCorrect'])">
               {{option.option}}

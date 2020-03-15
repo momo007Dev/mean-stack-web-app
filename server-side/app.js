@@ -1,9 +1,9 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
 const path = require('path');
+const {success, info, error, debug} = require('consola');
 require('dotenv').config();
 require('./config/database');
 
@@ -39,14 +39,14 @@ app.use('/api', users);
 app.use('/api', questions);
 
 app.listen(process.env.PORT, () => {
-    console.log(`Server started on port ${process.env.PORT}`);
+    info({message :`Server started on port ${process.env.PORT}`, badge : true})
 });
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-    const error = new Error("Not found !");
+    const error = new Error("Page Not found !");
     error.status = 404;
-    next(error);
+    next(error.message);
 });
 
 // Error Handler
@@ -54,10 +54,7 @@ app.use((error, req, res) => {
     //console.log(res.locals.error);
     res.status(error.status || 500);
     res.json({
-        error: {
-            status : error.status || 500,
-            message: error.message
-        }
+        message : error.message
     });
 });
 

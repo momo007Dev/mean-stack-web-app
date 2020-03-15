@@ -19,7 +19,6 @@ export class QuestionsService {
     return Math.floor(this.seconds / 3600) + ':' + Math.floor(this.seconds / 60) + ':' + Math.floor(this.seconds % 60);
   }
 
-
   getQuestions() {
     return this._http.get('/server/api/questions', {headers});
   }

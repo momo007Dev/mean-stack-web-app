@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/assets/img/login-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/assets/img/trophy.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/assets/login-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/questions.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/questions.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,14 +135,8 @@
       <workItem from="1583959180100" duration="12815000" />
       <workItem from="1584027603840" duration="31826000" />
       <workItem from="1584143374043" duration="2073000" />
-      <workItem from="1584194455359" duration="39563000" />
-    </task>
-    <task id="LOCAL-00007" summary="added post method">
-      <created>1583251328316</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1583251328316</updated>
+      <workItem from="1584194455359" duration="39905000" />
+      <workItem from="1584284178927" duration="5390000" />
     </task>
     <task id="LOCAL-00008" summary="user schema methods">
       <created>1583252043719</created>
@@ -484,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584235166132</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="will be working on results UI">
+      <created>1584237971036</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1584237971036</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +489,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added client side" />
     <MESSAGE value="basic angular app working" />
     <MESSAGE value="added many components" />
     <MESSAGE value="added some services" />
@@ -517,7 +513,8 @@
     <MESSAGE value="dashboard good so far" />
     <MESSAGE value="can list questions in ui" />
     <MESSAGE value="question ui stable" />
-    <option name="LAST_COMMIT_MESSAGE" value="question ui stable" />
+    <MESSAGE value="will be working on results UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="will be working on results UI" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -556,10 +553,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1584235165237">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1584237970111">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1584235165237" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1584237970111" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -588,10 +585,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1584224308757">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1584237978772">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1584224308757" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1584237978772" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
