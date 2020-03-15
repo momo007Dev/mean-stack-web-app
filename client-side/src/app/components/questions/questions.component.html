@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -16,16 +15,21 @@
     <div class="card " style="background-color: #31373e">
       <div class="card-content white-text">
         <span class="card-title">Question :</span>
-        <p><strong>{{question.qns[question.qnProgress].question}}</strong></p>
+        <h5>
+          <p><strong>{{question.qns[question.qnProgress].question}}</strong></p>
+        </h5>
       </div>
       <div class="card" style="margin: 10px;">
         <a class="list-group list-group-flush">
           <ng-container *ngFor="let option of question.qns[question.qnProgress]['answers'];
           let i = index">
             <a *ngIf="option != null"
-               class="list-group-item list-group-item-action "
-               onmouseover="this.style.color='red';" onmouseout="this.style.color='';"
-               style="cursor:pointer;"
+               class="list-group-item list-group-item-action test"
+               onmousemove="this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
+                      this.style.color='red'; this.style.fontSize= '3.7vh';"
+               onmouseout="this.style.backgroundColor = ''; this.style.color='';
+                  this.style.fontSize= '';"
+               style="cursor:pointer; "
                (click)="answer(question.qns[question.qnProgress]['_id'],
                 option['isCorrect'])">
               {{option.option}}
@@ -37,7 +41,6 @@
 
   </div>
 </div>
-
 
 
 <!--
