@@ -6,26 +6,31 @@
 <div class="row" *ngIf="question.qns">
   <div class="col s6 ">
     <span>Time Elapsed : {{question.displayTimeElapsed()}}</span>
+    <div class="row">
+      <h5 class="col s10">Question Progress</h5>
+      <h5 class="col s2 right-align">{{question.qnProgress + 1}}/5</h5>
+    </div>
     <div class="progress">
       <div class="determinate" style="width: 70%" [style.width.%]="(question.qnProgress+1)*20"></div>
     </div>
-    <div class="card blue-grey darken-1">
+    <div class="card " style="background-color: #31373e">
       <div class="card-content white-text">
-        <span class="card-title">{{question.qnProgress + 1}}</span>
-        <p>{{question.qns[question.qnProgress].question}}</p>
+        <span class="card-title">Question :</span>
+        <p><strong>{{question.qns[question.qnProgress].question}}</strong></p>
       </div>
-      <div class="card-action">
-        <ul class="collection answer">
-          <ng-container *ngFor="let option of question.qns[question.qnProgress]['answers'];let i = index">
-            <li *ngIf="option != null"
-                class="collection-item"
-                onmouseover="this.style.color='red';" onmouseout="this.style.color='';"
-                (click)="answer(question.qns[question.qnProgress]['_id'],
+      <div class="card" style="margin: 10px;">
+        <a class="list-group list-group-flush">
+          <ng-container *ngFor="let option of question.qns[question.qnProgress]['answers'];
+          let i = index">
+            <a *ngIf="option != null"
+               class="list-group-item list-group-item-action "
+               onmouseover="this.style.color='red';" onmouseout="this.style.color='';"
+               (click)="answer(question.qns[question.qnProgress]['_id'],
                 option['isCorrect'])">
               {{option.option}}
-            </li>
+            </a>
           </ng-container>
-        </ul>
+        </a>
       </div>
     </div>
 

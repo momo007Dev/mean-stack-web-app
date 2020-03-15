@@ -70,7 +70,7 @@ export class QuestionsComponent implements OnInit {
     this.question.qnProgress++;
     if (this.question.qnProgress == (this.question.qns).length) {
       clearInterval(this.question.timer);
-      this.router.navigate(['/result']);
+      this.router.navigate(['/results']);
     }
   }
 }
