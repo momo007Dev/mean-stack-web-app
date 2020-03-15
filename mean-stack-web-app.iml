@@ -23,5 +23,6 @@
     <orderEntry type="library" name="jquery-1.11.1" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="jquery.mCustomScrollbar.concat" level="application" />
+    <orderEntry type="library" name="materialize" level="application" />
   </component>
 </module>

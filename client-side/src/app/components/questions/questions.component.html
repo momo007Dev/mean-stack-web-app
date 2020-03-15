@@ -1,3 +1,40 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+<div class="row" *ngIf="question.qns">
+  <div class="col s6 ">
+    <span>Time Elapsed : {{question.displayTimeElapsed()}}</span>
+    <div class="progress">
+      <div class="determinate" style="width: 70%" [style.width.%]="(question.qnProgress+1)*20"></div>
+    </div>
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">{{question.qnProgress + 1}}</span>
+        <p>{{question.qns[question.qnProgress].question}}</p>
+      </div>
+      <div class="card-action">
+        <ul class="collection answer">
+          <ng-container *ngFor="let option of question.qns[question.qnProgress]['answers'];let i = index">
+            <li *ngIf="option != null"
+                class="collection-item"
+                onmouseover="this.style.color='red';" onmouseout="this.style.color='';"
+                (click)="answer(question.qns[question.qnProgress]['_id'],
+                option['isCorrect'])">
+              {{option.option}}
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!--
 <div class="row" *ngIf="question.qns" style="margin: 10px">
   <div class="col s8 offset-s2">
     <span>Time Elapsed : {{question.displayTimeElapsed()}}</span>
@@ -13,7 +50,7 @@
             <a *ngIf="option != null"
                class="list-group-item list-group-item-action "
                onmouseover="this.style.color='red';" onmouseout="this.style.color='';"
-                (click)="Answer(question.qns[question.qnProgress]['_id'],
+                (click)="answer(question.qns[question.qnProgress]['_id'],
                 option['isCorrect'])">
               {{option.option}}
             </a>
@@ -23,4 +60,5 @@
     </div>
   </div>
 </div>
+-->
 

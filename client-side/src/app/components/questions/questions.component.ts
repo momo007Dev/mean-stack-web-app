@@ -52,11 +52,23 @@ export class QuestionsComponent implements OnInit {
     }, 1000);
   }
 
-  Answer(qID, choice) {
+  async answer(qID, choice) {
     this.question.qns[this.question.qnProgress].answer = choice;
-    console.log(qID, choice);
+   // console.log(qID, choice);
+    if(JSON.parse(choice.toLowerCase())) {
+      this._flashMessagesService.show("correct answer", {
+        cssClass: "alert-success",
+        timeout: 2000
+      });
+    } else {
+      this._flashMessagesService.show("wrong answer", {
+        cssClass: "alert-danger",
+        timeout: 2000,
+      });
+    }
+   await new Promise(r => setTimeout(r, 2000));
     this.question.qnProgress++;
-    if (this.question.qnProgress == 10) {
+    if (this.question.qnProgress == (this.question.qns).length) {
       clearInterval(this.question.timer);
       this.router.navigate(['/result']);
     }

@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mean-stack-web-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mean-stack-web-app.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,14 +133,7 @@
       <workItem from="1583959180100" duration="12815000" />
       <workItem from="1584027603840" duration="31826000" />
       <workItem from="1584143374043" duration="2073000" />
-      <workItem from="1584194455359" duration="28700000" />
-    </task>
-    <task id="LOCAL-00005" summary="adding user schema">
-      <created>1583249148858</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1583249148858</updated>
+      <workItem from="1584194455359" duration="36921000" />
     </task>
     <task id="LOCAL-00006" summary="added first route to the api">
       <created>1583250281910</created>
@@ -476,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584219252778</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="question ui stable">
+      <created>1584223794823</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1584223794823</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +486,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added protected routes" />
     <MESSAGE value="added client side" />
     <MESSAGE value="basic angular app working" />
     <MESSAGE value="added many components" />
@@ -509,7 +510,8 @@
     <MESSAGE value="stable dashboard.component.html" />
     <MESSAGE value="dashboard good so far" />
     <MESSAGE value="can list questions in ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="can list questions in ui" />
+    <MESSAGE value="question ui stable" />
+    <option name="LAST_COMMIT_MESSAGE" value="question ui stable" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -580,10 +582,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1584223801820">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1584224308757">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1584223801820" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1584224308757" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
