@@ -134,7 +134,7 @@ const user_delete = (req, res) => {
     User.remove({_id: req.params.userId})
         .exec()
         .then(result => {
-            console.log(result);
+           // console.log(result);
             res.status(200).json({
                 message: "User deleted successfully"
             });
@@ -143,6 +143,27 @@ const user_delete = (req, res) => {
             res.status(500).json({
                 error: err
             });
+        });
+};
+
+const users_get_all = (req, res) => {
+    User.find()
+        .select("-__v")
+        .exec()
+        .then(users => {
+            if (users.length === 0)
+                return res
+                    .status(204)
+                    .json({message: "No Users found in the database"});
+            res.status(200).json(users);
+        })
+        .catch(err => {
+            res
+                .status(500)
+                .json({
+                    errorMessage: err.message,
+                    errorName: err.name
+                });
         });
 };
 
@@ -187,5 +208,6 @@ module.exports = {
     user_signup,
     user_delete,
     user_login,
+    users_get_all,
     getUserById
 };

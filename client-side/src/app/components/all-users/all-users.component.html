@@ -1,0 +1,48 @@
+<div class="container mb-5">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <h3 class="mb-4">All Users</h3>
+
+    </div>
+
+    <ng-container *ngFor="let user of users">
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+        <!--Card-->
+        <div class="card testimonial-card">
+          <!--Background color-->
+          <div class="card-up info-color"></div>
+          <!--Avatar-->
+          <div class="avatar mx-auto white">
+            <img src="../../../assets/img/Anna-Aston.jpg" class="rounded-circle img-fluid" alt="">
+          </div>
+          <div class="card-body">
+            <!--Name-->
+            <h4 class="font-weight-bold mb-4">{{user["email"]}}</h4>
+            <hr>
+            <!--Quotation-->
+            <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>
+              <strong>Id : </strong> {{user["_id"]}}
+              <i class="fa fa-quote-right pr-2"></i>
+            </p>
+          </div>
+        </div>
+        <br>
+        <!--Card-->
+      </div>
+      <!--Grid column-->
+    </ng-container>
+
+
+  </div>
+  <!-- Grid row -->
+
+</div>
+
+
+
+

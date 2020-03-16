@@ -1,5 +1,43 @@
 <body>
 <div class="container">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-md-7">
+      <div class="form d-flex justify-content-between">
+        <div class="image">
+          <img src="https://mdbootstrap.com/img/Photos/Others/sidenav2.jpg">
+        </div>
+        <form action="" class="my-form">
+          <h4 class="font-weight-bold mb-3">Log in to your account</h4>
+          <p class="mdb-color-text">To log in, please fill in these fiels with your e-mail address and password.</p>
+          <!-- Email address -->
+          <div class="md-form md-outline">
+            <label for="emailExample">
+            </label><input type="email" id="emailExample" class="form-control">
+          </div>
+          <!-- Password -->
+          <div class="md-form md-outline">
+
+            <label for="passwordExample">
+
+            </label><input type="password" id="passwordExample" class="form-control">
+          </div>
+          <br>
+          <div class="space">
+            <div class="float-right">
+              <button class="btn btn-rounded" type="button">Log in</button>
+            </div>
+          </div>
+          <hr>
+          <a class="link" href="#">Forgot password? Click here.</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+
   <div class="row">
     <div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
       <div class="card card-signin my-4">
@@ -36,7 +74,8 @@
   </div>
 </div>
 
-<!--
+
+
 <h2 class="page-header">Login</h2>
 
 <form (submit)="onLoginSubmit()">

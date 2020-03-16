@@ -36,6 +36,16 @@ export class AuthService {
     }
   }
 
+  getAllProfiles() {
+    this.getToken();
+    if (this.authToken) {
+      const httpAuthHeaders = new HttpHeaders()
+        .set('Authorization', this.authToken);
+      return this._http.get('/server/api/users/profiles/',
+        {headers: httpAuthHeaders});
+    }
+  }
+
   storeUserData(data : any) {
     localStorage.setItem("id_token", data.token);
     localStorage.setItem("user", JSON.stringify(data.user));

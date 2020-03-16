@@ -68,7 +68,7 @@ const question_update_one = (req, res) => {
     const {questionId} = req.params;
     const updateOps = {};
     for (const ops of req.body) {
-        updateOps[ops.propName] = ops.value;
+        updateOps[ops["propName"]] = ops.value;
     }
     Question.updateOne({_id: questionId}, {$set: updateOps})
         .exec()

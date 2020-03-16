@@ -9,8 +9,11 @@
           [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/register']">Register</a>
       </li>
-      <li class="nav-item" >
-        <a class="nav-link" [routerLink]="['/home']">Contact</a>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor:pointer;" [routerLink]="['/home']">
+          <i class="fa fa-envelope" ></i>
+          Contact
+        </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/home']">About</a>
@@ -26,6 +29,20 @@
   </div>
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
     <ul class="navbar-nav ml-auto">
+      <li *ngIf="authService.loggedIn()" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <h6 class="dropdown-header">Settings</h6>
+          <a class="dropdown-item" [routerLink]="['/users/all']">All Users</a>
+          <a class="dropdown-item" [routerLink]="['/home']">Another action</a>
+          <a class="dropdown-item" [routerLink]="['/home']">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
       <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
@@ -35,7 +52,8 @@
         <a class="nav-link" [routerLink]="['/questions']">QCM</a>
       </li>
       <li *ngIf="authService.loggedIn()" class="nav-item ">
-        <a class="nav-link " style="cursor:pointer;" (click)="onSelect()">Profile</a>
+        <a class="nav-link " style="cursor:pointer;" (click)="onSelect()">
+          <i class="fa fa-user"></i> Profile</a>
       </li>
       <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
