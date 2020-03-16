@@ -1,38 +1,51 @@
-
-
 <body>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
-      <div class="card card-signin my-4">
-        <div class="card-body">
-          <h5 class="card-title text-center">Sign Up</h5>
-          <form class="form-signin" (submit)="onRegisterSubmit()">
-            <div class="form-label-group">
-
-              <label for="inputEmail"></label>
-              <input type="email" id="inputEmail" class="form-control"
-                     [(ngModel)]="email" name="email"
-                     placeholder="Email address" required>
-            </div>
-
-            <div class="form-label-group">
-              <label for="inputPassword"></label>
-              <input type="password" id="inputPassword" class="form-control"
-                     [(ngModel)]="password" name="password"
-                     placeholder="Password" required>
-            </div>
-            <p></p>
-            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
-            <hr class="my-4">
-          </form>
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-md-7">
+      <div class="form d-flex justify-content-between">
+        <div class="image">
+          <img src="https://mdbootstrap.com/img/Photos/Others/sidenav2.jpg" alt="">
         </div>
+        <form action="" class="my-form" (submit)="onRegisterSubmit()">
+          <h4 class="font-weight-bold mb-3">Create an Account</h4>
+          <p class="mdb-color-text">It's free and anyone can join!</p>
+          <!-- Email address -->
+          <div class="md-form md-outline">
+            <label for="inputEmail">
+            </label>
+            <input type="email" id="inputEmail" class="form-control"
+                   [(ngModel)]="email" name="email"
+                   placeholder="Email address" required>
+          </div>
+          <!-- Password -->
+          <div class="md-form md-outline">
+            <label for="inputPassword"></label>
+            <input type="password" id="inputPassword" class="form-control"
+                   [(ngModel)]="password" name="password"
+                   placeholder="Password" required>
+          </div>
+          <br>
+          <div class="space">
+            <div class="float-right">
+              <button class="btn btn-rounded" type="submit">Sing Up</button>
+            </div>
+            <div class="float-left">
+              <a class="nav-link"
+                 style="text-decoration: underline; text-align: center;
+                 color: #6582B0"
+                 [routerLink]="['/login']">Already have an account ? Login</a>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <a class="link" href="#">Forgot password? Click here.</a>
+        </form>
       </div>
     </div>
   </div>
 </div>
-
-
+</body>
+<app-footer></app-footer>
 <!--
 <h2 class="page-header">Register</h2>
 
