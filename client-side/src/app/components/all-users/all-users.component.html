@@ -9,7 +9,7 @@
 
     </div>
 
-    <ng-container *ngFor="let user of users">
+    <ng-container *ngFor="let user of users; let i = index">
       <!--Grid column-->
       <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
         <!--Card-->
@@ -18,7 +18,7 @@
           <div class="card-up info-color"></div>
           <!--Avatar-->
           <div class="avatar mx-auto white">
-            <img src="../../../assets/img/Anna-Aston.jpg" class="rounded-circle img-fluid" alt="">
+            <img src="../../../assets/img/{{i + 1}}.jpg" class="rounded-circle img-fluid" alt="">
           </div>
           <div class="card-body">
             <!--Name-->

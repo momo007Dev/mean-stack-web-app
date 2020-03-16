@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FlashMessagesModule } from "angular2-flash-messages";
 import { JwtModule } from '@auth0/angular-jwt';
 import {ChartModule} from "angular2-chartjs";
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 
 import { AppComponent } from './app.component';
@@ -69,7 +70,8 @@ enableProdMode();
   providers: [
     ValidateService,
     AuthService,
-    QuestionsService
+    QuestionsService,
+    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })

@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     if (!this.validateService.validateRegister(user)) {
 
       this._flashMessagesService.show("Please fill in all fields", {
-        cssClass: "alert-danger",
+        cssClass: "alert-danger w-25",
         timeout: 2000,
         navigate: ''
       });
@@ -46,9 +46,9 @@ export class LoginComponent implements OnInit {
         //console.log(data.user.userId);
         //console.log(data.token);
          this.authService.storeUserData(data);
-          this._flashMessagesService.show("You are now logged in", {
-            cssClass: "alert-success",
-            timeout: 1000,
+          this._flashMessagesService.show("You are now logged in ...", {
+            cssClass: "alert-success w-25",
+            timeout: 2000,
             navigate: `${this.router.navigate(['/dashboard'])}`
           });
         }
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
         //console.log(err.error);
         console.log(err);
         this._flashMessagesService.show("Something went wrong", {
-          cssClass: "alert-danger",
+          cssClass: "alert-danger w-25",
           timeout: 3000
         });
       });

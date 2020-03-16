@@ -19,21 +19,17 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit() {
+    this.sessionExpired();
     if (this.authService.getProfile() === undefined) {
       return this._flashMessagesService.show("You need to log in !", {
-        cssClass: "alert-danger",
+        cssClass: "alert-danger w-50 p-3",
         timeout: 2000,
         navigate: `${this.router.navigate(['/login'])}`
       });
     } else {
       this.authService.getProfile().subscribe(
         (profile: any) => {
-          //const {user} = profile;
           this.user = profile.user;
-          //console.log(profile);
-          // console.log(user.userId);
-          // console.log(user.email);
-          //console.log(user.password);
         },
         err => {
           console.log(err);
@@ -42,6 +38,18 @@ export class ProfileComponent implements OnInit {
       );
     }
 
+  }
+
+  async sessionExpired(){
+    await new Promise(r => setTimeout(r, 30000));
+    this.authService.logout();
+    this._flashMessagesService
+      .show("Your session is over, you can log in back in to start a new session.",
+        {
+      cssClass: "alert-danger text-center ",
+      timeout: 10000,
+      navigate: `${await this.router.navigate(['/login'])}`
+    });
   }
   /*
     onClick(event : any){

@@ -43,14 +43,14 @@ export class NavbarComponent implements OnInit {
     if(!localStorage.getItem('id_token')) {
       this.authService.logout();
       this._flashMessagesService.show("Please log in first", {
-        cssClass: "alert-danger",
+        cssClass: "alert-danger w-25",
         timeout: 3000
       });
       return false;
     } else {
       this.authService.logout();
       this._flashMessagesService.show("You are logged out", {
-        cssClass: "alert-success",
+        cssClass: "alert-success w-25",
         timeout: 2000,
         navigate: `${this.router.navigate(['/login'])}`
       });

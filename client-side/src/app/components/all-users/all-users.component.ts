@@ -28,12 +28,12 @@ export class AllUsersComponent implements OnInit {
     this.authService.getAllProfiles()
       .toPromise()
       .then((data : any) => {
-        console.log(data);
         data.forEach(x => console.log(x.email));
         this.users = data;
       })
       .catch(err => {
-        console.log(err);
+        // catching unauthorized http reponses from the server
+        //console.log(err.status);
       });
   }
 }

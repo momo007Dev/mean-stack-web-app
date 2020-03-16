@@ -57,12 +57,12 @@ export class QuestionsComponent implements OnInit {
    // console.log(qID, choice);
     if(JSON.parse(choice.toLowerCase())) {
       this._flashMessagesService.show("correct answer", {
-        cssClass: "alert-success",
+        cssClass: "alert-success w-25",
         timeout: 2000
       });
     } else {
       this._flashMessagesService.show("wrong answer", {
-        cssClass: "alert-danger",
+        cssClass: "alert-danger W-25",
         timeout: 2000,
       });
     }
