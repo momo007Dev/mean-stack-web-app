@@ -3,11 +3,13 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item " [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" [routerLink]="['/home']">Home</a>
+        <a class="nav-link" [routerLink]="['/home']">
+          <i class="fa fa-home "></i> Home</a>
       </li>
       <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" [routerLink]="['/register']">Register</a>
+        <a class="nav-link" [routerLink]="['/register']">
+          <i class="fa fa-user-plus"></i> Register</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" style="cursor:pointer;" [routerLink]="['/home']">
@@ -16,7 +18,8 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/home']">About</a>
+        <a class="nav-link" [routerLink]="['/home']">
+          <i class="fa fa-address-card"></i> About</a>
       </li>
     </ul>
   </div>
@@ -35,8 +38,10 @@
           Admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <h6 class="dropdown-header">Settings</h6>
-          <a class="dropdown-item" [routerLink]="['/users/all']">All Users</a>
+          <h6 class="dropdown-header">
+            <i class="fa fa-cogs"> </i> Settings</h6>
+          <a class="dropdown-item" [routerLink]="['/users/all']">
+            All Users</a>
           <a class="dropdown-item" [routerLink]="['/home']">Another action</a>
           <a class="dropdown-item" [routerLink]="['/home']">Something else here</a>
           <div class="dropdown-divider"></div>
@@ -49,7 +54,8 @@
       </li>
       <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" [routerLink]="['/questions']">QCM</a>
+        <a class="nav-link" [routerLink]="['/questions']">
+          <i class="fa fa-list-ol"></i> QCM</a>
       </li>
       <li *ngIf="authService.loggedIn()" class="nav-item ">
         <a class="nav-link " style="cursor:pointer;" (click)="onSelect()">
@@ -57,10 +63,12 @@
       </li>
       <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" [routerLink]="['/login']">Login</a>
+        <a class="nav-link" [routerLink]="['/login']">
+          <i class="fa fa-sign-in"></i> Login</a>
       </li>
       <li *ngIf="authService.loggedIn()" class="nav-item">
-        <a id=`${authService.getId()}` class="nav-link" (click)="onLogOutClick()" href="#">Logout</a>
+        <a id=`${authService.getId()}` class="nav-link" (click)="onLogOutClick()" href="#">
+          <i class="fa fa-sign-out"></i>Logout</a>
       </li>
     </ul>
   </div>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {FlashMessagesService} from "angular2-flash-messages";
+import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
+import {QuestionsService} from "../../services/questions.service";
 
 @Component({
   selector: 'app-results',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _flashMessagesService: FlashMessagesService,
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    if (this.authService.getProfile() === undefined) {
+      return this._flashMessagesService.show("", {
+        navigate: `${this.router.navigate(['/login'])}`
+      });
+    }
   }
 
 }
