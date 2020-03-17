@@ -2,10 +2,10 @@
 
 <div *ngIf="questions.qns">
   <h2 class="header" style="margin-left: 24px">Completed!</h2>
-  <div class="card" style="margin: 24px">
+  <div class="card" style="margin: 74px">
     <div class="card-body">
       <div class="row" style="margin : 10px">
-        <div class="col-lg-3" style="margin-right: 10px">
+        <div class="col-lg-3" style="margin-right: 20px">
           <div class="">
             <img src="../../../assets/img/trophy.png" style="width: 250px; height: 250px;" alt="">
           </div>
@@ -45,11 +45,11 @@
               {{option.option}}
               <span *ngIf="(option['isCorrect']) === 'true'">
                  <i class="fa fa-check-circle right-align"
-                    style="color: green; position: absolute; right: 150px"></i>
+                    style="color: green; position: absolute; right: 150px"> correct answer</i>
               </span>
               <span *ngIf="(qn['index']) === j && (option['isCorrect']) === 'false'">
                  <i class="fa fa-times-circle right-align"
-                    style="color: red; position: absolute; right: 150px"></i>
+                    style="color: red; position: absolute; right: 135px"> incorrect answer</i>
               </span>
             </a>
           </ng-container>
@@ -60,7 +60,9 @@
   </ng-container>
 </div>
 
-<div>
+<div *ngIf="!questions.qns"
+  style="margin-bottom: 302px; margin-left: 20px; text-align: center; margin-top: 50px" >
+  <i class="fa fa-exclamation-triangle fa-4x" style="color: red"></i>
   <h3>You need to finish the QCM</h3>
 </div>
 
