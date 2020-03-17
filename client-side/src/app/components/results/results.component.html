@@ -42,13 +42,14 @@
         <p class="list-group list-group-flush">
           <ng-container *ngFor="let option of qn['answers'];let j = index">
             <a  class="list-group-item list-group-item-action" >
-              {{option.option}} {{option['isCorrect']}}
+              {{option.option}}
               <span *ngIf="(option['isCorrect']) === 'true'">
                  <i class="fa fa-check-circle right-align"
                     style="color: green; position: absolute; right: 150px"></i>
               </span>
-              <span *ngIf="(qn['answer']) != 'false' && (option['isCorrect']) === 'false'">
-                 incorrect
+              <span *ngIf="(qn['index']) === j && (option['isCorrect']) === 'false'">
+                 <i class="fa fa-times-circle right-align"
+                    style="color: red; position: absolute; right: 150px"></i>
               </span>
             </a>
           </ng-container>

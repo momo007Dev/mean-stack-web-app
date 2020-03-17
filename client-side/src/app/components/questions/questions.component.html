@@ -36,7 +36,7 @@
                onmouseout="this.style.backgroundColor = ''; this.style.color='';
                   this.style.fontSize= '';"
                style="cursor:pointer; "
-               (click)="answer(question.qns[question.qnProgress]['_id'],
+               (click)="answer(i,
                 option['isCorrect'])">
               {{option.option}}
             </a>
