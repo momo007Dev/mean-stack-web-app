@@ -98,7 +98,7 @@ const user_login = (req, res) => {
                         },
                         process.env.JWT_KEY,
                         {
-                            expiresIn: "30000"
+                            expiresIn: "1h"
                         }
                     );
                     return res

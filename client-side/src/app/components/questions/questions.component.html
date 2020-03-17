@@ -1,6 +1,6 @@
 <div class="row" *ngIf="question.qns">
   <div class="col s6 ">
-    <div class="card" style="width: 15rem; ">
+    <div class="card" style="width: 15rem; margin: 20px">
       <div class="card-body">
          <span style="margin: 20px; color: green">Time Elapsed : {{question.displayTimeElapsed()}}</span>
       </div>
@@ -30,7 +30,7 @@
           <ng-container *ngFor="let option of question.qns[question.qnProgress]['answers'];
           let i = index">
             <a *ngIf="option != null"
-               class="list-group-item list-group-item-action test"
+               class="list-group-item list-group-item-action"
                onmousemove="this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
                       this.style.color='green'; this.style.fontSize= '3.7vh';"
                onmouseout="this.style.backgroundColor = ''; this.style.color='';
@@ -44,6 +44,7 @@
         </a>
       </div>
     </div>
+
 
   </div>
 </div>

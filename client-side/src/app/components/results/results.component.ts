@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
@@ -14,8 +14,10 @@ export class ResultsComponent implements OnInit {
   constructor(
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private questions: QuestionsService
+  ) {
+  }
 
   ngOnInit() {
     if (this.authService.getProfile() === undefined) {

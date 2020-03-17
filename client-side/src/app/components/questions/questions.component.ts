@@ -36,9 +36,10 @@ export class QuestionsComponent implements OnInit {
     this.question.getQuestions()
       .toPromise()
       .then((data : any) => {
-        //console.log(data);data.forEach(x => console.log(x.question, (x.answers)));
         //console.log(data[0].answers.forEach(x => console.log(x.isCorrect)));
         this.question.qns = data;
+        this.question.qns.forEach(y => console.log(y.question,
+          y.answers.forEach(x => console.log(x.option, x.isCorrect))));
       })
       .catch(err => {
         console.log(err);
@@ -57,12 +58,12 @@ export class QuestionsComponent implements OnInit {
    // console.log(qID, choice);
     if(JSON.parse(choice.toLowerCase())) {
       this._flashMessagesService.show("correct answer", {
-        cssClass: "alert-success w-25",
+        cssClass: "alert-success w-25 text-center",
         timeout: 2000
       });
     } else {
       this._flashMessagesService.show("wrong answer", {
-        cssClass: "alert-danger W-25",
+        cssClass: "alert-danger w-25 text-center",
         timeout: 2000,
       });
     }
@@ -70,7 +71,7 @@ export class QuestionsComponent implements OnInit {
     this.question.qnProgress++;
     if (this.question.qnProgress == (this.question.qns).length) {
       clearInterval(this.question.timer);
-      this.router.navigate(['/results']);
+      await this.router.navigate(['/results']);
     }
   }
 }
