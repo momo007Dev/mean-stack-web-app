@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
@@ -15,12 +15,13 @@ export class QuestionsComponent implements OnInit {
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
     private router: Router,
-    private question : QuestionsService
-  ) { }
+    private question: QuestionsService
+  ) {
+  }
 
   ngOnInit() {
     this.question.qnProgress = 0;
-    this.question.seconds =0;
+    this.question.seconds = 0;
     this.showQuestion();
     this.startTimer();
 
@@ -29,17 +30,15 @@ export class QuestionsComponent implements OnInit {
         navigate: `${this.router.navigate(['/login'])}`
       });
     }
-
   }
 
-  showQuestion(){
+  showQuestion() {
     this.question.getQuestions()
       .toPromise()
-      .then((data : any) => {
+      .then((data: any) => {
         //console.log(data[0].answers.forEach(x => console.log(x.isCorrect)));
         this.question.qns = data;
-        this.question.qns.forEach(y => console.log(y.question,
-          y.answers.forEach(x => console.log(x.option, x.isCorrect))));
+       // this.question.qns.forEach(y => console.log(y.question,y.answers.forEach(x => console.log(x.option, x.isCorrect))));
       })
       .catch(err => {
         console.log(err);
@@ -55,8 +54,11 @@ export class QuestionsComponent implements OnInit {
 
   async answer(qID, choice) {
     this.question.qns[this.question.qnProgress].answer = choice;
-   // console.log(qID, choice);
-    if(JSON.parse(choice.toLowerCase())) {
+    this.question.qns[this.question.qnProgress].id = qID;
+     //console.log(qID, choice);
+     console.log(this.question.qns[this.question.qnProgress].answer);
+     console.log(this.question.qns[this.question.qnProgress].id);
+    if (JSON.parse(choice.toLowerCase())) {
       this._flashMessagesService.show("correct answer", {
         cssClass: "alert-success w-25 text-center",
         timeout: 2000
@@ -67,7 +69,7 @@ export class QuestionsComponent implements OnInit {
         timeout: 2000,
       });
     }
-   await new Promise(r => setTimeout(r, 2000));
+    await new Promise(r => setTimeout(r, 2000));
     this.question.qnProgress++;
     if (this.question.qnProgress == (this.question.qns).length) {
       clearInterval(this.question.timer);

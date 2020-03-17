@@ -1,29 +1,31 @@
-<h2 class="header" style="margin-left : 24px">Completed!</h2>
-<div class="card" style="margin: 24px">
-  <div class="card-body">
-    <div class="row" style="margin : 10px">
-      <div class="col-lg-3" style="margin-right : 10px">
-        <div class="">
-          <img src="../../../assets/img/trophy.png" style="width: 250px;height : 250px;" alt="">
+
+
+<div *ngIf="questions.qns">
+  <h2 class="header" style="margin-left: 24px">Completed!</h2>
+  <div class="card" style="margin: 24px">
+    <div class="card-body">
+      <div class="row" style="margin : 10px">
+        <div class="col-lg-3" style="margin-right: 10px">
+          <div class="">
+            <img src="../../../assets/img/trophy.png" style="width: 250px; height: 250px;" alt="">
+          </div>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div>
-          <br>
-          <h4>Danny</h4>
-          <h3>7/10</h3>
-          <span>Time Elapsed : 45 sec</span>
-        </div>
-        <div class="card-action">
-          <hr>
-          <button class="btn">Submit</button>
+        <div class="col-lg-4">
+          <div>
+            <br>
+            <h4>Danny</h4>
+            <h3>7/10</h3>
+            <span>Time Elapsed : 45 sec</span>
+          </div>
+          <div class="card-action">
+            <hr>
+            <button class="btn btn-primary" type="submit"
+                    style="width:130px; margin-left:40px;">Submit</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div>
   <ng-container *ngFor="let qn of questions.qns;let i=index">
     <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
 
@@ -36,21 +38,18 @@
           </p>
         </h5>
       </div>
-
       <div class="card" style="margin: 10px;">
         <p class="list-group list-group-flush">
           <ng-container *ngFor="let option of qn['answers'];let j = index">
             <a  class="list-group-item list-group-item-action" >
-              {{option.option}}
+              {{option.option}} {{option['isCorrect']}}
               <span *ngIf="(option['isCorrect']) === 'true'">
                  <i class="fa fa-check-circle right-align"
                     style="color: green; position: absolute; right: 150px"></i>
               </span>
-              <span *ngIf="(option['isCorrect']) === 'false'">
-                 <i class="fa fa-times-circle right-align"
-                    style="color: red; position: absolute; right: 150px"></i>
+              <span *ngIf="(qn['answer']) != 'false' && (option['isCorrect']) === 'false'">
+                 incorrect
               </span>
-
             </a>
           </ng-container>
         </p>
@@ -60,4 +59,11 @@
   </ng-container>
 </div>
 
+<div>
+  <h3>You need to finish the QCM</h3>
+</div>
 
+<!--
+<i class="fa fa-times-circle right-align"
+                    style="color: red; position: absolute; right: 150px"></i>
+                    -->
