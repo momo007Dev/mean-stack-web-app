@@ -3,6 +3,7 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {ValidateService} from "../../services/validate.service";
+import {JwtHelperService} from "@auth0/angular-jwt";
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   email: String;
   password: String;
+  timeLoggedIn : number;
 
   constructor(private validateService: ValidateService,
               private _flashMessagesService: FlashMessagesService,
@@ -45,6 +47,8 @@ export class LoginComponent implements OnInit {
       .then((data: any) => {
         //console.log(data.user.userId);
         //console.log(data.token);
+        this.timeLoggedIn = new Date().getTime();
+        this.sessionExpired(data.token);
          this.authService.storeUserData(data);
           this._flashMessagesService.show("You are now logged in ...", {
             cssClass: "alert-success w-25",
@@ -63,4 +67,20 @@ export class LoginComponent implements OnInit {
       });
 
   }
+
+  sessionExpired(token : string) {
+    const expirationDate = new JwtHelperService().getTokenExpirationDate(token).getTime();
+    const sessionExpired = expirationDate - this.timeLoggedIn;
+    setTimeout(() => {
+      this.authService.logout();
+      this._flashMessagesService
+        .show("Your session is over, you can log in back in to start a new session.",
+          {
+            cssClass: "alert-danger text-center ",
+            timeout: 10000,
+            navigate: `${this.router.navigate(['/login'])}`
+          });
+    }, sessionExpired);
+  }
+
 }

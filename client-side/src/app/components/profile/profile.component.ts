@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {FlashMessagesService} from 'angular2-flash-messages';
+import {tryCatch} from "rxjs/internal-compatibility";
 
 @Component({
   selector: 'app-profile',
@@ -19,7 +20,6 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit() {
-    this.sessionExpired();
     if (this.authService.getProfile() === undefined) {
       return this._flashMessagesService.show("You need to log in !", {
         cssClass: "alert-danger w-50 p-3",
@@ -37,20 +37,10 @@ export class ProfileComponent implements OnInit {
         }
       );
     }
-
   }
 
-  async sessionExpired(){
-    await new Promise(r => setTimeout(r, 30000));
-    this.authService.logout();
-    this._flashMessagesService
-      .show("Your session is over, you can log in back in to start a new session.",
-        {
-      cssClass: "alert-danger text-center ",
-      timeout: 10000,
-      navigate: `${await this.router.navigate(['/login'])}`
-    });
-  }
+
+
   /*
     onClick(event : any){
     console.log(event);

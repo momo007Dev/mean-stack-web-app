@@ -1,14 +1,11 @@
 <div class="row" *ngIf="question.qns">
   <div class="col s6 ">
-
-    <div class="card" style="width: 15rem; margin: 20px">
+    <div class="card" style="width: 15rem; ">
       <div class="card-body">
          <span style="margin: 20px; color: green">Time Elapsed : {{question.displayTimeElapsed()}}</span>
       </div>
     </div>
-
-
-    <div class="row" style="margin: 15px">
+    <div class="row" style="margin: 10px">
       <h5 class="col s10">Question Progress</h5>
       <h5 class="right-align">{{question.qnProgress + 1}}/{{(question.qns).length}}</h5>
     </div>
@@ -18,8 +15,7 @@
                 {{(question.qnProgress)*20}}%
       </div>
     </div>
-    <p></p>
-    <div class="card" style="background-color: #31373e; margin: 20px">
+    <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
       <div class="card-content">
         <p class="card-title" style="color: white; margin: 20px">Question :
         {{(question.qnProgress+1)}}</p>
@@ -52,8 +48,6 @@
   </div>
 </div>
 <br>
-
-<app-footer></app-footer>
 
 
 <!--

@@ -57,13 +57,10 @@ export class AuthService {
   }
 
   getToken() {
-    console.log();
+    //console.log(new JwtHelperService().isTokenExpired(this.authToken));
+    //console.log(new JwtHelperService().getTokenExpirationDate(this.authToken));
     this.authToken = localStorage.getItem("id_token");
     this.user = localStorage.getItem("user");
-  }
-
-  isSessionExpired(){
-    return new JwtHelperService().isTokenExpired(this.authToken);
   }
 
   logout() {
