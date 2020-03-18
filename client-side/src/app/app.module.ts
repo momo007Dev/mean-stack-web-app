@@ -25,6 +25,7 @@ import { QuestionsComponent } from './components/questions/questions.component';
 import { ResultsComponent } from './components/results/results.component';
 import { AllUsersComponent } from './components/all-users/all-users.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -34,6 +35,7 @@ const appRoutes : Routes = [
   { path: "dashboard", component: DashboardComponent},
   { path: "questions", component: QuestionsComponent},
   { path: "results", component: ResultsComponent},
+  { path: "reviews", component: ReviewsComponent},
   { path: "users/all", component: AllUsersComponent},
   { path: "profile/:id", component: ProfileComponent},
   { path: "**", component: HomeComponent }
@@ -56,7 +58,7 @@ enableProdMode();
     ResultsComponent,
     AllUsersComponent,
     FooterComponent,
-
+    ReviewsComponent,
   ],
 
   imports: [
