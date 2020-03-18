@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de404f23-77b6-4a1d-b2d9-95ecec7575f8" name="Default Changelist" comment="">
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +106,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="de404f23-77b6-4a1d-b2d9-95ecec7575f8" name="Default Changelist" comment="" />
+      <changelist id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
       <created>1583245560172</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -133,7 +138,7 @@
       <workItem from="1584284178927" duration="30384000" />
       <workItem from="1584370983267" duration="19602000" />
       <workItem from="1584456015215" duration="29856000" />
-      <workItem from="1584540425552" duration="252000" />
+      <workItem from="1584542573248" duration="1538000" />
     </task>
     <task id="LOCAL-00019" summary="added better erros messages">
       <created>1583671331148</created>
@@ -558,22 +563,22 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="358" y="86" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1583618889720" />
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1584540679569">
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1584542650328">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1584540679569" />
-    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1584540679569">
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1584542650328" />
+    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1584542650328">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1584540679569" />
-    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1584540679569">
+    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1584542650328" />
+    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1584542650328">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1584540679569" />
-    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1584540679569">
+    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1584542650328" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1584542650328">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1584540679569" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1584542650328" />
     <state x="79" y="0" key="SettingsEditor" timestamp="1583607221643">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -590,10 +595,6 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.689@0.0.1280.689" timestamp="1584216893706" />
-    <state x="389" y="0" key="git4idea.branch.GitSmartOperationDialog" timestamp="1584540665260">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="389" y="0" key="git4idea.branch.GitSmartOperationDialog/0.0.1280.689@0.0.1280.689" timestamp="1584540665260" />
     <state x="336" y="118" key="git4idea.merge.GitPullDialog" timestamp="1583975751831">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
