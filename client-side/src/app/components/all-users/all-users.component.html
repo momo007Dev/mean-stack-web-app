@@ -17,7 +17,7 @@
           <!--Background color-->
           <div class="card-up info-color"></div>
           <!--Avatar-->
-          <div class="avatar mx-auto white">
+          <div class="avatar mx-auto white" style="margin-top: 8px">
             <img src="../../../assets/img/{{i + 1}}.jpg" class="rounded-circle img-fluid" alt="">
           </div>
           <div class="card-body">
@@ -29,6 +29,15 @@
               <strong>Id : </strong> {{user["_id"]}}
               <i class="fa fa-quote-right pr-2"></i>
             </p>
+            <hr>
+            <button type="button" class="btn btn-primary">
+              <i class="fa fa-pencil" aria-hidden="true"
+              style="color: black"></i> Update</button>
+            <button type="button" class="btn btn-secondary btn btn-danger"
+                    style="margin-left: 112px;">
+              <i class="fa fa-trash " aria-hidden="true"
+                 style="color: black;"></i> Delete
+            </button>
           </div>
         </div>
         <br>
