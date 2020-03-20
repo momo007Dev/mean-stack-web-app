@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,14 +138,8 @@
       <workItem from="1584456015215" duration="29856000" />
       <workItem from="1584542573248" duration="13661000" />
       <workItem from="1584572089080" duration="2115000" />
-      <workItem from="1584607045806" duration="1711000" />
-    </task>
-    <task id="LOCAL-00021" summary="added all crud ops on question entity">
-      <created>1583675813431</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1583675813431</updated>
+      <workItem from="1584607045806" duration="1733000" />
+      <workItem from="1584653359640" duration="4462000" />
     </task>
     <task id="LOCAL-00022" summary="catching better erros in delete route">
       <created>1583676501978</created>
@@ -480,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584581110796</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="added small buttons for update and delete">
+      <created>1584612170138</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1584612170139</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +492,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="able to access protected routes but some work still to be done" />
     <MESSAGE value="working profile component" />
     <MESSAGE value="better profile ui" />
     <MESSAGE value="added stable nav features based on log in" />
@@ -513,7 +516,8 @@
     <MESSAGE value="improved result UI" />
     <MESSAGE value="added a reviews UI" />
     <MESSAGE value="added some padding in reviews UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some padding in reviews UI" />
+    <MESSAGE value="added small buttons for update and delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="added small buttons for update and delete" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -552,10 +556,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1584581109065">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1584612168661">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1584581109065" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1584612168661" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -600,13 +604,13 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="439" y="187" key="git4idea.rebase.GitRebaseDialog/0.0.1280.689@0.0.1280.689" timestamp="1583970467921" />
-    <state x="297" y="153" key="run.anything.popup" timestamp="1584462146819">
+    <state x="297" y="153" key="run.anything.popup" timestamp="1584654838869">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1584462146819" />
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1584064068905">
+    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1584654838869" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1584654099854">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1584064068905" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1584654099854" />
   </component>
 </project>

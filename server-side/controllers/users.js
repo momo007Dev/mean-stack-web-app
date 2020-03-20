@@ -131,17 +131,22 @@ const user_login = (req, res) => {
 };
 
 const user_delete = (req, res) => {
-    User.remove({_id: req.params.userId})
+    User.deleteOne({_id: req.params.userId})
         .exec()
         .then(result => {
-           // console.log(result);
+            if (result.n === 0) {
+                return res
+                    .status(404)
+                    .json({message: "No user found for the provided ID"});
+            }
+            //console.log(result);
             res.status(200).json({
                 message: "User deleted successfully"
             });
         })
         .catch(err => {
             res.status(500).json({
-                error: err
+                error: err.message
             });
         });
 };

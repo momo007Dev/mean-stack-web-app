@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Question = require("../models/questions");
+const {success, info, error, debug} = require('consola');
 
 const question_get_all = (req, res) => {
     let response = [];
@@ -163,7 +164,7 @@ const question_delete_one = (req, res) => {
                     url: "http://localhost:5000/api/questions",
                     body: {
                         question: "String",
-                        price: {
+                        answers: {
                             option: "String",
                             isCorrect: "Boolean",
                         }
@@ -173,9 +174,10 @@ const question_delete_one = (req, res) => {
         })
         .catch(err => {
             //console.log(err);
+            error({message: `An error occured while to delete this question : ${err}`, badge : true});
             res
                 .status(404)
-                .json({message: "An error occored while trying to delete the question"});
+                .json({message: "An error occured while trying to delete this question"});
         });
 };
 
