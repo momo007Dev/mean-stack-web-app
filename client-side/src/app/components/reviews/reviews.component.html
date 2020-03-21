@@ -4,24 +4,22 @@
 
     <div class="text-center font-weight-bold"><span>4</span> comments</div>
 
-    <div class="media d-block d-md-flex mt-4">
-      <img class="card-img-64 d-flex mx-auto mb-3"
-           src="../../../assets/img/1.jpg"
-           style="width: 10%" alt="Generic placeholder image">
-      <div class="media-body text-center text-md-left ml-md-3 ml-0">
-        <p class="font-weight-bold my-0">
-          Miley Steward
-        </p>
-        <p class="blockquote-footer my-0">
-          Miley Steward
-        </p>
-        Many of our components require the use of JavaScript to function.
-        Specifically, they require jQuery, Popper.js, and our own JavaScript plugins.
-        Place the following near the end of your pages, right before the closing
-        tag, to enable them. jQuery must come first, then Popper.js, and then our
-        JavaScript plugins.
+    <ng-container *ngFor="let review of reviews.rev; let i = index">
+      <div class="media d-block d-md-flex mt-4">
+        <img class="card-img-64 d-flex mx-auto mb-3"
+             src="../../../assets/img/1.jpg"
+             style="width: 10%" alt="Generic placeholder image">
+        <div class="media-body text-center text-md-left ml-md-3 ml-0">
+          <p class="font-weight-bold my-0">
+            {{review["author"]}}
+          </p>
+          <p class="blockquote-footer my-0">
+            {{(review["CreatedOn"]).toLocaleString('fr-BE')}}
+          </p>
+          {{review["reviewText"]}}
+        </div>
       </div>
-    </div>
+    </ng-container>
 
   </section>
 

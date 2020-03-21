@@ -31,7 +31,9 @@ export class ReviewsComponent implements OnInit {
         data.forEach(x => x.reviews.forEach(y => tab.push(y)));
         tab
           .sort((a,b) => Date.parse(a.CreatedOn) - Date.parse(b.CreatedOn))
-          .forEach(x => console.log(x.author, x.CreatedOn));
+          .forEach(x =>  x.CreatedOn = new Date(x.CreatedOn));
+          tab.forEach(x => console.log(x.author,
+            (x.CreatedOn).toLocaleString('fr-BE')));
         this.reviews.rev = tab;
       })
       .catch(err => {
