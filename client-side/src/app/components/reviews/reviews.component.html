@@ -14,7 +14,8 @@
             {{review["author"]}}
           </p>
           <p class="blockquote-footer my-0">
-            {{(review["CreatedOn"]).toLocaleString('fr-BE')}}
+            {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[0]}}
+            at {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[1]}}
           </p>
           {{review["reviewText"]}}
         </div>
