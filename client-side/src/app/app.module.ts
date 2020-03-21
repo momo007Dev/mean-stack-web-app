@@ -20,6 +20,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {ValidateService} from './services/validate.service';
 import { AuthService } from "./services/auth.service";
 import { QuestionsService } from "./services/questions.service";
+import { ReviewsService } from "./services/reviews.service";
 import { ChartsComponent } from './components/charts/charts.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { ResultsComponent } from './components/results/results.component';
@@ -73,6 +74,7 @@ enableProdMode();
     ValidateService,
     AuthService,
     QuestionsService,
+    ReviewsService,
     JwtHelperService
   ],
   bootstrap: [AppComponent]

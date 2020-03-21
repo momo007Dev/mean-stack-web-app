@@ -33,10 +33,13 @@ app.get('/', (req, res) => {
 });
 
 // Bring in the user routers
+const reviews = require('./routes/reviews');
 const users = require('./routes/users');
 const questions = require('./routes/questions');
+
 app.use('/api', users);
 app.use('/api', questions);
+app.use('/api', reviews);
 
 app.listen(process.env.PORT, () => {
     info({message :`Server started on port ${process.env.PORT}`, badge : true})

@@ -2,6 +2,28 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const uniqueValidator = require('mongoose-unique-validator');
 
+// Reviews Schema
+const reviewSchema = new mongoose.Schema({
+    author: {
+        type: String,
+        required: true
+    },
+    rating: {
+        type: Number,
+        required: true,
+        min: 0,
+        max: 5
+    },
+    reviewText: {
+        type: String,
+        required: true
+    },
+    createdOn: {
+        type: Date,
+        'default': Date.now()
+    }
+});
+
 // Users Schema
 const userSchema = new mongoose.Schema({
     email: {
@@ -13,7 +35,8 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         require: true
-    }
+    },
+    reviews: [reviewSchema]
 });
 
 userSchema.plugin(uniqueValidator);
