@@ -24,12 +24,15 @@ export class ReviewsComponent implements OnInit {
   }
 
   showReviews() {
+    let tab : Array<any> = [];
     this.reviews.getAllReviews()
       .toPromise()
       .then((data: any) => {
-        console.log(data);
-        this.reviews.rev = data;
-        // this.question.qns.forEach(y => console.log(y.question,y.answers.forEach(x => console.log(x.option, x.isCorrect))));
+        data.forEach(x => x.reviews.forEach(y => tab.push(y)));
+        tab
+          .sort((a,b) => Date.parse(a.CreatedOn) - Date.parse(b.CreatedOn))
+          .forEach(x => console.log(x.author, x.CreatedOn));
+        this.reviews.rev = tab;
       })
       .catch(err => {
         console.log(err);

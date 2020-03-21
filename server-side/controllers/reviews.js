@@ -35,7 +35,8 @@ const doAddReview = (req, res, user) => {
         user.reviews.push({
             author : user.email,
             rating,
-            reviewText
+            reviewText,
+            CreatedOn : new Date()
         });
         user
             .save()
