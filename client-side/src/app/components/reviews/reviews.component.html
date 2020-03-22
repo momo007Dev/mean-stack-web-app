@@ -1,7 +1,12 @@
 <div class="container m-5 p-5 border border-light">
 
-  <section>
+  <button type="submit" class="btn btn-primary" data-toggle="modal"
+          data-target="#exampleModal" data-whatever="@mdo"
+          style="width:165px; margin-left:460px; margin-top: 0">Add a review
+  </button>
 
+  <section>
+    <br>
     <div class="text-center font-weight-bold"><span>4</span> comments</div>
 
     <ng-container *ngFor="let review of reviews.rev; let i = index">
@@ -14,9 +19,9 @@
             {{review["author"]}}
           </span>
           <br>
-            Rating :
-            <ngb-rating [(rate)]="currentRate"></ngb-rating>
-          Rate: <b>{{currentRate}}</b>
+          Rating :
+          <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"></ngb-rating>
+          Rate: <b>{{ (review["rating"]) }}</b>
           <p class="blockquote-footer my-0">
             {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[0]}}
             at {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[1]}}
@@ -29,6 +34,45 @@
   </section>
 
 
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a review </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" class="my-form" (submit)="onReviewSubmit()">
+          Rating :
+          <ngb-rating [(rate)]="currentRate" ></ngb-rating>
+          <br>
+          <label for="inputRating">
+            <input style="width: 70px; height: 35px" class="form-control" id="inputRating"
+                   [(ngModel)]="currentRate" type="number"
+                   name="currentRate" required>
+          </label>
+          out of 10
+          <br>
+          Rate: <b>{{currentRate}}</b>
+          <br>
+          <label for="reviewComment">Your comment</label>
+          <textarea class="form-control" id="reviewComment" rows="4"
+                    [(ngModel)]="reviewText" name="reviewText"
+                    style="width: 440px" required></textarea>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="submit">submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 

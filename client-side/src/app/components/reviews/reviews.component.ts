@@ -11,7 +11,9 @@ import {ReviewsService} from "../../services/reviews.service";
 })
 export class ReviewsComponent implements OnInit {
 
-  currentRate = 8;
+  currentRate : number;
+  reviewText : string;
+  readonly : boolean = true;
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
@@ -32,14 +34,41 @@ export class ReviewsComponent implements OnInit {
       .then((data: any) => {
         data.forEach(x => x.reviews.forEach(y => tab.push(y)));
         tab
-          .sort((a,b) => Date.parse(a.CreatedOn) - Date.parse(b.CreatedOn))
+          .sort((a,b) => Date.parse(b.CreatedOn) - Date.parse(a.CreatedOn))
           .forEach(x =>  x.CreatedOn = new Date(x.CreatedOn));
-          //tab.forEach(x => console.log(x.author, (x.CreatedOn).toLocaleString('fr-BE')));
+          tab.forEach(x =>  x.rating = Number(x.rating));
+          //tab.forEach(x => console.log(x.author, x.rating));
         this.reviews.rev = tab;
+        console.log(this.currentRate)
       })
       .catch(err => {
         console.log(err);
       });
+  }
+
+  onReviewSubmit(){
+    const review = {
+      rating: this.currentRate,
+      reviewText: this.reviewText
+    };
+    //console.log(review);
+
+    this.reviews.createReview(JSON.stringify(review))
+      .toPromise()
+      .then(() => {
+        this.showReviews();
+        `${this.router.navigate(['/reviews'])}`;
+        }
+      )
+      .catch(err => {
+        console.log(err);
+        this._flashMessagesService.show("Something went wrong", {
+          cssClass: "alert-danger w-25",
+          timeout: 2000,
+          navigate: `${this.router.navigate(['/reviews'])}`
+        });
+      });
+
   }
 
 }

@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/reviews.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/reviews.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,14 +148,7 @@
       <workItem from="1584899418067" duration="3305000" />
       <workItem from="1584903484423" duration="281000" />
       <workItem from="1584903835767" duration="203000" />
-      <workItem from="1584904106616" duration="1572000" />
-    </task>
-    <task id="LOCAL-00028" summary="added protected routes">
-      <created>1583700226535</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1583700226535</updated>
+      <workItem from="1584904106616" duration="12117000" />
     </task>
     <task id="LOCAL-00029" summary="added client side">
       <created>1583701384037</created>
@@ -495,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584845897082</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="rating ui stable">
+      <created>1584906990244</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1584906990245</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +501,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="stable dashboard.component.html" />
     <MESSAGE value="dashboard good so far" />
     <MESSAGE value="can list questions in ui" />
     <MESSAGE value="question ui stable" />
@@ -528,7 +525,8 @@
     <MESSAGE value="stable reviews UI" />
     <MESSAGE value="added english version in dates" />
     <MESSAGE value="added static rating in reviews UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="added static rating in reviews UI" />
+    <MESSAGE value="rating ui stable" />
+    <option name="LAST_COMMIT_MESSAGE" value="rating ui stable" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -571,10 +569,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1584845896133">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1584906988228">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1584845896133" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1584906988228" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

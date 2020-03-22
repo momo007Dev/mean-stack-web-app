@@ -12,7 +12,7 @@ const reviewSchema = new mongoose.Schema({
         type: Number,
         required: true,
         min: 0,
-        max: 5
+        max: 10
     },
     reviewText: {
         type: String,
