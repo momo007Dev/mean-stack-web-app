@@ -1,9 +1,8 @@
-import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {ReviewsService} from "../../services/reviews.service";
-import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-reviews',
@@ -12,8 +11,9 @@ import {DOCUMENT} from "@angular/common";
 })
 export class ReviewsComponent implements OnInit {
 
+  currentRate = 8;
+
   constructor(
-    @Inject(DOCUMENT) private document: Document,
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
     private router: Router,

@@ -5,6 +5,7 @@ import { FlashMessagesModule } from "angular2-flash-messages";
 import { JwtModule } from '@auth0/angular-jwt';
 import {ChartModule} from "angular2-chartjs";
 import {JwtHelperService} from '@auth0/angular-jwt';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -45,6 +46,7 @@ const appRoutes : Routes = [
 enableProdMode();
 
 
+// noinspection AngularInvalidImportedOrDeclaredSymbol
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,11 +66,12 @@ enableProdMode();
 
   imports: [
     BrowserModule,
+    NgbModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
-    ChartModule
+    ChartModule,
   ],
   providers: [
     ValidateService,
