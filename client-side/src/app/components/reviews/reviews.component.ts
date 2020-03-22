@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {ReviewsService} from "../../services/reviews.service";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-reviews',
@@ -12,6 +13,7 @@ import {ReviewsService} from "../../services/reviews.service";
 export class ReviewsComponent implements OnInit {
 
   constructor(
+    @Inject(DOCUMENT) private document: Document,
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
     private router: Router,
@@ -32,8 +34,7 @@ export class ReviewsComponent implements OnInit {
         tab
           .sort((a,b) => Date.parse(a.CreatedOn) - Date.parse(b.CreatedOn))
           .forEach(x =>  x.CreatedOn = new Date(x.CreatedOn));
-          tab.forEach(x => console.log(x.author,
-            (x.CreatedOn).toLocaleString('fr-BE')));
+          //tab.forEach(x => console.log(x.author, (x.CreatedOn).toLocaleString('fr-BE')));
         this.reviews.rev = tab;
       })
       .catch(err => {

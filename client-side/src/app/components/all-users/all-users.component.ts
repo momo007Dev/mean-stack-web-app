@@ -28,7 +28,7 @@ export class AllUsersComponent implements OnInit {
     this.authService.getAllProfiles()
       .toPromise()
       .then((data : any) => {
-        data.forEach(x => console.log(x.email));
+        //data.forEach(x => console.log(x.email));
         this.users = data;
       })
       .catch(err => {

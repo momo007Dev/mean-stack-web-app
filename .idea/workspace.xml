@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,14 +141,7 @@
       <workItem from="1584653359640" duration="4527000" />
       <workItem from="1584706321433" duration="2549000" />
       <workItem from="1584742433304" duration="1253000" />
-      <workItem from="1584805256979" duration="20064000" />
-    </task>
-    <task id="LOCAL-00026" summary="added jwt tokens">
-      <created>1583694695679</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1583694695679</updated>
+      <workItem from="1584805256979" duration="24815000" />
     </task>
     <task id="LOCAL-00027" summary="added get user by id">
       <created>1583697557305</created>
@@ -484,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584833491872</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="added english version in dates">
+      <created>1584834166176</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1584834166176</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +494,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="made login home button secondary" />
     <MESSAGE value="brand nav routed to /home" />
     <MESSAGE value="stable dashboard.component.html" />
     <MESSAGE value="dashboard good so far" />
@@ -517,7 +518,8 @@
     <MESSAGE value="added reviews in the API" />
     <MESSAGE value="reviews can be query by the angular, UI still to be done" />
     <MESSAGE value="stable reviews UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="stable reviews UI" />
+    <MESSAGE value="added english version in dates" />
+    <option name="LAST_COMMIT_MESSAGE" value="added english version in dates" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
@@ -556,10 +558,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1584833490928">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1584834164842">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1584833490928" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1584834164842" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
