@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
         (profile: any) => {
           //const {user} = profile;
           //console.log(profile.user.userId);
-          this.router.navigate(['/profile', profile.user.userId]);
+          `${this.router.navigate(['/profile', profile.user.userId])}`
           //console.log(profile);
           // console.log(user.userId);
           // console.log(user.email);

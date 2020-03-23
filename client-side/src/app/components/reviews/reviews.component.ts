@@ -11,9 +11,9 @@ import {ReviewsService} from "../../services/reviews.service";
 })
 export class ReviewsComponent implements OnInit {
 
-  currentRate : number;
-  reviewText : string;
-  readonly : boolean = true;
+  currentRate: number;
+  reviewText: string;
+  readonly: boolean = true;
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
@@ -28,25 +28,26 @@ export class ReviewsComponent implements OnInit {
   }
 
   showReviews() {
-    let tab : Array<any> = [];
+    let tab: Array<any> = [];
     this.reviews.getAllReviews()
       .toPromise()
       .then((data: any) => {
         data.forEach(x => x.reviews.forEach(y => tab.push(y)));
         tab
-          .sort((a,b) => Date.parse(b.CreatedOn) - Date.parse(a.CreatedOn))
-          .forEach(x =>  x.CreatedOn = new Date(x.CreatedOn));
-          tab.forEach(x =>  x.rating = Number(x.rating));
-          //tab.forEach(x => console.log(x.author, x.rating));
+          .sort((a, b) => Date.parse(b.CreatedOn) - Date.parse(a.CreatedOn))
+          .forEach(x => {
+            x.CreatedOn = new Date(x.CreatedOn);
+            x.rating = Number(x.rating)
+          });
+        //tab.forEach(x => console.log(x.author, x.rating));
         this.reviews.rev = tab;
-        console.log(this.currentRate)
       })
       .catch(err => {
         console.log(err);
       });
   }
 
-  onReviewSubmit(){
+  onReviewSubmit() {
     const review = {
       rating: this.currentRate,
       reviewText: this.reviewText
@@ -56,8 +57,8 @@ export class ReviewsComponent implements OnInit {
     this.reviews.createReview(JSON.stringify(review))
       .toPromise()
       .then(() => {
-        this.showReviews();
-        `${this.router.navigate(['/reviews'])}`;
+          this.showReviews();
+          `${this.router.navigate(['/reviews'])}`;
         }
       )
       .catch(err => {

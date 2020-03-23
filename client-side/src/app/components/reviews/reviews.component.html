@@ -1,38 +1,42 @@
-<div class="container m-5 p-5 border border-light">
+<div *ngIf="reviews.rev">
 
-  <button type="submit" class="btn btn-primary" data-toggle="modal"
-          data-target="#exampleModal" data-whatever="@mdo"
-          style="width:165px; margin-left:460px; margin-top: 0">Add a review
-  </button>
+  <div class="container m-5 p-5 border border-bottom">
 
-  <section>
-    <br>
-    <div class="text-center font-weight-bold"><span>4</span> comments</div>
+    <button type="submit" class="btn btn-primary text-center" data-toggle="modal"
+            data-target="#exampleModal" data-whatever="@mdo"
+            style="width:165px; margin-left:455px; margin-top: 0">Add a review
+    </button>
 
-    <ng-container *ngFor="let review of reviews.rev; let i = index">
-      <div class="media d-block d-md-flex mt-4">
-        <img class="card-img-64 d-flex mx-auto mb-3"
-             src="../../../assets/img/1.jpg"
-             style="width: 10%" alt="Generic placeholder image">
-        <div class="media-body text-center text-md-left ml-md-3 ml-0">
+    <section>
+      <br>
+      <div class="text-center font-weight-bold"><span>{{(reviews.rev).length}}</span> comments</div>
+
+      <ng-container *ngFor="let review of reviews.rev; let i = index">
+        <div class="media d-block d-md-flex mt-4">
+          <img class="card-img-64 d-flex mx-auto mb-3"
+               src="../../../assets/img/1.jpg"
+               style="width: 10%" alt="Generic placeholder image">
+          <div class="media-body text-center text-md-left ml-md-3 ml-0">
           <span class="font-weight-bold my-0">
             {{review["author"]}}
-          </span>
-          <br>
-          Rating :
-          <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"></ngb-rating>
-          Rate: <b>{{ (review["rating"]) }}</b>
-          <p class="blockquote-footer my-0">
-            {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[0]}}
-            at {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[1]}}
-          </p>
-          {{review["reviewText"]}}
+            <br>
+            Rating :
+            <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"></ngb-rating>
+            </span>
+            <p class="blockquote-footer my-0">
+              {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[0]}}
+              at {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[1]}}
+            </p>
+            {{review["reviewText"]}}
+          </div>
         </div>
-      </div>
-    </ng-container>
+        <hr>
+      </ng-container>
 
-  </section>
+    </section>
 
+
+  </div>
 
 </div>
 
@@ -49,7 +53,7 @@
       <div class="modal-body">
         <form action="" class="my-form" (submit)="onReviewSubmit()">
           Rating :
-          <ngb-rating [(rate)]="currentRate" ></ngb-rating>
+          <ngb-rating [(rate)]="currentRate"></ngb-rating>
           <br>
           <label for="inputRating">
             <input style="width: 70px; height: 35px" class="form-control" id="inputRating"
@@ -61,10 +65,11 @@
           Rate: <b>{{currentRate}}</b>
           <br>
           <label for="reviewComment">Your comment</label>
-          <textarea class="form-control" id="reviewComment" rows="4"
+          <textarea #textAreaElement="ngModel" [class.is-invalid]="textAreaElement.invalid"
+                    class="form-control" id="reviewComment" rows="4"
                     [(ngModel)]="reviewText" name="reviewText"
                     style="width: 440px" required></textarea>
-
+          <br>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button class="btn btn-primary" type="submit">submit</button>
@@ -75,6 +80,11 @@
   </div>
 </div>
 
+<div *ngIf="!reviews.rev"
+     style="margin-bottom: 302px; margin-left: 20px; text-align: center; margin-top: 50px">
+  <i class="fa fa-exclamation-triangle fa-4x" style="color: red"></i>
+  <h3>There are no reviews</h3>
+</div>
 
 <!--
 
