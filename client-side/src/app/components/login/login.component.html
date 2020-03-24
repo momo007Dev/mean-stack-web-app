@@ -6,28 +6,36 @@
         <div class="image">
           <img src="https://mdbootstrap.com/img/Photos/Others/sidenav2.jpg" alt="">
         </div>
-        <form action="" class="my-form" (submit)="onLoginSubmit()">
+        <form #loginForm="ngForm" action="" class="my-form" (submit)="onLoginSubmit()">
           <h4 class="font-weight-bold mb-3">Log in to your account</h4>
           <p class="mdb-color-text">To log in, please fill in these fiels with your e-mail address and password.</p>
           <!-- Email address -->
           <div class="md-form md-outline">
             <label for="inputEmail">
             </label>
-            <input type="email" id="inputEmail" class="form-control"
+            <input #emailInput="ngModel" [class.is-invalid]="emailInput.invalid &&
+                    emailInput.touched"
+                   class="form-control" type="email" id="inputEmail"
                    [(ngModel)]="email" name="email"
                    placeholder="Email address" required>
+            <small class="text-danger" [class.d-none]="emailInput.valid ||
+          emailInput.untouched">An Email is required</small>
           </div>
           <!-- Password -->
-          <div class="md-form md-outline">
+          <div  class="md-form md-outline">
             <label for="inputPassword"></label>
-            <input type="password" id="inputPassword" class="form-control"
+            <input #passwordInput="ngModel" [class.is-invalid]="passwordInput.invalid &&
+                    passwordInput.touched"
+                   class="form-control" type="password" id="inputPassword"
                    [(ngModel)]="password" name="password"
                    placeholder="Password" required>
+            <small class="text-danger" [class.d-none]="passwordInput.valid ||
+          passwordInput.untouched">A password is required</small>
           </div>
           <br>
           <div class="space">
             <div class="float-right">
-              <button class="btn btn-rounded" type="submit">Log in</button>
+              <button [disabled]="loginForm.form.invalid" class="btn btn-rounded" type="submit">Log in</button>
             </div>
             <div class="float-left">
               <a class="nav-link"

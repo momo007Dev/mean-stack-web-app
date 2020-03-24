@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const User = require("../models/users");
 
 const getAuthor = (req, res, callback) => {
@@ -29,7 +28,7 @@ const doAddReview = (req, res, user) => {
     if (!user) {
         res
             .status(404)
-            .json({"message": "User not found"});
+            .json({message: "User not found"});
     } else {
         const {rating, reviewText} = req.body;
         user.reviews.push({
@@ -45,7 +44,9 @@ const doAddReview = (req, res, user) => {
                     .status(201)
                     .json(review);
             }).catch(err => {
-            res.status(500).json({
+            res
+                .status(500)
+                .json({
                 success: false,
                 error: err.message,
             });
@@ -71,7 +72,8 @@ const reviewsCreate = (req, res) => {
                     }
                 })
                 .catch(err => {
-                    res.status(500)
+                    res
+                        .status(500)
                         .json({
                         success: false,
                         error: err.message,

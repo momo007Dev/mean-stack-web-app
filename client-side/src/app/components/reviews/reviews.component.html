@@ -2,7 +2,7 @@
 
   <div class="container m-5 p-5 border border-bottom">
 
-    <button type="submit" class="btn btn-primary text-center" data-toggle="modal"
+    <button *ngIf="authService.loggedIn()" type="submit" class="btn btn-primary text-center" data-toggle="modal"
             data-target="#exampleModal" data-whatever="@mdo"
             style="width:165px; margin-left:455px; margin-top: 0">Add a review
     </button>
@@ -17,12 +17,18 @@
                src="../../../assets/img/1.jpg"
                style="width: 10%" alt="Generic placeholder image">
           <div class="media-body text-center text-md-left ml-md-3 ml-0">
-          <span class="font-weight-bold my-0">
+          <div id="test" class="font-weight-bold my-0">
             {{review["author"]}}
+            <span>
+              <i class="fa fa-pencil" aria-hidden="true"
+                 style="color: blue; margin-left: 690px"></i>
+            <i class="fa fa-trash " aria-hidden="true"
+               style="color: red; margin-left: 30px"></i>
+            </span>
             <br>
             Rating :
             <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"></ngb-rating>
-            </span>
+            </div>
             <p class="blockquote-footer my-0">
               {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[0]}}
               at {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[1]}}
@@ -51,28 +57,32 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="" class="my-form" (submit)="onReviewSubmit()">
+        <form #reviewForm="ngForm" action="" class="my-form" (submit)="onReviewSubmit()">
           Rating :
           <ngb-rating [(rate)]="currentRate"></ngb-rating>
           <br>
           <label for="inputRating">
-            <input style="width: 70px; height: 35px" class="form-control" id="inputRating"
+            <input #rateInput="ngModel" [class.is-invalid]="rateInput.invalid &&
+                    rateInput.touched" class="form-control" id="inputRating"
                    [(ngModel)]="currentRate" type="number"
-                   name="currentRate" required>
+                   name="currentRate" style="width: 70px; height: 35px" required>
           </label>
           out of 10
           <br>
           Rate: <b>{{currentRate}}</b>
           <br>
           <label for="reviewComment">Your comment</label>
-          <textarea #textAreaElement="ngModel" [class.is-invalid]="textAreaElement.invalid"
+          <textarea #textAreaElement="ngModel" [class.is-invalid]="textAreaElement.invalid &&
+                    textAreaElement.touched"
                     class="form-control" id="reviewComment" rows="4"
                     [(ngModel)]="reviewText" name="reviewText"
                     style="width: 440px" required></textarea>
+          <small class="text-danger" [class.d-none]="textAreaElement.valid ||
+          textAreaElement.untouched">Review Text is required</small>
           <br>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button class="btn btn-primary" type="submit">submit</button>
+            <button [disabled]="reviewForm.form.invalid" class="btn btn-primary" type="submit">submit</button>
           </div>
         </form>
       </div>

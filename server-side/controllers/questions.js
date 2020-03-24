@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const Question = require("../models/questions");
 const {success, info, error, debug} = require('consola');
 
