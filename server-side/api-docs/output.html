@@ -79,53 +79,57 @@
 <li>Question model</li>
 </ol>
 <ul>
-<li>Schema</li>
-</ul>
+<li>
+<p>Schema</p>
 <pre><code>{
-           "<span class="hljs-attribute">question</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"A question you want to create"</span>
-           </span>}</span>,
-           "<span class="hljs-attribute">answers</span>": <span class="hljs-value">[
-              {
-                 "<span class="hljs-attribute">option</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
-                    "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
-                 </span>}</span>,
-                 "<span class="hljs-attribute">isCorrect</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
-                    "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
-                    "<span class="hljs-attribute">default</span>": <span class="hljs-value"><span class="hljs-string">"false"</span>
-                 </span>}
-              </span>}
-           ]
-        </span>}</code></pre>
+   "<span class="hljs-attribute">question</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"A question you want to create"</span>
+   </span>}</span>,
+   "<span class="hljs-attribute">answers</span>": <span class="hljs-value">[
+      {
+         "<span class="hljs-attribute">option</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
+            "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
+         </span>}</span>,
+         "<span class="hljs-attribute">isCorrect</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
+            "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+            "<span class="hljs-attribute">default</span>": <span class="hljs-value"><span class="hljs-string">"false"</span>
+         </span>}
+      </span>}
+   ]
+</span>}</code></pre>
+</li>
+</ul>
 <h2 id="header-reviews">Reviews <a class="permalink" href="#header-reviews" aria-hidden="true">¶</a></h2>
 <ol start="2">
 <li>Reviews model</li>
 </ol>
 <ul>
-<li>Schema</li>
-</ul>
+<li>
+<p>Schema</p>
 <pre><code>{
-            "<span class="hljs-attribute">author</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
-                "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">rating</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Number"</span></span>,
-                "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
-                "<span class="hljs-attribute">min</span>": <span class="hljs-value"><span class="hljs-string">"0"</span></span>,
-                "<span class="hljs-attribute">max</span>": <span class="hljs-value"><span class="hljs-string">"10"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">reviewText</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
-                "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">CreatedOn</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span>
-            </span>}
-        </span>}</code></pre>
+    "<span class="hljs-attribute">author</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">rating</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Number"</span></span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+        "<span class="hljs-attribute">min</span>": <span class="hljs-value"><span class="hljs-string">"0"</span></span>,
+        "<span class="hljs-attribute">max</span>": <span class="hljs-value"><span class="hljs-string">"10"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">reviewText</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">CreatedOn</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span>
+    </span>}
+</span>}</code></pre>
+</li>
+</ul>
 <h2 id="header-users">Users <a class="permalink" href="#header-users" aria-hidden="true">¶</a></h2>
 <ol start="3">
 <li>Users model</li>
@@ -134,18 +138,18 @@
 <li>
 <p>Schema</p>
 <pre><code>{
-          "<span class="hljs-attribute">email</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
-              "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
-              "<span class="hljs-attribute">unique</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
-              "<span class="hljs-attribute">match</span>": <span class="hljs-value"><span class="hljs-string">"/[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">password</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
-              "<span class="hljs-attribute">require</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">reviews</span>": <span class="hljs-value">[reviewSchema]
-      </span>}</code></pre>
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+        "<span class="hljs-attribute">unique</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+        "<span class="hljs-attribute">match</span>": <span class="hljs-value"><span class="hljs-string">"/[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">password</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"String"</span></span>,
+        "<span class="hljs-attribute">require</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">reviews</span>": <span class="hljs-value">[reviewSchema]
+</span>}</code></pre>
 </li>
 </ul>
 </section><section id="questions" class="resource-group"><h2 class="group-heading">Questions <a href="#questions" class="permalink">&para;</a></h2><p>Group description (also with <em>Markdown</em>)</p>

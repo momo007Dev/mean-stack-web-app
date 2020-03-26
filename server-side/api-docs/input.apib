@@ -60,18 +60,16 @@ These extensions may change in the future as the [CommonMark specification](http
 1. Question model
 
     + Schema
-    
 
-            <!-- include(./reponses/question-schema.json) -->
+      <!-- include(./reponses/question-schema.json) -->
 
 ## Reviews
 
 2. Reviews model
 
     + Schema
-    
 
-            <!-- include(./reponses/review-schema.json) -->
+      <!-- include(./reponses/review-schema.json) -->
    
 ## Users
 
@@ -79,7 +77,7 @@ These extensions may change in the future as the [CommonMark specification](http
 
     + Schema
     
-            <!-- include(./reponses/users-schema.json) -->
+      <!-- include(./reponses/users-schema.json) -->
 
 
 # Group Questions
@@ -455,70 +453,4 @@ res: "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdt
             }
 
 
-## Authenticate user [/signup]
-Authenticate one user to access protected routes.
-
-### Create New User [POST]
-
-::: note
-#### <i class="fa fa-info"></i> Info
-Once the user's authentication has been successfully, he/She must login with correct credentials
-to obtain a JWT token sent in the `the response body`. This token will be used to
-access protected routes.
-:::
-
-> The request's body is required and can't be null.
-
-+ Request (application/json)
-
-    + Body
-
-            {
-                "email": "dan70@gmail.com",
-                "password": "toto"
-            }
-
-+ Response 200 (application/json)
-
-   + Body
-
-            {
-                "success": "true",
-                "message": "User created successfully",
-                "user": {
-                    "userId": "5e7c0a87e75d0f21c069c0a6",
-                    "userEmail": "dan70@gmail.com",
-                    "userPassword": "$2a$10$TuZKcEtFNyvWNWHuLyS5u.mCBiZ27aoMLA7IcccajrelV5QZsZ0F."
-                }
-            }
-
-+ Response 400 (application/json)
-
-    + Body
-
-            {
-                message: "All fields required"
-            }
-
-+ Response 409 (application/json)
-
-    + Body
-
-            {
-                success: "false",
-                message: "Mail already exists"
-            }
-
-
-+ Response 500 (application/json)
-
-    + Body
-
-            {
-                message: "Server error"
-            }
-
-
-
-
-
+<!-- include(input-2.apib) -->
