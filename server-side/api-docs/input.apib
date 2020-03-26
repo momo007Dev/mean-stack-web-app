@@ -329,18 +329,27 @@ Delete a single note
 # Group Users
 Group description
 
-## User List [/users/profiles]
+## Users List [/users/profiles]
 A list of users
-
-```http
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
-```
-
-### Get users [GET]
-Get a list of users. Example:
 
 ```no-highlight
 A JWT needs to be send in the request header
+```
+
+### Get users [GET]
+Get a list of users.
+
+::: warning
+#### <i class="fa fa-warning"></i> Caution
+To acces this route a JWT needs to be sent in `the request header` is and
+if the token has `expired` or `invalid`, a 401 status is sent back from the server.
+:::
+
+
+Example:
+
+```http
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 ```
 
 + Request (application/json)
@@ -354,6 +363,161 @@ A JWT needs to be send in the request header
    + Body
 
             <!-- include(./reponses/get-all-users.json) -->
+
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                message: "No Users found in the database"
+            }
+
++ Response 500 (application/json)
+
+    + Body
+
+            {
+                "message": "Server error"
+            }
+
+## Authenticate user [/login]
+Authenticate one user to access protected routes
+
+### Login User [GET]
+Get one user logged in.
+
+::: note
+#### <i class="fa fa-info"></i> Info
+Once the user's authentication has been successfully, a JWT is to be sent in
+`the response body`.
+:::
+
+> The request's body is required and can't be null.
+
+Example:
+
+```http
+res: "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg"
+```
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "email": "dan30@gmail.com",
+                "password": "toto"
+            }
+
++ Response 200 (application/json)
+
+   + Body
+
+            {
+                "success": "true",
+                "message": "Auth successful",
+                "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg",
+                "user": {
+                    "userId": "5e781fd2e50464350caea0b1",
+                    "userEmail": "dan30@gmail.com"
+                }
+            }
+
++ Response 401 (application/json)
+
+    + Body
+
+              {
+                  "success": false,
+                  "message": "Authentication failed"
+              }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                message: "All fields required"
+            }
+
++ Response 500 (application/json)
+
+    + Body
+
+            {
+                message: "Server error"
+            }
+
+
+## Authenticate user [/signup]
+Authenticate one user to access protected routes.
+
+### Create New User [POST]
+
+::: note
+#### <i class="fa fa-info"></i> Info
+Once the user's authentication has been successfully, he/She must login with correct credentials
+to obtain a JWT token sent in the `the response body`. This token will be used to
+access protected routes.
+:::
+
+> The request's body is required and can't be null.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "email": "dan70@gmail.com",
+                "password": "toto"
+            }
+
++ Response 200 (application/json)
+
+   + Body
+
+            {
+                "success": "true",
+                "message": "User created successfully",
+                "user": {
+                    "userId": "5e7c0a87e75d0f21c069c0a6",
+                    "userEmail": "dan70@gmail.com",
+                    "userPassword": "$2a$10$TuZKcEtFNyvWNWHuLyS5u.mCBiZ27aoMLA7IcccajrelV5QZsZ0F."
+                }
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                message: "All fields required"
+            }
+
++ Response 409 (application/json)
+
+    + Body
+
+            {
+                success: "false",
+                message: "Mail already exists"
+            }
+
+
++ Response 500 (application/json)
+
+    + Body
+
+            {
+                message: "Server error"
+            }
+
 
 
 
