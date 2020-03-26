@@ -1,0 +1,25 @@
+{
+    "question": "what's 200 - 150 ?",
+    "answers": [
+        {
+            "option": "50",
+            "isCorrect": true
+
+            },
+        {
+            "option": "100",
+            "isCorrect": false
+
+            },
+        {
+            "option": "4",
+            "isCorrect": false
+
+            },
+        {
+            "option": "40",
+            "isCorrect": false
+
+            }
+        ]
+}

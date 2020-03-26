@@ -1,0 +1,19 @@
+{
+   "question": {
+      "type": "string",
+      "description": "A question you want to create"
+   },
+   "answers": [
+      {
+         "option": {
+            "type": "String",
+            "required": "true"
+         },
+         "isCorrect": {
+            "type": "String",
+            "required": "true",
+            "default": "false"
+         }
+      }
+   ]
+}

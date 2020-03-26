@@ -123,25 +123,32 @@ const questionCreate = (req, res) => {
         .save()
         .then(result => {
             //console.log(result.answers.filter(x=> x.isCorrect === "true")[0].option);
-            res
-                .status(201)
-                .json(new Array({
-                    message: "Created question successfully",
-                    createdQuestion: {
-                        name: result.question,
-                        answer: result.answers.filter(x => x.isCorrect === "true")[0].option,
-                        request: {
-                            type: "GET",
-                            url: `http://localhost:5000/api/questions/${result._id}`
+            if (!result) {
+                res.status(405).json({
+                    message: "Invalid input"
+                });
+            } else {
+                res
+                    .status(201)
+                    .json(new Array({
+                        message: "Created question successfully",
+                        createdQuestion: {
+                            name: result.question,
+                            answer: result.answers.filter(x => x.isCorrect === "true")[0].option,
+                            request: {
+                                type: "GET",
+                                url: `http://localhost:5000/api/questions/${result._id}`
+                            }
                         }
-                    }
-                }));
+                    }));
+            }
         })
         .catch(err => {
             //console.log(err);
             res
-                .status(500)
+                .status(405)
                 .json({
+                    message: "Invalid input",
                     error: err
                 });
         });
@@ -173,7 +180,7 @@ const question_delete_one = (req, res) => {
         })
         .catch(err => {
             //console.log(err);
-            error({message: `An error occured while to delete this question : ${err}`, badge : true});
+            error({message: `An error occured while to delete this question : ${err}`, badge: true});
             res
                 .status(404)
                 .json({message: "An error occured while trying to delete this question"});

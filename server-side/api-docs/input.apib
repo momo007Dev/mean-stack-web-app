@@ -1,0 +1,360 @@
+FORMAT: 1A
+HOST: http://localhost:5000/api
+
+# API Title
+This an API documentation of our web application.
+
+## Subtitle
+Also Markdown *formatted*. This also includes automatic "smartypants" formatting -- hooray!
+
+> "A quote from another time and place"
+
+Another paragraph. Code sample:
+
+```http
+Authorization: bearer 5262d64b892e8d4341000001
+```
+
+And some code with no highlighting:
+
+```no-highlight
+Foo bar baz
+```
+
+1. A list
+2. Of items
+3. Can be
+4. Very useful
+
+Here is a table:
+
+ID | Name | Description
+--:| ---- | -----------
+ 1 | Foo  | I am a foo.
+ 8 | Bar  | I am a bar.
+15 | Baz  | I am a baz.
+
+::: note
+## Extensions
+Some non-standard Markdown extensions are also supported, such as this informational container, which can also contain **formatting**. Features include:
+
+* Informational block fenced with `::: note` and `:::`
+* Warning block fenced with `::: warning` and `:::`
+* [x] GitHub-style checkboxes using `[x]` and `[ ]`
+* Emoji support :smile: :ship: :cake: using `:smile:` ([cheat sheet](http://www.emoji-cheat-sheet.com/))
+
+These extensions may change in the future as the [CommonMark specification](http://spec.commonmark.org/) defines a [standard extension syntax](https://github.com/jgm/CommonMark/wiki/Proposed-Extensions).
+:::
+
+<!-- include(example-include.md) -->
+
+
+# Group Models
+
+> List of models in the mongodb database
+
+
+
+## Question
+
+1. Question model
+
+    + Schema
+    
+
+            <!-- include(./reponses/question-schema.json) -->
+
+## Reviews
+
+2. Reviews model
+
+    + Schema
+    
+
+            <!-- include(./reponses/review-schema.json) -->
+   
+## Users
+
+3. Users model
+
+    + Schema
+    
+            <!-- include(./reponses/users-schema.json) -->
+
+
+# Group Questions
+Group description (also with *Markdown*)
+
+## Important Info
+Descriptions may also contain sub-headings and **more Markdown**.
+
+## Question List [/questions]
+Question list description
+
++ Even
++ More
++ Markdown
+
+### Get Questions [GET]
+
+Get a list of questions.
+
++ Response 200 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            <!-- include(./reponses/get-all-questions-rep.json) -->
+            
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message ": "No documents found in the database"
+            }
+            
++ Response 500 (application/json)
+
+    + Body
+
+            {
+                "error ": "An error occured while trying to get data from the database"
+            }
+
+### Create New Question [POST]
+
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a list of answers in the
+form of choices and correct answer.
+
+Create a new question using a question and it's answers content body.
+
+> A body is required in the request sent to create a question
+
+
+
++ Request with a body (application/json)
+
+    + Body
+
+            <!-- include(./reponses/post-questions-body.json) -->
+            
++ Response 201
+
+    + Body
+
+
+            {
+                "message": "Created question successfully"
+            }
+            
+
++ Response 405 (application/json)
+
+    + Body
+
+            {
+                message : "Invalid input"
+            }
+
+
++ Response 500 (application/json)
+
+    + Body
+
+            {
+                message : "Server error"
+            }
+            
+
+## Question [/questions/{questionId}]
+
+Question description
+
++ Parameters
+
+    + questionId: `5e6444e51167df04c81f43e4` (required, string) - The question ID
+
+### Get Question [GET]
+
+Get a single question.
+
++ Parameters
+
+    + questionId: `5e6444e51167df04c81f43e4` (string)
+
++ Response 200 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+   + Body
+
+            <!-- include(./reponses/get-one-question.json) -->
+
+
++ Response 404 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                message: "No valid entry found for provided ID"
+            }
++ Response 500 (application/json)
+
+    + Body
+
+            {
+                message : "Server error"
+            }
+### Update a Question [PATCH]
+
+Update a single question by setting the question value in the body request.
+
+::: warning
+#### <i class="fa fa-warning"></i> Caution
+If the value for `the request body` is `null` or `undefined`, then the corresponding
+value is not modified on the server. However, if you send an empty string instead then
+it will **permanently overwrite** the original value.
+:::
+
++ Request (application/json)
+
+    + Body
+
+            [
+            	{
+            		propName : "question", value : "what's 10 x 10 ? "
+            	}
+            ]
+
++ Response 200 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                "message": "Question updated",
+                "modifiedDocs": result.nModified,
+                "request": {
+                    "type": "GET",
+                    "url": `http://localhost:5000/api/questions/${questionId}`
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                "error": "Question not found"
+            }
+
++ Response 500 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                "message": "Server error"
+            }
+
+### Delete a Question [DELETE]
+Delete a single note
+
++ Response 200 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                message: "Question deleted successfully"
+            }
+
++ Response 404 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                message: "No valid entry found for provided ID"
+            }
+
++ Response 500 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                "message": "Server error"
+            }
+
+# Group Users
+Group description
+
+## User List [/users/profiles]
+A list of users
+
+```http
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
+```
+
+### Get users [GET]
+Get a list of users. Example:
+
+```no-highlight
+A JWT needs to be send in the request header
+```
+
++ Request (application/json)
+
+  + Headers
+
+            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
+
++ Response 200 (application/json)
+
+   + Body
+
+            <!-- include(./reponses/get-all-users.json) -->
+
+
+
+

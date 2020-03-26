@@ -1,0 +1,37 @@
+[
+    {
+        "_id": "5e768cb63188554118fc7ff9",
+        "email": "dan50@gmail.com",
+        "password": "$2a$10$ZBQDw7cpZL9TlYjR3ZHNWunJsSD8gd4sjgqOVSp60AW5TfjMqN7.i",
+        "reviews": [
+            {
+                "_id": "5e768cc43188554118fc7ffa",
+                "author": "dan50@gmail.com",
+                "rating": "3",
+                "reviewText": "This is the 1st review",
+                "CreatedOn": "Sat Mar 21 2020 22:53:08 GMT+0100 (Central European Standard Time)"
+      },
+            {
+                "_id": "5e768cce3188554118fc7ffb",
+                "author": "dan50@gmail.com",
+                "rating": "3",
+                "reviewText": "This is the 2nd review",
+                "CreatedOn": "Sat Mar 21 2020 22:53:18 GMT+0100 (Central European Standard Time)"
+      }
+    ]
+  },
+    {
+        "_id": "5e768d7e3188554118fc7ffd",
+        "email": "dan10@gmail.com",
+        "password": "$2a$10$6dnnKzDJNiCq1HJLupWB.OrNVpFpHof1KWLmKUBZgt0XAQ4zBYN.C",
+        "reviews": [
+            {
+                "_id": "5e768f723188554118fc8007",
+                "author": "dan10@gmail.com",
+                "rating": "2",
+                "reviewText": "This is the 1st review",
+                "CreatedOn": "Sat Mar 21 2020 23:04:34 GMT+0100 (Central European Standard Time)"
+      }
+    ]
+  }
+]

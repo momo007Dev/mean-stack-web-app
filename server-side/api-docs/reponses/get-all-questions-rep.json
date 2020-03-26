@@ -1,0 +1,60 @@
+[
+    {
+        "question": "what's 10 x 10 ? ",
+        "answers": [
+            {
+                "isCorrect": "false",
+                "_id": "5e6444e51167df04c81f43e5",
+                "option": "190"
+                        },
+            {
+                "isCorrect": "true",
+                "_id": "5e6444e51167df04c81f43e6",
+                "option": "100"
+                        },
+            {
+                "isCorrect": "false",
+                "_id": "5e6444e51167df04c81f43e7",
+                "option": "400"
+                        },
+            {
+                "isCorrect": "false",
+                "_id": "5e6444e51167df04c81f43e8",
+                "option": "150"
+                        }
+                    ],
+        "request": {
+            "type": "GET",
+            "url": "http://localhost:5000/api/questions/5e6444e51167df04c81f43e4"
+        }
+    },
+    {
+        "question": "what's 10 + 30 ? ",
+        "answers": [
+            {
+                "isCorrect": "false",
+                "_id": "5e6444e51167df04c81f43e5",
+                "option": "29"
+                        },
+            {
+                "isCorrect": "true",
+                "_id": "5e6444e51167df04c81f43e6",
+                "option": "100"
+                        },
+            {
+                "isCorrect": "false",
+                "_id": "5e6444e51167df04c81f43e7",
+                "option": "40"
+                        },
+            {
+                "isCorrect": "false",
+                "_id": "5e6444e51167df04c81f43e8",
+                "option": "150"
+                        }
+                    ],
+        "request": {
+            "type": "GET",
+            "url": "http://localhost:5000/api/questions/5e6444e51167df04c81f43e4"
+        }
+    }
+]
