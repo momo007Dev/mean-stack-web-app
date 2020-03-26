@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,14 +165,7 @@
       <workItem from="1585152047681" duration="23605000" />
       <workItem from="1585211039697" duration="1987000" />
       <workItem from="1585230303697" duration="3609000" />
-      <workItem from="1585250732972" duration="2347000" />
-    </task>
-    <task id="LOCAL-00036" summary="added flash messages">
-      <created>1583749537095</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1583749537095</updated>
+      <workItem from="1585250732972" duration="3145000" />
     </task>
     <task id="LOCAL-00037" summary="can register users through angular app">
       <created>1583790694863</created>
@@ -510,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585252361598</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="added readme for the api doc">
+      <created>1585253105621</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1585253105622</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +518,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="bug in questions UI (footer)" />
     <MESSAGE value="added navbar fonts" />
     <MESSAGE value="automatic logout if token expired feature added" />
     <MESSAGE value="better automatic logout features added" />
@@ -543,7 +542,8 @@
     <MESSAGE value="added api docs v2" />
     <MESSAGE value="can split files now" />
     <MESSAGE value="added proper API file structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="added proper API file structure" />
+    <MESSAGE value="added readme for the api doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added readme for the api doc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -586,10 +586,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1585252360302">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1585253104838">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585252360302" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585253104838" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -618,10 +618,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1585189269609">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1585253113269">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1585189269609" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1585253113269" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
