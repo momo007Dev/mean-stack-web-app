@@ -2,41 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/example-include.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/input.apib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/questions/get-all-questions-rep.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/questions/get-one-question.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/questions/post-questions-body.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/questions/questions.apib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/reviews/reviews.apib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/users/get-all-users.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/users/get-one-user-rep.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/users/users.apib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models/question-schema.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models/review-schema.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/models/users-schema.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/example-include.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/example-schema.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/input-2.apib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/input.apib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/output.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/get-all-questions-rep.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/get-all-users.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/get-one-question.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/post-questions-body.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/question-schema.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/review-schema.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/users-schema.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/test/example-include.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/test/example-schema.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/test/output.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/test/test.apib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toto.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,14 +165,7 @@
       <workItem from="1585152047681" duration="23605000" />
       <workItem from="1585211039697" duration="1987000" />
       <workItem from="1585230303697" duration="3609000" />
-      <workItem from="1585250732972" duration="1581000" />
-    </task>
-    <task id="LOCAL-00035" summary="added a working navbar">
-      <created>1583747607204</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1583747607204</updated>
+      <workItem from="1585250732972" duration="2347000" />
     </task>
     <task id="LOCAL-00036" summary="added flash messages">
       <created>1583749537095</created>
@@ -543,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585189263707</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="added proper API file structure">
+      <created>1585252361597</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1585252361598</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +518,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added a footer" />
     <MESSAGE value="bug in questions UI (footer)" />
     <MESSAGE value="added navbar fonts" />
     <MESSAGE value="automatic logout if token expired feature added" />
@@ -576,7 +542,8 @@
     <MESSAGE value="added api docs" />
     <MESSAGE value="added api docs v2" />
     <MESSAGE value="can split files now" />
-    <option name="LAST_COMMIT_MESSAGE" value="can split files now" />
+    <MESSAGE value="added proper API file structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="added proper API file structure" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
