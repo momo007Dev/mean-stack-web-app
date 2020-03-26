@@ -33,7 +33,7 @@ export class AuthService {
     if (this.authToken) {
       const httpAuthHeaders = new HttpHeaders()
         .set('Authorization', this.authToken);
-      return this._http.get(`/server/api/user/profile/${JSON.parse(this.user).userId}`,
+      return this._http.get(`/server/api/user/${JSON.parse(this.user).userId}`,
         {headers: httpAuthHeaders});
     }
   }

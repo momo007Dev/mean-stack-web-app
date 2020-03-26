@@ -1,0 +1,11 @@
+{
+  "user": {
+    "userId": "5e781fd2e50464350caea0b1",
+    "email": "dan30@gmail.com",
+    "password": "$2a$10$qMfWyq7pshuk2xLzFR95IOQSWKWPHwgyqrNep.E14KqPPTKJzWBhe"
+  },
+  "request": {
+    "type": "GET",
+    "url": "http://localhost:5000/api/user/5e781fd2e50464350caea0b1"
+  }
+}

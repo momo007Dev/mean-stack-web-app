@@ -2,8 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/example-include.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/input.apib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/questions/get-all-questions-rep.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/questions/get-one-question.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/questions/post-questions-body.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/questions/questions.apib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/reviews/reviews.apib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/users/get-all-users.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/users/get-one-user-rep.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models-blueprint/users/users.apib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models/question-schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models/review-schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/models/users-schema.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/input.apib" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/api-docs/input.apib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/example-include.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/example-schema.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/input-2.apib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/input.apib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/output.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/get-all-questions-rep.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/get-all-users.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/get-one-question.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/post-questions-body.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/question-schema.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/review-schema.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/reponses/users-schema.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/test/example-include.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/test/example-schema.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/test/output.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/api-docs/test/test.apib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toto.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +197,8 @@
       <workItem from="1585151063700" duration="906000" />
       <workItem from="1585152047681" duration="23605000" />
       <workItem from="1585211039697" duration="1987000" />
+      <workItem from="1585230303697" duration="3609000" />
+      <workItem from="1585250732972" duration="1581000" />
     </task>
     <task id="LOCAL-00035" summary="added a working navbar">
       <created>1583747607204</created>
@@ -608,10 +643,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1585189303101" />
-    <state x="79" y="0" key="SettingsEditor" timestamp="1585155864971">
+    <state x="79" y="0" key="SettingsEditor" timestamp="1585230675537">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1585155864971" />
+    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1585230675537" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1584033127826">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -632,10 +667,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="439" y="187" key="git4idea.rebase.GitRebaseDialog/0.0.1280.689@0.0.1280.689" timestamp="1583970467921" />
-    <state x="297" y="153" key="run.anything.popup" timestamp="1585182895137">
+    <state x="297" y="153" key="run.anything.popup" timestamp="1585249563588">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1585182895137" />
+    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1585249563588" />
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1584654099854">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

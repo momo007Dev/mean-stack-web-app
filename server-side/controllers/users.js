@@ -189,7 +189,7 @@ const getUserById = (req, res) => {
                         },
                         request: {
                             type: "GET",
-                            url: `http://localhost:5000/api/user/profile/${doc._id}`
+                            url: `http://localhost:5000/api/user/${doc._id}`
                         }
                     });
             } else {
