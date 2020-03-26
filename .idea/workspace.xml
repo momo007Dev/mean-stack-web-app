@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/api-docs/input-2.apib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/api-docs/input.apib" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/api-docs/input.apib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/api-docs/output.html" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/api-docs/output.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,14 +162,8 @@
       <workItem from="1585070649322" duration="602000" />
       <workItem from="1585086259287" duration="2693000" />
       <workItem from="1585151063700" duration="906000" />
-      <workItem from="1585152047681" duration="23432000" />
-    </task>
-    <task id="LOCAL-00034" summary="work done for today">
-      <created>1583712709264</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1583712709264</updated>
+      <workItem from="1585152047681" duration="23605000" />
+      <workItem from="1585211039697" duration="1987000" />
     </task>
     <task id="LOCAL-00035" summary="added a working navbar">
       <created>1583747607204</created>
@@ -509,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585188018941</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="can split files now">
+      <created>1585189263707</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1585189263707</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +516,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="better question UI" />
     <MESSAGE value="added a footer" />
     <MESSAGE value="bug in questions UI (footer)" />
     <MESSAGE value="added navbar fonts" />
@@ -542,7 +540,8 @@
     <MESSAGE value="added angular form validation" />
     <MESSAGE value="added api docs" />
     <MESSAGE value="added api docs v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="added api docs v2" />
+    <MESSAGE value="can split files now" />
+    <option name="LAST_COMMIT_MESSAGE" value="can split files now" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -585,30 +584,30 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1585188018297">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1585189262957">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585188018297" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585189262957" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="358" y="86" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1583618889720" />
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1585180215981">
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1585189303101">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1585180215981" />
-    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1585180215980">
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1585189303101" />
+    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1585189303101">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1585180215980" />
-    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1585180215980">
+    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1585189303101" />
+    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1585189303101">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1585180215980" />
-    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1585180215980">
+    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1585189303101" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1585189303101">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1585180215980" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1585189303101" />
     <state x="79" y="0" key="SettingsEditor" timestamp="1585155864971">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -617,10 +616,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1585188029029">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1585189269609">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1585188029029" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1585189269609" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
