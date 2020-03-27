@@ -28,6 +28,7 @@ import { ResultsComponent } from './components/results/results.component';
 import { AllUsersComponent } from './components/all-users/all-users.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
+import { AddClassDirective } from './directives/add-class.directive';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -62,6 +63,7 @@ enableProdMode();
     AllUsersComponent,
     FooterComponent,
     ReviewsComponent,
+    AddClassDirective,
   ],
 
   imports: [

@@ -2,7 +2,7 @@
 
   <div class="container m-5 p-5 border border-bottom">
 
-    <button *ngIf="authService.loggedIn()" type="submit" class="btn btn-primary text-center" data-toggle="modal"
+    <button  type="submit" class="btn btn-primary text-center" data-toggle="modal"
             data-target="#exampleModal" data-whatever="@mdo"
             style="width:165px; margin-left:455px; margin-top: 0">Add a review
     </button>
@@ -64,8 +64,8 @@
           <label for="inputRating">
             <input #rateInput="ngModel" [class.is-invalid]="rateInput.invalid &&
                     rateInput.touched" class="form-control" id="inputRating"
-                   [(ngModel)]="currentRate" type="number"
-                   name="currentRate" style="width: 70px; height: 35px" required>
+                   [(ngModel)]="currentRate" type="number" placeholder="0"
+                   name="currentRate" style="width: 67px; height: 35px" required>
           </label>
           out of 10
           <br>
@@ -82,7 +82,7 @@
           <br>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button [disabled]="reviewForm.form.invalid" class="btn btn-primary" type="submit">submit</button>
+            <button appAddClass [disabled]="reviewForm.form.invalid" class="btn btn-primary" type="submit">submit</button>
           </div>
         </form>
       </div>

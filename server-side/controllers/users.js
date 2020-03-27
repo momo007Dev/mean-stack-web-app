@@ -172,13 +172,50 @@ const users_get_all = (req, res) => {
         });
 };
 
-const getUserById = (req, res) => {
+const update_user = (req, res) => {
     const {userId} = req.params;
     User.findById(userId)
         .select("_id email password")
         .exec()
         .then(doc => {
             if (doc) {
+                res
+                    .status(200)
+                    .json({
+                        user: {
+                            userId: doc._id,
+                            email: doc.email,
+                        },
+                        request: {
+                            type: "GET",
+                            url: `http://localhost:5000/api/user/${doc._id}`
+                        }
+                    });
+            } else {
+                res
+                    .status(404)
+                    .json({message: "No entry found for provided ID"});
+            }
+        })
+        .catch(err => {
+            // console.log(err);
+            res
+                .status(500)
+                .json({
+                    errorMessage: err.message,
+                    errorName: err.name
+                });
+        });
+};
+
+const get_user_by_id = (req, res) => {
+    const {userId} = req.params;
+    User.findById(userId)
+        .select("_id email password")
+        .exec()
+        .then(doc => {
+            if (doc) {
+               console.log(req.isAuthenticated());
                 res
                     .status(200)
                     .json({
@@ -214,5 +251,6 @@ module.exports = {
     user_delete,
     user_login,
     users_get_all,
-    getUserById
+    get_user_by_id,
+    update_user
 };

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Directive, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
@@ -10,17 +10,18 @@ import {JwtHelperService} from "@auth0/angular-jwt";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   email: String;
   password: String;
   timeLoggedIn : number;
+  //@ViewChild('loginform', { static: false }) loginForm : ElementRef;
 
   constructor(private validateService: ValidateService,
               private _flashMessagesService: FlashMessagesService,
               private authService: AuthService,
-              private router: Router) {
-  }
+              private router: Router) {}
 
   ngOnInit() {
   }
@@ -45,8 +46,6 @@ export class LoginComponent implements OnInit {
     this.authService.loginUser(JSON.stringify(user))
       .toPromise()
       .then((data: any) => {
-        //console.log(data.user.userId);
-        //console.log(data.token);
         this.timeLoggedIn = new Date().getTime();
         this.sessionExpired(data.token);
          this.authService.storeUserData(data);

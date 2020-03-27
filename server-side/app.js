@@ -4,6 +4,7 @@ const cors = require('cors');
 const passport = require('passport');
 const path = require('path');
 const {success, info, error, debug} = require('consola');
+const { spawn } = require('child_process');
 const aglio = require('aglio');
 require('dotenv').config();
 require('./config/database');
@@ -48,10 +49,13 @@ app.use('/api', users);
 app.use('/api', questions);
 app.use('/api', reviews);
 app.use('/api/docs', (req, res) => {
-    aglio.renderFile('./api-docs/input.apib', './api-docs/output.html', options,
+    aglio.renderFile('../../docs/blueprint/input.apib', '../../docs/index.html', options,
         function (err, warnings) {
         });
-    res.sendFile(path.join(__dirname + '/api-docs/output.html'));
+
+    //spawn('aglio', ['-i', '-l']);
+    //aglio -i ./blueprint/input.apib --theme-template default --theme-variables cyborg -o index.html -s
+    res.sendFile(path.join(__dirname + '../../docs/index.html'));
 });
 
 

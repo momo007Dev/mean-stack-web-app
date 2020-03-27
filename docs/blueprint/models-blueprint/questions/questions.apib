@@ -150,11 +150,7 @@ it will **permanently overwrite** the original value.
 
     + Body
 
-            [
-            	{
-            		propName : "question", value : "what's 10 x 10 ? "
-            	}
-            ]
+            <!-- include(post-questions-body.json) -->
 
 + Response 200 (application/json)
 
@@ -174,6 +170,20 @@ it will **permanently overwrite** the original value.
                 }
             }
 
++ Response 400 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                "message": "Please read the API doc to see how to update a question"
+            }
+
+
 + Response 404 (application/json)
 
     + Headers
@@ -184,7 +194,7 @@ it will **permanently overwrite** the original value.
     + Body
 
             {
-                "error": "Question not found"
+                "message": "No valid entry found for provided ID"
             }
 
 + Response 500 (application/json)

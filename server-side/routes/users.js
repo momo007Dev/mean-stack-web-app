@@ -8,10 +8,17 @@ const ctrlUsers = require("../controllers/users");
 
 router.post("/signup", ctrlUsers.user_signup);
 router.post("/login", ctrlUsers.user_login);
-router.delete("/user/:userId", ctrlUsers.user_delete);
-router.get("/user/:userId", passport.authenticate("jwt", { session: false }),ctrlUsers.getUserById);
 router.get("/users/profiles", passport.authenticate("jwt", { session: false }),
     ctrlUsers.users_get_all);
+
+router
+    .route("/user/:userId")
+    .get(passport.authenticate("jwt", { session: false }),ctrlUsers.get_user_by_id)
+    .delete(ctrlUsers.user_delete)
+    .patch(ctrlUsers.update_user);
+
+
+
 
 
 module.exports = router;
