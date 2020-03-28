@@ -37,7 +37,7 @@ const user_signup = (req, res) => {
                         user
                             .save()
                             .then(result => {
-                               // console.log(result);
+                                // console.log(result);
                                 res
                                     .status(201)
                                     .json({
@@ -51,7 +51,6 @@ const user_signup = (req, res) => {
                                     });
                             })
                             .catch(err => {
-                              //  console.log(err.name);
                                 res.status(500).json({
                                     success: false,
                                     error: err.message,
@@ -60,7 +59,12 @@ const user_signup = (req, res) => {
                     }
                 });
             }
+        }).catch(err => {
+        res.status(500).json({
+            success: false,
+            error: err.message,
         });
+    });
 };
 
 const user_login = (req, res) => {
@@ -104,14 +108,14 @@ const user_login = (req, res) => {
                     return res
                         .status(200)
                         .json({
-                        success: true,
-                        message: "Auth successful",
-                        token: "JWT " + token,
-                        user: {
-                            userId: user._id,
-                            userEmail: user.email
-                        }
-                    });
+                            success: true,
+                            message: "Auth successful",
+                            token: "JWT " + token,
+                            user: {
+                                userId: user._id,
+                                userEmail: user.email
+                            }
+                        });
                 }
                 res.status(401).json({
                     success: false,
@@ -120,13 +124,12 @@ const user_login = (req, res) => {
             });
         })
         .catch(err => {
-            //console.log(err);
             res
                 .status(500)
                 .json({
-                success: false,
-                error: err
-            });
+                    success: false,
+                    error: err
+                });
         });
 };
 
@@ -139,7 +142,6 @@ const user_delete = (req, res) => {
                     .status(404)
                     .json({message: "No user found for the provided ID"});
             }
-            //console.log(result);
             res.status(200).json({
                 message: "User deleted successfully"
             });
@@ -174,31 +176,40 @@ const users_get_all = (req, res) => {
 
 const update_user = (req, res) => {
     const {userId} = req.params;
-    User.findById(userId)
-        .select("_id email password")
-        .exec()
-        .then(doc => {
-            if (doc) {
-                res
-                    .status(200)
-                    .json({
-                        user: {
-                            userId: doc._id,
-                            email: doc.email,
-                        },
+
+    if (Object.keys(req.body).length > 2) {
+        return res
+            .status(405)
+            .json({
+                message: "Some fields are NOT allowed"
+            });
+    }
+
+    bcrypt.hash(req.body.password, 10, (err, hash) => {
+        if (err)
+            return res.status(400).json({
+                message : "password field is required",
+                error: err
+            });
+        req.body.password = hash;
+        User.updateOne({_id: userId}, {$set: req.body})
+            .exec()
+            .then(result => {
+                if (result.n === 0) {
+                    return res
+                        .status(404)
+                        .json({message: "No valid entry found for provided ID"});
+                } else {
+                    res.status(200).json({
+                        message: "User info updated successfully",
+                        modifiedDocs: result.nModified,
                         request: {
                             type: "GET",
-                            url: `http://localhost:5000/api/user/${doc._id}`
+                            url: `http://localhost:5000/api/user/${userId}`
                         }
                     });
-            } else {
-                res
-                    .status(404)
-                    .json({message: "No entry found for provided ID"});
-            }
-        })
-        .catch(err => {
-            // console.log(err);
+                }
+            }).catch(err => {
             res
                 .status(500)
                 .json({
@@ -206,6 +217,7 @@ const update_user = (req, res) => {
                     errorName: err.name
                 });
         });
+    });
 };
 
 const get_user_by_id = (req, res) => {
@@ -215,7 +227,7 @@ const get_user_by_id = (req, res) => {
         .exec()
         .then(doc => {
             if (doc) {
-               console.log(req.isAuthenticated());
+                console.log(req.isAuthenticated());
                 res
                     .status(200)
                     .json({
@@ -236,7 +248,6 @@ const get_user_by_id = (req, res) => {
             }
         })
         .catch(err => {
-           // console.log(err);
             res
                 .status(500)
                 .json({

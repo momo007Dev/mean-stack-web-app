@@ -238,6 +238,77 @@ Get one user.
                 message : "Server error"
             }
 
+### update a user [PATCH]
+update a user
+
++ Response 200 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                message: "User info updated successfully"
+            }
+
++ Response 400 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                message: "password field is required"
+            }
+
++ Response 404 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                message: "No valid entry found for provided ID"
+            }
+
++ Response 405 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                "message": "Some fields are NOT allowed"
+            }
+
++ Response 500 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                "message": "Server error"
+            }
+
+
+
+
 ### Delete a user [DELETE]
 Delete a user
 
