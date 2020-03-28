@@ -78,7 +78,6 @@ const user_login = (req, res) => {
     User.findOne({email: req.body.email})
         .exec()
         .then(user => {
-            //console.log(user);
             if (!user) {
                 return res
                     .status(401)
