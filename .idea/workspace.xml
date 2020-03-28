@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blueprint/models-blueprint/users/users.apib" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blueprint/models-blueprint/users/users.apib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/passport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,14 +166,7 @@
       <workItem from="1585211039697" duration="1987000" />
       <workItem from="1585230303697" duration="3609000" />
       <workItem from="1585250732972" duration="8119000" />
-      <workItem from="1585322896575" duration="22976000" />
-    </task>
-    <task id="LOCAL-00039" summary="added a nice nav bar">
-      <created>1583856542892</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1583856542892</updated>
+      <workItem from="1585322896575" duration="24748000" />
     </task>
     <task id="LOCAL-00040" summary="can now log in and log out">
       <created>1583857613321</created>
@@ -513,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585341774177</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="added update feature on the backend">
+      <created>1585358022930</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1585358022930</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +519,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="better automatic logout features added" />
     <MESSAGE value="good result UI, logic to be implemented later" />
     <MESSAGE value="can detected correct and wrong answers" />
     <MESSAGE value="better detection of wrong answers" />
@@ -546,7 +543,8 @@
     <MESSAGE value="added readme for the api doc" />
     <MESSAGE value="formatted index.html page" />
     <MESSAGE value="added some directives client side" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some directives client side" />
+    <MESSAGE value="added update feature on the backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="added update feature on the backend" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -589,10 +587,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1585341772514">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1585360028525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585341772514" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585360028525" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -621,10 +619,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1585253918542">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1585360023541">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1585253918542" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1585360023541" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
