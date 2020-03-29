@@ -35,6 +35,16 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    score: {
+        type: Number,
+        default: 0,
+        min: 0,
+        max: 10
+    },
+    level: {
+        type: String,
+        enum: ["A2", "B1", "B2", "C1", "C2"]
+    },
     role: {
         type: String,
         default: 'student',

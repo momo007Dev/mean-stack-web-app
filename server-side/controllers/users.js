@@ -1,7 +1,6 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcryptjs');
 const User = require("../models/users");
-const {roles} = require('./roles');
 
 const user_signup = (req, res) => {
 
@@ -179,15 +178,19 @@ const users_get_all = (req, res) => {
 
 const update_user = (req, res) => {
     const {userId} = req.params;
+    const userInfo = ["email", "password", "score", "level", "role", "reviews"];
+    const reqBodyLength = Object.keys(req.body).length;
+    const checkValues = Object.keys(req.body).filter(x => (userInfo.includes(x))).length;
 
-    if (Object.keys(req.body).length > 2) {
+    if ((Object.keys(req.body).length > 6) || (reqBodyLength !== checkValues)) {
         return res
             .status(405)
             .json({
                 message: "Some fields are NOT allowed"
             });
     }
-    if (userId.toString() === '5e7fd9abf35b123cbc246898' && req.user.role !== 'admin') {
+
+    if (userId === process.env.ADMIN_ID && req.user.role !== 'admin') {
         return res
             .status(403)
             .json({
@@ -197,8 +200,7 @@ const update_user = (req, res) => {
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err)
             return res.status(400).json({
-                message: "password field is required",
-                error: err
+                message: "password field is required"
             });
         req.body.password = hash;
         User.updateOne({_id: userId}, {$set: req.body})
@@ -266,39 +268,9 @@ const get_user_by_id = (req, res) => {
         });
 };
 
-const grantAccess = (action, resource) => {
-    return async (req, res, next) => {
-        try {
-            const permission = roles.can(req.user.role)[action](resource);
-            //console.log(typeof (req.user._id).toString());
-            //console.log(action);
-            //console.log(resource);
-            //console.log(typeof (req.params.userId).toString());
-            //console.log(permission.attributes);
 
-            if (!permission.granted) {
-                return res.status(403).json({
-                    message: "You don't have enough permission to perform this action"
-                });
-            }
-
-            if (action === 'readOwn' || action === 'updateOwn' &&
-                (req.user._id).toString() !==
-                (req.params.userId).toString() && req.user.role !== 'admin' &&
-                req.user.role !== 'teacher') {
-                return res.status(403).json({
-                    message: "You don't have enough permission to perform this action !"
-                });
-            }
-
-            next()
-        } catch (error) {
-            next(error)
-        }
-    }
-};
 
 module.exports = {
     user_signup, user_delete, user_login,
-    users_get_all, get_user_by_id, update_user, grantAccess
+    users_get_all, get_user_by_id, update_user
 };

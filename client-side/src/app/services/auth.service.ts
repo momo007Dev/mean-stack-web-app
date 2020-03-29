@@ -40,6 +40,7 @@ export class AuthService {
 
   getAllProfiles() {
     this.getToken();
+    console.log(this.authToken);
     if (this.authToken) {
       const httpAuthHeaders = new HttpHeaders()
         .set('Authorization', this.authToken);

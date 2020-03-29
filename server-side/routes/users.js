@@ -4,25 +4,26 @@ const passport = require("passport");
 const router = express.Router();
 
 const ctrlUsers = require("../controllers/users");
+const ctrlAcess = require("../controllers/grandAccess");
 
 
 router.post("/signup", ctrlUsers.user_signup);
 router.post("/login", ctrlUsers.user_login);
 router
     .get("/users/profiles", passport.authenticate("jwt", {session: false}),
-        ctrlUsers.grantAccess('readAny', 'profile'),
+        ctrlAcess.grantAccess('readAny', 'profile'),
         ctrlUsers.users_get_all);
 
 router
     .route("/user/:userId")
     .get(passport.authenticate("jwt", {session: false}),
-        ctrlUsers.grantAccess('readOwn', 'profile'),
+        ctrlAcess.grantAccess('readOwn', 'profile'),
         ctrlUsers.get_user_by_id)
 
     .delete(ctrlUsers.user_delete)
 
     .patch(passport.authenticate("jwt", {session: false}),
-        ctrlUsers.grantAccess('updateOwn', 'profile'),
+        ctrlAcess.grantAccess('updateOwn', 'profile'),
         ctrlUsers.update_user);
 
 

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/grandAccess.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blueprint/models-blueprint/users/users.apib" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blueprint/models-blueprint/users/users.apib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,14 +171,8 @@
       <workItem from="1585230303697" duration="3609000" />
       <workItem from="1585250732972" duration="8119000" />
       <workItem from="1585322896575" duration="27779000" />
-      <workItem from="1585408866170" duration="22562000" />
-    </task>
-    <task id="LOCAL-00044" summary="able to access protected routes but some work still to be done">
-      <created>1583975745772</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1583975745773</updated>
+      <workItem from="1585408866170" duration="22645000" />
+      <workItem from="1585495882244" duration="7218000" />
     </task>
     <task id="LOCAL-00045" summary="working profile component">
       <created>1584028937444</created>
@@ -515,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585448034439</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="protected admin info.">
+      <created>1585451412459</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1585451412459</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +525,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added a reviews UI" />
     <MESSAGE value="added some padding in reviews UI" />
     <MESSAGE value="added small buttons for update and delete" />
     <MESSAGE value="removed a bug in delete user function" />
@@ -548,7 +549,8 @@
     <MESSAGE value="cleaned users routes" />
     <MESSAGE value="rbac stable" />
     <MESSAGE value="updated api" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated api" />
+    <MESSAGE value="protected admin info." />
+    <option name="LAST_COMMIT_MESSAGE" value="protected admin info." />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -591,10 +593,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1585448033441">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1585451411665">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585448033441" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585451411665" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
