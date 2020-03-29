@@ -265,7 +265,11 @@ Get one user.
             }
 
 ### update a user [PATCH]
-update a user
+Update a user.
+
+A basic (student) user can only update his own profile. A user with a role of a teacher
+can update his/her profile as well as students's profiles. Only the admin can update his own
+and everyone's else profile.
 
 + Response 200 (application/json)
 
@@ -278,6 +282,19 @@ update a user
 
             {
                 message: "User info updated successfully"
+            }
+
++ Response 403 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                message: "Can NOT update admin's info !!!"
             }
 
 + Response 400 (application/json)

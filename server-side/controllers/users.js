@@ -187,7 +187,13 @@ const update_user = (req, res) => {
                 message: "Some fields are NOT allowed"
             });
     }
-
+    if (userId.toString() === '5e7fd9abf35b123cbc246898' && req.user.role !== 'admin') {
+        return res
+            .status(403)
+            .json({
+                message: "Can NOT update admin's info !!!"
+            });
+    }
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err)
             return res.status(400).json({
@@ -276,7 +282,8 @@ const grantAccess = (action, resource) => {
                 });
             }
 
-            if (action === 'readOwn' && (req.user._id).toString() !==
+            if (action === 'readOwn' || action === 'updateOwn' &&
+                (req.user._id).toString() !==
                 (req.params.userId).toString() && req.user.role !== 'admin' &&
                 req.user.role !== 'teacher') {
                 return res.status(403).json({

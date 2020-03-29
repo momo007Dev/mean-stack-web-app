@@ -18,8 +18,12 @@ router
     .get(passport.authenticate("jwt", {session: false}),
         ctrlUsers.grantAccess('readOwn', 'profile'),
         ctrlUsers.get_user_by_id)
+
     .delete(ctrlUsers.user_delete)
-    .patch(ctrlUsers.update_user);
+
+    .patch(passport.authenticate("jwt", {session: false}),
+        ctrlUsers.grantAccess('updateOwn', 'profile'),
+        ctrlUsers.update_user);
 
 
 module.exports = router;
