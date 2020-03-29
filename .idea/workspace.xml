@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/controllers/roles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blueprint/models-blueprint/users/get-one-user-rep.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blueprint/models-blueprint/users/get-one-user-rep.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blueprint/models-blueprint/users/users.apib" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blueprint/models-blueprint/users/users.apib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blueprint/models/users-schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blueprint/models/users-schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/roles.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/roles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,14 +172,7 @@
       <workItem from="1585230303697" duration="3609000" />
       <workItem from="1585250732972" duration="8119000" />
       <workItem from="1585322896575" duration="27779000" />
-      <workItem from="1585408866170" duration="15606000" />
-    </task>
-    <task id="LOCAL-00042" summary="added a better log in UI">
-      <created>1583965516113</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1583965516113</updated>
+      <workItem from="1585408866170" duration="19225000" />
     </task>
     <task id="LOCAL-00043" summary="added better routing with flash messages">
       <created>1583967478603</created>
@@ -519,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585429805704</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="rbac stable">
+      <created>1585443179595</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1585443179596</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +525,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="better detection of wrong answers" />
     <MESSAGE value="improved result UI" />
     <MESSAGE value="added a reviews UI" />
     <MESSAGE value="added some padding in reviews UI" />
@@ -552,7 +549,8 @@
     <MESSAGE value="added update feature on the backend" />
     <MESSAGE value="added update in api doc" />
     <MESSAGE value="cleaned users routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned users routes" />
+    <MESSAGE value="rbac stable" />
+    <option name="LAST_COMMIT_MESSAGE" value="rbac stable" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -595,10 +593,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1585429804577">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1585443178306">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585429804577" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585443178306" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

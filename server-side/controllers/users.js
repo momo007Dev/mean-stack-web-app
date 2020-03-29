@@ -48,6 +48,7 @@ const user_signup = (req, res) => {
                                         user: {
                                             userId: result._id,
                                             userEmail: result.email,
+                                            role: result.role,
                                             userPassword: result.password
                                         }
                                     });
@@ -114,7 +115,8 @@ const user_login = (req, res) => {
                             token: "JWT " + token,
                             user: {
                                 userId: user._id,
-                                userEmail: user.email
+                                userEmail: user.email,
+                                role: user.role
                             }
                         });
                 }
@@ -224,7 +226,7 @@ const update_user = (req, res) => {
 const get_user_by_id = (req, res) => {
     const {userId} = req.params;
     User.findById(userId)
-        .select("_id email password")
+        .select("_id email role password")
         .exec()
         .then(doc => {
             if (doc) {
@@ -234,6 +236,7 @@ const get_user_by_id = (req, res) => {
                         user: {
                             userId: doc._id,
                             email: doc.email,
+                            role: doc.role,
                             password: doc.password
                         },
                         request: {
@@ -268,7 +271,7 @@ const grantAccess = (action, resource) => {
             //console.log(permission.attributes);
 
             if (!permission.granted) {
-                return res.status(401).json({
+                return res.status(403).json({
                     message: "You don't have enough permission to perform this action"
                 });
             }
@@ -276,8 +279,8 @@ const grantAccess = (action, resource) => {
             if (action === 'readOwn' && (req.user._id).toString() !==
                 (req.params.userId).toString() && req.user.role !== 'admin' &&
                 req.user.role !== 'teacher') {
-                return res.status(401).json({
-                    message: "You don'tt have enough permission to perform this action"
+                return res.status(403).json({
+                    message: "You don't have enough permission to perform this action !"
                 });
             }
 

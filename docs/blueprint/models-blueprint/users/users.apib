@@ -43,6 +43,19 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdt
 
               "Unauthorized"
 
++ Response 403 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                message: "You don't have enough permission to perform this action"
+            }
+
 + Response 404 (application/json)
 
     + Body
@@ -217,6 +230,18 @@ Get one user.
 
             <!-- include(get-one-user-rep.json) -->
 
++ Response 403 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Body
+
+            {
+                message: "You don't have enough permission to perform this action"
+            }
 
 + Response 404 (application/json)
 
@@ -230,6 +255,7 @@ Get one user.
             {
                 message: "No valid entry found for provided ID"
             }
+
 + Response 500 (application/json)
 
     + Body
