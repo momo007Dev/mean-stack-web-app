@@ -35,6 +35,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    role: {
+        type: String,
+        default: 'student',
+        enum: ["student", "teacher", "admin"]
+    },
     reviews: [reviewSchema]
 });
 

@@ -4,8 +4,6 @@ const cors = require('cors');
 const passport = require('passport');
 const path = require('path');
 const {success, info, error, debug} = require('consola');
-const { spawn } = require('child_process');
-const aglio = require('aglio');
 require('dotenv').config();
 require('./config/database');
 
@@ -34,12 +32,6 @@ app.get('/', (req, res) => {
     });
 });
 
-const options = {
-    themeTemplate: 'triple',
-    themeVariables: 'cyborg',
-};
-
-
 // Bring in the user routers
 const reviews = require('./routes/reviews');
 const users = require('./routes/users');
@@ -49,12 +41,6 @@ app.use('/api', users);
 app.use('/api', questions);
 app.use('/api', reviews);
 app.use('/api/docs', (req, res) => {
-    aglio.renderFile('../../docs/blueprint/input.apib', '../../docs/index.html', options,
-        function (err, warnings) {
-        });
-
-    //spawn('aglio', ['-i', '-l']);
-    //aglio -i ./blueprint/input.apib --theme-template default --theme-variables cyborg -o index.html -s
     res.sendFile(path.join(__dirname + '../../docs/index.html'));
 });
 

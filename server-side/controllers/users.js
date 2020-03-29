@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcryptjs');
 const User = require("../models/users");
+const {roles} = require('./roles');
 
 const user_signup = (req, res) => {
 
@@ -32,7 +33,8 @@ const user_signup = (req, res) => {
                     } else {
                         const user = new User({
                             email: req.body.email,
-                            password: hash
+                            password: hash,
+                            role: req.body.role || "student"
                         });
                         user
                             .save()
@@ -187,7 +189,7 @@ const update_user = (req, res) => {
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err)
             return res.status(400).json({
-                message : "password field is required",
+                message: "password field is required",
                 error: err
             });
         req.body.password = hash;
@@ -226,7 +228,6 @@ const get_user_by_id = (req, res) => {
         .exec()
         .then(doc => {
             if (doc) {
-                console.log(req.isAuthenticated());
                 res
                     .status(200)
                     .json({
@@ -256,11 +257,38 @@ const get_user_by_id = (req, res) => {
         });
 };
 
+const grantAccess = (action, resource) => {
+    return async (req, res, next) => {
+        try {
+            const permission = roles.can(req.user.role)[action](resource);
+            //console.log(typeof (req.user._id).toString());
+            //console.log(action);
+            //console.log(resource);
+            //console.log(typeof (req.params.userId).toString());
+            //console.log(permission.attributes);
+
+            if (!permission.granted) {
+                return res.status(401).json({
+                    message: "You don't have enough permission to perform this action"
+                });
+            }
+
+            if (action === 'readOwn' && (req.user._id).toString() !==
+                (req.params.userId).toString() && req.user.role !== 'admin' &&
+                req.user.role !== 'teacher') {
+                return res.status(401).json({
+                    message: "You don'tt have enough permission to perform this action"
+                });
+            }
+
+            next()
+        } catch (error) {
+            next(error)
+        }
+    }
+};
+
 module.exports = {
-    user_signup,
-    user_delete,
-    user_login,
-    users_get_all,
-    get_user_by_id,
-    update_user
+    user_signup, user_delete, user_login,
+    users_get_all, get_user_by_id, update_user, grantAccess
 };

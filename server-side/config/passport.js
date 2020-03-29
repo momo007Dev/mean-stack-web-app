@@ -13,7 +13,7 @@ module.exports = (passport) => {
 
     // The JWT payload is passed into the verify callback
     passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-        console.log(jwt_payload);
+        //console.log(jwt_payload);
 
         // assign the `userId` property on the JWT to the database ID of user
         User.findById(jwt_payload.userId, (err, user) => {
