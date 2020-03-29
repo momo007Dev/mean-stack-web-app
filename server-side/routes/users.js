@@ -26,6 +26,11 @@ router
         ctrlAcess.grantAccess('updateOwn', 'profile'),
         ctrlUsers.update_user);
 
+router.patch("/user/:userId/score",
+    passport.authenticate("jwt", {session: false}),
+    ctrlAcess.grantAccess('updateOwn', 'profile'),
+    ctrlUsers.update_user_score);
+
 
 module.exports = router;
 

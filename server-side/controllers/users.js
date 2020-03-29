@@ -115,7 +115,8 @@ const user_login = (req, res) => {
                             user: {
                                 userId: user._id,
                                 userEmail: user.email,
-                                role: user.role
+                                role: user.role,
+                                score: user.score
                             }
                         });
                 }
@@ -178,7 +179,7 @@ const users_get_all = (req, res) => {
 
 const update_user = (req, res) => {
     const {userId} = req.params;
-    const userInfo = ["email", "password", "score", "level", "role", "reviews"];
+    const userInfo = ["email", "password", "level", "role", "reviews"];
     const reqBodyLength = Object.keys(req.body).length;
     const checkValues = Object.keys(req.body).filter(x => (userInfo.includes(x))).length;
 
@@ -197,6 +198,7 @@ const update_user = (req, res) => {
                 message: "Can NOT update admin's info !!!"
             });
     }
+
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err)
             return res.status(400).json({
@@ -228,6 +230,45 @@ const update_user = (req, res) => {
                     errorName: err.name
                 });
         });
+    });
+};
+
+const update_user_score = (req, res) => {
+    const {userId} = req.params;
+
+    if ((Number(req.body.score) > 10) ) {
+        return res
+            .status(405)
+            .json({
+                message: "The max score is 10"
+            });
+    }
+
+    const userScore = { "score" : req.body.score};
+    User.updateOne({_id: userId}, {$set: userScore})
+        .exec()
+        .then(result => {
+            if (result.n === 0) {
+                return res
+                    .status(404)
+                    .json({message: "No valid entry found for provided ID"});
+            } else {
+                res.status(200).json({
+                    message: "User info updated successfully",
+                    modifiedDocs: result.nModified,
+                    request: {
+                        type: "GET",
+                        url: `http://localhost:5000/api/user/${userId}`
+                    }
+                });
+            }
+        }).catch(err => {
+        res
+            .status(500)
+            .json({
+                errorMessage: err.message,
+                errorName: err.name
+            });
     });
 };
 
@@ -272,5 +313,5 @@ const get_user_by_id = (req, res) => {
 
 module.exports = {
     user_signup, user_delete, user_login,
-    users_get_all, get_user_by_id, update_user
+    users_get_all, get_user_by_id, update_user, update_user_score
 };

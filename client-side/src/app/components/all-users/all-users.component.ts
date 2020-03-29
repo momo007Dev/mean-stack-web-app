@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class AllUsersComponent implements OnInit {
   users: any[];
+  token : any;
 
   constructor(private authService: AuthService,
               private _flashMessagesService: FlashMessagesService,
@@ -19,17 +20,18 @@ export class AllUsersComponent implements OnInit {
 
   ngOnInit() {
 
-    if (!this.authService.getAllProfiles()) {
+    if (!this.authService.getAllProfiles(this.token)) {
       return this._flashMessagesService.show("", {
         navigate: `${this.router.navigate(['/login'])}`
       });
     }
 
-    this.authService.getAllProfiles()
+    this.authService.getAllProfiles(this.token)
       .toPromise()
       .then((data : any) => {
         //data.forEach(x => console.log(x.email));
         this.users = data;
+        this.token = localStorage.getItem('id_token');
       })
       .catch(err => {
         // catching unauthorized http reponses from the server

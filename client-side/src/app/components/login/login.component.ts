@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   email: String;
   password: String;
   timeLoggedIn : number;
+
   //@ViewChild('loginform', { static: false }) loginForm : ElementRef;
 
   constructor(private validateService: ValidateService,

@@ -11,6 +11,8 @@ import {tryCatch} from "rxjs/internal-compatibility";
 })
 export class ProfileComponent implements OnInit {
   user: Object;
+  token : any;
+  userId: any;
 
   constructor(
     private authService: AuthService,
@@ -20,7 +22,7 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit() {
-    if (this.authService.getProfile() === undefined) {
+    if (!Object.keys(localStorage).includes('id_token')) {
       return this._flashMessagesService.show("You need to log in !", {
         cssClass: "alert-danger w-50 p-3",
         timeout: 2000,
