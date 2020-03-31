@@ -29,7 +29,7 @@ export class ResultsComponent implements OnInit {
     const userScore = {
       "score" : this.questions.correctAnswerCount
     };
-    this.authService.updateProfile(userScore)
+    this.authService.updateScore(userScore)
       .toPromise()
       .then()
       .catch(err => {

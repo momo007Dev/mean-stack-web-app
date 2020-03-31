@@ -37,7 +37,7 @@ export class AuthService {
   }
 
 
-  updateProfile(user: any) {
+  updateScore(user: any) {
     this.getToken();
     if (this.authToken) {
       const httpAuthHeaders = new HttpHeaders()
