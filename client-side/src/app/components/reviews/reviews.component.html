@@ -2,7 +2,7 @@
 
   <div class="container m-5 p-5 border border-bottom">
 
-    <button  type="submit" class="btn btn-primary text-center" data-toggle="modal"
+    <button *ngIf="authService.loggedIn()" type="submit" class="btn btn-primary text-center" data-toggle="modal"
             data-target="#exampleModal" data-whatever="@mdo"
             style="width:165px; margin-left:455px; margin-top: 0">Add a review
     </button>

@@ -11,7 +11,7 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json; charset
 export class AuthService {
   authToken: any;
   user: any;
-  currentUser: any;
+  role: any;
 
   constructor(private _http: HttpClient) {
   }
@@ -50,7 +50,7 @@ export class AuthService {
 
   getAllProfiles() {
     this.getToken();
-    console.log(this.authToken);
+    //console.log(this.authToken);
     if (this.authToken) {
       const httpAuthHeaders = new HttpHeaders()
         .set('Authorization', this.authToken);
@@ -66,7 +66,7 @@ export class AuthService {
     localStorage.setItem("score", data.user.score);
     this.authToken = data.token;
     this.user = data.user;
-    this.currentUser = data.user.userId;
+    this.role = data.user.role;
   }
 
   getToken() {

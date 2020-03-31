@@ -22,7 +22,8 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit() {
-    if (!Object.keys(localStorage).includes('id_token')) {
+    if (this.authService.getAllProfiles() === undefined) {
+      this.authService.logout();
       return this._flashMessagesService.show("You need to log in !", {
         cssClass: "alert-danger w-50 p-3",
         timeout: 2000,

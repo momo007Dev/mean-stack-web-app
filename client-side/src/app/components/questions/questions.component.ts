@@ -11,8 +11,6 @@ import {QuestionsService} from "../../services/questions.service";
 })
 export class QuestionsComponent implements OnInit {
 
-  score : any = 0;
-
   constructor(
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,

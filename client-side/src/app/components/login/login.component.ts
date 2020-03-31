@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
         this.timeLoggedIn = new Date().getTime();
         this.sessionExpired(data.token);
          this.authService.storeUserData(data);
+         this.authService.role = data.user.role;
           this._flashMessagesService.show("You are now logged in ...", {
             cssClass: "alert-success w-25",
             timeout: 2000,
@@ -81,6 +82,11 @@ export class LoginComponent implements OnInit {
             navigate: `${this.router.navigate(['/login'])}`
           });
     }, sessionExpired);
+  }
+
+
+  isAdmins(){
+    return this.authService.role === 'admin';
   }
 
 }
