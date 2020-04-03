@@ -17,6 +17,7 @@ export class ReviewsComponent implements OnInit {
   readonly: boolean = true;
   deleteId: any;
   loggedInUser: any;
+  updateId: any;
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
@@ -28,7 +29,7 @@ export class ReviewsComponent implements OnInit {
 
   ngOnInit() {
     this.showReviews();
-
+    this.loggedInUser = JSON.parse(localStorage.getItem('user')).userEmail;
   }
 
   showReviews() {
@@ -36,7 +37,6 @@ export class ReviewsComponent implements OnInit {
     this.reviews.getAllReviews()
       .toPromise()
       .then((data: any) => {
-        this.loggedInUser = JSON.parse(localStorage.getItem('user')).userEmail;
         this.reviews.userId = data._id;
         data.forEach(x => x.reviews.forEach(y => tab.push(y)));
         tab
@@ -47,15 +47,13 @@ export class ReviewsComponent implements OnInit {
           });
         //tab.forEach(x => console.log(x.author, x.rating));
         this.reviews.rev = tab;
-        console.log(typeof this.authService.userId);
-        console.log(typeof this.loggedInUser);
       })
       .catch(err => {
         console.log(err);
       });
   }
 
-  onReviewSubmit() {
+  onReviewCreate() {
     const review = {
       rating: this.currentRate,
       reviewText: this.reviewText
@@ -84,6 +82,7 @@ export class ReviewsComponent implements OnInit {
   }
 
   modelTitle(event) {
+    this.updateId = event.id;
     (event.name === 'createReview') ? this.title = 'Create a new review'
       : this.title = 'Update this review';
   }
@@ -105,6 +104,35 @@ export class ReviewsComponent implements OnInit {
       .catch(err => {
         console.log(err);
       });
+  }
+
+  onUpdateReview(){
+    const review = {
+      rating: this.currentRate,
+      reviewText: this.reviewText
+    };
+    this.reviews.updateReview(this.authService.userId, this.updateId,
+      JSON.stringify(review))
+      .toPromise()
+      .then((data: any) => {
+        this.showReviews();
+        this._flashMessagesService.show("Review updated successfully !", {
+          cssClass: "alert-success ",
+          timeout: 2000
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  choose(){
+    if (this.title === 'Create a new review') {
+      this.onReviewCreate();
+
+    } else if (this.title === 'Update this review'){
+      this.onUpdateReview();
+    }
   }
 
 }

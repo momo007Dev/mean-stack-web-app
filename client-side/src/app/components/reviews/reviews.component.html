@@ -75,7 +75,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #reviewForm="ngForm" action="" class="my-form" (submit)="onReviewSubmit()">
+        <form #reviewForm="ngForm" action="" class="my-form" (submit)="choose()">
           Rating :
           <ngb-rating [(rate)]="currentRate"></ngb-rating>
           <br>
