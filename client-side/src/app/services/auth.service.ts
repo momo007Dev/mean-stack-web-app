@@ -12,6 +12,7 @@ export class AuthService {
   authToken: any;
   user: any;
   role: any;
+  userId: any;
 
   constructor(private _http: HttpClient) {
   }

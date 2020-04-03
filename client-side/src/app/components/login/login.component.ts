@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
         this.sessionExpired(data.token);
          this.authService.storeUserData(data);
          this.authService.role = data.user.role;
+         this.authService.userId = data.user.userId;
           this._flashMessagesService.show("You are now logged in ...", {
             cssClass: "alert-success w-25",
             timeout: 2000,

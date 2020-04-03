@@ -9,6 +9,7 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json; charset
 export class ReviewsService {
 
   rev: any[];
+  userId: any;
 
   constructor(private _http: HttpClient) {
   }
@@ -21,5 +22,20 @@ export class ReviewsService {
     const userId = JSON.parse(localStorage.getItem('user')).userId;
     return this._http.post(`/server/api/user/${userId}/reviews`, review, {headers});
 
+  }
+
+  updateReview(reviewId: any) {
+    // /user/5e7fd9d5f35b123cbc246899/reviews/5e862f463f21584038c3d362
+    return this._http
+      .patch(`/server/api/user/${this.userId}/reviews/${reviewId}`,
+      {headers});
+  }
+
+  deleteReview(userId : any, reviewId: any) {
+    // /user/5e7fd9d5f35b123cbc246899/reviews/5e862f463f21584038c3d362
+    //const userId = JSON.parse(localStorage.getItem('user')).userId;
+    return this._http
+      .delete(`/server/api/user/${userId}/reviews/${reviewId}`,
+        {headers});
   }
 }

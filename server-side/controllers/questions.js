@@ -136,7 +136,6 @@ const questionCreate = (req, res) => {
             }
         })
         .catch(err => {
-            //console.log(err);
             res
                 .status(405)
                 .json({
@@ -171,7 +170,6 @@ const question_delete_one = (req, res) => {
             });
         })
         .catch(err => {
-            //console.log(err);
             error({message: `An error occured while to delete this question : ${err}`, badge: true});
             res
                 .status(404)

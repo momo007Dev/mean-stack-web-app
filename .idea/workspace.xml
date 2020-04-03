@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/reviews.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/reviews.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/routes/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/reviews.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +182,8 @@
       <workItem from="1585495882244" duration="19090000" />
       <workItem from="1585579123724" duration="11067000" />
       <workItem from="1585666263046" duration="4838000" />
-      <workItem from="1585753815874" duration="9531000" />
+      <workItem from="1585753815874" duration="10364000" />
+      <workItem from="1585847767521" duration="24444000" />
     </task>
     <task id="LOCAL-00050" summary="brand nav routed to /home">
       <created>1584145446659</created>

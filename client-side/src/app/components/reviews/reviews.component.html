@@ -2,10 +2,14 @@
 
   <div class="container m-5 p-5 border border-bottom">
 
-    <button *ngIf="authService.loggedIn()" type="submit" class="btn btn-primary text-center" data-toggle="modal"
-            data-target="#exampleModal" data-whatever="@mdo"
-            style="width:165px; margin-left:455px; margin-top: 0">Add a review
-    </button>
+    <div *ngIf="authService.loggedIn()">
+      <button  (click)="modelTitle($event.target)" name="createReview" type="submit"
+              class="btn btn-primary text-center" data-toggle="modal"
+              data-target="#addReviewModel" data-whatever="@mdo"
+              style="width:165px; margin-left:455px; margin-top: 0">Add a review
+      </button>
+    </div>
+
 
     <section>
       <br>
@@ -17,17 +21,33 @@
                src="../../../assets/img/1.jpg"
                style="width: 10%" alt="Generic placeholder image">
           <div class="media-body text-center text-md-left ml-md-3 ml-0">
-          <div id="test" class="font-weight-bold my-0">
-            {{review["author"]}}
-            <span>
-              <i class="fa fa-pencil" aria-hidden="true"
-                 style="color: blue; margin-left: 690px"></i>
-            <i class="fa fa-trash " aria-hidden="true"
-               style="color: red; margin-left: 30px"></i>
-            </span>
-            <br>
-            Rating :
-            <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"></ngb-rating>
+            <div id="test" class="font-weight-bold my-0">
+              {{review["author"]}}
+
+              <span *ngIf="review['author'] === loggedInUser">
+
+                <a (click)="modelTitle($event.target)" data-toggle="modal"
+                   data-target="#addReviewModel" data-whatever="@mdo">
+
+                  <i id="{{review['_id']}}" name="updateReview" class="fa fa-pencil"
+                     aria-hidden="true" onmousemove="this.style.cursor = 'pointer';
+                     this.style.fontSize= '4.7vh'" onmouseout="this.style.fontSize= ''"
+                     style="color: blue; margin-left: 690px"></i>
+                </a>
+
+                <a (click)="getDeleteId($event.target)" data-toggle="modal"
+                   data-target="#deleteModel" data-whatever="@mdo">
+
+                  <i  title="{{review['_id']}}" class="fa fa-trash {{review['_ids']}}"
+                     aria-hidden="true" onmousemove="this.style.cursor = 'pointer';
+                     this.style.fontSize= '4.7vh'" onmouseout="this.style.fontSize= ''"
+                     style="color: red; margin-left: 30px"></i>
+
+                </a>
+              </span>
+              <br>
+              Rating :
+              <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"></ngb-rating>
             </div>
             <p class="blockquote-footer my-0">
               {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[0]}}
@@ -38,20 +58,18 @@
         </div>
         <hr>
       </ng-container>
-
     </section>
-
-
   </div>
 
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="addReviewModel" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+      <flash-messages></flash-messages>
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add a review </h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -82,9 +100,38 @@
           <br>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button appAddClass [disabled]="reviewForm.form.invalid" class="btn btn-primary" type="submit">submit</button>
+            <button appAddClass [disabled]="reviewForm.form.invalid" class="btn btn-primary" type="submit">submit
+            </button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteModel" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <flash-messages></flash-messages>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Confirm Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title" style="text-align: center">
+          <strong>Are you sure?</strong></h5>
+        <br>
+        <p>You are about to delete this comment, this process is irreversible !</p>
+        <p>Do you want to proceed ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Close
+        </button>
+        <button appAddClass (click)="onDeleteReview()" type="button" class="btn btn-danger">Delete</button>
       </div>
     </div>
   </div>
