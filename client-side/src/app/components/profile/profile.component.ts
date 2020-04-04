@@ -11,8 +11,12 @@ import {tryCatch} from "rxjs/internal-compatibility";
 })
 export class ProfileComponent implements OnInit {
   user: Object;
-  token : any;
+  token: any;
   userId: any;
+  email: string;
+  username: string;
+  password: string;
+  confirmPassword: string;
 
   constructor(
     private authService: AuthService,
@@ -22,6 +26,10 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit() {
+    this.getUserProfile();
+  }
+
+  getUserProfile() {
     if (this.authService.getAllProfiles() === undefined) {
       this.authService.logout();
       return this._flashMessagesService.show("You need to log in !", {
@@ -33,6 +41,8 @@ export class ProfileComponent implements OnInit {
       this.authService.getProfile().subscribe(
         (profile: any) => {
           this.user = profile.user;
+          this.email = profile.user.email;
+          this.username = profile.user.username;
         },
         err => {
           console.log(err);
@@ -42,14 +52,27 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  onUpdateUser() {
+    const user = {
+      "username": this.username,
+      "email": this.email,
+      "password": this.password
+    };
 
+    console.log(JSON.stringify(user));
+    this.authService.updateUser(user)
+      .toPromise()
+      .then((data: any) => {
+        this.getUserProfile();
+        this._flashMessagesService.show(`${data.message}`, {
+          cssClass: "alert-success w-25 p-3",
+          timeout: 2000
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
 
-  /*
-    onClick(event : any){
-    console.log(event);
-    console.log(event.srcElement.formAction);
   }
-   */
-
 }
 

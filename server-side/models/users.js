@@ -25,6 +25,11 @@ const reviewSchema = new mongoose.Schema({
 
 // Users Schema
 const userSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        require: true,
+        unique: true
+    },
     email: {
         type: String,
         required: true,

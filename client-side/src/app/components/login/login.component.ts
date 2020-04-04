@@ -13,7 +13,7 @@ import {JwtHelperService} from "@auth0/angular-jwt";
 
 export class LoginComponent implements OnInit {
 
-  email: String;
+  pseudo: String;
   password: String;
   timeLoggedIn : number;
 
@@ -29,11 +29,11 @@ export class LoginComponent implements OnInit {
 
   onLoginSubmit() {
     const user = {
-      email: this.email,
+      pseudo: this.pseudo,
       password: this.password
     };
 
-    if (!this.validateService.validateRegister(user)) {
+    if (!this.validateService.validateLogin(user)) {
 
       this._flashMessagesService.show("Please fill in all fields", {
         cssClass: "alert-danger w-25",
@@ -52,6 +52,7 @@ export class LoginComponent implements OnInit {
          this.authService.storeUserData(data);
          this.authService.role = data.user.role;
          this.authService.userId = data.user.userId;
+         this.authService.userEmail = data.user.userEmail;
           this._flashMessagesService.show("You are now logged in ...", {
             cssClass: "alert-success w-25",
             timeout: 2000,

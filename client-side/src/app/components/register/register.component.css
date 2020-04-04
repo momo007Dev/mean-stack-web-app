@@ -9,7 +9,7 @@
 }
 .image img {
   width: 224px;
-  height: auto;
+  height: 88vh;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }

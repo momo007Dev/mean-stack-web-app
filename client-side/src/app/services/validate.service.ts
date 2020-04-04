@@ -9,6 +9,10 @@ export class ValidateService {
   }
 
   validateRegister(user) {
-    return !(!user.email || !user.password);
+    return !(!user.email || !user.password || !user.username);
+  }
+
+  validateLogin(user) {
+    return !(!user.pseudo || !user.password);
   }
 }

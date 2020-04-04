@@ -61,6 +61,7 @@ export class QuestionsComponent implements OnInit {
 
      if (JSON.parse(this.question.qns[this.question.qnProgress].answer)) {
        this.question.correctAnswerCount++;
+       console.log(this.question.correctAnswerCount);
      }
 
     if (JSON.parse(choice.toLowerCase())) {

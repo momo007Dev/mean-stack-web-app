@@ -4,22 +4,22 @@
     <div class="col-md-7">
       <div class="form d-flex justify-content-between">
         <div class="image">
-          <img src="https://mdbootstrap.com/img/Photos/Others/sidenav2.jpg" alt="">
+          <img src="../../../assets/img/login.jpg"  alt="">
         </div>
         <form #loginForm="ngForm" action="" class="my-form" (submit)="onLoginSubmit()">
           <h4 class="font-weight-bold mb-3">Log in to your account</h4>
           <p class="mdb-color-text">To log in, please fill in these fiels with your e-mail address and password.</p>
           <!-- Email address -->
           <div class="md-form md-outline">
-            <label for="inputEmail">
+            <label for="pseudo">
             </label>
-            <input #emailInput="ngModel" [class.is-invalid]="emailInput.invalid &&
-                    emailInput.touched"
-                   class="form-control" type="email" id="inputEmail"
-                   [(ngModel)]="email" name="email"
-                   placeholder="Email address" required>
-            <small class="text-danger" [class.d-none]="emailInput.valid ||
-          emailInput.untouched">An Email is required</small>
+            <input #pseudoInput="ngModel" [class.is-invalid]="pseudoInput.invalid &&
+                    pseudoInput.touched"
+                   class="form-control" type="text" id="pseudo"
+                   [(ngModel)]="pseudo" name="pseudo"
+                   placeholder="Email address or Username" required>
+            <small class="text-danger" [class.d-none]="pseudoInput.valid ||
+          pseudoInput.untouched">An Email or a username is required</small>
           </div>
           <!-- Password -->
           <div  class="md-form md-outline">

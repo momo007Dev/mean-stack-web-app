@@ -13,7 +13,8 @@
 
     <section>
       <br>
-      <div class="text-center font-weight-bold"><span>{{(reviews.rev).length}}</span> comments</div>
+      <div class="text-center font-weight-bold"><span>{{(reviews.rev).length}}
+      </span> comments</div>
 
       <ng-container *ngFor="let review of reviews.rev; let i = index">
         <div class="media d-block d-md-flex mt-4">
@@ -24,7 +25,7 @@
             <div id="test" class="font-weight-bold my-0">
               {{review["author"]}}
 
-              <span *ngIf="review['author'] === loggedInUser">
+              <span *ngIf="authService.loggedIn() && review['author'] === loggedInUser">
 
                 <a (click)="modelTitle($event.target)" data-toggle="modal"
                    data-target="#addReviewModel" data-whatever="@mdo">
@@ -67,7 +68,6 @@
      aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <flash-messages></flash-messages>
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -90,17 +90,18 @@
           Rate: <b>{{currentRate}}</b>
           <br>
           <label for="reviewComment">Your comment</label>
-          <textarea #textAreaElement="ngModel" [class.is-invalid]="textAreaElement.invalid &&
-                    textAreaElement.touched"
-                    class="form-control" id="reviewComment" rows="4"
+          <textarea #textAreaElement="ngModel" [class.is-invalid]="textAreaElement.invalid
+          && textAreaElement.touched" class="form-control" id="reviewComment" rows="4"
                     [(ngModel)]="reviewText" name="reviewText"
                     style="width: 440px" required></textarea>
           <small class="text-danger" [class.d-none]="textAreaElement.valid ||
           textAreaElement.untouched">Review Text is required</small>
           <br>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button appAddClass [disabled]="reviewForm.form.invalid" class="btn btn-primary" type="submit">submit
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close</button>
+            <button appAddClass [disabled]="reviewForm.form.invalid"
+                    class="btn btn-primary" type="submit">submit
             </button>
           </div>
         </form>
@@ -113,7 +114,6 @@
      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <flash-messages></flash-messages>
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Confirm Delete</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -131,92 +131,16 @@
         <button type="button" class="btn btn-secondary"
                 data-dismiss="modal">Close
         </button>
-        <button appAddClass (click)="onDeleteReview()" type="button" class="btn btn-danger">Delete</button>
+        <button appAddClass (click)="onDeleteReview()" type="button"
+                class="btn btn-danger">Delete</button>
       </div>
     </div>
   </div>
 </div>
 
 <div *ngIf="!reviews.rev"
-     style="margin-bottom: 302px; margin-left: 20px; text-align: center; margin-top: 50px">
+     style="margin-bottom: 302px; margin-left: 20px; text-align: center;
+     margin-top: 50px">
   <i class="fa fa-exclamation-triangle fa-4x" style="color: red"></i>
   <h3>There are no reviews</h3>
 </div>
-
-<!--
-
-<section>
-
-  <div class="text-center font-weight-bold"><span>4</span> comments</div>
-
-  <div class="media d-block d-md-flex mt-4">
-    <img class="card-img-64 d-flex mx-auto mb-3"
-         src="https://mdbootstrap.com/img/Photos/Avatars/img (20).jpg"
-         style="width: 10%" alt="Generic placeholder image">
-    <div class="media-body text-center text-md-left ml-md-3 ml-0">
-      <p class="font-weight-bold my-0">
-        Miley Steward
-      </p>
-      Many of our components require the use of JavaScript to function.
-      Specifically, they require jQuery, Popper.js, and our own JavaScript plugins.
-      Place the following  near the end of your pages, right before the closing
-      tag, to enable them. jQuery must come first, then Popper.js, and then our
-      JavaScript plugins.
-      <div class="media d-block d-md-flex mt-4">
-        <img class="card-img-64 d-flex mx-auto mb-3 rounded-circle img-fluid"
-             src="../../../assets/img/1.jpg" alt="Generic placeholder image"
-             style="width: 10%">
-        <div class="media-body text-center text-md-left ml-md-3 ml-0">
-          <p class="font-weight-bold my-0">
-            Tommy Smith
-          </p>
-          Curious which components explicitly require jQuery, our JS, and Popper.js?
-          Click the show components link below. If you’re at all unsure about the general
-          page structure, keep reading for an example page template.
-        </div>
-      </div>
-
-
-      <div class="form-group mt-4">
-        <label for="quickReplyFormComment">Your comment</label>
-        <textarea class="form-control" id="quickReplyFormComment" rows="3"
-                  style="width: 540px"></textarea>
-
-        <div class="text-center my-4">
-          <button class="btn btn-info btn-sm" type="submit">Post</button>
-        </div>
-      </div>
-
-      <div class="media d-block d-md-flex mt-3">
-        <img class="card-img-64 d-flex mx-auto mb-3"
-             src="../../../assets/img/1.jpg" alt="Generic placeholder image"
-             style="width: 10%">
-        <div class="media-body text-center text-md-left ml-md-3 ml-0">
-          <p class="font-weight-bold my-0">
-            Sylvester the Cat
-          </p>
-          For improved cross-browser rendering, we use Reboot to correct inconsistencies across browsers
-          and devices while providing slightly more opinionated resets to common HTML elements.
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="media d-block d-md-flex mt-3">
-    <img class="card-img-64 d-flex mx-auto mb-3"
-         src="https://mdbootstrap.com/img/Photos/Avatars/img (30).jpg"
-         style="width: 10%" alt="Generic placeholder image">
-    <div class="media-body text-center text-md-left ml-md-3 ml-0">
-      <p class="font-weight-bold my-0">
-        Caroline Horwitz
-      </p>
-      For more straightforward sizing in CSS, we switch the global box-sizing value
-      from content-box to border-box. This ensures padding does not affect the final
-      computed width of an element, but it can cause problems with some third party
-      software like Google Maps and Google Custom Search Engine.
-    </div>
-  </div>
-
-</section>
-
-
--->

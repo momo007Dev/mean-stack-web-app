@@ -40,7 +40,7 @@ export class NavbarComponent implements OnInit {
       this.authService.logout();
       this._flashMessagesService.show("Please log in first", {
         cssClass: "alert-danger w-25",
-        timeout: 3000
+        timeout: 2000
       });
       return false;
     } else {

@@ -9,25 +9,31 @@
       </div>
       <!--Avatar-->
       <div class="avatar mx-auto white" style="margin-top: 8px">
-        <img src="../../../assets/img/1.jpg" class="rounded-circle img-fluid" alt="">
+        <img src="../../../assets/img/1.jpg" class="rounded-circle img-fluid" alt=""
+        style="height: 150px">
       </div>
       <div class="card-body">
         <!--Name-->
-        <h4 class="font-weight-bold mb-4">Anna Aston</h4>
+        <h4 class="font-weight-bold mb-4">{{user["username"]}}</h4>
         <hr>
         <!--Quotation-->
         <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>
-          <strong> Email : </strong>: {{user["email"]}}
+
+          <strong style="margin-right: 36px">Id : </strong> {{user["userId"]}}
           <br>
-          <strong>Id : </strong> {{user["userId"]}}
-          <i class="fa fa-quote-right pr-2"></i>
+          <strong style="margin-right: 34px"> Email : </strong> {{user["email"]}}
+          <br>
+          <strong> Username : </strong> {{user["username"]}}
+          <br>
+          <strong style="margin-right: 44px"> Role : </strong> {{user["role"]}}
+          <i style="margin-left: 140px" class="fa fa-quote-right pr-2"></i>
         </p>
       </div>
     </div>
     <!--Card-->
     <br>
   </div>
-  <button type="submit" class="btn btn-primary" data-toggle="modal"
+  <button type="button" class="btn btn-primary" data-toggle="modal"
           data-target="#exampleModal" data-whatever="@mdo"
           style="width:130px; margin-left:40px;">Update
   </button>
@@ -47,63 +53,64 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form #profileForm="ngForm" (submit)="onUpdateUser()">
           <div class="form-group">
             <label for="username" class="col-form-label"></label>
-            <input type="text" class="form-control" id="username" placeholder="Username">
+            <input #usernameInput="ngModel" [class.is-invalid]="usernameInput.invalid &&
+                    usernameInput.touched"
+                   class="form-control" type="text" id="username"
+                   [(ngModel)]="username" name="username"
+                   placeholder="Email address or Username" value="{{username}}" required>
+            <small class="text-danger" [class.d-none]="usernameInput.valid ||
+          usernameInput.untouched">A username is required</small>
           </div>
           <div class="form-group">
-            <label for="email" class="col-form-label"></label>
-            <input type="text" class="form-control" id="email" placeholder="Email">
+            <label for="inputEmail" class="col-form-label"></label>
+            <input #emailInput="ngModel" [class.is-invalid]="emailInput.invalid &&
+                    emailInput.touched"
+                   class="form-control" type="email" id="inputEmail"
+                   [(ngModel)]="email" name="email"
+                   placeholder="Email address" value="{{email}}" required>
+            <small class="text-danger" [class.d-none]="emailInput.valid ||
+          emailInput.untouched">An Email is required</small>
           </div>
           <div class="form-group">
-            <label for="password" class="col-form-label"></label>
-            <input type="text" class="form-control" id="password"
-                   placeholder="Password">
+            <label for="inputPassword" class="col-form-label"></label>
+            <input #passwordInput="ngModel" [class.is-invalid]="passwordInput.invalid &&
+                    passwordInput.touched"
+                   class="form-control" type="text" id="inputPassword"
+                   [(ngModel)]="password" name="password"
+                   placeholder="Password" required>
+            <small class="text-danger" [class.d-none]="passwordInput.valid ||
+          passwordInput.untouched">A password is required</small>
           </div>
           <div class="form-group">
-            <label for="passwordC" class="col-form-label"></label>
-            <input type="text" class="form-control" id="passwordC"
-                   placeholder="Confirm Password">
+
+            <label for="PasswordConfirm" class="col-form-label"></label>
+            <input #inputConfirmPassword="ngModel" pattern="{{passwordInput.value}}"
+                   [class.is-invalid]="inputConfirmPassword.invalid &&
+                   inputConfirmPassword.touched"
+                   class="form-control" type="text" id="PasswordConfirm"
+                   [(ngModel)]="confirmPassword" name="confirmPassword"
+                   placeholder="Confirm password" required>
+
+            <div *ngIf="inputConfirmPassword.errors && (inputConfirmPassword.invalid ||
+                        inputConfirmPassword.touched)">
+              <small class="text-danger" *ngIf="inputConfirmPassword.errors.pattern">
+                Passwords do not match</small>
+              <small class="text-danger" *ngIf="inputConfirmPassword.errors.required
+                      && inputConfirmPassword.touched">
+                Please confirm your password</small>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button appAddClass type="submit" class="btn btn-primary"
+                    [disabled]="profileForm.form.invalid">Submit</button>
+
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
     </div>
   </div>
 </div>
-
-
-<!--
-<div *ngIf="user">
-  <p></p>
-  <div class="card" style="width: 25rem; margin-left: 10px">
-    <div class="card-body">
-      <i class="fa fa-user-circle-o fa-4x" aria-hidden="true"
-         style="text-align: center"></i>
-      <h5 class="card-title">Id : {{user["userId"]}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Username : Danny</h6>
-      <ul class="list-group align-self-auto">
-        <li class="list-group-item active">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-          <strong> Email</strong>: {{user["email"]}}
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-          <strong> Password</strong>: {{user["password"]}}
-        </li>
-      </ul>
-    </div>
-  </div>
-
-</div>
--->
-<!-- <button (click)="onClick($event)"> test </button>
-  <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
--->

@@ -13,6 +13,7 @@ export class AuthService {
   user: any;
   role: any;
   userId: any;
+  userEmail: any;
 
   constructor(private _http: HttpClient) {
   }
@@ -44,6 +45,16 @@ export class AuthService {
       const httpAuthHeaders = new HttpHeaders()
         .set('Authorization', this.authToken);
       return this._http.patch(`/server/api/user/${JSON.parse(this.user).userId}/score`,
+        user, {headers: httpAuthHeaders});
+    }
+  }
+
+  updateUser(user: any) {
+    this.getToken();
+    if (this.authToken) {
+      const httpAuthHeaders = new HttpHeaders()
+        .set('Authorization', this.authToken);
+      return this._http.patch(`/server/api/user/${JSON.parse(this.user).userId}`,
         user, {headers: httpAuthHeaders});
     }
   }

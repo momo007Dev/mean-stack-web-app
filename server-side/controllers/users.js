@@ -4,7 +4,7 @@ const User = require("../models/users");
 
 const user_signup = (req, res) => {
 
-    if (!req.body.email || !req.body.password) {
+    if (!req.body.email || !req.body.password || !req.body.username) {
         return res
             .status(400)
             .json({
@@ -13,15 +13,19 @@ const user_signup = (req, res) => {
             });
     }
 
-    User.find({email: req.body.email})
+    User.find({
+            $or:[
+                {email: req.body.email}, {username: req.body.username}
+            ]})
         .exec()
         .then(user => {
+            console.log(user);
             if (user.length >= 1) {
                 return res
                     .status(409)
                     .json({
                         success: false,
-                        message: "Mail already exists"
+                        message: "Mail or Username already exists !"
                     });
             } else {
                 bcrypt.hash(req.body.password, 10, (err, hash) => {
@@ -31,6 +35,7 @@ const user_signup = (req, res) => {
                         });
                     } else {
                         const user = new User({
+                            username: req.body.username,
                             email: req.body.email,
                             password: hash,
                             role: req.body.role || "student"
@@ -45,6 +50,7 @@ const user_signup = (req, res) => {
                                         message: "User created successfully",
                                         user: {
                                             userId: result._id,
+                                            username: result.username,
                                             userEmail: result.email,
                                             role: result.role,
                                             userPassword: result.password
@@ -70,13 +76,17 @@ const user_signup = (req, res) => {
 
 const user_login = (req, res) => {
 
-    if (!req.body.email || !req.body.password) {
+    const {pseudo} = req.body;
+    if (!pseudo || !req.body.password) {
         return res
             .status(400)
             .json({message: "All fields required"});
     }
 
-    User.findOne({email: req.body.email})
+    User.findOne({
+        $or:[
+            {email: pseudo}, {username: pseudo}
+        ]})
         .exec()
         .then(user => {
             if (!user) {
@@ -89,9 +99,10 @@ const user_login = (req, res) => {
             }
             bcrypt.compare(req.body.password, user.password, (err, result) => {
                 if (err) {
+                    console.log(user.role);
                     return res.status(401).json({
                         success: false,
-                        message: "Auth failed"
+                        message: "Auth failed !"
                     });
                 }
                 if (result) {
@@ -113,6 +124,7 @@ const user_login = (req, res) => {
                             token: "JWT " + token,
                             user: {
                                 userId: user._id,
+                                username: user.username,
                                 userEmail: user.email,
                                 role: user.role,
                                 score: user.score
@@ -178,11 +190,11 @@ const users_get_all = (req, res) => {
 
 const update_user = (req, res) => {
     const {userId} = req.params;
-    const userInfo = ["email", "password", "level", "role", "reviews"];
+    const userInfo = ["username", "email", "password", "level", "role", "reviews"];
     const reqBodyLength = Object.keys(req.body).length;
     const checkValues = Object.keys(req.body).filter(x => (userInfo.includes(x))).length;
 
-    if ((Object.keys(req.body).length > 6) || (reqBodyLength !== checkValues)) {
+    if ((Object.keys(req.body).length > 7) || (reqBodyLength !== checkValues)) {
         return res
             .status(405)
             .json({
@@ -199,10 +211,10 @@ const update_user = (req, res) => {
     }
 
     bcrypt.hash(req.body.password, 10, (err, hash) => {
-        if (err)
+        if (err) {
             return res.status(400).json({
-                message: "password field is required"
-            });
+                message: "password field is required !"
+            });}
         req.body.password = hash;
         User.updateOne({_id: userId}, {$set: req.body})
             .exec()
@@ -235,7 +247,7 @@ const update_user = (req, res) => {
 const update_user_score = (req, res) => {
     const {userId} = req.params;
 
-    if ((Number(req.body.score) > 10) ) {
+    if ((Number(req.body.score) > 10)) {
         return res
             .status(405)
             .json({
@@ -243,7 +255,7 @@ const update_user_score = (req, res) => {
             });
     }
 
-    const userScore = { "score" : req.body.score};
+    const userScore = {"score": req.body.score};
     User.updateOne({_id: userId}, {$set: userScore})
         .exec()
         .then(result => {
@@ -274,7 +286,7 @@ const update_user_score = (req, res) => {
 const get_user_by_id = (req, res) => {
     const {userId} = req.params;
     User.findById(userId)
-        .select("_id email role password")
+        .select("_id email role username password")
         .exec()
         .then(doc => {
             if (doc) {
@@ -284,6 +296,7 @@ const get_user_by_id = (req, res) => {
                         user: {
                             userId: doc._id,
                             email: doc.email,
+                            username: doc.username,
                             role: doc.role,
                             password: doc.password
                         },
@@ -307,7 +320,6 @@ const get_user_by_id = (req, res) => {
                 });
         });
 };
-
 
 
 module.exports = {

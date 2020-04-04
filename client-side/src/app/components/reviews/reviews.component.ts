@@ -29,7 +29,7 @@ export class ReviewsComponent implements OnInit {
 
   ngOnInit() {
     this.showReviews();
-    this.loggedInUser = JSON.parse(localStorage.getItem('user')).userEmail;
+    this.loggedInUser = this.authService.userEmail;
   }
 
   showReviews() {
@@ -64,9 +64,8 @@ export class ReviewsComponent implements OnInit {
       .toPromise()
       .then(() => {
         this.showReviews();
-        console.log("toto");
         this._flashMessagesService.show("Review added successfully !", {
-          cssClass: "alert-success",
+          cssClass: "alert-success w-25",
           timeout: 2000
         });
       })
@@ -97,7 +96,7 @@ export class ReviewsComponent implements OnInit {
       .then((data: any) => {
         this.showReviews();
         this._flashMessagesService.show(`${data.message}`, {
-          cssClass: "alert-success ",
+          cssClass: "alert-success w-25",
           timeout: 2000
         });
       })
@@ -114,10 +113,10 @@ export class ReviewsComponent implements OnInit {
     this.reviews.updateReview(this.authService.userId, this.updateId,
       JSON.stringify(review))
       .toPromise()
-      .then((data: any) => {
+      .then(() => {
         this.showReviews();
         this._flashMessagesService.show("Review updated successfully !", {
-          cssClass: "alert-success ",
+          cssClass: "alert-success w-25",
           timeout: 2000
         });
       })

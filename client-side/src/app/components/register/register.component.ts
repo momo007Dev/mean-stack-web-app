@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
 
   email: string;
   password: string;
+  username: string;
 
   constructor(private validateService: ValidateService,
               private _flashMessagesService: FlashMessagesService,
@@ -26,6 +27,7 @@ export class RegisterComponent implements OnInit {
 
   onRegisterSubmit() {
     const user = {
+      username: this.username,
       email: this.email,
       password: this.password
     };
