@@ -11,7 +11,7 @@
 
     <ng-container *ngFor="let user of users; let i = index">
       <!--Grid column-->
-      <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+      <div *ngIf="user['role'] !== 'admin' && user['role'] !== 'teacher'"  class="col-lg-4 col-md-12 mb-lg-0 mb-4">
         <!--Card-->
         <div class="card testimonial-card">
           <!--Background color-->
@@ -22,12 +22,18 @@
           </div>
           <div class="card-body">
             <!--Name-->
-            <h4 class="font-weight-bold mb-4">{{user["email"]}}</h4>
+            <h4 class="font-weight-bold mb-4">{{user["username"]}}</h4>
             <hr>
             <!--Quotation-->
             <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>
-              <strong>Id : </strong> {{user["_id"]}}
-              <i class="fa fa-quote-right pr-2"></i>
+              <strong style="margin-right: 36px">Id : </strong> {{user["_id"]}}
+              <br>
+              <strong style="margin-right: 34px"> Email : </strong> {{user["email"]}}
+              <br>
+              <strong> Username : </strong> {{user["username"]}}
+              <br>
+              <strong style="margin-right: 44px"> Role : </strong> {{user["role"]}}
+              <i style="margin-left: 80px" class="fa fa-quote-right pr-2"></i>
             </p>
             <hr>
             <button type="button" class="btn btn-primary btn-sm">

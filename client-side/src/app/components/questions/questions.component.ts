@@ -38,6 +38,7 @@ export class QuestionsComponent implements OnInit {
       .then((data: any) => {
         //console.log(data[0].answers.forEach(x => console.log(x.isCorrect)));
         this.question.qns = data;
+        this.question.correctAnswerCount = 0;
        // this.question.qns.forEach(y => console.log(y.question,y.answers.forEach(x => console.log(x.option, x.isCorrect))));
       })
       .catch(err => {

@@ -3,6 +3,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {ReviewsService} from "../../services/reviews.service";
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-reviews',
@@ -18,6 +19,7 @@ export class ReviewsComponent implements OnInit {
   deleteId: any;
   loggedInUser: any;
   updateId: any;
+  date: any;
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
@@ -28,8 +30,10 @@ export class ReviewsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showReviews();
     this.loggedInUser = this.authService.userEmail;
+    setInterval(() => {
+      this.showReviews();
+    }, 1000);
   }
 
   showReviews() {
@@ -42,10 +46,11 @@ export class ReviewsComponent implements OnInit {
         tab
           .sort((a, b) => Date.parse(b.CreatedOn) - Date.parse(a.CreatedOn))
           .forEach(x => {
-            x.CreatedOn = new Date(x.CreatedOn);
-            x.rating = Number(x.rating)
+            x.rating = Number(x.rating);
+            x.CreatedOn = this.reviews
+              .formatDate(this.reviews.getDate() - new Date(x.CreatedOn).getTime());
+
           });
-        //tab.forEach(x => console.log(x.author, x.rating));
         this.reviews.rev = tab;
       })
       .catch(err => {
@@ -58,7 +63,6 @@ export class ReviewsComponent implements OnInit {
       rating: this.currentRate,
       reviewText: this.reviewText
     };
-    //console.log(review);
 
     this.reviews.createReview(JSON.stringify(review))
       .toPromise()
@@ -105,7 +109,7 @@ export class ReviewsComponent implements OnInit {
       });
   }
 
-  onUpdateReview(){
+  onUpdateReview() {
     const review = {
       rating: this.currentRate,
       reviewText: this.reviewText
@@ -125,11 +129,11 @@ export class ReviewsComponent implements OnInit {
       });
   }
 
-  choose(){
+  choose() {
     if (this.title === 'Create a new review') {
       this.onReviewCreate();
 
-    } else if (this.title === 'Update this review'){
+    } else if (this.title === 'Update this review') {
       this.onUpdateReview();
     }
   }

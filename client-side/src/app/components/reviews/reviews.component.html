@@ -51,8 +51,7 @@
               <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"></ngb-rating>
             </div>
             <p class="blockquote-footer my-0">
-              {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[0]}}
-              at {{(review["CreatedOn"]).toLocaleString('fr-BE').split(' à')[1]}}
+              {{review["CreatedOn"]}}
             </p>
             {{review["reviewText"]}}
           </div>

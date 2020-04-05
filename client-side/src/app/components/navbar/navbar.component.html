@@ -52,8 +52,8 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li *ngIf="authService.loggedIn() && authService.role === 'admin' ||
-      authService.role === 'teacher'" class="nav-item dropdown">
+      <li *ngIf="authService.loggedIn() && (authService.role === 'teacher' ||
+      authService.role === 'admin')" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
            aria-haspopup="true" aria-expanded="false">
           Teacher
@@ -62,9 +62,9 @@
           <h6 class="dropdown-header">
             <i class="fa fa-cogs"> </i> Settings</h6>
           <a class="dropdown-item" [routerLink]="['/users/all']">
-            All Users</a>
+            All students</a>
           <a class="dropdown-item" [routerLink]="['/home']">Student's scores</a>
-          <a class="dropdown-item" [routerLink]="['/home']">Something else here</a>
+          <a class="dropdown-item" [routerLink]="['/questions/all']">All questions</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>

@@ -93,6 +93,7 @@ export class AuthService {
     this.user = null;
     localStorage.removeItem('id_token');
     localStorage.removeItem('user');
+    localStorage.removeItem('role');
     //localStorage.clear();
   }
 
