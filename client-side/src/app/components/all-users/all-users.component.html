@@ -11,14 +11,16 @@
 
     <ng-container *ngFor="let user of users; let i = index">
       <!--Grid column-->
-      <div *ngIf="user['role'] !== 'admin' && user['role'] !== 'teacher'"  class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+      <div *ngIf="user['role'] !== 'admin' && user['role'] !== 'teacher'" class="col-lg-4
+      col-md-12 mb-lg-0 mb-4">
         <!--Card-->
         <div class="card testimonial-card">
           <!--Background color-->
           <div class="card-up info-color"></div>
           <!--Avatar-->
           <div class="avatar mx-auto white" style="margin-top: 8px">
-            <img src="../../../assets/img/{{i + 1}}.jpg" class="rounded-circle img-fluid" alt="">
+            <img src="../../../assets/img/{{i + 1}}.jpg" class="rounded-circle img-fluid"
+                 alt="">
           </div>
           <div class="card-body">
             <!--Name-->
@@ -36,10 +38,15 @@
               <i style="margin-left: 80px" class="fa fa-quote-right pr-2"></i>
             </p>
             <hr>
-            <button type="button" class="btn btn-primary btn-sm">
+            <button name="{{user['_id']}}" (click)="getUpdateId($event.target)"
+                    type="button" class="btn btn-primary btn-sm"
+                    data-toggle="modal" data-target="#exampleModal">
               <i class="fa fa-pencil" aria-hidden="true"
-              style="color: black"></i> Update</button>
-            <button type="button" class="btn btn-secondary btn btn-danger btn-sm"
+                 style="color: black"></i> Update
+            </button>
+            <button id="{{user['_id']}}" (click)="getDeleteId($event.target)"
+                    type="button" class="btn btn-secondary btn btn-danger btn-sm"
+                    data-toggle="modal" data-target="#deleteModel"
                     style="margin-left: 145px;">
               <i class="fa fa-trash " aria-hidden="true"
                  style="color: black;"></i> Delete
@@ -51,13 +58,139 @@
       </div>
       <!--Grid column-->
     </ng-container>
-
-
   </div>
   <!-- Grid row -->
-
 </div>
 
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div *ngIf="alertMessage.length> 1 && !(alertMessage.includes('wrong'))"
+           class="alert alert-success" role="alert"> {{alertMessage}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div *ngIf="alertMessage.includes('wrong')" class="alert alert-danger"
+           role="alert"> {{alertMessage}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-header">
+
+        <h5 class="modal-title" id="exampleModalLabel">Update their profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #profileForm="ngForm" (submit)="onUpdateAllUser()">
+          <div class="form-group">
+            <label for="username" class="col-form-label"></label>
+            <input #usernameInput="ngModel" [class.is-invalid]="usernameInput.invalid &&
+                    usernameInput.touched"
+                   class="form-control" type="text" id="username"
+                   [(ngModel)]="username" name="username"
+                   placeholder="Username" required>
+            <small class="text-danger" [class.d-none]="usernameInput.valid ||
+          usernameInput.untouched">A username is required</small>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="col-form-label"></label>
+            <input #emailInput="ngModel" [class.is-invalid]="emailInput.invalid &&
+                    emailInput.touched"
+                   class="form-control" type="email" id="inputEmail"
+                   [(ngModel)]="email" name="email"
+                   placeholder="Email address" required>
+            <small class="text-danger" [class.d-none]="emailInput.valid ||
+          emailInput.untouched">An Email is required</small>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="col-form-label"></label>
+            <input #passwordInput="ngModel" [class.is-invalid]="passwordInput.invalid &&
+                    passwordInput.touched"
+                   class="form-control" type="text" id="inputPassword"
+                   [(ngModel)]="password" name="password"
+                   placeholder="Password" required>
+            <small class="text-danger" [class.d-none]="passwordInput.valid ||
+          passwordInput.untouched">A password is required</small>
+          </div>
+          <div class="form-group">
+
+            <label for="PasswordConfirm" class="col-form-label"></label>
+            <input #inputConfirmPassword="ngModel" pattern="{{passwordInput.value}}"
+                   [class.is-invalid]="inputConfirmPassword.invalid &&
+                   inputConfirmPassword.touched"
+                   class="form-control" type="text" id="PasswordConfirm"
+                   [(ngModel)]="confirmPassword" name="confirmPassword"
+                   placeholder="Confirm password" required>
+
+            <div *ngIf="inputConfirmPassword.errors && (inputConfirmPassword.invalid ||
+                        inputConfirmPassword.touched)">
+              <small class="text-danger" *ngIf="inputConfirmPassword.errors.pattern">
+                Passwords do not match</small>
+              <small class="text-danger" *ngIf="inputConfirmPassword.errors.required
+                      && inputConfirmPassword.touched">
+                Please confirm your password</small>
+            </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close</button>
+            <button appAddClass type="submit" class="btn btn-primary"
+                    [disabled]="profileForm.form.invalid">Submit</button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteModel" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div *ngIf="alertMessage.length> 1 && !(alertMessage.includes('wrong'))"
+           class="alert alert-success" role="alert"> {{alertMessage}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div *ngIf="alertMessage.includes('wrong')" class="alert alert-danger"
+           role="alert"> {{alertMessage}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Confirm Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title" style="text-align: center">
+          <strong>Are you sure?</strong></h5>
+        <br>
+        <p>You are about to delete this user, and this process is <strong>irreversible
+        </strong>!</p>
+        <p>Do you want to proceed ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Close
+        </button>
+        <button appAddClass (click)="onDeleteUser()" type="button"
+                class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

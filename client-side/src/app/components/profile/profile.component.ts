@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {tryCatch} from "rxjs/internal-compatibility";
 
 @Component({
   selector: 'app-profile',
@@ -59,8 +58,7 @@ export class ProfileComponent implements OnInit {
       "password": this.password
     };
 
-    console.log(JSON.stringify(user));
-    this.authService.updateUser(user)
+    this.authService.updateUser(this.authService.userId, user)
       .toPromise()
       .then((data: any) => {
         this.getUserProfile();
@@ -71,6 +69,10 @@ export class ProfileComponent implements OnInit {
       })
       .catch(err => {
         console.log(err);
+        this._flashMessagesService.show('Something went wrong', {
+          cssClass: "alert-danger w-25",
+          timeout: 3000
+        });
       });
 
   }

@@ -25,7 +25,9 @@ router
         ctrlAcess.grantAccess('readOwn', 'profile'),
         ctrlUsers.get_user_by_id)
 
-    .delete(ctrlUsers.user_delete)
+    .delete(passport.authenticate("jwt", {session: false}),
+        ctrlAcess.grantAccess('deleteOwn', 'profile'),
+        ctrlUsers.user_delete)
 
     .patch(passport.authenticate("jwt", {session: false}),
         ctrlAcess.grantAccess('updateOwn', 'profile'),

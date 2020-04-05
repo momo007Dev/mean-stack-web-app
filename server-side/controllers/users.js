@@ -157,7 +157,7 @@ const user_delete = (req, res) => {
                     .json({message: "No user found for the provided ID"});
             }
             res.status(200).json({
-                message: "User deleted successfully"
+                message: "User deleted successfully !"
             });
         })
         .catch(err => {

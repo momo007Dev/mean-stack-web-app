@@ -10,7 +10,6 @@ export class ReviewsService {
 
   rev: any[];
   userId: any;
-  date : any;
 
   constructor(private _http: HttpClient) {
   }
@@ -39,7 +38,7 @@ export class ReviewsService {
   }
 
   getDate(){
-    return this.date = new Date().getTime();
+    return new Date().getTime();
   }
 
   convertMS(ms) {

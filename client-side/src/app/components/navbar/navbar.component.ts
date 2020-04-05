@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
   onSelect(){
       this.authService.getProfile().subscribe(
         (profile: any) => {
-          `${this.router.navigate(['/profile', profile.user.userId])}`
+          `${this.router.navigate(['/profile', profile.user.username])}`
         },
         err => {
           console.log(err);

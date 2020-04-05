@@ -16,7 +16,7 @@ const grantAccess = (action, resource) => {
                 });
             }
 
-            if ((action === 'readOwn' || action === 'updateOwn') &&
+            if ((action === 'readOwn' || action === 'updateOwn' || action === 'deleteOwn') &&
                 (req.user._id).toString() !==
                 (req.params.userId).toString() && req.user.role !== 'admin' &&
                 req.user.role !== 'teacher') {
