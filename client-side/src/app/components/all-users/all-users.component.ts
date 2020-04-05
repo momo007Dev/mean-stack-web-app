@@ -44,12 +44,12 @@ export class AllUsersComponent implements OnInit {
   }
 
   getUpdateId(event) {
-    console.log(event.name);
+   // console.log(event.name);
     this.userId = event.name;
   }
 
   getDeleteId(event) {
-    console.log(event.id);
+    //console.log(event.id);
     this.userId = event.id;
   }
 

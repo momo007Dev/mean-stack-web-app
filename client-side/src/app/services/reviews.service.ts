@@ -24,17 +24,17 @@ export class ReviewsService {
 
   }
 
-  updateReview(userId: any, reviewId: any, review: any) {
+  updateReview(userEmail: any, reviewId: any, review: any) {
     // /user/5e7fd9d5f35b123cbc246899/reviews/5e862f463f21584038c3d362
     return this._http
-      .patch(`/server/api/user/${userId}/reviews/${reviewId}`, review, {headers});
+      .patch(`/server/api/user/${userEmail}/reviews/${reviewId}`, review, {headers});
   }
 
-  deleteReview(userId: any, reviewId: any) {
+  deleteReview(userEmail: any, reviewId: any) {
     // /user/5e7fd9d5f35b123cbc246899/reviews/5e862f463f21584038c3d362
     //const userId = JSON.parse(localStorage.getItem('user')).userId;
     return this._http
-      .delete(`/server/api/user/${userId}/reviews/${reviewId}`, {headers});
+      .delete(`/server/api/user/${userEmail}/reviews/${reviewId}`, {headers});
   }
 
   getDate(){

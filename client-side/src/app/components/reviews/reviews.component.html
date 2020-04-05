@@ -25,12 +25,14 @@
             <div id="test" class="font-weight-bold my-0">
               {{review["author"]}}
 
-              <span *ngIf="authService.loggedIn() && review['author'] === loggedInUser">
+              <span *ngIf="authService.loggedIn() && review['author'] === loggedInUser
+              || loggedInUserRole === 'admin' || loggedInUserRole === 'teacher'">
 
                 <a (click)="modelTitle($event.target)" data-toggle="modal"
                    data-target="#addReviewModel" data-whatever="@mdo">
 
-                  <i id="{{review['_id']}}" name="updateReview" class="fa fa-pencil"
+                  <i id="{{review['_id']}}" name="updateReview" title="{{review['author']}}"
+                     class="fa fa-pencil"
                      aria-hidden="true" onmousemove="this.style.cursor = 'pointer';
                      this.style.fontSize= '4.7vh'" onmouseout="this.style.fontSize= ''"
                      style="color: blue; margin-left: 690px"></i>
@@ -39,7 +41,7 @@
                 <a (click)="getDeleteId($event.target)" data-toggle="modal"
                    data-target="#deleteModel" data-whatever="@mdo">
 
-                  <i  title="{{review['_id']}}" class="fa fa-trash {{review['_ids']}}"
+                  <i  title="{{review['_id']}}" id="{{review['author']}}" class="fa fa-trash"
                      aria-hidden="true" onmousemove="this.style.cursor = 'pointer';
                      this.style.fontSize= '4.7vh'" onmouseout="this.style.fontSize= ''"
                      style="color: red; margin-left: 30px"></i>

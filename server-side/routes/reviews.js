@@ -14,7 +14,7 @@ router
 router.get("/reviews/all", ctrlUsers.users_get_all);
 
 router
-    .route('/user/:userId/reviews/:reviewId')
+    .route('/user/:userEmail/reviews/:reviewId')
     .patch(ctrlReviews.reviewsUpdateOne)
     .delete(ctrlReviews.reviewsDeleteOne);
 

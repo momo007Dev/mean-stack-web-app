@@ -18,8 +18,10 @@ export class ReviewsComponent implements OnInit {
   readonly: boolean = true;
   deleteId: any;
   loggedInUser: any;
+  loggedInUserRole: any;
   updateId: any;
   date: any;
+  reviewAuthor: any;
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
@@ -31,6 +33,7 @@ export class ReviewsComponent implements OnInit {
 
   ngOnInit() {
     this.loggedInUser = this.authService.userEmail;
+    this.loggedInUserRole = this.authService.role;
     setInterval(() => {
       this.showReviews();
     }, 1000);
@@ -86,16 +89,18 @@ export class ReviewsComponent implements OnInit {
 
   modelTitle(event) {
     this.updateId = event.id;
+    this.reviewAuthor = event.title;
     (event.name === 'createReview') ? this.title = 'Create a new review'
       : this.title = 'Update this review';
   }
 
   getDeleteId(event) {
+    this.reviewAuthor = event.id;
     this.deleteId = event.title;
   }
 
   onDeleteReview() {
-    this.reviews.deleteReview(this.authService.userId, this.deleteId)
+    this.reviews.deleteReview(this.reviewAuthor, this.deleteId)
       .toPromise()
       .then((data: any) => {
         this.showReviews();
@@ -114,7 +119,7 @@ export class ReviewsComponent implements OnInit {
       rating: this.currentRate,
       reviewText: this.reviewText
     };
-    this.reviews.updateReview(this.authService.userId, this.updateId,
+    this.reviews.updateReview(this.reviewAuthor, this.updateId,
       JSON.stringify(review))
       .toPromise()
       .then(() => {
