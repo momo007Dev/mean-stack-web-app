@@ -1,16 +1,20 @@
 <div *ngIf="questions.qns">
   <br>
   <h3 class="mb-4" style="margin-left: 60px">All Questions
-    <button class="btn btn-success"  data-toggle="modal" data-target="#exampleModalCenter"
+    <button class="btn btn-success" data-toggle="modal"
+            data-target=".bd-example-modal-lg"
             style="margin-left: 670px; color: white;font-weight: bold;">
-      Create a new question</button></h3>
+      Create a new question
+    </button>
+  </h3>
+
 
   <br>
   <ng-container *ngFor="let qn of questions.qns;let i=index">
     <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
 
       <div class="card-content">
-        <p class="card-title" style="color: white; margin: 20px">Question {{(i +1)}} :</p>
+        <p class="card-title" style="color: white; margin: 20px">Question {{(i + 1)}} :</p>
         <h5>
           <p style="color: white; margin: 20px">
             <strong>{{qn.question}}</strong>
@@ -20,7 +24,7 @@
       <div class="card" style="margin: 10px;">
         <p class="list-group list-group-flush">
           <ng-container *ngFor="let option of qn['answers'];let j = index">
-            <a  class="list-group-item list-group-item-action" >
+            <a class="list-group-item list-group-item-action">
               {{option.option}}
               <span *ngIf="(option['isCorrect']) === 'true'">
                  <i class="fa fa-check-circle right-align"
@@ -37,9 +41,9 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Create a new question</h5>
@@ -47,69 +51,108 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="container my-4">
+      <div class="modal-body" style="margin-left: 40px">
+        <!-- Question -->
+        <label for="questionText">Add your question here</label>
+        <textarea #textAreaElement="ngModel"
+                  [class.is-invalid]="textAreaElement.invalid
+              && textAreaElement.touched" class="form-control" id="questionText" rows="3"
+                  [(ngModel)]="question" name="question"
+                  style="width: 500px" required></textarea>
+        <small class="text-danger" [class.d-none]="textAreaElement.valid ||
+          textAreaElement.untouched">A question is required</small>
+        <hr>
 
-          <hr>
+        <section class="section-preview">
 
-          <p class="font-weight-bold">Basic examples</p>
+          <!-- Answer 1 -->
+          <small style="margin-left: 25px">Answer 1</small>
+          <div class="custom-control custom-checkbox">
+            <input (click)="check($event.target)" type="checkbox"
+                   class="custom-control-input" id="defaultUnchecked">
+            <label class="custom-control-label" for="defaultUnchecked"
+                   style="float: left"></label>
 
-          <section class="section-preview">
+            <textarea #textAreaElement1="ngModel"
+                      [class.is-invalid]="textAreaElement1.invalid
+                  && textAreaElement1.touched" class="form-control" id="answer1" rows="2"
+                      [(ngModel)]="option1" name="option4"
+                      style="width: 440px" required></textarea>
+            <label for="answer1"></label>
+            <small class="text-danger" [class.d-none]="textAreaElement1.valid ||
+            textAreaElement1.untouched">1st answer required</small>
+          </div>
 
-            <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox">
-              <input (click)="check($event.target)" type="checkbox" class="custom-control-input" id="defaultUnchecked">
-              <label class="custom-control-label" for="defaultUnchecked">
-                Default unchecked</label>
-            </div>
+          <!-- Answer 2 -->
+          <small style="margin-left: 25px">Answer 2</small>
+          <div class="custom-control custom-checkbox">
+            <input (click)="check($event.target)" type="checkbox"
+                   class="custom-control-input" id="defaultUnchecked2">
+            <label class="custom-control-label" for="defaultUnchecked2"
+                   style="float: left"></label>
 
-            <div class="my-2"></div>
 
-            <!-- Default checked -->
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="defaultChecked"
-                     checked="">
-              <label class="custom-control-label" for="defaultChecked">
-                Default checked</label>
-            </div>
+            <textarea #textAreaElement2="ngModel"
+                      [class.is-invalid]="textAreaElement2.invalid
+                && textAreaElement2.touched" class="form-control" id="answer2" rows="2"
+                      [(ngModel)]="option2" name="option4"
+                      style="width: 440px" required></textarea>
+            <label for="answer2"></label>
+            <small class="text-danger" [class.d-none]="textAreaElement2.valid ||
+            textAreaElement2.untouched">2nd answer required</small>
+          </div>
 
-            <div class="my-2"></div>
+          <!-- Answer 3 -->
+          <small style="margin-left: 25px">Answer 3</small>
+          <div class="custom-control custom-checkbox">
+            <input (click)="check($event.target)" type="checkbox"
+                   class="custom-control-input" id="defaultUnchecked3">
+            <label class="custom-control-label" for="defaultUnchecked3"
+                   style="float: left"></label>
 
-            <!-- Default indeterminate -->
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="defaultIndeterminate" checked="">
-              <label class="custom-control-label" for="defaultIndeterminate">
-                Default indeterminate</label>
-            </div>
+            <textarea #textAreaElement3="ngModel"
+                      [class.is-invalid]="textAreaElement3.invalid
+                 && textAreaElement3.touched" class="form-control" id="answer3" rows="2"
+                      [(ngModel)]="option3" name="option4"
+                      style="width: 440px" required></textarea>
+            <label for="answer3"></label>
+            <small class="text-danger" [class.d-none]="textAreaElement3.valid ||
+            textAreaElement3.untouched">3rd answer required</small>
+          </div>
 
-            <div class="my-2"></div>
+          <!-- Answer 4 -->
+          <small style="margin-left: 25px">Answer 4</small>
+          <div class="custom-control custom-checkbox">
+            <input (click)="check($event.target)" type="checkbox"
+                   class="custom-control-input" id="defaultUnchecked4">
+            <label class="custom-control-label" for="defaultUnchecked4"
+                   style="float: left"></label>
 
-            <!-- Default unchecked disabled -->
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="defaultUncheckedDisabled" disabled="">
-              <label class="custom-control-label" for="defaultUncheckedDisabled">
-                Default unchecked disabled</label>
-            </div>
+            <textarea #textAreaElement4="ngModel"
+                      [class.is-invalid]="textAreaElement4.invalid
+                  && textAreaElement4.touched" class="form-control" id="answer4" rows="2"
+                      [(ngModel)]="option4" name="option4"
+                      style="width: 440px" required></textarea>
+            <label for="answer4"></label>
+            <small class="text-danger" [class.d-none]="textAreaElement4.valid ||
+            textAreaElement4.untouched">4th answer required</small>
+          </div>
 
-            <div class="my-2"></div>
-
-            <!-- Default checked disabled -->
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="defaultCheckedDisabled" checked="" disabled="">
-              <label class="custom-control-label" for="defaultCheckedDisabled">
-                Default checked disabled</label>
-            </div>
-
-          </section>
-
-          <hr>
-
+        </section>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button (click)="onCreateQuestion()" type="button" class="btn btn-primary"
+                  [disabled]="textAreaElement4.invalid ||
+                            textAreaElement3.invalid ||
+                            textAreaElement2.invalid ||
+                            textAreaElement1.invalid ||
+                            textAreaElement.invalid || !toto()">Submit
+          </button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
+

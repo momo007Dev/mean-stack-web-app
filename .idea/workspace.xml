@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,21 +177,7 @@
       <workItem from="1585847767521" duration="27470000" />
       <workItem from="1585928642541" duration="25964000" />
       <workItem from="1586013141073" duration="22773000" />
-      <workItem from="1586097707792" duration="27748000" />
-    </task>
-    <task id="LOCAL-00056" summary="will be working on results UI">
-      <created>1584237971036</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1584237971036</updated>
-    </task>
-    <task id="LOCAL-00057" summary="added clickable answers">
-      <created>1584300151884</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1584300151885</updated>
+      <workItem from="1586097707792" duration="35355000" />
     </task>
     <task id="LOCAL-00058" summary="better question UI">
       <created>1584301548699</created>
@@ -523,7 +508,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586121949271</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="working on all questions UI">
+      <created>1586132102292</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1586132102292</updated>
+    </task>
+    <task id="LOCAL-00106" summary="working on all questions UI">
+      <created>1586132177225</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1586132177225</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +530,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added angular form validation" />
     <MESSAGE value="added api docs" />
     <MESSAGE value="added api docs v2" />
     <MESSAGE value="can split files now" />
@@ -556,7 +554,8 @@
     <MESSAGE value="time ui updated in the review ui" />
     <MESSAGE value="all ui working and profile ui stable" />
     <MESSAGE value="admin &amp; teacher can  update and delete students's review" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin &amp; teacher can  update and delete students's review" />
+    <MESSAGE value="working on all questions UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on all questions UI" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -599,10 +598,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1586132100991">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1586132175294">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586132100991" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586132175294" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

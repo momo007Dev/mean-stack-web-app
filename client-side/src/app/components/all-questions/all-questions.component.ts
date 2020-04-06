@@ -11,6 +11,14 @@ import {QuestionsService} from "../../services/questions.service";
 })
 export class AllQuestionsComponent implements OnInit {
 
+  question: any;
+  option1: any;
+  option2: any;
+  option3: any;
+  option4: any;
+  test: any;
+  tab: Array<any> = [];
+
   constructor(
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
@@ -38,6 +46,23 @@ export class AllQuestionsComponent implements OnInit {
   }
 
   check(event){
-    console.log(event.checked);
+
+    //console.log(event.checked);
+    console.log(event.id);
+    (event.checked) ? this.tab.push(event.id): undefined;
+    console.log(this.tab);
+  }
+
+  toto(){
+     if (this.tab.length === 1) {
+      return true;
+    } else if (this.tab.length >= 1) {
+       this.tab.splice(-1);
+         return false;
+       }
+  }
+
+  onCreateQuestion(){
+    console.log("toto");
   }
 }
