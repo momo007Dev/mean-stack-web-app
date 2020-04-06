@@ -1,0 +1,115 @@
+<div *ngIf="questions.qns">
+  <br>
+  <h3 class="mb-4" style="margin-left: 60px">All Questions
+    <button class="btn btn-success"  data-toggle="modal" data-target="#exampleModalCenter"
+            style="margin-left: 670px; color: white;font-weight: bold;">
+      Create a new question</button></h3>
+
+  <br>
+  <ng-container *ngFor="let qn of questions.qns;let i=index">
+    <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
+
+      <div class="card-content">
+        <p class="card-title" style="color: white; margin: 20px">Question {{(i +1)}} :</p>
+        <h5>
+          <p style="color: white; margin: 20px">
+            <strong>{{qn.question}}</strong>
+          </p>
+        </h5>
+      </div>
+      <div class="card" style="margin: 10px;">
+        <p class="list-group list-group-flush">
+          <ng-container *ngFor="let option of qn['answers'];let j = index">
+            <a  class="list-group-item list-group-item-action" >
+              {{option.option}}
+              <span *ngIf="(option['isCorrect']) === 'true'">
+                 <i class="fa fa-check-circle right-align"
+                    style="color: green; position: absolute; right: 150px"> correct answer</i>
+              </span>
+            </a>
+          </ng-container>
+        </p>
+      </div>
+    </div>
+    <br>
+  </ng-container>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Create a new question</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container my-4">
+
+          <hr>
+
+          <p class="font-weight-bold">Basic examples</p>
+
+          <section class="section-preview">
+
+            <!-- Default unchecked -->
+            <div class="custom-control custom-checkbox">
+              <input (click)="check($event.target)" type="checkbox" class="custom-control-input" id="defaultUnchecked">
+              <label class="custom-control-label" for="defaultUnchecked">
+                Default unchecked</label>
+            </div>
+
+            <div class="my-2"></div>
+
+            <!-- Default checked -->
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="defaultChecked"
+                     checked="">
+              <label class="custom-control-label" for="defaultChecked">
+                Default checked</label>
+            </div>
+
+            <div class="my-2"></div>
+
+            <!-- Default indeterminate -->
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="defaultIndeterminate" checked="">
+              <label class="custom-control-label" for="defaultIndeterminate">
+                Default indeterminate</label>
+            </div>
+
+            <div class="my-2"></div>
+
+            <!-- Default unchecked disabled -->
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="defaultUncheckedDisabled" disabled="">
+              <label class="custom-control-label" for="defaultUncheckedDisabled">
+                Default unchecked disabled</label>
+            </div>
+
+            <div class="my-2"></div>
+
+            <!-- Default checked disabled -->
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="defaultCheckedDisabled" checked="" disabled="">
+              <label class="custom-control-label" for="defaultCheckedDisabled">
+                Default checked disabled</label>
+            </div>
+
+          </section>
+
+          <hr>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
