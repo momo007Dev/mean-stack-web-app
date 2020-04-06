@@ -24,4 +24,13 @@ export class QuestionsService {
     return this._http.get('/server/api/questions', {headers});
   }
 
+  createQuestion(question : any) {
+    return this._http.post('/server/api/questions', question,{headers});
+  }
+
+  deleteQuestion(questionId: any){
+    // `/server/api/user/${userEmail}/reviews/${reviewId}`
+    return this._http.delete(`/server/api/questions/${questionId}`, {headers});
+  }
+
 }

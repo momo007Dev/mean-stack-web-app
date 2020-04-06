@@ -82,7 +82,7 @@ const question_update_one = (req, res) => {
                     .json({message: "No valid entry found for provided ID"});
             } else {
                 res.status(200).json({
-                    message: "Question updated",
+                    message: "Question updated successfully !",
                     modifiedDocs: result.nModified,
                     request: {
                         type: "GET",
@@ -108,7 +108,7 @@ const questionCreate = (req, res) => {
         return res
             .status(400)
             .json({
-                message: "Please read the API doc to see how to update a question"
+                message: "Please read the API doc to see how to create a question"
             });
 
     const question = new Question(req.body);
@@ -123,7 +123,7 @@ const questionCreate = (req, res) => {
                 res
                     .status(201)
                     .json(new Array({
-                        message: "Created question successfully",
+                        message: "Created question successfully !",
                         createdQuestion: {
                             name: result.question,
                             answer: result.answers.filter(x => x.isCorrect === "true")[0].option,
@@ -155,7 +155,7 @@ const question_delete_one = (req, res) => {
                 .json({message: "No valid entry found for provided ID"});
 
             res.status(200).json({
-                message: "Question deleted successfully",
+                message: "Question deleted successfully !",
                 request: {
                     type: "POST",
                     url: "http://localhost:5000/api/questions",

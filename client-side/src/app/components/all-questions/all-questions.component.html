@@ -1,23 +1,82 @@
-<div *ngIf="questions.qns">
+<div class="navbar navbar-expand-lg rounded-pill navbar-dark bg-dark"
+     style="width: 400px; text-align: center; margin-left: 460px">
+  <a class="navbar-brand">
+    <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a (click)="showView()" class="nav-link" style="cursor: pointer">
+          All questions <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a (click)="showTable()" class="nav-link" style="cursor: pointer">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" >Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" tabindex="-1"
+           aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<br>
+
+<div *ngIf="questions.qns && !showTableView">
   <br>
-  <h3 class="mb-4" style="margin-left: 60px">All Questions
-    <button class="btn btn-success" data-toggle="modal"
-            data-target=".bd-example-modal-lg"
-            style="margin-left: 670px; color: white;font-weight: bold;">
+  <h3 class="mb-4" style="margin-left: 60px">All Questions ({{(questions.qns).length}})
+    <button
+      class="btn btn-success" data-toggle="modal"
+      data-target=".bd-example-modal-lg"
+      style="margin-left: 390px; color: white;font-weight: bold;">
+      <i class="fa fa-plus" aria-hidden="true"></i>
       Create a new question
     </button>
+    <button (click)="deleteClicked()" class="btn btn-danger"
+            style="margin-left: 30px; color: white;font-weight: bold;">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+      Delete question(s)
+    </button>
   </h3>
-
-
   <br>
   <ng-container *ngFor="let qn of questions.qns;let i=index">
-    <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
 
+    <!-- Question
+    <div *ngIf="deleteButton" class="custom-control custom-checkbox checkbox-lg"
+         style="float: left; margin-left: 85px">
+      <input type="checkbox"
+             class="custom-control-input " id="{{qn['_id']}}">
+      <label class="custom-control-label" for="{{qn['_id']}}"
+             style="float: left"></label>
+    </div>
+    -->
+    <a *ngIf="deleteButton" (click)="getQuestionId($event.target)"
+       style="margin-left: 50px; float: left" data-toggle="modal"
+       data-target="#deleteModel" data-whatever="@mdo">
+
+      <i class="fa fa-trash fa-2x" id="{{qn['_id']}}"
+         aria-hidden="true" onmousemove="this.style.cursor = 'pointer';
+                     this.style.fontSize= '6.7vh'" onmouseout="this.style.fontSize= ''"
+         style="color: red; margin-left: 30px"></i>
+    </a>
+
+    <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
       <div class="card-content">
-        <p class="card-title" style="color: white; margin: 20px">Question {{(i + 1)}} :</p>
+
+        <p class="card-title" style="color: white; margin: 20px">Question {{(i + 1)}} :
+
+        </p>
         <h5>
           <p style="color: white; margin: 20px">
             <strong>{{qn.question}}</strong>
+
           </p>
         </h5>
       </div>
@@ -40,6 +99,50 @@
 </div>
 
 
+<div *ngIf="showTableView" class="container text-center my-4">
+
+  <p class="font-weight-bold">The data in the table comes from the google spreadsheet</p>
+
+  <!-- Table  -->
+  <table class="table table-bordered table-striped table-hover" id="testTable">
+    <!-- Table head -->
+    <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>E-mail</th>
+    </tr>
+    </thead>
+    <!-- Table head -->
+
+    <!-- Table body -->
+    <tbody id="demo">
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+
+    </tbody>
+    <!-- Table body -->
+  </table>
+  <!-- Table  -->
+
+</div>
+
+
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
      aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -47,11 +150,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Create a new question</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button (click)="closeAlert()" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body" style="margin-left: 40px">
+
         <!-- Question -->
         <label for="questionText">Add your question here</label>
         <textarea #textAreaElement="ngModel"
@@ -68,15 +172,15 @@
           <!-- Answer 1 -->
           <small style="margin-left: 25px">Answer 1</small>
           <div class="custom-control custom-checkbox">
-            <input (click)="check($event.target)" type="checkbox"
-                   class="custom-control-input" id="defaultUnchecked">
-            <label class="custom-control-label" for="defaultUnchecked"
+            <input (click)="buttonChecked($event.target)" type="checkbox"
+                   class="custom-control-input" id="option1">
+            <label class="custom-control-label" for="option1"
                    style="float: left"></label>
 
             <textarea #textAreaElement1="ngModel"
                       [class.is-invalid]="textAreaElement1.invalid
                   && textAreaElement1.touched" class="form-control" id="answer1" rows="2"
-                      [(ngModel)]="option1" name="option4"
+                      [(ngModel)]="option1" name="option1"
                       style="width: 440px" required></textarea>
             <label for="answer1"></label>
             <small class="text-danger" [class.d-none]="textAreaElement1.valid ||
@@ -86,16 +190,16 @@
           <!-- Answer 2 -->
           <small style="margin-left: 25px">Answer 2</small>
           <div class="custom-control custom-checkbox">
-            <input (click)="check($event.target)" type="checkbox"
-                   class="custom-control-input" id="defaultUnchecked2">
-            <label class="custom-control-label" for="defaultUnchecked2"
+            <input (click)="buttonChecked($event.target)" type="checkbox"
+                   class="custom-control-input" id="option2">
+            <label class="custom-control-label" for="option2"
                    style="float: left"></label>
 
 
             <textarea #textAreaElement2="ngModel"
                       [class.is-invalid]="textAreaElement2.invalid
                 && textAreaElement2.touched" class="form-control" id="answer2" rows="2"
-                      [(ngModel)]="option2" name="option4"
+                      [(ngModel)]="option2" name="option2"
                       style="width: 440px" required></textarea>
             <label for="answer2"></label>
             <small class="text-danger" [class.d-none]="textAreaElement2.valid ||
@@ -105,15 +209,15 @@
           <!-- Answer 3 -->
           <small style="margin-left: 25px">Answer 3</small>
           <div class="custom-control custom-checkbox">
-            <input (click)="check($event.target)" type="checkbox"
-                   class="custom-control-input" id="defaultUnchecked3">
-            <label class="custom-control-label" for="defaultUnchecked3"
+            <input (click)="buttonChecked($event.target)" type="checkbox"
+                   class="custom-control-input" id="option3">
+            <label class="custom-control-label" for="option3"
                    style="float: left"></label>
 
             <textarea #textAreaElement3="ngModel"
                       [class.is-invalid]="textAreaElement3.invalid
                  && textAreaElement3.touched" class="form-control" id="answer3" rows="2"
-                      [(ngModel)]="option3" name="option4"
+                      [(ngModel)]="option3" name="option3"
                       style="width: 440px" required></textarea>
             <label for="answer3"></label>
             <small class="text-danger" [class.d-none]="textAreaElement3.valid ||
@@ -123,9 +227,9 @@
           <!-- Answer 4 -->
           <small style="margin-left: 25px">Answer 4</small>
           <div class="custom-control custom-checkbox">
-            <input (click)="check($event.target)" type="checkbox"
-                   class="custom-control-input" id="defaultUnchecked4">
-            <label class="custom-control-label" for="defaultUnchecked4"
+            <input (click)="buttonChecked($event.target)" type="checkbox"
+                   class="custom-control-input" id="option4">
+            <label class="custom-control-label" for="option4"
                    style="float: left"></label>
 
             <textarea #textAreaElement4="ngModel"
@@ -140,17 +244,54 @@
 
         </section>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <span style="color: green; margin-right: 280px">
+            {{alertMessage}}
+          </span>
+          <button (click)="closeAlert()" type="button" class="btn btn-secondary" data-dismiss="modal">
             Close
           </button>
-          <button (click)="onCreateQuestion()" type="button" class="btn btn-primary"
+          <button appAddClass (click)="onCreateQuestion()" type="button" class="btn btn-primary"
                   [disabled]="textAreaElement4.invalid ||
                             textAreaElement3.invalid ||
                             textAreaElement2.invalid ||
                             textAreaElement1.invalid ||
-                            textAreaElement.invalid || !toto()">Submit
+                            textAreaElement.invalid || !submitOneAnswerCheck()">Submit
           </button>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="deleteModel" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle1">Confirm Delete</h5>
+        <button (click)="closeAlert()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title" style="text-align: center">
+          <strong>Are you sure?</strong></h5>
+        <br>
+        <p>You are about to delete this question, this process is <strong>irreversible
+        </strong></p>
+        <p>Do you want to proceed ?</p>
+      </div>
+      <div class="modal-footer">
+        <span style="color: green; margin-right: 70px">
+            {{alertMessage}}
+          </span>
+        <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+                data-dismiss="modal">Close
+        </button>
+        <button appAddClass (click)="onDeleteQuestion()" type="button"
+                class="btn btn-danger">Delete
+        </button>
       </div>
     </div>
   </div>

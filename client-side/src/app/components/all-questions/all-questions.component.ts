@@ -16,8 +16,17 @@ export class AllQuestionsComponent implements OnInit {
   option2: any;
   option3: any;
   option4: any;
-  test: any;
-  tab: Array<any> = [];
+  alertMessage : string;
+  deleteButton: boolean = false;
+  showButton: boolean = false;
+  showTableView: boolean = false;
+  questionId : any;
+  answerArray: Object = {
+    "option1" : false,
+    "option2" : false,
+    "option3" : false,
+    "option4" : false,
+  };
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
@@ -45,24 +54,89 @@ export class AllQuestionsComponent implements OnInit {
       });
   }
 
-  check(event){
-
-    //console.log(event.checked);
-    console.log(event.id);
-    (event.checked) ? this.tab.push(event.id): undefined;
-    console.log(this.tab);
+  buttonChecked(event){
+    (event.checked) ? this.answerArray[event.id] = true: this.answerArray[event.id] = false;
   }
 
-  toto(){
-     if (this.tab.length === 1) {
-      return true;
-    } else if (this.tab.length >= 1) {
-       this.tab.splice(-1);
-         return false;
-       }
+  submitOneAnswerCheck(){
+     return Object.keys(this.answerArray).filter(x => this.answerArray[x]).length === 1;
   }
 
   onCreateQuestion(){
-    console.log("toto");
+
+    const questionCreated = {
+      "question" : this.question,
+      "answers": [
+        {
+          "option": this.option1,
+          "isCorrect": this.answerArray["option1"]
+        },
+        {
+          "option": this.option2,
+          "isCorrect": this.answerArray["option2"]
+        },
+        {
+          "option": this.option3,
+          "isCorrect": this.answerArray["option3"]
+        },
+        {
+          "option": this.option4,
+          "isCorrect": this.answerArray["option4"]
+        }
+      ]
+    };
+
+    //console.log(questionCreated);
+    this.questions.createQuestion(questionCreated)
+      .toPromise()
+      .then((data) => {
+        this.showAllQuestion();
+        this.alertMessage = `${data[0].message}`;
+      })
+      .catch(err => {
+        this.alertMessage = "Something went wrong !";
+        console.log(err);
+      });
+
+  }
+
+  deleteClicked(){
+    (this.deleteButton) ? this.deleteButton = false : this.deleteButton = true;
+  }
+  // showButton
+
+  showView(){
+   (this.showButton) ? this.showButton = true : this.showTableView = false;
+  }
+
+  showTable(){
+    !(this.showTableView) ? this.showTableView = true : this.showButton = true;
+  }
+
+  getQuestionId(event){
+    this.questionId = event.id;
+  }
+
+  onDeleteQuestion(){
+    //console.log(this.questionId);
+    this.questions.deleteQuestion(this.questionId)
+      .toPromise()
+      .then((data) => {
+        this.showAllQuestion();
+        this.alertMessage = `${data["message"]}`;
+      })
+      .catch(err => {
+        this.alertMessage = "Something went wrong !";
+        console.log(err);
+      });
+
+  }
+
+  showQn(){
+
+  }
+
+  closeAlert(){
+    this.alertMessage = "";
   }
 }
