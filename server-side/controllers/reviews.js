@@ -106,7 +106,7 @@ const reviewsUpdateOne = (req, res) => {
                 if (!user.reviews.id(reviewId)) {
                     return res
                         .status(404)
-                        .json({message: 'No was review found with provided ID'});
+                        .json({message: 'No was review found with provided Email'});
                 } else {
 
                     if (Object.keys(req.body).length > 2) {
@@ -170,7 +170,7 @@ const reviewsDeleteOne = (req, res) => {
             if (!user) // !user is nul here and if it's not null we got a user
                 return res
                     .status(404)
-                    .json({message: 'No user was found with provided ID'});
+                    .json({message: 'No user was found with provided Email'});
 
             if (user.reviews && user.reviews.length > 0) {
                 if (!user.reviews.id(reviewId)) {

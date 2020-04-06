@@ -29,6 +29,7 @@ import { AllUsersComponent } from './components/all-users/all-users.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AddClassDirective } from './directives/add-class.directive';
+import { AllQuestionsComponent } from './components/all-questions/all-questions.component';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -37,6 +38,7 @@ const appRoutes : Routes = [
   { path: "login", component: LoginComponent },
   { path: "dashboard", component: DashboardComponent},
   { path: "questions", component: QuestionsComponent},
+  { path: "questions/all", component: AllQuestionsComponent},
   { path: "results", component: ResultsComponent},
   { path: "reviews", component: ReviewsComponent},
   { path: "users/all", component: AllUsersComponent},
@@ -64,6 +66,7 @@ enableProdMode();
     FooterComponent,
     ReviewsComponent,
     AddClassDirective,
+    AllQuestionsComponent,
   ],
 
   imports: [
