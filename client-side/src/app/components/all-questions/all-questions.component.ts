@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
@@ -16,16 +16,25 @@ export class AllQuestionsComponent implements OnInit {
   option2: any;
   option3: any;
   option4: any;
-  alertMessage : string;
+
+  alertMessage: string;
   deleteButton: boolean = false;
-  showButton: boolean = false;
-  showTableView: boolean = false;
-  questionId : any;
+  switchToAllQuestions: boolean = false;
+  switchToUserTable: boolean = false;
+
+  sortUsername: boolean = false;
+  sortScore: boolean = false;
+  sortEmail: boolean = false;
+
+  questionId: any;
+  users: any;
+
+
   answerArray: Object = {
-    "option1" : false,
-    "option2" : false,
-    "option3" : false,
-    "option4" : false,
+    "option1": false,
+    "option2": false,
+    "option3": false,
+    "option4": false,
   };
 
   constructor(
@@ -54,18 +63,18 @@ export class AllQuestionsComponent implements OnInit {
       });
   }
 
-  buttonChecked(event){
-    (event.checked) ? this.answerArray[event.id] = true: this.answerArray[event.id] = false;
+  buttonChecked(event) {
+    (event.checked) ? this.answerArray[event.id] = true : this.answerArray[event.id] = false;
   }
 
-  submitOneAnswerCheck(){
-     return Object.keys(this.answerArray).filter(x => this.answerArray[x]).length === 1;
+  submitOneAnswerCheck() {
+    return Object.keys(this.answerArray).filter(x => this.answerArray[x]).length === 1;
   }
 
-  onCreateQuestion(){
+  onCreateQuestion() {
 
     const questionCreated = {
-      "question" : this.question,
+      "question": this.question,
       "answers": [
         {
           "option": this.option1,
@@ -100,24 +109,28 @@ export class AllQuestionsComponent implements OnInit {
 
   }
 
-  deleteClicked(){
+  deleteClicked() {
     (this.deleteButton) ? this.deleteButton = false : this.deleteButton = true;
   }
+
   // showButton
 
-  showView(){
-   (this.showButton) ? this.showButton = true : this.showTableView = false;
+  showView() {
+    (this.switchToAllQuestions) ? this.switchToAllQuestions = true :
+      this.switchToUserTable = false;
   }
 
-  showTable(){
-    !(this.showTableView) ? this.showTableView = true : this.showButton = true;
+  showTable() {
+    !(this.switchToUserTable) ? this.switchToUserTable = true :
+      this.switchToAllQuestions = true;
+    this.showUsersInTable();
   }
 
-  getQuestionId(event){
+  getQuestionId(event) {
     this.questionId = event.id;
   }
 
-  onDeleteQuestion(){
+  onDeleteQuestion() {
     //console.log(this.questionId);
     this.questions.deleteQuestion(this.questionId)
       .toPromise()
@@ -132,11 +145,58 @@ export class AllQuestionsComponent implements OnInit {
 
   }
 
-  showQn(){
+  showUsersInTable() {
+    this.authService.getAllProfiles()
+      .toPromise()
+      .then((data: any) => {
+        this.users = data.filter(x => x.username !== 'admin' && x.username !== 'teacher');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  sortByUsername(event) {
+    if (event.id === 'username'){
+      if (this.sortUsername) {
+        this.sortUsername = false;
+        this.users.sort((a, b) => (a.username < b.username) ? 1
+          : (a.username > b.username) ? -1 : 0);
+      } else {
+        this.sortUsername = true;
+        this.users.sort((a, b) => (a.username > b.username) ? 1
+          : (a.username < b.username) ? -1 : 0);
+      }
+    } else if (event.id === 'score'){
+      if (this.sortScore) {
+        this.sortScore = false;
+        this.users.sort((a, b) => (a.score - b.score));
+      } else {
+        this.sortScore = true;
+        this.users.sort((a, b) => (b.score - a.score));
+      }
+
+    } else if (event.id === 'email'){
+      if (this.sortEmail) {
+        this.sortEmail = false;
+        this.users.sort((a, b) => (a.email < b.email) ? 1
+          : (a.email > b.email) ? -1 : 0);
+      } else {
+        this.sortEmail = true;
+        this.users.sort((a, b) => (a.email > b.email) ? 1
+          : (a.email < b.email) ? -1 : 0);
+      }
+    }
+  }
+
+  getUserId(){
+
+  }
+  seeProfile(){
 
   }
 
-  closeAlert(){
+  closeAlert() {
     this.alertMessage = "";
   }
 }

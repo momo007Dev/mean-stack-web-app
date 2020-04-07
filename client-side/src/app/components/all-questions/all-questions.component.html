@@ -1,5 +1,6 @@
-<div class="navbar navbar-expand-lg rounded-pill navbar-dark bg-dark"
-     style="width: 400px; text-align: center; margin-left: 460px">
+<!-- All questions navbar -->
+<div class="navbar container navbar-expand-lg rounded-pill navbar-dark bg-dark"
+     style="width: 450px; text-align: center;">
   <a class="navbar-brand">
     <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
   </a>
@@ -15,10 +16,11 @@
           All questions <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a (click)="showTable()" class="nav-link" style="cursor: pointer">Features</a>
+        <a (click)="showTable()" class="nav-link" style="cursor: pointer">
+          Users results</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" >Pricing</a>
+        <a class="nav-link">Pricing</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" tabindex="-1"
@@ -28,10 +30,13 @@
   </div>
 </div>
 <br>
-
-<div *ngIf="questions.qns && !showTableView">
+<!-- navbar values -->
+<div *ngIf="questions.qns && !switchToUserTable">
   <br>
-  <h3 class="mb-4" style="margin-left: 60px">All Questions ({{(questions.qns).length}})
+  <h3 class="mb-4 font-weight-bold" style="margin-left: 60px">
+    All Questions ({{(questions.qns).length}})
+
+    <!-- Create a question button  -->
     <button
       class="btn btn-success" data-toggle="modal"
       data-target=".bd-example-modal-lg"
@@ -39,6 +44,8 @@
       <i class="fa fa-plus" aria-hidden="true"></i>
       Create a new question
     </button>
+
+    <!-- Delete a question button  -->
     <button (click)="deleteClicked()" class="btn btn-danger"
             style="margin-left: 30px; color: white;font-weight: bold;">
       <i class="fa fa-trash" aria-hidden="true"></i>
@@ -46,17 +53,11 @@
     </button>
   </h3>
   <br>
+
+  <!-- All Question Loop -->
   <ng-container *ngFor="let qn of questions.qns;let i=index">
 
-    <!-- Question
-    <div *ngIf="deleteButton" class="custom-control custom-checkbox checkbox-lg"
-         style="float: left; margin-left: 85px">
-      <input type="checkbox"
-             class="custom-control-input " id="{{qn['_id']}}">
-      <label class="custom-control-label" for="{{qn['_id']}}"
-             style="float: left"></label>
-    </div>
-    -->
+    <!-- Delete icon -->
     <a *ngIf="deleteButton" (click)="getQuestionId($event.target)"
        style="margin-left: 50px; float: left" data-toggle="modal"
        data-target="#deleteModel" data-whatever="@mdo">
@@ -67,6 +68,7 @@
          style="color: red; margin-left: 30px"></i>
     </a>
 
+    <!-- Question & it's answer card -->
     <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
       <div class="card-content">
 
@@ -98,43 +100,69 @@
   </ng-container>
 </div>
 
-
-<div *ngIf="showTableView" class="container text-center my-4">
+<!-- User Table -->
+<div *ngIf="switchToUserTable" class="container text-center my-3">
 
   <p class="font-weight-bold">The data in the table comes from the google spreadsheet</p>
 
   <!-- Table  -->
-  <table class="table table-bordered table-striped table-hover" id="testTable">
+  <table class="table table-bordered table-striped " id="testTable">
     <!-- Table head -->
     <thead class="thead-dark">
     <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>E-mail</th>
+      <!-- username -->
+      <th scope="col"># <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></th>
+      <th (click)="sortByUsername($event.target)" id="username" style="cursor: pointer">
+        Username
+        <span *ngIf="!sortUsername">
+           <i class="fa fa-sort-desc" aria-hidden="true"></i>
+        </span>
+        <span *ngIf="sortUsername">
+           <i class="fa fa-sort-asc" aria-hidden="true"></i>
+        </span>
+      </th>
+
+      <!-- Email -->
+      <th (click)="sortByUsername($event.target)" id="email" style="cursor: pointer">
+        Email
+        <span *ngIf="!sortEmail">
+           <i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+        </span>
+        <span *ngIf="sortEmail">
+          <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+        </span>
+      </th>
+
+      <!-- Score -->
+      <th (click)="sortByUsername($event.target)" id="score" style="cursor: pointer">
+        Score
+        <span *ngIf="!sortScore">
+          <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+        </span>
+        <span *ngIf="sortScore">
+          <i class="fa fa-sort-numeric-desc" aria-hidden="true"></i>
+        </span>
+      </th>
+
+      <!-- Level -->
+      <th>Level <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></th>
     </tr>
     </thead>
     <!-- Table head -->
 
     <!-- Table body -->
     <tbody id="demo">
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-
+    <ng-container *ngFor="let user of users; let i = index">
+      <tr onmousemove="this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
+                      this.style.color='green'"
+          onmouseout="this.style.backgroundColor = ''; this.style.color=''">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{user["username"]}}</td>
+        <td>{{user["email"]}}</td>
+        <td>{{user["score"]}}</td>
+        <td>{{user["username"]}}</td>
+      </tr>
+    </ng-container>
     </tbody>
     <!-- Table body -->
   </table>
@@ -150,7 +178,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Create a new question</h5>
-        <button (click)="closeAlert()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button (click)="closeAlert()" type="button" class="close" data-dismiss="modal"
+                aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -247,8 +276,8 @@
           <span style="color: green; margin-right: 280px">
             {{alertMessage}}
           </span>
-          <button (click)="closeAlert()" type="button" class="btn btn-secondary" data-dismiss="modal">
-            Close
+          <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+                  data-dismiss="modal">Close
           </button>
           <button appAddClass (click)="onCreateQuestion()" type="button" class="btn btn-primary"
                   [disabled]="textAreaElement4.invalid ||
@@ -263,7 +292,7 @@
   </div>
 </div>
 
-
+<!-- Delete Modal -->
 <div class="modal fade" id="deleteModel" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

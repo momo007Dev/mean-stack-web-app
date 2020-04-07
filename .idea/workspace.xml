@@ -4,12 +4,11 @@
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/questions.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/questions.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,14 +181,7 @@
       <workItem from="1585928642541" duration="25964000" />
       <workItem from="1586013141073" duration="22773000" />
       <workItem from="1586097707792" duration="36074000" />
-      <workItem from="1586178635066" duration="19657000" />
-    </task>
-    <task id="LOCAL-00059" summary="added a footer">
-      <created>1584320333500</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1584320333501</updated>
+      <workItem from="1586178635066" duration="30373000" />
     </task>
     <task id="LOCAL-00060" summary="bug in questions UI (footer)">
       <created>1584325529874</created>
@@ -527,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586139928790</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="all questions ui stable">
+      <created>1586206587147</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1586206587148</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +534,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added api docs v2" />
     <MESSAGE value="can split files now" />
     <MESSAGE value="added proper API file structure" />
     <MESSAGE value="added readme for the api doc" />
@@ -560,7 +558,8 @@
     <MESSAGE value="admin &amp; teacher can  update and delete students's review" />
     <MESSAGE value="working on all questions UI" />
     <MESSAGE value="working on validating create question submit" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on validating create question submit" />
+    <MESSAGE value="all questions ui stable" />
+    <option name="LAST_COMMIT_MESSAGE" value="all questions ui stable" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -603,10 +602,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1586139927976">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1586206583095">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586139927976" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586206583095" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -635,10 +634,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586139937733">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586206596898">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586139937733" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586206596898" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
