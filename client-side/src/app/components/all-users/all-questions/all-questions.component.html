@@ -84,7 +84,8 @@
                                                         itemsPerPage: 1,
                                                         currentPage: page,
                                                         totalItems: totalItems};
-                                                        let i = index">
+                                                        trackBy: trackByMethod;
+                                                        index as i">
 
     <!-- Delete icon -->
     <a *ngIf="deleteButton" (click)="getQuestionId($event.target)"

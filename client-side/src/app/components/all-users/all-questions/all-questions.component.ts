@@ -31,6 +31,7 @@ export class AllQuestionsComponent implements OnInit {
 
   totalItems : number;
   page:number = 1;
+  test: any;
 
 
   answerArray: Object = {
@@ -185,6 +186,11 @@ export class AllQuestionsComponent implements OnInit {
       }
     }
   }
+
+  trackByMethod(index:number, el:any): number {
+    return el;
+  }
+
 
 
   closeAlert() {
