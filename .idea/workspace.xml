@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/charts/charts.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/charts/charts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/charts/charts.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/charts/charts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/footer/footer.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/footer/footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,14 +175,7 @@
       <workItem from="1586097707792" duration="36074000" />
       <workItem from="1586178635066" duration="36520000" />
       <workItem from="1586268938078" duration="7635000" />
-      <workItem from="1586279767505" duration="5896000" />
-    </task>
-    <task id="LOCAL-00062" summary="automatic logout if token expired feature added">
-      <created>1584400536930</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1584400536931</updated>
+      <workItem from="1586279767505" duration="6164000" />
     </task>
     <task id="LOCAL-00063" summary="better automatic logout features added">
       <created>1584412195448</created>
@@ -544,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586224543052</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="pagination working">
+      <created>1586291412465</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1586291412466</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added readme for the api doc" />
     <MESSAGE value="formatted index.html page" />
     <MESSAGE value="added some directives client side" />
     <MESSAGE value="added update feature on the backend" />
@@ -577,7 +552,8 @@
     <MESSAGE value="all questions ui stable" />
     <MESSAGE value="users table stable" />
     <MESSAGE value="created a min nav bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="created a min nav bar" />
+    <MESSAGE value="pagination working" />
+    <option name="LAST_COMMIT_MESSAGE" value="pagination working" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -660,6 +636,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.689@0.0.1280.689" timestamp="1584216893706" />
+    <state x="449" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586291587570">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="449" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.689@0.0.1280.689" timestamp="1586291587570" />
     <state x="336" y="118" key="git4idea.merge.GitPullDialog" timestamp="1583975751831">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
