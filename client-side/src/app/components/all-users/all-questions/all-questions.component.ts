@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
-import {QuestionsService} from "../../services/questions.service";
+import {QuestionsService} from "../../../services/questions.service";
 
 @Component({
   selector: 'app-all-questions',
@@ -29,6 +29,9 @@ export class AllQuestionsComponent implements OnInit {
   questionId: any;
   users: any;
 
+  totalItems : number;
+  page:number = 1;
+
 
   answerArray: Object = {
     "option1": false,
@@ -53,10 +56,8 @@ export class AllQuestionsComponent implements OnInit {
     this.questions.getQuestions()
       .toPromise()
       .then((data: any) => {
-        //console.log(data[0].answers.forEach(x => console.log(x.isCorrect)));
         this.questions.qns = data;
-        this.questions.correctAnswerCount = 0;
-        // this.question.qns.forEach(y => console.log(y.question,y.answers.forEach(x => console.log(x.option, x.isCorrect))));
+        this.totalItems = this.questions.qns.length;
       })
       .catch(err => {
         console.log(err);
@@ -95,7 +96,6 @@ export class AllQuestionsComponent implements OnInit {
       ]
     };
 
-    //console.log(questionCreated);
     this.questions.createQuestion(questionCreated)
       .toPromise()
       .then((data) => {
@@ -112,8 +112,6 @@ export class AllQuestionsComponent implements OnInit {
   deleteClicked() {
     (this.deleteButton) ? this.deleteButton = false : this.deleteButton = true;
   }
-
-  // showButton
 
   showView() {
     (this.switchToAllQuestions) ? this.switchToAllQuestions = true :

@@ -16,7 +16,12 @@
       <div class="text-center font-weight-bold"><span>{{(reviews.rev).length}}
       </span> comments</div>
 
-      <ng-container *ngFor="let review of reviews.rev; let i = index">
+      <ng-container *ngFor="let review of reviews.rev | paginate:
+                                                    { id: 'reviewsPagination',
+                                                        itemsPerPage: 4,
+                                                        currentPage: page,
+                                                        totalItems: totalItems };
+                                                        let i = index">
         <div class="media d-block d-md-flex mt-4">
           <img class="card-img-64 d-flex mx-auto mb-3"
                src="../../../assets/img/1.jpg"
@@ -61,6 +66,21 @@
         <hr>
       </ng-container>
     </section>
+    <div class="pagination justify-content-center pagination-lg">
+    <pagination-controls  id="reviewsPagination"
+                          (pageChange)="page = ($event)"
+                          maxSize="{{totalItems}}"
+                          directionLinks="true"
+                          autoHide="true"
+                          responsive="true"
+                          previousLabel="Previous"
+                          nextLabel="Next"
+                          screenReaderPaginationLabel="Pagination"
+                          screenReaderPageLabel="page"
+                          screenReaderCurrentLabel="You're on page">
+    </pagination-controls>
+    </div>
+
   </div>
 
 </div>

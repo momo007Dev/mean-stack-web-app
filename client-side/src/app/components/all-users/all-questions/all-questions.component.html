@@ -79,7 +79,12 @@
   <br>
 
   <!-- All Question Loop -->
-  <ng-container *ngFor="let qn of questions.qns;let i=index">
+  <ng-container *ngFor="let qn of questions.qns | paginate:
+                                                    { id: 'allQuestionsPagination',
+                                                        itemsPerPage: 1,
+                                                        currentPage: page,
+                                                        totalItems: totalItems};
+                                                        let i = index">
 
     <!-- Delete icon -->
     <a *ngIf="deleteButton" (click)="getQuestionId($event.target)"
@@ -96,7 +101,7 @@
     <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
       <div class="card-content">
 
-        <p class="card-title" style="color: white; margin: 20px">Question {{(i + 1)}} :
+        <p class="card-title" style="color: white; margin: 20px">Question {{page}} :
 
         </p>
         <h5>
@@ -122,6 +127,17 @@
     </div>
     <br>
   </ng-container>
+  <div class="pagination justify-content-center pagination-lg">
+    <pagination-controls  id="allQuestionsPagination"
+                          (pageChange)="page = ($event)"
+                          maxSize="{{totalItems.toString()}}"
+                          directionLinks="true"
+                          autoHide="true"
+                          responsive="true"
+                          previousLabel="Previous"
+                          nextLabel="Next">
+    </pagination-controls>
+  </div>
 </div>
 
 <!-- User Table -->

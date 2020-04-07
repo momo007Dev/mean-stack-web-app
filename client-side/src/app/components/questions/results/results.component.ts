@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
-import {QuestionsService} from "../../services/questions.service";
+import {QuestionsService} from "../../../services/questions.service";
 
 @Component({
   selector: 'app-results',

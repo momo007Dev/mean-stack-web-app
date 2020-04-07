@@ -23,6 +23,9 @@ export class ReviewsComponent implements OnInit {
   date: any;
   reviewAuthor: any;
 
+  totalItems : number;
+  page:number = 1;
+
   constructor(
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
@@ -55,6 +58,7 @@ export class ReviewsComponent implements OnInit {
 
           });
         this.reviews.rev = tab;
+        this.totalItems = this.reviews.rev.length;
       })
       .catch(err => {
         console.log(err);

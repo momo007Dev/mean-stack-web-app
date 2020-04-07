@@ -3,10 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/charts/charts.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/charts/charts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/charts/charts.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/charts/charts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/footer/footer.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/footer/footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/results/results.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,14 +197,9 @@
       <workItem from="1585928642541" duration="25964000" />
       <workItem from="1586013141073" duration="22773000" />
       <workItem from="1586097707792" duration="36074000" />
-      <workItem from="1586178635066" duration="35758000" />
-    </task>
-    <task id="LOCAL-00061" summary="added navbar fonts">
-      <created>1584328235828</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1584328235828</updated>
+      <workItem from="1586178635066" duration="36520000" />
+      <workItem from="1586268938078" duration="7635000" />
+      <workItem from="1586279767505" duration="5896000" />
     </task>
     <task id="LOCAL-00062" summary="automatic logout if token expired feature added">
       <created>1584400536930</created>
@@ -524,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586218881468</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="created a min nav bar">
+      <created>1586224543052</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1586224543052</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +552,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added proper API file structure" />
     <MESSAGE value="added readme for the api doc" />
     <MESSAGE value="formatted index.html page" />
     <MESSAGE value="added some directives client side" />
@@ -557,7 +576,8 @@
     <MESSAGE value="working on validating create question submit" />
     <MESSAGE value="all questions ui stable" />
     <MESSAGE value="users table stable" />
-    <option name="LAST_COMMIT_MESSAGE" value="users table stable" />
+    <MESSAGE value="created a min nav bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="created a min nav bar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -600,10 +620,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1586218879552">
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1586224541265">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586218879552" />
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586224541265" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -632,10 +652,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586206596898">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586224550680">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586206596898" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586224550680" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

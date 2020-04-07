@@ -6,6 +6,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import {ChartModule} from "angular2-chartjs";
 import {JwtHelperService} from '@auth0/angular-jwt';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 import { AppComponent } from './app.component';
@@ -22,14 +23,14 @@ import {ValidateService} from './services/validate.service';
 import { AuthService } from "./services/auth.service";
 import { QuestionsService } from "./services/questions.service";
 import { ReviewsService } from "./services/reviews.service";
-import { ChartsComponent } from './components/charts/charts.component';
+import { ChartsComponent } from './components/dashboard/charts/charts.component';
 import { QuestionsComponent } from './components/questions/questions.component';
-import { ResultsComponent } from './components/results/results.component';
+import { ResultsComponent } from './components/questions/results/results.component';
 import { AllUsersComponent } from './components/all-users/all-users.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from './components/home/footer/footer.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AddClassDirective } from './directives/add-class.directive';
-import { AllQuestionsComponent } from './components/all-questions/all-questions.component';
+import { AllQuestionsComponent } from './components/all-users/all-questions/all-questions.component';
 import { MinNavBArComponent } from './components/navbar/min-nav-bar/min-nav-bar.component';
 
 const appRoutes : Routes = [
@@ -75,6 +76,7 @@ enableProdMode();
     BrowserModule,
     NgbModule,
     FormsModule,
+    NgxPaginationModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
