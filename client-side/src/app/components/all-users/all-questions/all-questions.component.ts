@@ -19,19 +19,12 @@ export class AllQuestionsComponent implements OnInit {
 
   alertMessage: string;
   deleteButton: boolean = false;
-  switchToAllQuestions: boolean = false;
-  switchToUserTable: boolean = false;
-
-  sortUsername: boolean = false;
-  sortScore: boolean = false;
-  sortEmail: boolean = false;
 
   questionId: any;
   users: any;
 
   totalItems : number;
   page:number = 1;
-  test: any;
 
 
   answerArray: Object = {
@@ -114,17 +107,6 @@ export class AllQuestionsComponent implements OnInit {
     (this.deleteButton) ? this.deleteButton = false : this.deleteButton = true;
   }
 
-  showView() {
-    (this.switchToAllQuestions) ? this.switchToAllQuestions = true :
-      this.switchToUserTable = false;
-  }
-
-  showTable() {
-    !(this.switchToUserTable) ? this.switchToUserTable = true :
-      this.switchToAllQuestions = true;
-    this.showUsersInTable();
-  }
-
   getQuestionId(event) {
     this.questionId = event.id;
   }
@@ -143,55 +125,9 @@ export class AllQuestionsComponent implements OnInit {
 
   }
 
-  showUsersInTable() {
-    this.authService.getAllProfiles()
-      .toPromise()
-      .then((data: any) => {
-        this.users = data.filter(x => x.username !== 'admin' && x.username !== 'teacher');
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
-
-  sortByUsername(event) {
-    if (event.id === 'username'){
-      if (this.sortUsername) {
-        this.sortUsername = false;
-        this.users.sort((a, b) => (a.username < b.username) ? 1
-          : (a.username > b.username) ? -1 : 0);
-      } else {
-        this.sortUsername = true;
-        this.users.sort((a, b) => (a.username > b.username) ? 1
-          : (a.username < b.username) ? -1 : 0);
-      }
-    } else if (event.id === 'score'){
-      if (this.sortScore) {
-        this.sortScore = false;
-        this.users.sort((a, b) => (a.score - b.score));
-      } else {
-        this.sortScore = true;
-        this.users.sort((a, b) => (b.score - a.score));
-      }
-
-    } else if (event.id === 'email'){
-      if (this.sortEmail) {
-        this.sortEmail = false;
-        this.users.sort((a, b) => (a.email < b.email) ? 1
-          : (a.email > b.email) ? -1 : 0);
-      } else {
-        this.sortEmail = true;
-        this.users.sort((a, b) => (a.email > b.email) ? 1
-          : (a.email < b.email) ? -1 : 0);
-      }
-    }
-  }
-
   trackByMethod(index:number, el:any): number {
     return el;
   }
-
-
 
   closeAlert() {
     this.alertMessage = "";

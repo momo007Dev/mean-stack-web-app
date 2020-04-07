@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/users-table/users-table.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/users-table/users-table.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/users-table/users-table.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/users-table/users-table.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,14 +190,7 @@
       <workItem from="1586097707792" duration="36074000" />
       <workItem from="1586178635066" duration="36520000" />
       <workItem from="1586268938078" duration="7635000" />
-      <workItem from="1586279767505" duration="11567000" />
-    </task>
-    <task id="LOCAL-00068" summary="added a reviews UI">
-      <created>1584544131654</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1584544131655</updated>
+      <workItem from="1586279767505" duration="13701000" />
     </task>
     <task id="LOCAL-00069" summary="added some padding in reviews UI">
       <created>1584581110796</created>
@@ -523,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586299694819</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="testing pagination">
+      <created>1586299861847</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1586299861847</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="rbac stable" />
     <MESSAGE value="updated api" />
     <MESSAGE value="protected admin info." />
     <MESSAGE value="added level and score to user info" />
@@ -556,7 +567,8 @@
     <MESSAGE value="edwin working very hard !!!!!" />
     <MESSAGE value="questions ui stable" />
     <MESSAGE value="questions ui stable but question pagination to be worked on" />
-    <option name="LAST_COMMIT_MESSAGE" value="questions ui stable but question pagination to be worked on" />
+    <MESSAGE value="testing pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing pagination" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -599,10 +611,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1586299693374">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1586299860920">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586299693374" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586299860920" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -631,10 +643,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586299703200">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586299870837">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586299703200" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586299870837" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

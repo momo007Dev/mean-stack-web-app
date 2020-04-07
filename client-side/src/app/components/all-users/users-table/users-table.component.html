@@ -1,0 +1,72 @@
+
+<app-min-nav-bar></app-min-nav-bar>
+
+<!-- User Table -->
+<div class="container text-center my-3">
+
+  <p class="font-weight-bold">The data in the table comes from the google spreadsheet</p>
+
+  <!-- Table  -->
+  <table class="table table-bordered table-striped " id="testTable">
+    <!-- Table head -->
+    <thead class="thead-dark">
+    <tr>
+      <!-- username -->
+      <th scope="col"># <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></th>
+      <th (click)="sortByUsername($event.target)" id="username" style="cursor: pointer">
+        Username
+        <span *ngIf="!sortUsername">
+           <i class="fa fa-sort-desc" aria-hidden="true"></i>
+        </span>
+        <span *ngIf="sortUsername">
+           <i class="fa fa-sort-asc" aria-hidden="true"></i>
+        </span>
+      </th>
+
+      <!-- Email -->
+      <th (click)="sortByUsername($event.target)" id="email" style="cursor: pointer">
+        Email
+        <span *ngIf="!sortEmail">
+           <i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+        </span>
+        <span *ngIf="sortEmail">
+          <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+        </span>
+      </th>
+
+      <!-- Score -->
+      <th (click)="sortByUsername($event.target)" id="score" style="cursor: pointer">
+        Score
+        <span *ngIf="!sortScore">
+          <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+        </span>
+        <span *ngIf="sortScore">
+          <i class="fa fa-sort-numeric-desc" aria-hidden="true"></i>
+        </span>
+      </th>
+
+      <!-- Level -->
+      <th>Level <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></th>
+    </tr>
+    </thead>
+    <!-- Table head -->
+
+    <!-- Table body -->
+    <tbody id="demo">
+    <ng-container *ngFor="let user of users; let i = index">
+      <tr onmousemove="this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
+                      this.style.color='green'"
+          onmouseout="this.style.backgroundColor = ''; this.style.color=''">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{user["username"]}}</td>
+        <td>{{user["email"]}}</td>
+        <td>{{user["score"]}}</td>
+        <td>{{user["username"]}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+    <!-- Table body -->
+  </table>
+  <!-- Table  -->
+
+</div>

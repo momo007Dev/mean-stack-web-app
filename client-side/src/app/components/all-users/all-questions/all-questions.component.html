@@ -1,61 +1,7 @@
+<app-min-nav-bar></app-min-nav-bar>
 
-<div class="row">
-  <div class="col-md-8 offset-md-5">
-    <button class="btn btn-secondary btn-sm container w-25" data-toggle="collapse"
-            href="#collapseExample" aria-expanded="false"
-            aria-controls="collapseExample">Quick nagivation
-    </button>
-  </div>
-</div>
-
-<br>
-
-<!-- All questions navbar -->
-<div class="row ">
-  <div class="col-md-5 offset-md-4">
-    <div class="collapse w-auto" id="collapseExample">
-      <div class="navbar container navbar-expand-lg rounded-pill navbar-dark bg-dark">
-        <a class="navbar-brand">
-          <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarNav" aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item" [routerLinkActive]="['active']"
-                [routerLinkActiveOptions]="{ exact: true }">
-              <a [routerLink]="['/users/all']" class="nav-link" style="cursor: pointer">
-                All Users</a>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['active']"
-                [routerLinkActiveOptions]="{ exact: true }">
-              <a (click)="showView()" class="nav-link" style="cursor: pointer">
-                All questions <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a (click)="showTable()" class="nav-link" style="cursor: pointer">
-                Users results</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" tabindex="-1"
-                 aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<br>
 <!-- navbar values -->
-<div *ngIf="questions.qns && !switchToUserTable">
+<div *ngIf="questions.qns">
   <br>
   <h3 class="mb-4 font-weight-bold" style="margin-left: 60px">
     All Questions ({{(questions.qns).length}})
@@ -139,76 +85,6 @@
                           nextLabel="Next">
     </pagination-controls>
   </div>
-</div>
-
-<!-- User Table -->
-<div *ngIf="switchToUserTable" class="container text-center my-3">
-
-  <p class="font-weight-bold">The data in the table comes from the google spreadsheet</p>
-
-  <!-- Table  -->
-  <table class="table table-bordered table-striped " id="testTable">
-    <!-- Table head -->
-    <thead class="thead-dark">
-    <tr>
-      <!-- username -->
-      <th scope="col"># <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></th>
-      <th (click)="sortByUsername($event.target)" id="username" style="cursor: pointer">
-        Username
-        <span *ngIf="!sortUsername">
-           <i class="fa fa-sort-desc" aria-hidden="true"></i>
-        </span>
-        <span *ngIf="sortUsername">
-           <i class="fa fa-sort-asc" aria-hidden="true"></i>
-        </span>
-      </th>
-
-      <!-- Email -->
-      <th (click)="sortByUsername($event.target)" id="email" style="cursor: pointer">
-        Email
-        <span *ngIf="!sortEmail">
-           <i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
-        </span>
-        <span *ngIf="sortEmail">
-          <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
-        </span>
-      </th>
-
-      <!-- Score -->
-      <th (click)="sortByUsername($event.target)" id="score" style="cursor: pointer">
-        Score
-        <span *ngIf="!sortScore">
-          <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
-        </span>
-        <span *ngIf="sortScore">
-          <i class="fa fa-sort-numeric-desc" aria-hidden="true"></i>
-        </span>
-      </th>
-
-      <!-- Level -->
-      <th>Level <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></th>
-    </tr>
-    </thead>
-    <!-- Table head -->
-
-    <!-- Table body -->
-    <tbody id="demo">
-    <ng-container *ngFor="let user of users; let i = index">
-      <tr onmousemove="this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
-                      this.style.color='green'"
-          onmouseout="this.style.backgroundColor = ''; this.style.color=''">
-        <th scope="row">{{i + 1}}</th>
-        <td>{{user["username"]}}</td>
-        <td>{{user["email"]}}</td>
-        <td>{{user["score"]}}</td>
-        <td>{{user["username"]}}</td>
-      </tr>
-    </ng-container>
-    </tbody>
-    <!-- Table body -->
-  </table>
-  <!-- Table  -->
-
 </div>
 
 

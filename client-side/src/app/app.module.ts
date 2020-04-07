@@ -32,6 +32,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AddClassDirective } from './directives/add-class.directive';
 import { AllQuestionsComponent } from './components/all-users/all-questions/all-questions.component';
 import { MinNavBArComponent } from './components/navbar/min-nav-bar/min-nav-bar.component';
+import { UsersTableComponent } from './components/all-users/users-table/users-table.component';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -41,6 +42,7 @@ const appRoutes : Routes = [
   { path: "dashboard", component: DashboardComponent},
   { path: "questions", component: QuestionsComponent},
   { path: "questions/all", component: AllQuestionsComponent},
+  { path: "users/info", component: UsersTableComponent},
   { path: "results", component: ResultsComponent},
   { path: "reviews", component: ReviewsComponent},
   { path: "users/all", component: AllUsersComponent},
@@ -70,6 +72,7 @@ enableProdMode();
     AddClassDirective,
     AllQuestionsComponent,
     MinNavBArComponent,
+    UsersTableComponent,
   ],
 
   imports: [
