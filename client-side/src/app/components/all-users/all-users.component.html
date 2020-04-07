@@ -1,3 +1,5 @@
+<app-min-nav-bar></app-min-nav-bar>
+
 <div class="container mb-5">
 
   <!-- Grid row -->
@@ -61,7 +63,6 @@
   </div>
   <!-- Grid row -->
 </div>
-
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -139,10 +140,12 @@
             </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">
-              Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
             <button appAddClass type="submit" class="btn btn-primary"
-                    [disabled]="profileForm.form.invalid">Submit</button>
+                    [disabled]="profileForm.form.invalid">Submit
+            </button>
 
           </div>
         </form>
@@ -186,7 +189,8 @@
                 data-dismiss="modal">Close
         </button>
         <button appAddClass (click)="onDeleteUser()" type="button"
-                class="btn btn-danger">Delete</button>
+                class="btn btn-danger">Delete
+        </button>
       </div>
     </div>
   </div>

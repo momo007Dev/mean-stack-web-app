@@ -131,7 +131,6 @@ export class AllQuestionsComponent implements OnInit {
   }
 
   onDeleteQuestion() {
-    //console.log(this.questionId);
     this.questions.deleteQuestion(this.questionId)
       .toPromise()
       .then((data) => {
@@ -189,12 +188,6 @@ export class AllQuestionsComponent implements OnInit {
     }
   }
 
-  getUserId(){
-
-  }
-  seeProfile(){
-
-  }
 
   closeAlert() {
     this.alertMessage = "";

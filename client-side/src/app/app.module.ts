@@ -30,6 +30,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AddClassDirective } from './directives/add-class.directive';
 import { AllQuestionsComponent } from './components/all-questions/all-questions.component';
+import { MinNavBArComponent } from './components/navbar/min-nav-bar/min-nav-bar.component';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -67,6 +68,7 @@ enableProdMode();
     ReviewsComponent,
     AddClassDirective,
     AllQuestionsComponent,
+    MinNavBArComponent,
   ],
 
   imports: [
