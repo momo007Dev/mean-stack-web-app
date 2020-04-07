@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blueprint/compile.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blueprint/compile.md" afterDir="false" />
-    </list>
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,14 +175,7 @@
       <workItem from="1586097707792" duration="36074000" />
       <workItem from="1586178635066" duration="36520000" />
       <workItem from="1586268938078" duration="7635000" />
-      <workItem from="1586279767505" duration="10972000" />
-    </task>
-    <task id="LOCAL-00066" summary="better detection of wrong answers">
-      <created>1584482061324</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1584482061324</updated>
+      <workItem from="1586279767505" duration="11288000" />
     </task>
     <task id="LOCAL-00067" summary="improved result UI">
       <created>1584486131497</created>
@@ -526,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586292269561</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="questions ui stable">
+      <created>1586299385729</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1586299385729</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added update in api doc" />
     <MESSAGE value="cleaned users routes" />
     <MESSAGE value="rbac stable" />
     <MESSAGE value="updated api" />
@@ -559,7 +552,8 @@
     <MESSAGE value="email change" />
     <MESSAGE value="edwin working very hard" />
     <MESSAGE value="edwin working very hard !!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="edwin working very hard !!!!!" />
+    <MESSAGE value="questions ui stable" />
+    <option name="LAST_COMMIT_MESSAGE" value="questions ui stable" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -602,10 +596,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1586292267783">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1586299636756">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586292267783" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586299636756" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1583618889720">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -634,10 +628,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586292279726">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586299562417">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586292279726" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586299562417" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
