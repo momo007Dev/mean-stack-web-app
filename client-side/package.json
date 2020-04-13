@@ -34,6 +34,7 @@
     "materialize-css": "^1.0.0-rc.2",
     "ng2-charts": "^2.3.0",
     "ngx-pagination": "^5.0.0",
+    "minimist": ">=1.2.3",
     "popper.js": "^1.15.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
