@@ -18,6 +18,9 @@
                    class="form-control" type="text" id="pseudo"
                    [(ngModel)]="pseudo" name="pseudo"
                    placeholder="Email address or Username" required>
+            <i style="position:absolute; top: 178px; right: 62px; color: green"
+               class="fa fa-check-circle-o" aria-hidden="true"
+               [class.d-none]="pseudoInput.invalid || pseudoInput.untouched"></i>
             <small class="text-danger" [class.d-none]="pseudoInput.valid ||
           pseudoInput.untouched">An Email or a username is required</small>
           </div>
