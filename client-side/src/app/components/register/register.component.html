@@ -15,8 +15,9 @@
           <div class="md-form md-outline">
             <label for="username">
             </label>
-            <input #usernameInput="ngModel" [class.is-invalid]="usernameInput.invalid &&
-                    usernameInput.touched"
+            <input #usernameInput="ngModel"
+                   [class.is-invalid]="usernameInput.invalid && usernameInput.touched"
+                   [class.is-valid]="!(usernameInput.invalid && usernameInput.untouched)"
                    class="form-control" type="text" id="username"
                    [(ngModel)]="username" name="username"
                    placeholder="username" required>
@@ -28,27 +29,57 @@
           <div class="md-form md-outline">
             <label for="inputEmail">
             </label>
-            <input #emailInput="ngModel" [class.is-invalid]="emailInput.invalid &&
-                    emailInput.touched"
+            <input #emailInput="ngModel"
+                   pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                   [class.is-invalid]="emailInput.invalid && emailInput.touched"
+                   [class.is-valid]="!(emailInput.invalid && emailInput.untouched)"
                    class="form-control" type="email" id="inputEmail"
                    [(ngModel)]="email" name="email"
                    placeholder="Email address" required>
-            <small class="text-danger" [class.d-none]="emailInput.valid ||
-          emailInput.untouched">An Email is required</small>
+          </div>
+          <div *ngIf="emailInput.errors && (emailInput.invalid ||
+                        emailInput.touched)">
+            <small class="text-danger" *ngIf="emailInput.errors.pattern">
+              {{emailInput.value}} is not a valid email</small>
+            <small class="text-danger" *ngIf="emailInput.errors.required
+                      && emailInput.touched">
+              An Email is required</small>
           </div>
 
           <!-- Password -->
           <div class="md-form md-outline">
             <label for="inputPassword"></label>
-            <input #passwordInput="ngModel" [class.is-invalid]="passwordInput.invalid &&
-                    passwordInput.touched"
+            <input #passwordInput="ngModel"
+                   [class.is-invalid]="passwordInput.invalid && passwordInput.touched"
+                   [class.is-valid]="!(passwordInput.invalid && passwordInput.untouched)"
                    class="form-control" type="password" id="inputPassword"
                    [(ngModel)]="password" name="password"
                    placeholder="Password" required>
             <small class="text-danger" [class.d-none]="passwordInput.valid ||
           passwordInput.untouched">A password is required</small>
           </div>
-          <br>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="PasswordConfirm" class="col-form-label"></label>
+            <input #inputConfirmPassword="ngModel" pattern="{{passwordInput.value}}"
+                   [class.is-invalid]="inputConfirmPassword.invalid &&
+                   inputConfirmPassword.touched"
+                   [class.is-valid]="!(inputConfirmPassword.invalid &&
+                   inputConfirmPassword.untouched)"
+                   class="form-control" type="text" id="PasswordConfirm"
+                   [(ngModel)]="confirmPassword" name="confirmPassword"
+                   placeholder="Confirm password" required>
+
+            <div *ngIf="inputConfirmPassword.errors && (inputConfirmPassword.invalid ||
+                        inputConfirmPassword.touched)">
+              <small class="text-danger" *ngIf="inputConfirmPassword.errors.pattern">
+                Passwords do not match</small>
+              <small class="text-danger" *ngIf="inputConfirmPassword.errors.required
+                      && inputConfirmPassword.touched">
+                Please confirm your password</small>
+            </div>
+          </div>
           <div class="space">
             <div class="float-right">
               <button [disabled]="signUpForm.form.invalid" class="btn btn-rounded" type="submit">Sign Up</button>
@@ -69,5 +100,9 @@
   </div>
 </div>
 </body>
+<br>
+<br>
+<br>
+<br>
 <br>
 

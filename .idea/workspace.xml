@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/directives/valid-input.directive.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/directives/valid-input.directive.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,14 +188,7 @@
       <workItem from="1586279767505" duration="17252000" />
       <workItem from="1586354229472" duration="1390000" />
       <workItem from="1586721180416" duration="657000" />
-      <workItem from="1586796086868" duration="1362000" />
-    </task>
-    <task id="LOCAL-00071" summary="removed a bug in delete user function">
-      <created>1584666960149</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1584666960150</updated>
+      <workItem from="1586796086868" duration="7842000" />
     </task>
     <task id="LOCAL-00072" summary="added reviews in the API">
       <created>1584826275673</created>
@@ -526,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586312236891</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="added check validation in login forms">
+      <created>1586797485798</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1586797485799</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +541,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added level and score to user info" />
     <MESSAGE value="add update user score through UI" />
     <MESSAGE value="added teacher and admin dropdown" />
     <MESSAGE value="removed a bug in profile UI" />
@@ -559,7 +565,8 @@
     <MESSAGE value="testing pagination" />
     <MESSAGE value="created users tables ui" />
     <MESSAGE value="add some testing files in backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="add some testing files in backend" />
+    <MESSAGE value="added check validation in login forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="added check validation in login forms" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -602,10 +609,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1586312235969">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1586797484023">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586312235969" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586797484023" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -634,10 +641,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586312244566">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586797495193">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586312244566" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586797495193" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
