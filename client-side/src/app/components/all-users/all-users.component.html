@@ -90,42 +90,62 @@
       </div>
       <div class="modal-body">
         <form #profileForm="ngForm" (submit)="onUpdateAllUser()">
+
+          <!-- Username -->
           <div class="form-group">
             <label for="username" class="col-form-label"></label>
-            <input #usernameInput="ngModel" [class.is-invalid]="usernameInput.invalid &&
-                    usernameInput.touched"
+            <input #usernameInput="ngModel"
+                   [class.is-invalid]="usernameInput.invalid && usernameInput.touched"
+                   [class.is-valid]="!(usernameInput.invalid && usernameInput.untouched)"
                    class="form-control" type="text" id="username"
                    [(ngModel)]="username" name="username"
-                   placeholder="Username" required>
+                   placeholder="Email address or Username" value="{{username}}" required>
             <small class="text-danger" [class.d-none]="usernameInput.valid ||
-          usernameInput.untouched">A username is required</small>
+            usernameInput.untouched">A username is required</small>
           </div>
-          <div class="form-group">
-            <label for="inputEmail" class="col-form-label"></label>
-            <input #emailInput="ngModel" [class.is-invalid]="emailInput.invalid &&
-                    emailInput.touched"
+
+          <!-- Email address -->
+          <div class="md-form md-outline">
+            <label for="inputEmail">
+            </label>
+            <input #emailInput="ngModel"
+                   pattern="^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$"
+                   [class.is-invalid]="emailInput.invalid && emailInput.touched"
+                   [class.is-valid]="!(emailInput.invalid && emailInput.untouched)"
                    class="form-control" type="email" id="inputEmail"
                    [(ngModel)]="email" name="email"
                    placeholder="Email address" required>
-            <small class="text-danger" [class.d-none]="emailInput.valid ||
-          emailInput.untouched">An Email is required</small>
           </div>
+          <div *ngIf="emailInput.errors && (emailInput.invalid ||
+                        emailInput.touched)">
+            <small class="text-danger" *ngIf="emailInput.errors.pattern">
+              {{emailInput.value}} is not a valid email</small>
+            <small class="text-danger" *ngIf="emailInput.errors.required
+                      && emailInput.touched">
+              An Email is required</small>
+          </div>
+
+          <!-- Password -->
           <div class="form-group">
             <label for="inputPassword" class="col-form-label"></label>
-            <input #passwordInput="ngModel" [class.is-invalid]="passwordInput.invalid &&
-                    passwordInput.touched"
+            <input #passwordInput="ngModel"
+                   [class.is-invalid]="passwordInput.invalid && passwordInput.touched"
+                   [class.is-valid]="!(passwordInput.invalid && passwordInput.untouched)"
                    class="form-control" type="text" id="inputPassword"
                    [(ngModel)]="password" name="password"
                    placeholder="Password" required>
             <small class="text-danger" [class.d-none]="passwordInput.valid ||
-          passwordInput.untouched">A password is required</small>
+            passwordInput.untouched">A password is required</small>
           </div>
-          <div class="form-group">
 
+          <!-- Confirm Password  -->
+          <div class="form-group">
             <label for="PasswordConfirm" class="col-form-label"></label>
             <input #inputConfirmPassword="ngModel" pattern="{{passwordInput.value}}"
                    [class.is-invalid]="inputConfirmPassword.invalid &&
                    inputConfirmPassword.touched"
+                   [class.is-valid]="!(inputConfirmPassword.invalid &&
+                   inputConfirmPassword.untouched)"
                    class="form-control" type="text" id="PasswordConfirm"
                    [(ngModel)]="confirmPassword" name="confirmPassword"
                    placeholder="Confirm password" required>
@@ -139,6 +159,8 @@
                 Please confirm your password</small>
             </div>
           </div>
+
+          <!-- Modal footer -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               Close
