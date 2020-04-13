@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   password: string;
   username: string;
   confirmPassword : string;
+  emailPattern : string = "/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/";
 
   constructor(private validateService: ValidateService,
               private _flashMessagesService: FlashMessagesService,

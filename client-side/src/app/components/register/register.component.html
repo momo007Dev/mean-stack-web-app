@@ -30,7 +30,7 @@
             <label for="inputEmail">
             </label>
             <input #emailInput="ngModel"
-                   pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                   pattern="^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$"
                    [class.is-invalid]="emailInput.invalid && emailInput.touched"
                    [class.is-valid]="!(emailInput.invalid && emailInput.untouched)"
                    class="form-control" type="email" id="inputEmail"
