@@ -6,14 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(value: any, sname: string): any {
-    console.log(value, sname);
     if (sname === "" ){
       return value;
     }
     const users : any[] = [];
     value.forEach(x => {
-      let name : string = x.username;
-      if(name.startsWith(sname)){
+      let username : string = x.username;
+      if(username.startsWith(sname)){
         users.push(x);
       }
     });

@@ -1,12 +1,11 @@
 <app-min-nav-bar></app-min-nav-bar>
 
-<form class="form-inline">
+<form class="form-inline" style="float: right; margin-right: 20px">
   <label for="search"></label>
   <input #searcch="ngModel"
      class="form-control" type="search" id="search"
      [(ngModel)]="searchValue" name="username"
-     placeholder="search" aria-label="Search" style="margin-left: 10px">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+     placeholder="Filter" aria-label="Search" >
 </form>
 
 
@@ -81,6 +80,7 @@
 </div>
 
 
+<!-- User Table
 <br><br>
 <div class="container">
   <ag-grid-angular
@@ -93,3 +93,4 @@
 
 <br><br>
 
+-->
