@@ -61,7 +61,8 @@ export class QuestionsComponent implements OnInit {
        this.question.correctAnswerCount++;
      }
 
-    if (JSON.parse(choice.toLowerCase())) {
+    /**
+     * if (JSON.parse(choice.toLowerCase())) {
       this._flashMessagesService.show("correct answer", {
         cssClass: "alert-success w-25 text-center",
         timeout: 2000
@@ -72,7 +73,9 @@ export class QuestionsComponent implements OnInit {
         timeout: 2000,
       });
     }
-    await new Promise(r => setTimeout(r, 2000));
+     await new Promise(r => setTimeout(r, 2000));
+     */
+
     this.question.qnProgress++;
     if (this.question.qnProgress == (this.question.qns).length) {
       this.question.timeTaken = this.question.displayTimeElapsed();

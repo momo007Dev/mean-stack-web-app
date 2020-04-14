@@ -43,7 +43,7 @@ export class ResultsComponent implements OnInit {
   getLevel(){
     this.authService.getProfile()
       .toPromise()
-      .then( (data: any) => {
+      .then((data: any) => {
         this.description = this.questions.getLevelDescription(data.user.level);
       })
       .catch(err => {

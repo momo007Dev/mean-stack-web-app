@@ -330,13 +330,13 @@ const get_user_by_id = (req, res) => {
 
 
 function getLevel(user, score) {
-    if (score <= 0 && score < 2) {
+    if (score <= 0 || score < 2) {
         return this.user = "A1"
-    } else if (score <= 2 && score < 4) {
+    } else if (score <= 2 || score < 4) {
         return this.user = "A2"
-    } else if (score <= 4 && score < 6) {
+    } else if (score <= 4 || score < 6) {
         return this.user = "B1"
-    } else if (score <= 6 && score < 8) {
+    } else if (score <= 6 || score < 8) {
         return this.user = "B2"
     } else if (score <= 8 || score <= 9) {
         return this.user = "C1"
