@@ -1,35 +1,66 @@
-
 <div *ngIf="questions.qns">
-  <h2 class="header mb-4 font-weight-bold" style="margin-left: 24px">Completed!</h2>
-  <div class="card" style="margin: 74px">
-    <div class="card-body">
-      <div class="row" style="margin : 10px">
-        <div class="col-lg-3" style="margin-right: 20px">
-          <div class="">
-            <img src="../../../../assets/img/trophy.png" style="width: 250px; height: 250px;" alt="">
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div>
-            <br>
-            <h4>Danny</h4>
-            <h3>{{questions.correctAnswerCount}}/10</h3>
-            <span>Time Elapsed : 45 sec</span>
-          </div>
-          <div class="card-action">
-            <hr>
-            <button class="btn btn-primary" type="submit"
-                    style="width:130px; margin-left:40px;">Submit</button>
-          </div>
+<h2 class="header mb-4 font-weight-bold" style="margin-left: 24px">Completed!</h2>
+<div class="card" style="margin: 74px">
+  <div class="card-body">
+    <div class="row" style="margin : 10px">
+      <div class="col-lg-3" style="margin-right: 20px">
+        <div class="">
+          <img src="../../../../assets/img/trophy.png" style="width: 250px; height: 250px;" alt="">
         </div>
       </div>
+      <div class="col-lg-4">
+        <div>
+          <br>
+          <h4>Danny</h4>
+          <h3>{{questions.correctAnswerCount}}/10</h3>
+          <h4>Your is level is : {{level["Level"]}}</h4>
+          <span class="blockquote-footer" style="font-size: medium">
+            Time Elapsed : 45 sec</span>
+        </div>
+        <div class="card-action">
+          <hr>
+          <button [routerLink]="['/questions']"
+                  class="btn btn-outline-success my-2 my-sm-0" type="button"
+                  style="width:130px; margin-left:40px;">
+            <i class="fa fa-undo" aria-hidden="true"></i>
+            Restart
+          </button>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div>
+          <br>
+          <h4>{{level["Title"]}}</h4>
+          <p>
+            {{level["Subtitle"]}}
+          </p>
+          <ol>
+            <li>
+              {{level["1"]}}
+            </li>
+            <li>
+              {{level["2"]}}
+            </li>
+            <li>
+              {{level["3"]}}
+            </li>
+          </ol>
+
+        </div>
+
+      </div>
+
+
     </div>
   </div>
+</div>
+
   <ng-container *ngFor="let qn of questions.qns;let i=index">
     <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
 
       <div class="card-content">
-        <p class="card-title" style="color: white; margin: 20px">Question {{(i +1)}} :</p>
+        <p class="card-title" style="color: white; margin: 20px">Question {{(i + 1)}} :</p>
         <h5>
           <p style="color: white; margin: 20px">
             <strong>{{qn.question}}</strong>
@@ -39,7 +70,7 @@
       <div class="card" style="margin: 10px;">
         <p class="list-group list-group-flush">
           <ng-container *ngFor="let option of qn['answers'];let j = index">
-            <a  class="list-group-item list-group-item-action" >
+            <a class="list-group-item list-group-item-action">
               {{option.option}}
               <span *ngIf="(option['isCorrect']) === 'true'">
                  <i class="fa fa-check-circle right-align"
@@ -59,7 +90,7 @@
 </div>
 
 <div *ngIf="!questions.qns"
-  style="margin-bottom: 302px; margin-left: 20px; text-align: center; margin-top: 50px" >
+     style="margin-bottom: 302px; margin-left: 20px; text-align: center; margin-top: 50px">
   <i class="fa fa-exclamation-triangle fa-4x" style="color: red"></i>
   <h3>You need to finish the QCM</h3>
 </div>
