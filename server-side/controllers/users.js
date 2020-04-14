@@ -291,10 +291,11 @@ const update_user_score = (req, res) => {
 const get_user_by_id = (req, res) => {
     const {userId} = req.params;
     User.findById(userId)
-        .select("_id email role username password")
+        .select("_id email role username level password")
         .exec()
         .then(doc => {
             if (doc) {
+                console.log(doc);
                 res
                     .status(200)
                     .json({
@@ -303,6 +304,7 @@ const get_user_by_id = (req, res) => {
                             email: doc.email,
                             username: doc.username,
                             role: doc.role,
+                            level: doc.level,
                             password: doc.password
                         },
                         request: {

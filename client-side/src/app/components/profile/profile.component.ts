@@ -42,6 +42,7 @@ export class ProfileComponent implements OnInit {
           this.user = profile.user;
           this.email = profile.user.email;
           this.username = profile.user.username;
+          this.username = profile.user.username;
         },
         err => {
           console.log(err);

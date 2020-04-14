@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/filter.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/pipes/filter.pipe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,14 +187,7 @@
       <workItem from="1586354229472" duration="1390000" />
       <workItem from="1586721180416" duration="657000" />
       <workItem from="1586796086868" duration="21925000" />
-      <workItem from="1586873677805" duration="6839000" />
-    </task>
-    <task id="LOCAL-00083" summary="can split files now">
-      <created>1585189263707</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1585189263707</updated>
+      <workItem from="1586873677805" duration="7520000" />
     </task>
     <task id="LOCAL-00084" summary="added proper API file structure">
       <created>1585252361597</created>
@@ -533,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586880566799</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="added level in the all users ui">
+      <created>1586881289562</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1586881289562</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +540,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="working on validating create question submit" />
     <MESSAGE value="all questions ui stable" />
     <MESSAGE value="users table stable" />
     <MESSAGE value="created a min nav bar" />
@@ -566,7 +564,8 @@
     <MESSAGE value="added lowercase to filter" />
     <MESSAGE value="added a filter in all users ui" />
     <MESSAGE value="add level based on score in the backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="add level based on score in the backend" />
+    <MESSAGE value="added level in the all users ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="added level in the all users ui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -609,10 +608,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1586880565694">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1586881288581">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586880565694" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586881288581" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -641,10 +640,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586880572771">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586881300438">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586880572771" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586881300438" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
