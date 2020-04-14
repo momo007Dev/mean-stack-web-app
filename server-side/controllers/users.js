@@ -336,7 +336,7 @@ function getLevel(user, score) {
         return this.user = "B1"
     } else if (score <= 6 && score < 8) {
         return this.user = "B2"
-    } else if (score <= 8 && score < 9) {
+    } else if (score <= 8 || score <= 9) {
         return this.user = "C1"
     } else {
         return this.user = "C2"
