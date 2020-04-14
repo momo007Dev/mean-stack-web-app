@@ -1,20 +1,14 @@
-
 <app-min-nav-bar></app-min-nav-bar>
+
 <form class="form-inline">
-  <input class="form-control mr-sm-2 " type="search" placeholder="Search"
-         aria-label="Search" style="margin-left: 10px"
-     (keyup)="quickSearch()" [(ngModel)]="searchValue">
+  <label for="search"></label>
+  <input #searcch="ngModel"
+     class="form-control" type="search" id="search"
+     [(ngModel)]="searchValue" name="username"
+     placeholder="search" aria-label="Search" style="margin-left: 10px">
   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
 
-<br><br>
-<div class="container">
-  <ag-grid-angular
-    style="width: 580px; height: 232px; font-size: medium" class="ag-theme-balham"
-    [columnDefs]="colDefs" [animateRows]="true" (gridReady)="onGridReady($event)">
-
-  </ag-grid-angular>
-</div>
 
 <!-- User Table -->
 <div class="container text-center my-3">
@@ -68,7 +62,7 @@
 
     <!-- Table body -->
     <tbody id="demo">
-    <ng-container *ngFor="let user of users; let i = index">
+    <ng-container *ngFor="let user of users | filter : searchValue; let i = index">
       <tr onmousemove="this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
                       this.style.color='green'"
           onmouseout="this.style.backgroundColor = ''; this.style.color=''">
@@ -86,4 +80,16 @@
 
 </div>
 
+
+<br><br>
+<div class="container">
+  <ag-grid-angular
+    style="width: 580px; height: 232px; font-size: medium" class="ag-theme-balham"
+    [columnDefs]="colDefs" [animateRows]="true" (gridReady)="onGridReady($event)">
+
+  </ag-grid-angular>
+</div>
+
+
+<br><br>
 

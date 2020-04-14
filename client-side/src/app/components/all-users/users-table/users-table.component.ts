@@ -11,7 +11,7 @@ export class UsersTableComponent implements OnInit {
 
   private colDefs;
   private gridColumnApi;
-  private searchValue;
+  private searchValue : string = "";
   private gridApi;
 
   users: any;
@@ -27,6 +27,8 @@ export class UsersTableComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    console.log(this.searchValue);
 
     this.colDefs = [
       {headerName : "Usernames", field : "username", width : 150},

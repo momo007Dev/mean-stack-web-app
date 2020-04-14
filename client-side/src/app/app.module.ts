@@ -35,6 +35,7 @@ import { MinNavBArComponent } from './components/navbar/min-nav-bar/min-nav-bar.
 import { UsersTableComponent } from './components/all-users/users-table/users-table.component';
 import { ValidInputDirective } from './directives/valid-input.directive';
 import {AgGridModule} from "ag-grid-angular";
+import { FilterPipe } from './pipes/filter.pipe';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -76,6 +77,7 @@ enableProdMode();
     MinNavBArComponent,
     UsersTableComponent,
     ValidInputDirective,
+    FilterPipe,
   ],
 
     imports: [
