@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'filter'
@@ -6,13 +6,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(value: any, sname: string): any {
-    if (sname === "" ){
+    if (sname === "") {
       return value;
     }
-    const users : any[] = [];
+    const users: Array<any> = [];
     value.forEach(x => {
-      let username : string = x.username;
-      if(username.startsWith(sname.toLocaleLowerCase())){
+      let username: string = x.username;
+      let email: string = x.email;
+      let score: string = x.score.toString();
+      if (username.startsWith(sname.toLocaleLowerCase()) ||
+        email.startsWith(sname.toLocaleLowerCase()) ||
+        score.startsWith(sname)) {
         users.push(x);
       }
     });

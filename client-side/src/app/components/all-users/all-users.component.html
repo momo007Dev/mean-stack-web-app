@@ -1,4 +1,12 @@
 <app-min-nav-bar></app-min-nav-bar>
+<br>
+<form class="form-inline" style=" margin-left: 540px">
+  <label for="search"></label>
+  <input #searcch="ngModel"
+         class="form-control" type="search" id="search"
+         [(ngModel)]="searchValue" name="username"
+         placeholder="Filter" aria-label="Search" >
+</form>
 
 <div class="container mb-5">
 
@@ -11,7 +19,7 @@
 
     </div>
 
-    <ng-container *ngFor="let user of users; let i = index">
+    <ng-container *ngFor="let user of users | filter : searchValue; let i = index">
       <!--Grid column-->
       <div *ngIf="user['role'] !== 'admin' && user['role'] !== 'teacher'" class="col-lg-4
         col-md-12 mb-lg-0 mb-4">

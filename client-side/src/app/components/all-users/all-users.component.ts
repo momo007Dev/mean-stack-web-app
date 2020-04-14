@@ -9,13 +9,17 @@ import {Router} from "@angular/router";
   styleUrls: ['./all-users.component.css']
 })
 export class AllUsersComponent implements OnInit {
+
   users: any[];
   email: string;
   username: string;
   password: string;
+
   confirmPassword: string;
   userId: string;
   alertMessage: string = "";
+
+  searchValue: string = "";
 
   constructor(private authService: AuthService,
               private _flashMessagesService: FlashMessagesService,
