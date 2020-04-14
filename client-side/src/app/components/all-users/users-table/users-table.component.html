@@ -1,5 +1,20 @@
 
 <app-min-nav-bar></app-min-nav-bar>
+<form class="form-inline">
+  <input class="form-control mr-sm-2 " type="search" placeholder="Search"
+         aria-label="Search" style="margin-left: 10px"
+     (keyup)="quickSearch()" [(ngModel)]="searchValue">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<br><br>
+<div class="container">
+  <ag-grid-angular
+    style="width: 580px; height: 232px; font-size: medium" class="ag-theme-balham"
+    [columnDefs]="colDefs" [animateRows]="true" (gridReady)="onGridReady($event)">
+
+  </ag-grid-angular>
+</div>
 
 <!-- User Table -->
 <div class="container text-center my-3">
@@ -70,3 +85,5 @@
   <!-- Table  -->
 
 </div>
+
+

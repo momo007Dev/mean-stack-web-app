@@ -99,13 +99,13 @@
                    [class.is-valid]="!(usernameInput.invalid && usernameInput.untouched)"
                    class="form-control" type="text" id="username"
                    [(ngModel)]="username" name="username"
-                   placeholder="Email address or Username" value="{{username}}" required>
+                   placeholder="Username" value="{{username}}" required>
             <small class="text-danger" [class.d-none]="usernameInput.valid ||
             usernameInput.untouched">A username is required</small>
           </div>
 
           <!-- Email address -->
-          <div class="md-form md-outline">
+          <div class="form-group">
             <label for="inputEmail">
             </label>
             <input #emailInput="ngModel"

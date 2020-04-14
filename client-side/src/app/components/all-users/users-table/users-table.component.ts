@@ -9,6 +9,11 @@ import {AuthService} from "../../../services/auth.service";
 })
 export class UsersTableComponent implements OnInit {
 
+  private colDefs;
+  private gridColumnApi;
+  private searchValue;
+  private gridApi;
+
   users: any;
 
   sortUsername: boolean = false;
@@ -22,6 +27,14 @@ export class UsersTableComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.colDefs = [
+      {headerName : "Usernames", field : "username", width : 150},
+      {headerName : "Email", field : "email", width : 160},
+      {headerName : "Score", field : "score", width : 120},
+      {headerName : "Level", field : "username", width : 120},
+      ];
+
     this.showUsersInTable();
   }
 
@@ -67,6 +80,16 @@ export class UsersTableComponent implements OnInit {
           : (a.email < b.email) ? -1 : 0);
       }
     }
+  }
+
+  onGridReady(event){
+  this.gridApi = event.api;
+  this.gridColumnApi = event.columnApi;
+  event.api.setRowData(this.users);
+  }
+
+  quickSearch(){
+    this.gridApi.setQuickFilter(this.searchValue);
   }
 
 }

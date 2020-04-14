@@ -34,6 +34,7 @@ import { AllQuestionsComponent } from './components/all-users/all-questions/all-
 import { MinNavBArComponent } from './components/navbar/min-nav-bar/min-nav-bar.component';
 import { UsersTableComponent } from './components/all-users/users-table/users-table.component';
 import { ValidInputDirective } from './directives/valid-input.directive';
+import {AgGridModule} from "ag-grid-angular";
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -77,16 +78,17 @@ enableProdMode();
     ValidInputDirective,
   ],
 
-  imports: [
-    BrowserModule,
-    NgbModule,
-    FormsModule,
-    NgxPaginationModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes),
-    FlashMessagesModule.forRoot(),
-    ChartModule,
-  ],
+    imports: [
+        BrowserModule,
+        NgbModule,
+        FormsModule,
+        NgxPaginationModule,
+        HttpClientModule,
+        RouterModule.forRoot(appRoutes),
+        FlashMessagesModule.forRoot(),
+        ChartModule,
+        AgGridModule.withComponents([]),
+    ],
   providers: [
     ValidateService,
     AuthService,
