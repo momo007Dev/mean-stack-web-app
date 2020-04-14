@@ -12,7 +12,7 @@ export class FilterPipe implements PipeTransform {
     const users : any[] = [];
     value.forEach(x => {
       let username : string = x.username;
-      if(username.startsWith(sname)){
+      if(username.startsWith(sname.toLocaleLowerCase())){
         users.push(x);
       }
     });
