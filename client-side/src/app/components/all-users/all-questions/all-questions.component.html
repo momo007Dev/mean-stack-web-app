@@ -119,15 +119,17 @@
         </button>
       </div>
       <div class="modal-body" style="margin-left: 40px">
+
         <!-- Question -->
         <label for="questionText">Add your question here</label>
-        <textarea #textAreaElement="ngModel"
-                  [class.is-invalid]="textAreaElement.invalid
-              && textAreaElement.touched" class="form-control" id="questionText" rows="3"
+        <textarea #textArea0="ngModel"
+                  [class.is-invalid]="textArea0.invalid && textArea0.touched"
+                  [class.is-valid]="!(textArea0.invalid && textArea0.untouched)"
+                  class="form-control" id="questionText" rows="3"
                   [(ngModel)]="question" name="question"
                   style="width: 500px" required></textarea>
-        <small class="text-danger" [class.d-none]="textAreaElement.valid ||
-          textAreaElement.untouched">A question is required</small>
+        <small class="text-danger" [class.d-none]="textArea0.valid ||
+          textArea0.untouched">A question is required</small>
         <hr>
 
         <section class="section-preview">
@@ -141,16 +143,17 @@
             <label class="custom-control-label" for="option1"
                    style="float: left">
             </label>
-            <textarea #textAreaElement1="ngModel"
-                      [class.is-invalid]="textAreaElement1.invalid
-                  && textAreaElement1.touched" class="form-control" id="answer1" rows="2"
+            <textarea #textArea1="ngModel"
+                      [class.is-invalid]="textArea1.invalid&& textArea1.touched"
+                      [class.is-valid]="!(textArea1.invalid && textArea1.untouched)"
+                      class="form-control" id="answer1" rows="2"
                       [(ngModel)]="option1" name="option1"
                       style="width: 440px" required></textarea>
 
             <label for="answer1">
             </label>
-            <small class="text-danger" [class.d-none]="textAreaElement1.valid ||
-            textAreaElement1.untouched">1st answer required</small>
+            <small class="text-danger" [class.d-none]="textArea1.valid ||
+            textArea1.untouched">1st answer required</small>
           </div>
 
           <!-- Answer 2 -->
@@ -161,14 +164,15 @@
             <label class="custom-control-label" for="option2"
                    style="float: left"></label>
 
-            <textarea #textAreaElement2="ngModel"
-                      [class.is-invalid]="textAreaElement2.invalid
-                && textAreaElement2.touched" class="form-control" id="answer2" rows="2"
+            <textarea #textArea2="ngModel"
+                      [class.is-invalid]="textArea2.invalid && textArea2.touched"
+                      [class.is-valid]="!(textArea2.invalid && textArea2.untouched)"
+                      class="form-control" id="answer2" rows="2"
                       [(ngModel)]="option2" name="option2"
                       style="width: 440px" required></textarea>
             <label for="answer2"></label>
-            <small class="text-danger" [class.d-none]="textAreaElement2.valid ||
-            textAreaElement2.untouched">2nd answer required</small>
+            <small class="text-danger" [class.d-none]="textArea2.valid ||
+            textArea2.untouched">2nd answer required</small>
           </div>
 
           <!-- Answer 3 -->
@@ -179,14 +183,15 @@
             <label class="custom-control-label" for="option3"
                    style="float: left"></label>
 
-            <textarea #textAreaElement3="ngModel"
-                      [class.is-invalid]="textAreaElement3.invalid
-                 && textAreaElement3.touched" class="form-control" id="answer3" rows="2"
+            <textarea #textArea3="ngModel"
+                      [class.is-invalid]="textArea3.invalid && textArea3.touched"
+                      [class.is-valid]="!(textArea3.invalid && textArea3.untouched)"
+                      class="form-control" id="answer3" rows="2"
                       [(ngModel)]="option3" name="option3"
                       style="width: 440px" required></textarea>
             <label for="answer3"></label>
-            <small class="text-danger" [class.d-none]="textAreaElement3.valid ||
-            textAreaElement3.untouched">3rd answer required</small>
+            <small class="text-danger" [class.d-none]="textArea3.valid ||
+            textArea3.untouched">3rd answer required</small>
           </div>
 
           <!-- Answer 4 -->
@@ -197,14 +202,15 @@
             <label class="custom-control-label" for="option4"
                    style="float: left"></label>
 
-            <textarea #textAreaElement4="ngModel"
-                      [class.is-invalid]="textAreaElement4.invalid
-                  && textAreaElement4.touched" class="form-control" id="answer4" rows="2"
+            <textarea #textArea4="ngModel"
+                      [class.is-invalid]="textArea4.invalid && textArea4.touched"
+                      [class.is-valid]="!(textArea4.invalid && textArea4.untouched)"
+                      class="form-control" id="answer4" rows="2"
                       [(ngModel)]="option4" name="option4"
                       style="width: 440px" required></textarea>
             <label for="answer4"></label>
-            <small class="text-danger" [class.d-none]="textAreaElement4.valid ||
-            textAreaElement4.untouched">4th answer required</small>
+            <small class="text-danger" [class.d-none]="textArea4.valid ||
+            textArea4.untouched">4th answer required</small>
           </div>
 
         </section>
@@ -216,11 +222,11 @@
                   data-dismiss="modal">Close
           </button>
           <button appAddClass (click)="onCreateQuestion()" type="button" class="btn btn-primary"
-                  [disabled]="textAreaElement4.invalid ||
-                            textAreaElement3.invalid ||
-                            textAreaElement2.invalid ||
-                            textAreaElement1.invalid ||
-                            textAreaElement.invalid || !submitOneAnswerCheck()">Submit
+                  [disabled]="textArea4.invalid ||
+                            textArea3.invalid ||
+                            textArea2.invalid ||
+                            textArea1.invalid ||
+                            textArea0.invalid || !submitOneAnswerCheck()">Submit
           </button>
         </div>
       </div>

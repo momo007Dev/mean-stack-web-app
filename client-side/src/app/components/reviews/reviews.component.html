@@ -110,12 +110,13 @@
           Rate: <b>{{currentRate}}</b>
           <br>
           <label for="reviewComment">Your comment</label>
-          <textarea #textAreaElement="ngModel" [class.is-invalid]="textAreaElement.invalid
-          && textAreaElement.touched" class="form-control" id="reviewComment" rows="4"
+          <textarea #textArea="ngModel"
+                    [class.is-invalid]="textArea.invalid && textArea.touched" class="form-control" id="reviewComment" rows="4"
+                    [class.is-valid]="!(textArea.invalid && textArea.untouched)"
                     [(ngModel)]="reviewText" name="reviewText"
                     style="width: 440px" required></textarea>
-          <small class="text-danger" [class.d-none]="textAreaElement.valid ||
-          textAreaElement.untouched">Review Text is required</small>
+          <small class="text-danger" [class.d-none]="textArea.valid ||
+          textArea.untouched">Review Text is required</small>
           <br>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
