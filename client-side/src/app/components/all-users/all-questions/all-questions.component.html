@@ -116,19 +116,23 @@
         <section class="section-preview">
 
           <!-- Answer 1 -->
-          <small style="margin-left: 25px">Answer 1</small>
+          <small style="margin-left: 25px">Answer 1
+            <i style="color: red; margin-left: 350px" class="fa fa-times fa-2x" aria-hidden="true"></i>
+          </small>
           <div class="custom-control custom-checkbox">
             <input (click)="buttonChecked($event.target)" type="checkbox"
                    class="custom-control-input" id="option1">
             <label class="custom-control-label" for="option1"
-                   style="float: left"></label>
-
+                   style="float: left">
+            </label>
             <textarea #textAreaElement1="ngModel"
                       [class.is-invalid]="textAreaElement1.invalid
                   && textAreaElement1.touched" class="form-control" id="answer1" rows="2"
                       [(ngModel)]="option1" name="option1"
                       style="width: 440px" required></textarea>
-            <label for="answer1"></label>
+
+            <label for="answer1">
+            </label>
             <small class="text-danger" [class.d-none]="textAreaElement1.valid ||
             textAreaElement1.untouched">1st answer required</small>
           </div>
@@ -140,7 +144,6 @@
                    class="custom-control-input" id="option2">
             <label class="custom-control-label" for="option2"
                    style="float: left"></label>
-
 
             <textarea #textAreaElement2="ngModel"
                       [class.is-invalid]="textAreaElement2.invalid
@@ -216,7 +219,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle1">Confirm Delete</h5>
-        <button (click)="closeAlert()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button (click)="closeAlert()" type="button" class="close"
+                data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

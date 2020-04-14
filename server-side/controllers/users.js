@@ -14,9 +14,10 @@ const user_signup = (req, res) => {
     }
 
     User.find({
-            $or:[
-                {email: req.body.email}, {username: req.body.username}
-            ]})
+        $or: [
+            {email: req.body.email}, {username: req.body.username}
+        ]
+    })
         .exec()
         .then(user => {
             console.log(user);
@@ -84,9 +85,10 @@ const user_login = (req, res) => {
     }
 
     User.findOne({
-        $or:[
+        $or: [
             {email: pseudo}, {username: pseudo}
-        ]})
+        ]
+    })
         .exec()
         .then(user => {
             if (!user) {
@@ -214,7 +216,8 @@ const update_user = (req, res) => {
         if (err) {
             return res.status(400).json({
                 message: "password field is required !"
-            });}
+            });
+        }
         req.body.password = hash;
         User.updateOne({_id: userId}, {$set: req.body})
             .exec()
@@ -246,6 +249,7 @@ const update_user = (req, res) => {
 
 const update_user_score = (req, res) => {
     const {userId} = req.params;
+    console.log(req.user);
 
     if ((Number(req.body.score) > 10)) {
         return res
@@ -255,7 +259,8 @@ const update_user_score = (req, res) => {
             });
     }
 
-    const userScore = {"score": req.body.score};
+    const userScore =
+        {"score": req.body.score, "level": getLevel(req.user, req.body.score)};
     User.updateOne({_id: userId}, {$set: userScore})
         .exec()
         .then(result => {
@@ -320,6 +325,23 @@ const get_user_by_id = (req, res) => {
                 });
         });
 };
+
+
+function getLevel(user, score) {
+    if (score <= 0 && score < 2) {
+        return this.user = "A1"
+    } else if (score <= 2 && score < 4) {
+        return this.user = "A2"
+    } else if (score <= 4 && score < 6) {
+        return this.user = "B1"
+    } else if (score <= 6 && score < 8) {
+        return this.user = "B2"
+    } else if (score <= 8 && score < 9) {
+        return this.user = "C1"
+    } else {
+        return this.user = "C2"
+    }
+}
 
 
 module.exports = {
