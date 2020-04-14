@@ -13,9 +13,9 @@
           <br>
           <h4>Danny</h4>
           <h3>{{questions.correctAnswerCount}}/10</h3>
-          <h4>Your is level is : {{level["Level"]}}</h4>
+          <h4>Your is level is : {{description["Level"]}}</h4>
           <span class="blockquote-footer" style="font-size: medium">
-            Time Elapsed : 45 sec</span>
+            Time Elapsed : {{questions.timeTaken}}</span>
         </div>
         <div class="card-action">
           <hr>
@@ -31,19 +31,19 @@
       <div class="col-lg-4">
         <div>
           <br>
-          <h4>{{level["Title"]}}</h4>
+          <h4>{{description["Title"]}}</h4>
           <p>
-            {{level["Subtitle"]}}
+            {{description["Subtitle"]}}
           </p>
           <ol>
             <li>
-              {{level["1"]}}
+              {{description["1"]}}
             </li>
             <li>
-              {{level["2"]}}
+              {{description["2"]}}
             </li>
             <li>
-              {{level["3"]}}
+              {{description["3"]}}
             </li>
           </ol>
 

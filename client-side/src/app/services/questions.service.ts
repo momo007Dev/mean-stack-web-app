@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {ReviewsService} from "./reviews.service";
 
 const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 
@@ -9,16 +10,18 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json; charset
 export class QuestionsService {
   qns: any[];
   seconds: number;
-  timer;
+  timer : any;
+  timeTaken : any;
   qnProgress: number;
   correctAnswerCount: number = 0;
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient, private reviews: ReviewsService) {
   }
 
   displayTimeElapsed() {
     return Math.floor(this.seconds / 3600) + ':' + Math.floor(this.seconds / 60)
       + ':' + Math.floor(this.seconds % 60);
+
   }
 
   getQuestions() {
@@ -30,11 +33,10 @@ export class QuestionsService {
   }
 
   deleteQuestion(questionId: any) {
-    // `/server/api/user/${userEmail}/reviews/${reviewId}`
     return this._http.delete(`/server/api/questions/${questionId}`, {headers});
   }
 
-  levelDesc() {
+  levelDescription() {
     return {
 
       'A1': {
@@ -93,19 +95,19 @@ export class QuestionsService {
     };
   }
 
-  getLevelDesc(level) {
+  getLevelDescription(level) {
     if (level === 'A1') {
-      return this.levelDesc().A1;
+      return this.levelDescription().A1;
     } else if (level === 'A2') {
-      return this.levelDesc().A2;
+      return this.levelDescription().A2;
     } else if (level === 'B1') {
-      return this.levelDesc().B1;
+      return this.levelDescription().B1;
     } else if (level === 'B2') {
-      return this.levelDesc().B2;
+      return this.levelDescription().B2;
     } else if (level === 'C1') {
-      return this.levelDesc().C1;
+      return this.levelDescription().C1;
     } else if (level === 'C2') {
-      return this.levelDesc().C2;
+      return this.levelDescription().C2;
     }
   }
 
