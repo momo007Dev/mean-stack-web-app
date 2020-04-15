@@ -2,6 +2,12 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
 const questionSchema = new mongoose.Schema({
+
+    type: {
+        type: String,
+        required: true,
+        enum: ["multiple", "boolean", "fill in"]
+    },
     question: {
             type: String,
             required: true,

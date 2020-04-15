@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "type": "module",
   "description": "back end server with node.js",
   "main": "app.js",
   "scripts": {
