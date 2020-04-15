@@ -17,21 +17,29 @@ export class AllQuestionsComponent implements OnInit {
   option3: any;
   option4: any;
 
+  optionB1: any;
+  optionB2: any;
+
   alertMessage: string;
   deleteButton: boolean = false;
 
   questionId: any;
   users: any;
 
-  totalItems : number;
-  page:number = 1;
+  totalItems: number;
+  page: number = 1;
 
 
-  answerArray: Object = {
+  multipleAnswerArray: Object = {
     "option1": false,
     "option2": false,
     "option3": false,
     "option4": false,
+  };
+
+  booleanAnswerArray: Object = {
+    "optionB1": false,
+    "optionB2": false,
   };
 
   constructor(
@@ -58,12 +66,17 @@ export class AllQuestionsComponent implements OnInit {
       });
   }
 
-  buttonChecked(event) {
-    (event.checked) ? this.answerArray[event.id] = true : this.answerArray[event.id] = false;
+  buttonCheckeds(event : any, tab : Object) {
+    (event.checked) ? tab[event.id] = true : tab[event.id] = false;
+  }
+
+  private buttonChecked(event) {
+    this.buttonCheckeds(event, this.multipleAnswerArray);
   }
 
   submitOneAnswerCheck() {
-    return Object.keys(this.answerArray).filter(x => this.answerArray[x]).length === 1;
+    return Object.keys(this.multipleAnswerArray)
+      .filter(x => this.multipleAnswerArray[x]).length === 1;
   }
 
   onCreateQuestion() {
@@ -73,19 +86,19 @@ export class AllQuestionsComponent implements OnInit {
       "answers": [
         {
           "option": this.option1,
-          "isCorrect": this.answerArray["option1"]
+          "isCorrect": this.multipleAnswerArray["option1"]
         },
         {
           "option": this.option2,
-          "isCorrect": this.answerArray["option2"]
+          "isCorrect": this.multipleAnswerArray["option2"]
         },
         {
           "option": this.option3,
-          "isCorrect": this.answerArray["option3"]
+          "isCorrect": this.multipleAnswerArray["option3"]
         },
         {
           "option": this.option4,
-          "isCorrect": this.answerArray["option4"]
+          "isCorrect": this.multipleAnswerArray["option4"]
         }
       ]
     };
@@ -125,7 +138,7 @@ export class AllQuestionsComponent implements OnInit {
 
   }
 
-  trackByMethod(index:number, el:any): number {
+  trackByMethod(index: number, el: any): number {
     return el;
   }
 

@@ -4,7 +4,7 @@
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,14 +186,7 @@
       <workItem from="1586354229472" duration="1390000" />
       <workItem from="1586721180416" duration="657000" />
       <workItem from="1586796086868" duration="21925000" />
-      <workItem from="1586873677805" duration="23296000" />
-    </task>
-    <task id="LOCAL-00089" summary="added update in api doc">
-      <created>1585360048065</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1585360048066</updated>
+      <workItem from="1586873677805" duration="25722000" />
     </task>
     <task id="LOCAL-00090" summary="cleaned users routes">
       <created>1585429805703</created>
@@ -531,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586899468628</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="added check validation in create question ui">
+      <created>1586907481949</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1586907481950</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +539,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="edwin working very hard" />
     <MESSAGE value="edwin working very hard !!!!!" />
     <MESSAGE value="questions ui stable" />
     <MESSAGE value="questions ui stable but question pagination to be worked on" />
@@ -564,7 +563,8 @@
     <MESSAGE value="fully updated the results ui" />
     <MESSAGE value="removed a bug in level calculation in the backend" />
     <MESSAGE value="added multiple choices type of questions in question ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="added multiple choices type of questions in question ui" />
+    <MESSAGE value="added check validation in create question ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="added check validation in create question ui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -607,10 +607,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1586899467662">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1586907480964">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586899467662" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586907480964" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -639,10 +639,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586899474116">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1586907483321">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586899474116" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586907483321" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -659,6 +659,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="439" y="187" key="git4idea.rebase.GitRebaseDialog/0.0.1280.689@0.0.1280.689" timestamp="1586048623866" />
+    <state x="367" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1586909152066">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="367" y="0" key="refactoring.ChangeSignatureDialog/0.0.1280.689@0.0.1280.689" timestamp="1586909152066" />
     <state x="297" y="153" key="run.anything.popup" timestamp="1586112061496">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

@@ -106,9 +106,9 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Multiple choice question modal -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
-     aria-labelledby="myLargeModalLabel" aria-hidden="true" id="toto">
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -270,26 +270,90 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Boolean question modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create a new question</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title">Create a new question</h5>
+        <button (click)="closeAlert()" type="button" class="close" data-dismiss="modal"
+                aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body font-weight-bold" style="text-align: center">
-        <p> Which type of question you want to create ? </p>
-        <br>
-        <button type="button" class="btn btn-warning btn-sm"
-                style="float: left">Boolean</button>
-        <button type="button" class="btn btn-success btn-sm">Fill in</button>
-        <button type="button" class="btn btn-primary btn-sm"
-                data-toggle="modal" data-target="#toto"
-                data-dismiss="modal" style="float: right">Multiple</button>
+      <div class="modal-body" style="margin-left: 40px">
+
+        <!-- Question -->
+        <label for="questionText1">Add your question here</label>
+        <textarea #textAreaB0="ngModel"
+                  [class.is-invalid]="textAreaB0.invalid && textAreaB0.touched"
+                  [class.is-valid]="!(textAreaB0.invalid && textAreaB0.untouched)"
+                  class="form-control" id="questionText1" rows="3"
+                  [(ngModel)]="question" name="question"
+                  style="width: 500px" required></textarea>
+        <small class="text-danger" [class.d-none]="textAreaB0.valid ||
+          textAreaB0.untouched">A question is required</small>
+        <hr>
+
+        <section class="section-preview">
+
+          <!-- Answer 1 -->
+          <small style="margin-left: 25px">Answer 1
+          </small>
+          <div class="custom-control custom-checkbox">
+            <input (click)="buttonChecked($event.target)" type="checkbox"
+                   class="custom-control-input" id="optionB1">
+            <label class="custom-control-label" for="optionB1"
+                   style="float: left">
+            </label>
+            <textarea #textAreaB1="ngModel"
+                      [class.is-invalid]="textAreaB1.invalid&& textAreaB1.touched"
+                      [class.is-valid]="!(textAreaB1.invalid && textAreaB1.untouched)"
+                      class="form-control" id="answerB1" rows="2"
+                      [(ngModel)]="optionB1" name="answerB1"
+                      style="width: 440px" required></textarea>
+
+            <label for="answerB1">
+            </label>
+            <small class="text-danger" [class.d-none]="textAreaB1.valid ||
+            textAreaB1.untouched">1st answer required</small>
+          </div>
+
+          <!-- Answer 2 -->
+          <small style="margin-left: 25px">Answer 2</small>
+          <div class="custom-control custom-checkbox">
+            <input (click)="buttonChecked($event.target)" type="checkbox"
+                   class="custom-control-input" id="optionB2">
+            <label class="custom-control-label" for="optionB2"
+                   style="float: left"></label>
+
+            <textarea #textAreaB2="ngModel"
+                      [class.is-invalid]="textAreaB2.invalid && textAreaB2.touched"
+                      [class.is-valid]="!(textAreaB2.invalid && textAreaB2.untouched)"
+                      class="form-control" id="answerB2" rows="2"
+                      [(ngModel)]="optionB2" name="answerB2"
+                      style="width: 440px" required></textarea>
+
+            <label for="answerB2"></label>
+            <small class="text-danger" [class.d-none]="textAreaB2.valid ||
+            textAreaB2.untouched">2nd answer required</small>
+          </div>
+
+        </section>
+        <div class="modal-footer">
+          <span style="color: green; margin-right: 280px">
+            {{alertMessage}}
+          </span>
+          <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+                  data-dismiss="modal">Close
+          </button>
+          <button appAddClass (click)="onCreateQuestion()" type="button" class="btn btn-primary"
+                  [disabled]="textAreaB2.invalid ||
+                            textAreaB1.invalid ||
+                            textAreaB0.invalid || !submitOneAnswerCheck()">Submit
+          </button>
+        </div>
       </div>
     </div>
   </div>
