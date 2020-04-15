@@ -21,12 +21,14 @@
       </button>
       <div class="dropdown-menu" style="background-color: #28A745;">
         <a class="dropdown-item" data-toggle="modal" data-target=".bd-example-modal-lg"
-           href="#" style="font-weight: bold">Multiple choice</a>
+           href="#" style="font-weight: bold" id="multipleQuestion"
+           (click)="questionTypeChoosen($event.target)">Multiple choice</a>
 
         <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal"
-           href="#" style="font-weight: bold">Fill in</a>
+           href="#" style="font-weight: bold" id="booleanQuestion"
+           (click)="questionTypeChoosen($event.target)">Boolean</a>
 
-        <a class="dropdown-item" href="#" style="font-weight: bold">Boolean</a>
+        <a class="dropdown-item" href="#" style="font-weight: bold">Fill in</a>
 
         <div class="dropdown-divider" style="font-weight: bold"></div>
         <a class="dropdown-item" href="#" style="font-weight: bold">Separated link</a>
@@ -104,7 +106,6 @@
     </pagination-controls>
   </div>
 </div>
-
 
 <!-- Multiple choice question modal -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
@@ -221,7 +222,8 @@
           <button (click)="closeAlert()" type="button" class="btn btn-secondary"
                   data-dismiss="modal">Close
           </button>
-          <button appAddClass (click)="onCreateQuestion()" type="button" class="btn btn-primary"
+          <button appAddClass (click)="onCreateQuestion()" type="button"
+                  class="btn btn-primary"
                   [disabled]="textArea4.invalid ||
                             textArea3.invalid ||
                             textArea2.invalid ||
@@ -348,9 +350,9 @@
           <button (click)="closeAlert()" type="button" class="btn btn-secondary"
                   data-dismiss="modal">Close
           </button>
-          <button appAddClass (click)="onCreateQuestion()" type="button" class="btn btn-primary"
-                  [disabled]="textAreaB2.invalid ||
-                            textAreaB1.invalid ||
+          <button appAddClass (click)="onCreateQuestion()" type="button"
+                  class="btn btn-primary"
+                  [disabled]="textAreaB2.invalid || textAreaB1.invalid ||
                             textAreaB0.invalid || !submitOneAnswerCheck()">Submit
           </button>
         </div>

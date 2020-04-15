@@ -11,6 +11,7 @@ import {QuestionsService} from "../../../services/questions.service";
 })
 export class AllQuestionsComponent implements OnInit {
 
+  questionType: any;
   question: any;
   option1: any;
   option2: any;
@@ -30,14 +31,14 @@ export class AllQuestionsComponent implements OnInit {
   page: number = 1;
 
 
-  multipleAnswerArray: Object = {
+  multipleAnswer: Object = {
     "option1": false,
     "option2": false,
     "option3": false,
     "option4": false,
   };
 
-  booleanAnswerArray: Object = {
+  booleanAnswer: Object = {
     "optionB1": false,
     "optionB2": false,
   };
@@ -66,17 +67,26 @@ export class AllQuestionsComponent implements OnInit {
       });
   }
 
-  buttonCheckeds(event : any, tab : Object) {
+  checkArray(event: any, tab: Object) {
     (event.checked) ? tab[event.id] = true : tab[event.id] = false;
   }
 
   private buttonChecked(event) {
-    this.buttonCheckeds(event, this.multipleAnswerArray);
+    this.checkArray(event, this.multipleAnswer);
+    this.checkArray(event, this.booleanAnswer);
+  }
+
+  questionTypeChoosen(event) {
+    this.questionType = event.id;
   }
 
   submitOneAnswerCheck() {
-    return Object.keys(this.multipleAnswerArray)
-      .filter(x => this.multipleAnswerArray[x]).length === 1;
+    return (this.questionType === 'multipleQuestion') ?
+      Object.keys(this.multipleAnswer)
+        .filter(x => this.multipleAnswer[x]).length === 1 :
+      (this.questionType === 'booleanQuestion') ?
+        Object.keys(this.booleanAnswer)
+          .filter(x => this.booleanAnswer[x]).length === 1 : undefined;
   }
 
   onCreateQuestion() {
@@ -86,19 +96,19 @@ export class AllQuestionsComponent implements OnInit {
       "answers": [
         {
           "option": this.option1,
-          "isCorrect": this.multipleAnswerArray["option1"]
+          "isCorrect": this.multipleAnswer["option1"]
         },
         {
           "option": this.option2,
-          "isCorrect": this.multipleAnswerArray["option2"]
+          "isCorrect": this.multipleAnswer["option2"]
         },
         {
           "option": this.option3,
-          "isCorrect": this.multipleAnswerArray["option3"]
+          "isCorrect": this.multipleAnswer["option3"]
         },
         {
           "option": this.option4,
-          "isCorrect": this.multipleAnswerArray["option4"]
+          "isCorrect": this.multipleAnswer["option4"]
         }
       ]
     };
@@ -144,5 +154,7 @@ export class AllQuestionsComponent implements OnInit {
 
   closeAlert() {
     this.alertMessage = "";
+    Object.keys(this.multipleAnswer).forEach(x => this.multipleAnswer[x] = false);
+    Object.keys(this.booleanAnswer).forEach(x => this.booleanAnswer[x] = false);
   }
 }
