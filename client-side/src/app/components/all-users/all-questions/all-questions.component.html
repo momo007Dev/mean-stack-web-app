@@ -222,8 +222,8 @@
           <button (click)="closeAlert()" type="button" class="btn btn-secondary"
                   data-dismiss="modal">Close
           </button>
-          <button appAddClass (click)="onCreateQuestion()" type="button"
-                  class="btn btn-primary"
+          <button appAddClass (click)="onCreateQuestion($event.target)" type="button"
+                  class="btn btn-primary" id="sumbitMultiple"
                   [disabled]="textArea4.invalid ||
                             textArea3.invalid ||
                             textArea2.invalid ||
@@ -257,7 +257,12 @@
         <p>Do you want to proceed ?</p>
       </div>
       <div class="modal-footer">
-        <span style="color: green; margin-right: 70px">
+        <span *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
+              style="color: green; margin-right: 280px">
+            {{alertMessage}}
+          </span>
+        <span *ngIf="alertMessage.includes('wrong')"
+              style="color: red; margin-right: 280px">
             {{alertMessage}}
           </span>
         <button (click)="closeAlert()" type="button" class="btn btn-secondary"
@@ -299,7 +304,6 @@
         <hr>
 
         <section class="section-preview">
-
           <!-- Answer 1 -->
           <small style="margin-left: 25px">Answer 1
           </small>
@@ -341,17 +345,23 @@
             <small class="text-danger" [class.d-none]="textAreaB2.valid ||
             textAreaB2.untouched">2nd answer required</small>
           </div>
-
         </section>
+
+        <!-- boolean modal footer -->
         <div class="modal-footer">
-          <span style="color: green; margin-right: 280px">
+          <span *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
+            style="color: green; margin-right: 280px">
+            {{alertMessage}}
+          </span>
+          <span *ngIf="alertMessage.includes('wrong')"
+                style="color: red; margin-right: 280px">
             {{alertMessage}}
           </span>
           <button (click)="closeAlert()" type="button" class="btn btn-secondary"
                   data-dismiss="modal">Close
           </button>
-          <button appAddClass (click)="onCreateQuestion()" type="button"
-                  class="btn btn-primary"
+          <button appAddClass (click)="onCreateQuestion($event.target)" type="button"
+                  class="btn btn-primary" id="sumbitBoolean"
                   [disabled]="textAreaB2.invalid || textAreaB1.invalid ||
                             textAreaB0.invalid || !submitOneAnswerCheck()">Submit
           </button>

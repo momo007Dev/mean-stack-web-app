@@ -109,7 +109,7 @@ const questionCreate = (req, res) => {
             .json({
                 message: "Please read the API doc to see how to create a question"
             });
-
+    console.log(req.body);
     const question = new Question(req.body);
     question
         .save()
@@ -119,7 +119,6 @@ const questionCreate = (req, res) => {
                     message: "Invalid input"
                 });
             } else {
-                console.log(result);
                 res
                     .status(201)
                     .json(new Array({

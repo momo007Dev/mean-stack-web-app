@@ -21,7 +21,7 @@ export class AllQuestionsComponent implements OnInit {
   optionB1: any;
   optionB2: any;
 
-  alertMessage: string;
+  alertMessage: string = "";
   deleteButton: boolean = false;
 
   questionId: any;
@@ -89,29 +89,51 @@ export class AllQuestionsComponent implements OnInit {
           .filter(x => this.booleanAnswer[x]).length === 1 : undefined;
   }
 
-  onCreateQuestion() {
+  onCreateQuestion(event) {
 
-    const questionCreated = {
-      "question": this.question,
-      "answers": [
-        {
-          "option": this.option1,
-          "isCorrect": this.multipleAnswer["option1"]
-        },
-        {
-          "option": this.option2,
-          "isCorrect": this.multipleAnswer["option2"]
-        },
-        {
-          "option": this.option3,
-          "isCorrect": this.multipleAnswer["option3"]
-        },
-        {
-          "option": this.option4,
-          "isCorrect": this.multipleAnswer["option4"]
-        }
-      ]
-    };
+    let questionCreated: Object;
+
+    if (event.id === 'sumbitMultiple') {
+
+      questionCreated = {
+        "type": "multiple",
+        "question": this.question,
+        "answers": [
+          {
+            "option": this.option1,
+            "isCorrect": this.multipleAnswer["option1"]
+          },
+          {
+            "option": this.option2,
+            "isCorrect": this.multipleAnswer["option2"]
+          },
+          {
+            "option": this.option3,
+            "isCorrect": this.multipleAnswer["option3"]
+          },
+          {
+            "option": this.option4,
+            "isCorrect": this.multipleAnswer["option4"]
+          }
+        ]
+      };
+    } else if (event.id === 'sumbitBoolean') {
+      questionCreated = {
+
+        "type": "boolean",
+        "question": this.question,
+        "answers": [
+          {
+            "option": this.optionB1,
+            "isCorrect": this.booleanAnswer["optionB1"]
+          },
+          {
+            "option": this.optionB2,
+            "isCorrect": this.booleanAnswer["optionB2"]
+          },
+        ]
+      };
+    }
 
     this.questions.createQuestion(questionCreated)
       .toPromise()
