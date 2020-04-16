@@ -119,7 +119,7 @@
       <div class="modal-body" style="margin-left: 40px">
 
         <!-- Question -->
-        <label for="questionText">Add your question here</label>
+        <label class="font-italic" for="questionText">Add your question here</label>
         <textarea #textArea0="ngModel"
                   [class.is-invalid]="textArea0.invalid && textArea0.touched"
                   [class.is-valid]="!(textArea0.invalid && textArea0.untouched)"
@@ -133,7 +133,7 @@
         <section class="section-preview">
 
           <!-- Answer 1 -->
-          <small style="margin-left: 25px">Answer 1
+          <small class="font-italic" style="margin-left: 25px">Answer 1
           </small>
           <div class="custom-control custom-checkbox">
             <input (click)="buttonChecked($event.target)" type="checkbox"
@@ -155,7 +155,7 @@
           </div>
 
           <!-- Answer 2 -->
-          <small style="margin-left: 25px">Answer 2</small>
+          <small class="font-italic" style="margin-left: 25px">Answer 2</small>
           <div class="custom-control custom-checkbox">
             <input (click)="buttonChecked($event.target)" type="checkbox"
                    class="custom-control-input" id="option2">
@@ -174,7 +174,7 @@
           </div>
 
           <!-- Answer 3 -->
-          <small style="margin-left: 25px">Answer 3</small>
+          <small class="font-italic" style="margin-left: 25px">Answer 3</small>
           <div class="custom-control custom-checkbox">
             <input (click)="buttonChecked($event.target)" type="checkbox"
                    class="custom-control-input" id="option3">
@@ -193,7 +193,7 @@
           </div>
 
           <!-- Answer 4 -->
-          <small style="margin-left: 25px">Answer 4</small>
+          <small class="font-italic" style="margin-left: 25px">Answer 4</small>
           <div class="custom-control custom-checkbox">
             <input (click)="buttonChecked($event.target)" type="checkbox"
                    class="custom-control-input" id="option4">
@@ -213,10 +213,10 @@
         </section>
 
         <!-- multiple question info tag -->
-        <p class="font-italic">
+        <small class="font-italic">
           <i class="fa fa-info-circle" aria-hidden="true" style="color: green"></i>
           Users will be displayed all options and will able to select one option.
-        </p>
+        </small>
 
         <!-- multiple question footer modal -->
         <div class="modal-footer">
@@ -296,7 +296,7 @@
       <div class="modal-body" style="margin-left: 40px">
 
         <!-- Question -->
-        <label for="questionText1">Add your question here</label>
+        <label class="font-italic" for="questionText1">Add your question here</label>
         <textarea #textAreaB0="ngModel"
                   [class.is-invalid]="textAreaB0.invalid && textAreaB0.touched"
                   [class.is-valid]="!(textAreaB0.invalid && textAreaB0.untouched)"
@@ -309,7 +309,7 @@
 
         <section class="section-preview">
           <!-- Answer 1 -->
-          <small style="margin-left: 25px">Answer 1
+          <small class="font-italic" style="margin-left: 25px">Answer 1
           </small>
           <div class="custom-control custom-checkbox">
             <input (click)="buttonChecked($event.target)" type="checkbox"
@@ -331,7 +331,7 @@
           </div>
 
           <!-- Answer 2 -->
-          <small style="margin-left: 25px">Answer 2</small>
+          <small class="font-italic" style="margin-left: 25px">Answer 2</small>
           <div class="custom-control custom-checkbox">
             <input (click)="buttonChecked($event.target)" type="checkbox"
                    class="custom-control-input" id="optionB2">
@@ -352,11 +352,11 @@
         </section>
 
         <!-- boolean question info tag -->
-        <p class="font-italic">
+        <small class="font-italic">
           <i class="fa fa-info-circle" aria-hidden="true" style="color: green"></i>
           Users will be displayed all question options but will able to select just
           one option.
-        </p>
+        </small>
 
         <!-- boolean modal footer -->
         <div class="modal-footer">
@@ -398,7 +398,7 @@
       <div class="modal-body" style="margin-left: 40px">
 
         <!-- Question -->
-        <label for="fillInQuestion">Add your question here</label>
+        <label class="font-italic" for="fillInQuestion">Add your question here</label>
         <textarea #textAreaFillIn="ngModel"
                   [class.is-invalid]="textAreaFillIn.invalid && textAreaFillIn.touched"
                   [class.is-valid]="!(textAreaFillIn.invalid && textAreaFillIn.untouched)"
@@ -419,22 +419,28 @@
           <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: red"></i>
           Enter each blank input box as a letter enclosed in square brackets,
           such as: <br>
-          <strong>Neil Armstrong was (1)[born] in 1930 and (2)[went] to the moon
-            in 1969. He (3)[died] in 2012.</strong>
+          <strong>{{fillInexample}}</strong>
         </small>
         <br> <br>
-        <p class="font-weight-bold">
-          Preview :
-        </p>
-        <p>
-          {{question | replace : question}}
-        </p>
+        <div class="card w-75">
+          <div class="card-header ">
+            <p class="font-weight-bold">
+              Preview :
+            </p>
+          </div>
+          <div class="card-body">
+            <p class="text-monospace">
+              {{question | replace : question}}
+            </p>
+          </div>
+        </div>
+        <br>
         <!-- Fill in question info tag -->
-        <p class="font-italic">
+        <small class="font-italic">
           <i class="fa fa-info-circle" aria-hidden="true" style="color: green"></i>
           Users will be displayed all question options but will able to select just
           one option.
-        </p>
+        </small>
 
         <!-- boolean modal footer -->
         <div class="modal-footer">

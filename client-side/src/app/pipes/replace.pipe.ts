@@ -12,17 +12,20 @@ export class ReplacePipe implements PipeTransform {
     }
 
     let s: string = "";
-    let t = value.match(/\(\d+\)/g);
-    if (t.length === 0) {
+
+    //let t = value.match(/\(\d+\)/g);
+    let tt = value.match(/{.+?}/g);
+    let ttt = value.match(/\[.+?]/g);
+    if (tt.length === 0) {
       return value;
     }
-    let tt = value.match(/\[.+?]/g);
 
-    t.forEach((x, i) => {
+    tt.forEach((x, i) => {
       (i === 0) ?
-        s = value.replace(t[0] + tt[0], '(' + (i + 1) + ')' + '___')
-        :
-        s = s.replace(t[i] + tt[i], '(' + (i + 1) + ')' + '___');
+        s = value.replace( tt[0] + ttt[0],
+          '(' + (i + 1) + ')' + tt[0] + '___') :
+        s = s.replace( tt[i] + ttt[i],
+          '(' + (i + 1) + ')' + tt[i] + '___');
     });
 
     return s;

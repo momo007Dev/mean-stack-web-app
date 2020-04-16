@@ -27,6 +27,9 @@ export class AllQuestionsComponent implements OnInit {
   totalItems: number;
   page: number = 1;
 
+  fillInexample: string = "Neil Armstrong {be}[was] born in 1930 and " +
+    "{go}[went] to the moon in 1969. He {die}[died] in 2012. ";
+
 
   multipleAnswer: Object = {
     "option1": false,
@@ -176,6 +179,8 @@ export class AllQuestionsComponent implements OnInit {
     Object.keys(this.multipleAnswer).forEach(x => this.multipleAnswer[x] = false);
     Object.keys(this.booleanAnswer).forEach(x => this.booleanAnswer[x] = false);
   }
+
+
 }
 
 
