@@ -98,7 +98,8 @@ enableProdMode();
     AuthService,
     QuestionsService,
     ReviewsService,
-    JwtHelperService
+    JwtHelperService,
+    ReplacePipe
   ],
   bootstrap: [AppComponent]
 })

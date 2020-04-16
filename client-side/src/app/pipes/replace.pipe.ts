@@ -5,27 +5,27 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class ReplacePipe implements PipeTransform {
 
-  transform(value: any, sname: string): any {
+  transform(value: any): any {
 
-    if (sname === "") {
+    if (value === "") {
       return value;
     }
 
     let s: string = "";
 
     //let t = value.match(/\(\d+\)/g);
-    let tt = value.match(/{.+?}/g);
-    let ttt = value.match(/\[.+?]/g);
-    if (tt.length === 0) {
+    let tab = value.match(/{.+?}/g);
+    let tab1 = value.match(/\[.+?]/g);
+    if (tab === null) {
       return value;
     }
 
-    tt.forEach((x, i) => {
+    tab.forEach((x, i) => {
       (i === 0) ?
-        s = value.replace( tt[0] + ttt[0],
-          '(' + (i + 1) + ')' + tt[0] + '___') :
-        s = s.replace( tt[i] + ttt[i],
-          '(' + (i + 1) + ')' + tt[i] + '___');
+        s = value.replace( tab[0] + tab1[0],
+          '(' + (i + 1) + ')' + tab[0] + '___') :
+        s = s.replace( tab[i] + tab1[i],
+          '(' + (i + 1) + ')' + tab[i] + '___');
     });
 
     return s;

@@ -430,16 +430,16 @@
           </div>
           <div class="card-body">
             <p class="text-monospace">
-              {{question | replace : question}}
+              {{question | replace }}
             </p>
           </div>
         </div>
         <br>
+
         <!-- Fill in question info tag -->
         <small class="font-italic">
           <i class="fa fa-info-circle" aria-hidden="true" style="color: green"></i>
-          Users will be displayed all question options but will able to select just
-          one option.
+          Users will shown multiple input boxes within the text of the question.
         </small>
 
         <!-- boolean modal footer -->
@@ -457,8 +457,7 @@
           </button>
           <button appAddClass (click)="onCreateQuestion($event.target)" type="button"
                   class="btn btn-primary" id="sumbitFillIn"
-                  [disabled]="textAreaB2.invalid || textAreaB1.invalid ||
-                            textAreaB0.invalid || !submitOneAnswerCheck()">Submit
+                  [disabled]="textAreaFillIn.invalid">Submit
           </button>
         </div>
       </div>

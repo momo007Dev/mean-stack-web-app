@@ -3,6 +3,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
 import {QuestionsService} from "../../../services/questions.service";
+import {ReplacePipe} from "../../../pipes/replace.pipe";
 
 @Component({
   selector: 'app-all-questions',
@@ -13,6 +14,7 @@ export class AllQuestionsComponent implements OnInit {
 
   questionType: any;
   question: string = "";
+  questionPiped: string = "";
   option1: any;
   option2: any;
   option3: any;
@@ -47,11 +49,13 @@ export class AllQuestionsComponent implements OnInit {
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
     private router: Router,
-    private questions: QuestionsService
+    private questions: QuestionsService,
+    private replacePipe : ReplacePipe
   ) {
   }
 
   ngOnInit() {
+
     this.showAllQuestion();
   }
 
@@ -90,6 +94,9 @@ export class AllQuestionsComponent implements OnInit {
   }
 
   onCreateQuestion(event) {
+    this.questionPiped = this.replacePipe.transform(this.question);
+    console.log(this.questionPiped);
+    console.log("toto");
 
     let questionCreated: Object;
 
@@ -117,6 +124,8 @@ export class AllQuestionsComponent implements OnInit {
           }
         ]
       };
+      //console.log(questionCreated["answers"]);
+
     } else if (event.id === 'sumbitBoolean') {
       questionCreated = {
 
@@ -200,4 +209,15 @@ t = string.match(/\(\d+\)/g);
 tt = string.match(/\[.+?\]/g);
 "(1)[toto] went to the moon in (2)[1969] and was born in (3)[usa]"
 .replace(t[0] + tt[0], '(1) ___');
+
+
+tab = {
+        "type" : "boolean",
+        "question" : "is 25 x 20 equal to 150 ?",
+        "answerss": []
+
+}
+
+
+
  */

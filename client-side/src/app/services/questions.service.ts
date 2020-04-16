@@ -10,8 +10,8 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json; charset
 export class QuestionsService {
   qns: any[];
   seconds: number;
-  timer : any;
-  timeTaken : any;
+  timer: any;
+  timeTaken: any;
   qnProgress: number;
   correctAnswerCount: number = 0;
 
@@ -36,13 +36,45 @@ export class QuestionsService {
     return this._http.delete(`/server/api/questions/${questionId}`, {headers});
   }
 
+  getAnswer(value) {
+
+    let tab = value.match(/\[.+?]/g);
+    if (tab.length === 0) {
+      return value;
+    }
+    tab.forEach((x, i) => {
+      tab[i] = x.replace(x, x.slice(1, x.length - 1))
+    })
+    return tab;
+  }
+
+  retrans(value) {
+
+    let s: string = "";
+
+    //let t = value.match(/\(\d+\)/g);
+    let tab = value.match(/{.+?}/g);
+    let tab1 = value.match(/\[.+?]/g);
+    if (tab.length === 0) {
+      return value;
+    }
+
+    tab.forEach((x, i) => {
+      (i === 0) ?
+        s = value.replace(tab[0] + tab1[0], tab1[0].slice(1, tab1[0].length - 1)) :
+        s = s.replace(tab[i] + tab1[i], tab1[i].slice(1, tab1[i].length - 1));
+    });
+
+    return s;
+  }
+
   levelDescription() {
     return {
 
       'A1': {
         Title: 'A1 | Beginner',
         Subtitle: 'At the A1 CEFR level, a language learner can:',
-        Level : 'A1',
+        Level: 'A1',
         1: 'Understand and use very basic expressions to satisfy concrete needs.',
         2: 'Introduce themselves and ask others questions about personal details.',
         3: 'Interact simply as long as the other person speaks slowly and clearly.'
@@ -51,7 +83,7 @@ export class QuestionsService {
       'A2': {
         Title: 'A2 | Elementary',
         Subtitle: 'At the A2 CEFR level, a language learner can:',
-        Level : 'A2',
+        Level: 'A2',
         1: 'Understand frequently used expressions in most intermediate areas such as shopping, family, employment, etc.',
         2: 'Complete tasks that are routine and involve a direct exchange of information.',
         3: 'Describe matters of immediate need in simple terms.'
@@ -60,7 +92,7 @@ export class QuestionsService {
       'B1': {
         Title: 'B1 | Intermediate',
         Subtitle: 'At the B1 CEFR level, a language learner can:',
-        Level : 'B1',
+        Level: 'B1',
         1: 'Understand points regarding family, work, school or leisure-related topics.',
         2: 'Deal with most travel situations in areas where the language is spoken.',
         3: 'Describe experiences, events, dreams, and ambitions, as well as opinions or plans in brief.',
@@ -69,7 +101,7 @@ export class QuestionsService {
       'B2': {
         Title: 'B2 | Upper Intermediate',
         Subtitle: 'At the B2 CEFR level, a language learner can:',
-        Level : 'B2',
+        Level: 'B2',
         1: 'Understand the main ideas of a complex text such as a technical piece related to their field.',
         2: 'Spontaneously interact without too much strain for either the learner or the native speaker.',
         3: 'Produce a detailed text on a wide range of subjects.'
@@ -78,7 +110,7 @@ export class QuestionsService {
       'C1': {
         Title: 'C1 | Advanced',
         Subtitle: 'At the C1 CEFR level, a language learner can:',
-        Level : 'C1',
+        Level: 'C1',
         1: 'Understand a wide range of longer and more demanding texts or conversations.',
         2: 'Express ideas without too much searching.',
         3: 'Effectively use the language for social, academic or professional situations.'
@@ -87,7 +119,7 @@ export class QuestionsService {
       'C2': {
         Title: 'C2 | Proficiency',
         Subtitle: 'At the C2 CEFR level, a language learner can:',
-        Level : 'C2',
+        Level: 'C2',
         1: 'Understand almost everything read or heard with ease.',
         2: 'Summarize information from a variety of sources into a coherent presentation.',
         3: 'Express themselves using precise meaning in complex scenarios.'

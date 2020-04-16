@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/directives/add-class.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/directives/add-class.directive.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/replace.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/pipes/replace.pipe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/questions.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/questions.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,14 +192,7 @@
       <workItem from="1586796086868" duration="21925000" />
       <workItem from="1586873677805" duration="30796000" />
       <workItem from="1586964502555" duration="17458000" />
-      <workItem from="1587046848846" duration="13339000" />
-    </task>
-    <task id="LOCAL-00096" summary="added teacher and admin dropdown">
-      <created>1585619942342</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1585619942343</updated>
+      <workItem from="1587046848846" duration="21211000" />
     </task>
     <task id="LOCAL-00097" summary="removed a bug in profile UI">
       <created>1585680383449</created>
@@ -534,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587055514555</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="added preview in the replace pipe">
+      <created>1587064265416</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1587064265417</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added check validation in login forms" />
     <MESSAGE value="add pattern in email register ui" />
     <MESSAGE value="added error visual in update profile ui" />
     <MESSAGE value="updated all users modal ui" />
@@ -567,7 +569,8 @@
     <MESSAGE value="added boolean question creation ui" />
     <MESSAGE value="working on fill in questions ui" />
     <MESSAGE value="replace pipe created" />
-    <option name="LAST_COMMIT_MESSAGE" value="replace pipe created" />
+    <MESSAGE value="added preview in the replace pipe" />
+    <option name="LAST_COMMIT_MESSAGE" value="added preview in the replace pipe" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -610,10 +613,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587055511777">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587064264439">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587055511777" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587064264439" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -642,10 +645,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587000367033">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587064267104">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587000367033" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587064267104" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -670,9 +673,9 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1586112061496" />
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1586832588942">
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1587071146372">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1586832588942" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1587071146372" />
   </component>
 </project>

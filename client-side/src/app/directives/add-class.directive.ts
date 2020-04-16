@@ -10,7 +10,6 @@ export class AddClassDirective {
 
   @HostListener('click')
   async onClick() {
-    console.log(this.elRef.nativeElement.id);
 
     await new Promise(r => setTimeout(r, 1000));
     this.renderer.setAttribute(this.elRef.nativeElement, 'disabled', 'true');
