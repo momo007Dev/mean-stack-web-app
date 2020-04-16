@@ -36,6 +36,7 @@ import { UsersTableComponent } from './components/all-users/users-table/users-ta
 import { ValidInputDirective } from './directives/valid-input.directive';
 import {AgGridModule} from "ag-grid-angular";
 import { FilterPipe } from './pipes/filter.pipe';
+import { ReplacePipe } from './pipes/replace.pipe';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -78,6 +79,7 @@ enableProdMode();
     UsersTableComponent,
     ValidInputDirective,
     FilterPipe,
+    ReplacePipe,
   ],
 
     imports: [

@@ -11,7 +11,7 @@
     <div class="btn-group">
       <button
         class="btn btn-success"
-        style="margin-left: 390px; color: white;font-weight: bold;" >
+        style="margin-left: 390px; color: white;font-weight: bold;">
         <i class="fa fa-plus" aria-hidden="true"></i>
         Create a new question
       </button>
@@ -24,11 +24,12 @@
            href="#" style="font-weight: bold" id="multipleQuestion"
            (click)="questionTypeChoosen($event.target)">Multiple choice</a>
 
-        <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal"
+        <a class="dropdown-item" data-toggle="modal" data-target="#booleanModal"
            href="#" style="font-weight: bold" id="booleanQuestion"
            (click)="questionTypeChoosen($event.target)">Boolean</a>
 
-        <a class="dropdown-item" href="#" style="font-weight: bold">Fill in</a>
+        <a class="dropdown-item" data-toggle="modal" data-target="#fillInModal"
+           href="#" style="font-weight: bold">Fill in the blanks</a>
 
         <div class="dropdown-divider" style="font-weight: bold"></div>
         <a class="dropdown-item" href="#" style="font-weight: bold">Separated link</a>
@@ -95,14 +96,14 @@
     <br>
   </ng-container>
   <div class="pagination justify-content-center pagination-lg">
-    <pagination-controls  id="allQuestionsPagination"
-                          (pageChange)="page = ($event)"
-                          maxSize="{{totalItems.toString()}}"
-                          directionLinks="true"
-                          autoHide="true"
-                          responsive="true"
-                          previousLabel="Previous"
-                          nextLabel="Next">
+    <pagination-controls id="allQuestionsPagination"
+                         (pageChange)="page = ($event)"
+                         maxSize="{{totalItems.toString()}}"
+                         directionLinks="true"
+                         autoHide="true"
+                         responsive="true"
+                         previousLabel="Previous"
+                         nextLabel="Next">
     </pagination-controls>
   </div>
 </div>
@@ -261,11 +262,11 @@
       </div>
       <div class="modal-footer">
         <span *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
-              style="color: green; margin-right: 280px">
+              style="color: green; margin-right: 80px">
             {{alertMessage}}
           </span>
         <span *ngIf="alertMessage.includes('wrong')"
-              style="color: red; margin-right: 280px">
+              style="color: red; margin-right: 80px">
             {{alertMessage}}
           </span>
         <button (click)="closeAlert()" type="button" class="btn btn-secondary"
@@ -281,7 +282,7 @@
 
 
 <!-- Boolean question modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+<div class="modal fade" id="booleanModal" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -360,7 +361,7 @@
         <!-- boolean modal footer -->
         <div class="modal-footer">
           <span *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
-            style="color: green; margin-right: 280px">
+                style="color: green; margin-right: 280px">
             {{alertMessage}}
           </span>
           <span *ngIf="alertMessage.includes('wrong')"
@@ -380,5 +381,87 @@
     </div>
   </div>
 </div>
+
+
+<!-- Fill in the blanks question modal -->
+<div class="modal fade" id="fillInModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create a new question</h5>
+        <button (click)="closeAlert()" type="button" class="close" data-dismiss="modal"
+                aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="margin-left: 40px">
+
+        <!-- Question -->
+        <label for="fillInQuestion">Add your question here</label>
+        <textarea #textAreaFillIn="ngModel"
+                  [class.is-invalid]="textAreaFillIn.invalid && textAreaFillIn.touched"
+                  [class.is-valid]="!(textAreaFillIn.invalid && textAreaFillIn.untouched)"
+                  class="form-control" id="fillInQuestion" rows="3"
+                  [(ngModel)]="question" name="question"
+                  style="width: 500px" required></textarea>
+        <small class="text-danger" [class.d-none]="textAreaFillIn.valid ||
+          textAreaFillIn.untouched">A question is required</small>
+        <hr>
+
+        <div class="container" style="background-color: lightgray">
+          <small>
+
+          </small>
+        </div>
+
+        <small class="font-italic">
+          <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: red"></i>
+          Enter each blank input box as a letter enclosed in square brackets,
+          such as: <br>
+          <strong>Neil Armstrong was (1)[born] in 1930 and (2)[went] to the moon
+            in 1969. He (3)[died] in 2012.</strong>
+        </small>
+        <br> <br>
+        <p class="font-weight-bold">
+          Preview :
+        </p>
+        <p>
+          {{question | replace : question}}
+        </p>
+        <!-- Fill in question info tag -->
+        <p class="font-italic">
+          <i class="fa fa-info-circle" aria-hidden="true" style="color: green"></i>
+          Users will be displayed all question options but will able to select just
+          one option.
+        </p>
+
+        <!-- boolean modal footer -->
+        <div class="modal-footer">
+          <span *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
+                style="color: green; margin-right: 280px">
+            {{alertMessage}}
+          </span>
+          <span *ngIf="alertMessage.includes('wrong')"
+                style="color: red; margin-right: 280px">
+            {{alertMessage}}
+          </span>
+          <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+                  data-dismiss="modal">Close
+          </button>
+          <button appAddClass (click)="onCreateQuestion($event.target)" type="button"
+                  class="btn btn-primary" id="sumbitFillIn"
+                  [disabled]="textAreaB2.invalid || textAreaB1.invalid ||
+                            textAreaB0.invalid || !submitOneAnswerCheck()">Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- boolean modal footer
+{{question | slice:1:question.length - 1}}
+-->
 
 

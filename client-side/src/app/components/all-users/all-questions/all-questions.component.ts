@@ -12,7 +12,7 @@ import {QuestionsService} from "../../../services/questions.service";
 export class AllQuestionsComponent implements OnInit {
 
   questionType: any;
-  question: any;
+  question: string = "";
   option1: any;
   option2: any;
   option3: any;
@@ -189,4 +189,10 @@ string.match(/\[.+?\]/g);
 
 space = /_{2,}/g
 "(1)[toto] went to the moon ______  in (2)[1969]".match(space)
+
+
+t = string.match(/\(\d+\)/g);
+tt = string.match(/\[.+?\]/g);
+"(1)[toto] went to the moon in (2)[1969] and was born in (3)[usa]"
+.replace(t[0] + tt[0], '(1) ___');
  */
