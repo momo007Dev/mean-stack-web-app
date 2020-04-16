@@ -114,10 +114,6 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Create a new question</h5>
-        <button (click)="closeAlert()" type="button" class="close" data-dismiss="modal"
-                aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
       <div class="modal-body" style="margin-left: 40px">
 
@@ -213,8 +209,15 @@
             <small class="text-danger" [class.d-none]="textArea4.valid ||
             textArea4.untouched">4th answer required</small>
           </div>
-
         </section>
+
+        <!-- multiple question info tag -->
+        <p class="font-italic">
+          <i class="fa fa-info-circle" aria-hidden="true" style="color: green"></i>
+          Users will be displayed all options and will able to select one option.
+        </p>
+
+        <!-- multiple question footer modal -->
         <div class="modal-footer">
           <span style="color: green; margin-right: 280px">
             {{alertMessage}}
@@ -317,7 +320,7 @@
                       [class.is-invalid]="textAreaB1.invalid&& textAreaB1.touched"
                       [class.is-valid]="!(textAreaB1.invalid && textAreaB1.untouched)"
                       class="form-control" id="answerB1" rows="2"
-                      [(ngModel)]="optionB1" name="answerB1"
+                      [(ngModel)]="option1" name="answerB1"
                       style="width: 440px" required></textarea>
 
             <label for="answerB1">
@@ -338,7 +341,7 @@
                       [class.is-invalid]="textAreaB2.invalid && textAreaB2.touched"
                       [class.is-valid]="!(textAreaB2.invalid && textAreaB2.untouched)"
                       class="form-control" id="answerB2" rows="2"
-                      [(ngModel)]="optionB2" name="answerB2"
+                      [(ngModel)]="option2" name="answerB2"
                       style="width: 440px" required></textarea>
 
             <label for="answerB2"></label>
@@ -346,6 +349,13 @@
             textAreaB2.untouched">2nd answer required</small>
           </div>
         </section>
+
+        <!-- boolean question info tag -->
+        <p class="font-italic">
+          <i class="fa fa-info-circle" aria-hidden="true" style="color: green"></i>
+          Users will be displayed all question options but will able to select just
+          one option.
+        </p>
 
         <!-- boolean modal footer -->
         <div class="modal-footer">

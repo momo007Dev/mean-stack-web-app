@@ -18,9 +18,6 @@ export class AllQuestionsComponent implements OnInit {
   option3: any;
   option4: any;
 
-  optionB1: any;
-  optionB2: any;
-
   alertMessage: string = "";
   deleteButton: boolean = false;
 
@@ -124,11 +121,11 @@ export class AllQuestionsComponent implements OnInit {
         "question": this.question,
         "answers": [
           {
-            "option": this.optionB1,
+            "option": this.option1,
             "isCorrect": this.booleanAnswer["optionB1"]
           },
           {
-            "option": this.optionB2,
+            "option": this.option2,
             "isCorrect": this.booleanAnswer["optionB2"]
           },
         ]
@@ -180,3 +177,16 @@ export class AllQuestionsComponent implements OnInit {
     Object.keys(this.booleanAnswer).forEach(x => this.booleanAnswer[x] = false);
   }
 }
+
+
+/*
+var string = "(1)[toto] went to the moon ______  in (2)[1969]";
+string.match(/_{2,}/g);
+
+var string = "(1)[toto] went to the moon ______  in (2)[1969]";
+string.match(/\(\d+\)/g);
+string.match(/\[.+?\]/g);
+
+space = /_{2,}/g
+"(1)[toto] went to the moon ______  in (2)[1969]".match(space)
+ */
