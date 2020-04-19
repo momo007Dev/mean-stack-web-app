@@ -4,7 +4,7 @@ const {success, info, error, debug} = require('consola');
 const question_get_all = (req, res) => {
     let response = [];
     Question.find()
-        .select("question answers _id")
+        .select("question answers _id type")
         .exec()
         .then(docs => {
             //docs.forEach(x => console.log(x.question));

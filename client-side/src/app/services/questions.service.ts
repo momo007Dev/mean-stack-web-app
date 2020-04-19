@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {ReviewsService} from "./reviews.service";
 
 const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 
@@ -15,7 +14,7 @@ export class QuestionsService {
   qnProgress: number;
   correctAnswerCount: number = 0;
 
-  constructor(private _http: HttpClient, private reviews: ReviewsService) {
+  constructor(private _http: HttpClient) {
   }
 
   displayTimeElapsed() {
@@ -44,7 +43,7 @@ export class QuestionsService {
     }
     tab.forEach((x, i) => {
       tab[i] = x.replace(x, x.slice(1, x.length - 1))
-    })
+    });
     return tab;
   }
 

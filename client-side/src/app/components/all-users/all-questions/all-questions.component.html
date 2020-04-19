@@ -29,7 +29,8 @@
            (click)="questionTypeChoosen($event.target)">Boolean</a>
 
         <a class="dropdown-item" data-toggle="modal" data-target="#fillInModal"
-           href="#" style="font-weight: bold">Fill in the blanks</a>
+           href="#" style="font-weight: bold" id="fillInBlanksQuestion"
+           (click)="questionTypeChoosen($event.target)">Fill in the blanks</a>
 
         <div class="dropdown-divider" style="font-weight: bold"></div>
         <a class="dropdown-item" href="#" style="font-weight: bold">Separated link</a>
@@ -75,7 +76,6 @@
         <h5>
           <p style="color: white; margin: 20px">
             <strong>{{qn.question}}</strong>
-
           </p>
         </h5>
       </div>
@@ -439,7 +439,7 @@
         <!-- Fill in question info tag -->
         <small class="font-italic">
           <i class="fa fa-info-circle" aria-hidden="true" style="color: green"></i>
-          Users will shown multiple input boxes within the text of the question.
+          Users will be shown multiple input boxes within the text of the question.
         </small>
 
         <!-- boolean modal footer -->

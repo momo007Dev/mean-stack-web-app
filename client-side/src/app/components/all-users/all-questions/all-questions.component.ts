@@ -50,7 +50,7 @@ export class AllQuestionsComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private questions: QuestionsService,
-    private replacePipe : ReplacePipe
+    private replacePipe: ReplacePipe
   ) {
   }
 
@@ -60,10 +60,23 @@ export class AllQuestionsComponent implements OnInit {
   }
 
   showAllQuestion() {
+    let tab: Array<any> = [];
+
     this.questions.getQuestions()
       .toPromise()
       .then((data: any) => {
-        this.questions.qns = data;
+
+        tab = data;
+        tab.filter(x => x.type === 'fill in')
+          .forEach(x => x.question = this.replacePipe.transform(x.question));
+
+        tab.filter(x => x.type === 'fill in')
+          .forEach(x =>
+            x.answers.forEach((x, i) =>
+              x.option = '(' + ++i + ') ' + x.option)
+        );
+
+        this.questions.qns = tab;
         this.totalItems = this.questions.qns.length;
       })
       .catch(err => {
@@ -94,9 +107,8 @@ export class AllQuestionsComponent implements OnInit {
   }
 
   onCreateQuestion(event) {
+
     this.questionPiped = this.replacePipe.transform(this.question);
-    console.log(this.questionPiped);
-    console.log("toto");
 
     let questionCreated: Object;
 
@@ -124,7 +136,6 @@ export class AllQuestionsComponent implements OnInit {
           }
         ]
       };
-      //console.log(questionCreated["answers"]);
 
     } else if (event.id === 'sumbitBoolean') {
       questionCreated = {
@@ -142,7 +153,19 @@ export class AllQuestionsComponent implements OnInit {
           },
         ]
       };
+    } else if (event.id === 'sumbitFillIn') {
+      questionCreated = {
+        "type": "fill in",
+        "question": this.question,
+        "answers": []
+      };
+
+      let questionAnswer = this.questions.getAnswer(this.question);
+      questionAnswer.forEach(x =>
+        questionCreated["answers"].push({"option": x, "isCorrect": true}));
     }
+
+    console.log(questionCreated);
 
     this.questions.createQuestion(questionCreated)
       .toPromise()
