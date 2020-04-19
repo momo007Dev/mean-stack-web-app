@@ -29,6 +29,8 @@ export class AllQuestionsComponent implements OnInit {
   totalItems: number;
   page: number = 1;
 
+  regexAnswer : any;
+
   fillInexample: string = "Neil Armstrong {be}[was] born in 1930 and " +
     "{go}[went] to the moon in 1969. He {die}[died] in 2012. ";
 
@@ -66,16 +68,20 @@ export class AllQuestionsComponent implements OnInit {
       .then((data: any) => {
 
         data.filter(x => x.type === 'fill in')
-          .forEach(x => x.question = this.replacePipe.transform(x.question));
+          .forEach(x => {
+            x.question = this.replacePipe.transform(x.question);
+          });
 
         data.filter(x => x.type === 'fill in')
           .forEach(x =>
             x.answers.forEach((x, i) =>
-              x.option = '(' + ++i + ') ' + x.option)
-        );
+              x.option = '(' + ++i + ') ' + x.option));
 
-        data.forEach((x, i) => x.questionNumber = ++i);
+        data.forEach((x, i) => {
+          x.questionNumber = ++i;
+        });
 
+      data.forEach(x => console.log(x.regexAnswer));
         this.questions.qns = data;
         this.totalItems = this.questions.qns.length;
       })

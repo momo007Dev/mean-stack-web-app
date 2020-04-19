@@ -10,7 +10,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 
 
 import { AppComponent } from './app.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {enableProdMode} from '@angular/core';
@@ -92,6 +92,7 @@ enableProdMode();
         FlashMessagesModule.forRoot(),
         ChartModule,
         AgGridModule.withComponents([]),
+        ReactiveFormsModule,
     ],
   providers: [
     ValidateService,

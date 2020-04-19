@@ -38,7 +38,7 @@ export class QuestionsService {
   getAnswer(value) {
 
     let tab = value.match(/\[.+?]/g);
-    if (tab.length === 0) {
+    if (tab === null) {
       return value;
     }
     tab.forEach((x, i) => {
@@ -54,7 +54,7 @@ export class QuestionsService {
     //let t = value.match(/\(\d+\)/g);
     let tab = value.match(/{.+?}/g);
     let tab1 = value.match(/\[.+?]/g);
-    if (tab.length === 0) {
+    if (tab === null) {
       return value;
     }
 
