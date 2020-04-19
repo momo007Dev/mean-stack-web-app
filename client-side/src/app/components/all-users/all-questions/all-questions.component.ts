@@ -60,23 +60,23 @@ export class AllQuestionsComponent implements OnInit {
   }
 
   showAllQuestion() {
-    let tab: Array<any> = [];
 
     this.questions.getQuestions()
       .toPromise()
       .then((data: any) => {
 
-        tab = data;
-        tab.filter(x => x.type === 'fill in')
+        data.filter(x => x.type === 'fill in')
           .forEach(x => x.question = this.replacePipe.transform(x.question));
 
-        tab.filter(x => x.type === 'fill in')
+        data.filter(x => x.type === 'fill in')
           .forEach(x =>
             x.answers.forEach((x, i) =>
               x.option = '(' + ++i + ') ' + x.option)
         );
 
-        this.questions.qns = tab;
+        data.forEach((x, i) => x.questionNumber = ++i);
+
+        this.questions.qns = data;
         this.totalItems = this.questions.qns.length;
       })
       .catch(err => {

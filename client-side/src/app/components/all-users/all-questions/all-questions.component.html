@@ -49,7 +49,7 @@
   <!-- All Question Loop -->
   <ng-container *ngFor="let qn of questions.qns | paginate:
                                                     { id: 'allQuestionsPagination',
-                                                        itemsPerPage: 1,
+                                                        itemsPerPage: 3,
                                                         currentPage: page,
                                                         totalItems: totalItems};
                                                         trackBy: trackByMethod;
@@ -70,7 +70,7 @@
     <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
       <div class="card-content">
 
-        <p class="card-title" style="color: white; margin: 20px">Question {{page}} :
+        <p class="card-title" style="color: white; margin: 20px">Question {{qn["questionNumber"]}} :
 
         </p>
         <h5>
