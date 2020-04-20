@@ -11,6 +11,7 @@ import {ReplacePipe} from "../../pipes/replace.pipe";
   templateUrl: './questions.component.html',
   styleUrls: ['./questions.component.css']
 })
+
 export class QuestionsComponent implements OnInit {
 
   option: any;
@@ -35,7 +36,6 @@ export class QuestionsComponent implements OnInit {
       tickets: new FormArray([])
     });
 
-
     this.question.qnProgress = 0;
     this.question.seconds = 0;
     this.showQuestion();
@@ -58,7 +58,6 @@ export class QuestionsComponent implements OnInit {
             x.regexAnswer = this.question.getAnswer(x.question);
             x.question = this.replacePipe.transform(x.question);
             this.tab.push(x.regexAnswer.length);
-            console.log(this.tab);
           });
 
         data.forEach((x, i) => {
@@ -82,6 +81,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   onChangeTickets() {
+    // let tab : Array<any> =  new Array([this.tab[this.progress]]);
     const numberOfTickets = this.tab[this.progress] || 0;
     if (this.t.length < numberOfTickets) {
       for (let i = this.t.length; i < numberOfTickets; i++) {
@@ -89,6 +89,7 @@ export class QuestionsComponent implements OnInit {
           name: ['', Validators.required]
         }));
       }
+
     } else {
       for (let i = this.t.length; i >= numberOfTickets; i--) {
         this.t.removeAt(i);
@@ -104,6 +105,8 @@ export class QuestionsComponent implements OnInit {
     Object.keys(this.dynamicForm.value)
       .forEach(x => (this.dynamicForm.value[x])
         .forEach(y => t.push((y.name).toLocaleLowerCase())));
+
+    this.question.qns[this.question.qnProgress].fill = t;
 
     this.question.qns[this.question.qnProgress].answers
       .forEach(x => t1.push(x.option));
@@ -121,7 +124,6 @@ export class QuestionsComponent implements OnInit {
   }
 
   test1() {
-    console.log(this.dynamicForm.value);
     this.question.qnProgress--;
     this.progress--;
   }
@@ -146,7 +148,7 @@ export class QuestionsComponent implements OnInit {
       || this.compArray)) {
       this.question.correctAnswerCount++;
     }
-    console.log(this.question.correctAnswerCount);
+
     /**
      * if (JSON.parse(choice.toLowerCase())) {
       this._flashMessagesService.show("correct answer", {

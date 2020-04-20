@@ -13,6 +13,8 @@ export class QuestionsService {
   timeTaken: any;
   qnProgress: number;
   correctAnswerCount: number = 0;
+  //description: any;
+
 
   constructor(private _http: HttpClient) {
   }
@@ -127,7 +129,9 @@ export class QuestionsService {
   }
 
   getLevelDescription(level) {
-    if (level === 'A1') {
+    if (level === undefined) {
+      return level;
+    } else if (level === 'A1') {
       return this.levelDescription().A1;
     } else if (level === 'A2') {
       return this.levelDescription().A2;

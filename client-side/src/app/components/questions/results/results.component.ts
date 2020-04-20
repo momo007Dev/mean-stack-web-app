@@ -11,7 +11,7 @@ import {QuestionsService} from "../../../services/questions.service";
 })
 export class ResultsComponent implements OnInit {
 
-  private description : any;
+  description: any;
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
@@ -23,13 +23,9 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
 
-    if (!Object.keys(localStorage).includes('id_token')) {
-      return this._flashMessagesService.show("", {
-        navigate: `${this.router.navigate(['/login'])}`
-      });
-    }
+
     const userScore = {
-      "score" : this.questions.correctAnswerCount
+      "score": this.questions.correctAnswerCount
     };
     this.authService.updateScore(userScore)
       .toPromise()
@@ -40,7 +36,7 @@ export class ResultsComponent implements OnInit {
     this.getLevel();
   }
 
-  getLevel(){
+  getLevel() {
     this.authService.getProfile()
       .toPromise()
       .then((data: any) => {
