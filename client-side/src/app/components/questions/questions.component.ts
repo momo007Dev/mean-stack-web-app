@@ -15,6 +15,7 @@ export class QuestionsComponent implements OnInit {
 
   option: any;
   progress: number = 0;
+  compArray: boolean;
   dynamicForm: FormGroup;
   tab: Array<number> = [];
 
@@ -53,7 +54,7 @@ export class QuestionsComponent implements OnInit {
       .then((data: any) => {
 
         data.filter(x => x.type === 'fill in')
-          .forEach((x, i) => {
+          .forEach(x => {
             x.regexAnswer = this.question.getAnswer(x.question);
             x.question = this.replacePipe.transform(x.question);
             this.tab.push(x.regexAnswer.length);
@@ -95,16 +96,39 @@ export class QuestionsComponent implements OnInit {
     }
   }
 
-  test() {
-    console.log(this.dynamicForm.value);
+  async test() {
+
+    let t: Array<string> = [];
+    let t1: Array<string> = [];
+
+    Object.keys(this.dynamicForm.value)
+      .forEach(x => (this.dynamicForm.value[x])
+        .forEach(y => t.push((y.name).toLocaleLowerCase())));
+
+    this.question.qns[this.question.qnProgress].answers
+      .forEach(x => t1.push(x.option));
+
+    (this.compareTwoArray(t, t1)) ? this.question.correctAnswerCount++ : undefined;
+
     this.question.qnProgress++;
     this.progress++;
+
+    if (this.question.qnProgress == (this.question.qns).length) {
+      this.question.timeTaken = this.question.displayTimeElapsed();
+      clearInterval(this.question.timer);
+      await this.router.navigate(['/results']);
+    }
   }
 
-  test1(){
+  test1() {
     console.log(this.dynamicForm.value);
     this.question.qnProgress--;
     this.progress--;
+  }
+
+  private compareTwoArray(t1: Array<string>, t2: Array<string>): boolean {
+    let tab: Array<string> = t1.filter(x => t2.includes(x));
+    return tab.length === t1.length;
   }
 
   startTimer() {
@@ -118,10 +142,11 @@ export class QuestionsComponent implements OnInit {
     this.question.qns[this.question.qnProgress].answer = choice;
     this.question.qns[this.question.qnProgress].index = index;
 
-    if (JSON.parse(this.question.qns[this.question.qnProgress].answer)) {
+    if (JSON.parse(this.question.qns[this.question.qnProgress].answer
+      || this.compArray)) {
       this.question.correctAnswerCount++;
     }
-
+    console.log(this.question.correctAnswerCount);
     /**
      * if (JSON.parse(choice.toLowerCase())) {
       this._flashMessagesService.show("correct answer", {

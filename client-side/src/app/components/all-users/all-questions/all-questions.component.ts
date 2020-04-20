@@ -103,7 +103,7 @@ export class AllQuestionsComponent implements OnInit {
     this.questionType = event.id;
   }
 
-  submitOneAnswerCheck() {
+  submitOneAnswerCheck() : boolean {
     return (this.questionType === 'multipleQuestion') ?
       Object.keys(this.multipleAnswer)
         .filter(x => this.multipleAnswer[x]).length === 1 :
