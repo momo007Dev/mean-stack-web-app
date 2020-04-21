@@ -98,7 +98,7 @@
   <div class="pagination justify-content-center pagination-lg">
     <pagination-controls id="allQuestionsPagination"
                          (pageChange)="page = ($event)"
-                         maxSize="{{totalItems.toString()}}"
+                         maxSize="{{totalItems}}"
                          directionLinks="true"
                          autoHide="true"
                          responsive="true"
@@ -115,17 +115,60 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Create a new question</h5>
+        <button (click)="closeAlert()" type="button" class="close"
+                data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body" style="margin-left: 40px">
+
+        {{registrationForm.value | json}}
+        <br>
+
+        <!-- Multiple choice question modal -->
+        <form [formGroup]="registrationForm" (ngSubmit)="submitTest()">
+
+          <div class="form-group">
+            <button type="button" class="btn btn-secondary btn-sm m-2"
+                    (click)="addAlternateEmail()">Add inputs</button>
+            <div formArrayName="alternateEmails"
+                 class="form-group custom-control custom-checkbox"
+                 *ngFor="let email of alternateEmails.controls; let i=index">
+
+              <input type="checkbox" class="custom-control-input"
+                     (click)="buttonChecked($event.target)" id="{{i}}">
+
+              <label class="custom-control-label" for="{{i}}" style="float: left">
+              </label>
+
+              <button (click)="removeSkill(i)" class="close mx-auto"
+                      style="float: right">
+                <span aria-hidden="true">&times;</span>
+              </button>
+
+              <label>
+                <textarea class="form-control " rows="2" style="width: 400px"
+                [formControlName]="i" ></textarea>
+              </label>
+
+            </div>
+          </div>
+          <br>
+          <button class="btn btn-primary"
+                  type="submit"
+                  [disabled]="!submitTestCheck()">Register
+          </button>
+        </form>
+        <br>
 
         <!-- Question -->
         <label class="font-italic" for="questionText">Add your question here</label>
         <textarea #textArea0="ngModel"
                   [class.is-invalid]="textArea0.invalid && textArea0.touched"
                   [class.is-valid]="!(textArea0.invalid && textArea0.untouched)"
-                  class="form-control" id="questionText" rows="3"
+                  class="form-control w-75" id="questionText" rows="3"
                   [(ngModel)]="question" name="question"
-                  style="width: 500px" required></textarea>
+                  style="" required></textarea>
         <small class="text-danger" [class.d-none]="textArea0.valid ||
           textArea0.untouched">A question is required</small>
         <hr>

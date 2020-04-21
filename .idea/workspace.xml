@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/questions.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/services/questions.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,14 +195,7 @@
       <workItem from="1587258469147" duration="4974000" />
       <workItem from="1587310699034" duration="20160000" />
       <workItem from="1587337316186" duration="10673000" />
-      <workItem from="1587393878092" duration="7484000" />
-    </task>
-    <task id="LOCAL-00102" summary="time ui updated in the review ui">
-      <created>1586048613713</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1586048613714</updated>
+      <workItem from="1587393878092" duration="23732000" />
     </task>
     <task id="LOCAL-00103" summary="all ui working and profile ui stable">
       <created>1586116842700</created>
@@ -540,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587348683718</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="can now display correct and incorrect rep in fill in ui">
+      <created>1587403276563</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1587403276564</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="working on angular grip api" />
     <MESSAGE value="can filter table based on user's username" />
     <MESSAGE value="removed a bug in filter ui" />
     <MESSAGE value="added lowercase to filter" />
@@ -573,7 +572,8 @@
     <MESSAGE value="removed a bug in questions ui" />
     <MESSAGE value="stable fill in question ui" />
     <MESSAGE value="pre final fill in question ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre final fill in question ui" />
+    <MESSAGE value="can now display correct and incorrect rep in fill in ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="can now display correct and incorrect rep in fill in ui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -616,10 +616,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587348682722">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587403274559">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587348682722" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587403274559" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -648,10 +648,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1584033127826" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587348685144">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587403278227">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587348685144" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587403278227" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

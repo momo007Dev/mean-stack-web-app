@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../../services/auth.service";
+import {FormBuilder, FormGroup, FormArray, Validators} from '@angular/forms';
 import {Router} from "@angular/router";
 import {QuestionsService} from "../../../services/questions.service";
 import {ReplacePipe} from "../../../pipes/replace.pipe";
@@ -29,7 +30,7 @@ export class AllQuestionsComponent implements OnInit {
   totalItems: number;
   page: number = 1;
 
-  regexAnswer : any;
+  regexAnswer: any;
 
   fillInexample: string = "Neil Armstrong {be}[was] born in 1930 and " +
     "{go}[went] to the moon in 1969. He {die}[died] in 2012. ";
@@ -46,17 +47,25 @@ export class AllQuestionsComponent implements OnInit {
     "optionB1": false,
     "optionB2": false,
   };
+  registrationForm: FormGroup;
+
+  t: Array<any> = [];
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
     private router: Router,
     private questions: QuestionsService,
-    private replacePipe: ReplacePipe
+    private replacePipe: ReplacePipe,
+    private formBuilder: FormBuilder
   ) {
   }
 
   ngOnInit() {
+
+    this.registrationForm = this.formBuilder.group({
+      alternateEmails: this.formBuilder.array([])
+    });
 
     this.showAllQuestion();
   }
@@ -81,7 +90,6 @@ export class AllQuestionsComponent implements OnInit {
           x.questionNumber = ++i;
         });
 
-      data.forEach(x => console.log(x.regexAnswer));
         this.questions.qns = data;
         this.totalItems = this.questions.qns.length;
       })
@@ -90,20 +98,50 @@ export class AllQuestionsComponent implements OnInit {
       });
   }
 
+  get alternateEmails() {
+    return this.registrationForm.get('alternateEmails') as FormArray;
+  }
+
+  addAlternateEmail() {
+    this.alternateEmails.push(this.formBuilder.control(''));
+    // this.t =new Array(this.registrationForm.value.alternateEmails.length);
+  }
+
+  removeSkill(index: number) {
+    this.alternateEmails.removeAt(index);
+    this.t.splice(index, 1);
+  }
+
+
   checkArray(event: any, tab: Object) {
+    // console.log(event.id);
+    //console.log(event.checked);
     (event.checked) ? tab[event.id] = true : tab[event.id] = false;
   }
 
   private buttonChecked(event) {
     this.checkArray(event, this.multipleAnswer);
     this.checkArray(event, this.booleanAnswer);
+    this.checkArray(event, this.t);
   }
+
+  submitTest() {
+
+    this.t.forEach(x => console.log(x));
+
+    console.log(this.t);
+  }
+
+  submitTestCheck(): boolean {
+    return this.t.filter(x => x).length === 1;
+  }
+
 
   questionTypeChoosen(event) {
     this.questionType = event.id;
   }
 
-  submitOneAnswerCheck() : boolean {
+  submitOneAnswerCheck(): boolean {
     return (this.questionType === 'multipleQuestion') ?
       Object.keys(this.multipleAnswer)
         .filter(x => this.multipleAnswer[x]).length === 1 :
