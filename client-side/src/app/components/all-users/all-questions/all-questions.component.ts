@@ -100,9 +100,11 @@ export class AllQuestionsComponent implements OnInit {
 
   get alternateEmails() {
     return this.registrationForm.get('alternateEmails') as FormArray;
+
   }
 
   addAlternateEmail() {
+    this.registrationForm.get('alternateEmails').setValidators([Validators.required]);
     this.alternateEmails.push(this.formBuilder.control(''));
     // this.t =new Array(this.registrationForm.value.alternateEmails.length);
   }
@@ -127,9 +129,27 @@ export class AllQuestionsComponent implements OnInit {
 
   submitTest() {
 
-    this.t.forEach(x => console.log(x));
+    //this.t.forEach(x => console.log(x));
 
+    console.log(this.registrationForm.value.alternateEmails);
     console.log(this.t);
+    console.log(this.t.length, 'this tab length');
+    console.log(this.t.indexOf(true), 'this is the index of checked text');
+    console.log(this.t[this.t.indexOf(true)], 'this.t[this.t.indexOf(true)');
+    console.log('****************************');
+
+    let questionCreated = {
+      "type": "multiple",
+      "question": this.question,
+      "answers": []
+    };
+
+    this.registrationForm.value.alternateEmails
+      .forEach((x,i) =>
+      questionCreated["answers"].push({"option": x,
+        "isCorrect": (i === this.t.indexOf(true))}));
+
+    console.log(questionCreated);
   }
 
   submitTestCheck(): boolean {

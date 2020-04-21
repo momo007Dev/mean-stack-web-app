@@ -31,9 +31,6 @@
         <a class="dropdown-item" data-toggle="modal" data-target="#fillInModal"
            href="#" style="font-weight: bold" id="fillInBlanksQuestion"
            (click)="questionTypeChoosen($event.target)">Fill in the blanks</a>
-
-        <div class="dropdown-divider" style="font-weight: bold"></div>
-        <a class="dropdown-item" href="#" style="font-weight: bold">Separated link</a>
       </div>
     </div>
 
@@ -122,6 +119,7 @@
       </div>
       <div class="modal-body" style="margin-left: 40px">
 
+        {{alternateEmails.status | json}}
         {{registrationForm.value | json}}
         <br>
 
@@ -147,7 +145,10 @@
               </button>
 
               <label>
-                <textarea class="form-control " rows="2" style="width: 400px"
+                <textarea class="form-control" rows="2" style="width: 400px"
+                          [class.is-invalid]=
+                            "registrationForm.get('alternateEmails').invalid &&
+                          registrationForm.get('alternateEmails').touched"
                 [formControlName]="i" ></textarea>
               </label>
 

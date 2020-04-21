@@ -84,7 +84,7 @@
             </a>
             <a *ngIf="qn.type === 'fill in'"
                 class="list-group-item list-group-item-action">
-              {{option.option}}
+              ({{j+1}}) {{option.option}}
               <span *ngIf="(option['isCorrect']) === 'true'">
                  <i class="fa fa-check-circle right-align"
                     style="color: green; position: absolute; right: 150px"> correct answer</i>
