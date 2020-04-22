@@ -2,7 +2,7 @@
 <br>
 <form class="form-inline" style=" margin-left: 540px">
   <label for="search"></label>
-  <input #searcch="ngModel"
+  <input
          class="form-control" type="search" id="search"
          [(ngModel)]="searchValue" name="username"
          placeholder="Filter" aria-label="Search" >
@@ -33,29 +33,43 @@
                  style="height: 150px" alt="">
           </div>
           <div class="card-body">
-            <!--Name-->
+
+            <!-- user -->
             <h4 class="font-weight-bold mb-4">{{user["username"]}}</h4>
             <hr>
-            <!--Quotation-->
+
+            <!--user id-->
             <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>
               <strong style="margin-right: 37px">Id : </strong> {{user["_id"]}}
               <br>
+
+              <!-- user email -->
               <strong style="margin-right: 34px"> Email : </strong> {{user["email"]}}
               <br>
+
+              <!-- username -->
               <strong> Username : </strong> {{user["username"]}}
               <br>
+
+              <!-- user level -->
               <strong style="margin-right: 37px"> Level : </strong> {{user["level"]}}
               <br>
+
+              <!-- user role -->
               <strong style="margin-right: 44px"> Role : </strong> {{user["role"]}}
               <i style="margin-left: 80px" class="fa fa-quote-right pr-2"></i>
             </p>
             <hr>
+
+            <!-- update user button -->
             <button name="{{user['_id']}}" (click)="getUpdateId($event.target)"
                     type="button" class="btn btn-primary btn-sm"
                     data-toggle="modal" data-target="#exampleModal">
               <i class="fa fa-pencil" aria-hidden="true"
                  style="color: black"></i> Update
             </button>
+
+            <!-- delete user button -->
             <button id="{{user['_id']}}" (click)="getDeleteId($event.target)"
                     type="button" class="btn btn-secondary btn btn-danger btn-sm"
                     data-toggle="modal" data-target="#deleteModel"
@@ -75,16 +89,21 @@
 </div>
 
 
+<!-- updated modal success alert message -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+
+      <!-- delete modal success alert message -->
       <div *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
            class="alert alert-success" role="alert"> {{alertMessage}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
+      <!-- delete modal failed alert message -->
       <div *ngIf="alertMessage.includes('wrong')" class="alert alert-danger"
            role="alert"> {{alertMessage}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -94,6 +113,8 @@
       <div class="modal-header">
 
         <h5 class="modal-title" id="exampleModalLabel">Update their profile</h5>
+
+        <!-- close update modal -->
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -170,7 +191,7 @@
             </div>
           </div>
 
-          <!-- Modal footer -->
+          <!-- update modal footer -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               Close
@@ -178,7 +199,6 @@
             <button appAddClass type="submit" class="btn btn-primary"
                     [disabled]="profileForm.form.invalid">Submit
             </button>
-
           </div>
         </form>
       </div>
@@ -186,28 +206,38 @@
   </div>
 </div>
 
+
+<!-- delete modal -->
 <div class="modal fade" id="deleteModel" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
+
+      <!-- delete modal success alert message -->
       <div *ngIf="alertMessage.length> 1 && !(alertMessage.includes('wrong'))"
            class="alert alert-success" role="alert"> {{alertMessage}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
+      <!-- delete modal failed alert message -->
       <div *ngIf="alertMessage.includes('wrong')" class="alert alert-danger"
            role="alert"> {{alertMessage}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
+      <!-- delete modal header -->
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Confirm Delete</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
+      <!-- delete modal body -->
       <div class="modal-body">
         <h5 class="modal-title" style="text-align: center">
           <strong>Are you sure?</strong></h5>
@@ -216,6 +246,8 @@
         </strong>!</p>
         <p>Do you want to proceed ?</p>
       </div>
+
+      <!-- delete modal footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"
                 data-dismiss="modal">Close

@@ -81,16 +81,16 @@ export class QuestionsComponent implements OnInit {
   }
 
   onChangeTickets() {
-    const numberOfTickets = this.tab[this.progress] || 0;
-    if (this.getInputs.length < numberOfTickets) {
-      for (let i = this.getInputs.length; i < numberOfTickets; i++) {
+    const numberOfInputs = this.tab[this.progress] || 0;
+    if (this.getInputs.length < numberOfInputs) {
+      for (let i = this.getInputs.length; i < numberOfInputs; i++) {
         this.getInputs.push(this.formBuilder.group({
           name: ['', Validators.required]
         }));
       }
 
     } else {
-      for (let i = this.getInputs.length; i >= numberOfTickets; i--) {
+      for (let i = this.getInputs.length; i >= numberOfInputs; i--) {
         this.getInputs.removeAt(i);
       }
     }

@@ -1,5 +1,7 @@
 <div class="row" *ngIf="question.qns">
   <div class="col s6 ">
+
+    <!-- Time elapsed -->
     <div class="card" style="width: 16rem; margin-left: 520px">
       <div class="card-body">
         <span style="margin: 21px; color: green">
@@ -7,10 +9,16 @@
           Time Elapsed : {{question.displayTimeElapsed()}}</span>
       </div>
     </div>
+
+    <!-- Questions progress bar title -->
     <div class="row" style="margin-left: 140px; margin-right: 140px">
       <h5 class="col s10">Question Progress</h5>
-      <h5 class="right-align">{{question.qnProgress + 1}}/{{(question.qns).length}}</h5>
+      <h5 class="right-align">
+        {{question.qnProgress + 1}}/{{(question.qns).length}}
+      </h5>
     </div>
+
+    <!-- Questions progress bar -->
     <div class="progress" style="margin-left: 140px; margin-right: 140px">
       <div class="progress-bar progress-bar-success progress-bar-striped active"
            [ngStyle]="{'width.%':(question.qnProgress)*10}">
@@ -18,7 +26,11 @@
       </div>
     </div>
     <br>
+
+    <!-- Question card -->
     <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
+
+      <!-- Question title -->
       <div class="card-content">
         <p class="card-title" style="color: white; margin: 20px">Question
           {{(question.qnProgress + 1)}} :</p>
@@ -28,30 +40,44 @@
           </p>
         </h5>
       </div>
+
+      <!-- Questions of type fill in -->
       <div *ngIf="question.qns[question.qnProgress].type === 'fill in'"
            class="card" style="margin: 10px;"> {{onChangeTickets()}}
         <p class="list-group list-group-flush">
 
+          <!-- Loop through all questions of type fill in -->
           <ng-container *ngFor="let group of getInputs.controls; let i = index">
+
+            <!-- inputs groups for questions of type fill in -->
             <div [formGroup]="group" class="list-group-item list-group-item-action">
+
+              <!-- inputs number for questions of type fill in -->
               <label for="{{i}}">({{i + 1 }})</label>
+
+              <!-- inputs for questions of type fill in -->
               <input type="text" id="{{i}}" formControlName="name"
                      class="form-control"
                      [class.is-invalid]="group['controls'].name.invalid &&
                       group['controls'].name.touched"
                      [class.is-valid]="!(group['controls'].name.invalid &&
                           group['controls'].name['untouched'])">
+
+              <!-- input error message for questions of type fill in -->
               <small class="text-danger" style="float: left"
                      [class.d-none]="group['controls'].name.valid ||
                      group['controls'].name['untouched']">
                 <i style="color: red" class="fa fa-exclamation-circle"
                    aria-hidden="true"></i>
-                An answer required here</small>
+                An answer required here
+              </small>
             </div>
           </ng-container>
         </p>
+
         <br>
 
+        <!-- Next button for questions of type fill in -->
         <div class="btn-toolbar row mx-auto" role="toolbar"
              aria-label="Toolbar with button groups">
           <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -60,17 +86,23 @@
           </div>
           <div class="btn-group mr-2" role="group" aria-label="Second group">
             <button (click)="test()" type="button" class="btn btn-outline-info"
-                    [disabled]="getInputs.invalid">
-              next</button>
+                    [disabled]="getInputs.invalid">next
+            </button>
           </div>
         </div>
-
       </div>
+
+      <!-- Questions of type multiple or boolean -->
       <div *ngIf="question.qns[question.qnProgress].type !== 'fill in'"
            class="card" style="margin: 10px;">
         <a class="list-group list-group-flush">
-          <ng-container *ngFor="let option of question.qns[question.qnProgress]['answers'];
-          let i = index">
+
+          <!-- Loop through all questions of multiple or boolean -->
+          <ng-container
+            *ngFor="let option of question.qns[question.qnProgress]['answers'];
+              let i = index">
+
+            <!-- Style of possible answers -->
             <a *ngIf="option != null "
                class="list-group-item list-group-item-action"
                onmousemove="this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
@@ -84,13 +116,11 @@
             </a>
           </ng-container>
         </a>
-
       </div>
     </div>
   </div>
 </div>
 
-<br>
 <br>
 <br>
 
