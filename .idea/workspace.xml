@@ -5,7 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,14 +198,10 @@
       <workItem from="1587310699034" duration="20160000" />
       <workItem from="1587337316186" duration="10673000" />
       <workItem from="1587393878092" duration="24322000" />
-      <workItem from="1587479156379" duration="34095000" />
-    </task>
-    <task id="LOCAL-00105" summary="working on all questions UI">
-      <created>1586132102292</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1586132102292</updated>
+      <workItem from="1587479156379" duration="35220000" />
+      <workItem from="1587526275484" duration="247000" />
+      <workItem from="1587526764489" duration="197000" />
+      <workItem from="1587564399281" duration="8824000" />
     </task>
     <task id="LOCAL-00106" summary="working on all questions UI">
       <created>1586132177225</created>
@@ -540,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587489055915</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="stable dynamic multiple question ui">
+      <created>1587524936091</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1587524936092</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +557,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -559,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added lowercase to filter" />
     <MESSAGE value="added a filter in all users ui" />
     <MESSAGE value="add level based on score in the backend" />
     <MESSAGE value="added level in the all users ui" />
@@ -584,7 +591,8 @@
     <MESSAGE value="can now display correct and incorrect rep in fill in ui" />
     <MESSAGE value="added dynamic inputs for multiple questions ui" />
     <MESSAGE value="dynamic multiple question creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="dynamic multiple question creation" />
+    <MESSAGE value="stable dynamic multiple question ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="stable dynamic multiple question ui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -627,10 +635,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587489054484">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587524934892">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587489054484" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587524934892" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -659,10 +667,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1587491976495" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587489057528">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587524937728">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587489057528" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587524937728" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

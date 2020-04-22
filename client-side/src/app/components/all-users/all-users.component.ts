@@ -53,7 +53,6 @@ export class AllUsersComponent implements OnInit {
   }
 
   getDeleteId(event) {
-    //console.log(event.id);
     this.userId = event.id;
   }
 

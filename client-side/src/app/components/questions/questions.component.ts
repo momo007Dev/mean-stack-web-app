@@ -17,7 +17,7 @@ export class QuestionsComponent implements OnInit {
   option: any;
   progress: number = 0;
   compArray: boolean;
-  dynamicForm: FormGroup;
+  dynamicInputsForm: FormGroup;
   tab: Array<number> = [];
 
   constructor(
@@ -32,8 +32,8 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.dynamicForm = this.formBuilder.group({
-      tickets: new FormArray([])
+    this.dynamicInputsForm = this.formBuilder.group({
+      inputs: new FormArray([])
     });
 
     this.question.qnProgress = 0;
@@ -72,27 +72,26 @@ export class QuestionsComponent implements OnInit {
       });
   }
 
-  get f() {
-    return this.dynamicForm.controls;
+  get getDynamicInputsForm() {
+    return this.dynamicInputsForm.controls;
   }
 
-  get t() {
-    return this.f.tickets as FormArray;
+  get getInputs() {
+    return this.getDynamicInputsForm.inputs as FormArray;
   }
 
   onChangeTickets() {
-    // let tab : Array<any> =  new Array([this.tab[this.progress]]);
     const numberOfTickets = this.tab[this.progress] || 0;
-    if (this.t.length < numberOfTickets) {
-      for (let i = this.t.length; i < numberOfTickets; i++) {
-        this.t.push(this.formBuilder.group({
+    if (this.getInputs.length < numberOfTickets) {
+      for (let i = this.getInputs.length; i < numberOfTickets; i++) {
+        this.getInputs.push(this.formBuilder.group({
           name: ['', Validators.required]
         }));
       }
 
     } else {
-      for (let i = this.t.length; i >= numberOfTickets; i--) {
-        this.t.removeAt(i);
+      for (let i = this.getInputs.length; i >= numberOfTickets; i--) {
+        this.getInputs.removeAt(i);
       }
     }
   }
@@ -102,8 +101,8 @@ export class QuestionsComponent implements OnInit {
     let t: Array<string> = [];
     let t1: Array<string> = [];
 
-    Object.keys(this.dynamicForm.value)
-      .forEach(x => (this.dynamicForm.value[x])
+    Object.keys(this.dynamicInputsForm.value)
+      .forEach(x => (this.dynamicInputsForm.value[x])
         .forEach(y => t.push((y.name).toLocaleLowerCase())));
 
     this.question.qns[this.question.qnProgress].fill = t;

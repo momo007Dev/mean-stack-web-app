@@ -12,7 +12,7 @@
       <button
         class="btn btn-success"
         style="margin-left: 390px; color: white;font-weight: bold;">
-        <i class="fa fa-plus" aria-hidden="true"></i>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
         Create a new question
       </button>
       <button type="button" class="btn btn-success dropdown-toggle
@@ -136,7 +136,9 @@
                   [(ngModel)]="question" name="question"
                   style="" required></textarea>
         <small class="text-danger" [class.d-none]="textArea0.valid ||
-          textArea0.untouched">A question is required</small>
+          textArea0.untouched">
+          <i style="color: red" class="fa fa-exclamation-circle"
+             aria-hidden="true"></i> A question is required</small>
         <hr>
         <!-- Add inputs button -->
         <button style="float: left" type="button" data-toggle="tooltip"
@@ -305,7 +307,9 @@
                   [(ngModel)]="question" name="question"
                   style="width: 500px" required></textarea>
         <small class="text-danger" [class.d-none]="textAreaB0.valid ||
-          textAreaB0.untouched">A question is required</small>
+          textAreaB0.untouched">
+          <i style="color: red" class="fa fa-exclamation-circle"
+             aria-hidden="true"></i> A question is required</small>
         <hr>
 
         <!-- Boolean answer body -->
@@ -340,7 +344,9 @@
                 <label for="answerB1">
                 </label>
                 <small class="text-danger" [class.d-none]="textAreaB1.valid ||
-              textAreaB1.untouched">1st answer required</small>
+              textAreaB1.untouched">
+                  <i style="color: red" class="fa fa-exclamation-circle"
+                     aria-hidden="true"></i> 1st answer required</small>
               </div>
             </div>
 
@@ -363,11 +369,14 @@
 
                 <label for="answerB2"></label>
                 <small class="text-danger" [class.d-none]="textAreaB2.valid ||
-              textAreaB2.untouched">2nd answer required</small>
+              textAreaB2.untouched">
+                  <i style="color: red" class="fa fa-exclamation-circle"
+                     aria-hidden="true"></i> 2nd answer required</small>
               </div>
             </div>
           </div>
         </div>
+        <br>
 
         <!-- boolean question info tag -->
         <small class="font-italic">
@@ -424,7 +433,9 @@
                   [(ngModel)]="question" name="question"
                   style="width: 500px" required></textarea>
         <small class="text-danger" [class.d-none]="textAreaFillIn.valid ||
-          textAreaFillIn.untouched">A question is required</small>
+          textAreaFillIn.untouched">
+          <i style="color: red" class="fa fa-exclamation-circle"
+             aria-hidden="true"></i> A question is required</small>
         <hr>
 
         <div class="container" style="background-color: lightgray">
@@ -434,7 +445,7 @@
         </div>
 
         <small class="font-italic">
-          <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: red"></i>
+          <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color: red"></i>
           Enter each blank input box as a letter enclosed in square brackets,
           such as: <br>
           <strong>{{fillInexample}}</strong>

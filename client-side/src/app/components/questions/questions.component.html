@@ -31,13 +31,22 @@
       <div *ngIf="question.qns[question.qnProgress].type === 'fill in'"
            class="card" style="margin: 10px;"> {{onChangeTickets()}}
         <p class="list-group list-group-flush">
-          <ng-container *ngFor="let ticket of t.controls; let i = index">
-            <div [formGroup]="ticket" class="list-group-item list-group-item-action">
+
+          <ng-container *ngFor="let group of getInputs.controls; let i = index">
+            <div [formGroup]="group" class="list-group-item list-group-item-action">
               <label for="{{i}}">({{i + 1 }})</label>
-              <input type="text" id="{{i}}" formControlName="name"  class="form-control"/>
-              <div *ngIf="ticket['controls'].name.errors" class="invalid-feedback">
-                <div *ngIf="ticket['controls'].name.errors.required">Name is required</div>
-              </div>
+              <input type="text" id="{{i}}" formControlName="name"
+                     class="form-control"
+                     [class.is-invalid]="group['controls'].name.invalid &&
+                      group['controls'].name.touched"
+                     [class.is-valid]="!(group['controls'].name.invalid &&
+                          group['controls'].name['untouched'])">
+              <small class="text-danger" style="float: left"
+                     [class.d-none]="group['controls'].name.valid ||
+                     group['controls'].name['untouched']">
+                <i style="color: red" class="fa fa-exclamation-circle"
+                   aria-hidden="true"></i>
+                An answer required here</small>
             </div>
           </ng-container>
         </p>
@@ -50,7 +59,8 @@
                     class="btn btn-outline-success">prev</button>
           </div>
           <div class="btn-group mr-2" role="group" aria-label="Second group">
-            <button (click)="test()" type="button" class="btn btn-outline-info">
+            <button (click)="test()" type="button" class="btn btn-outline-info"
+                    [disabled]="getInputs.invalid">
               next</button>
           </div>
         </div>

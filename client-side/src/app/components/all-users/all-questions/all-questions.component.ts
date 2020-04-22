@@ -40,7 +40,7 @@ export class AllQuestionsComponent implements OnInit {
   };
   multipleQuestionForm: FormGroup;
 
-  t: Array<any> = [];
+optionsArray: Array<any> = [];
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
@@ -106,7 +106,7 @@ export class AllQuestionsComponent implements OnInit {
 
   removeSkill(index: number) {
     this.getAnswerOptions.removeAt(index);
-    this.t.splice(index, 1);
+    this.optionsArray.splice(index, 1);
   }
 
 
@@ -116,7 +116,7 @@ export class AllQuestionsComponent implements OnInit {
 
   private buttonChecked(event) {
     this.checkArray(event, this.booleanAnswer);
-    this.checkArray(event, this.t);
+    this.checkArray(event, this.optionsArray);
   }
 
   questionTypeChoosen(event) {
@@ -125,7 +125,7 @@ export class AllQuestionsComponent implements OnInit {
 
   submitOneAnswerCheck(): boolean {
     return (this.questionType === 'multipleQuestion') ?
-      this.t.filter(x => x).length === 1 :
+      this.optionsArray.filter(x => x).length === 1 :
       (this.questionType === 'booleanQuestion') ?
         Object.keys(this.booleanAnswer)
           .filter(x => this.booleanAnswer[x]).length === 1 : undefined;
@@ -149,10 +149,8 @@ export class AllQuestionsComponent implements OnInit {
         .forEach((x, i) =>
           questionCreated["answers"].push({
             "option": x.option,
-            "isCorrect": (i === this.t.indexOf(true))
+            "isCorrect": (i === this.optionsArray.indexOf(true))
           }));
-
-      console.log(questionCreated);
 
     } else if (event.id === 'sumbitBoolean') {
 
@@ -219,7 +217,6 @@ export class AllQuestionsComponent implements OnInit {
     this.alertMessage = "";
     Object.keys(this.booleanAnswer).forEach(x => this.booleanAnswer[x] = false);
   }
-
 
 }
 
