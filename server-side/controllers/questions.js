@@ -7,10 +7,7 @@ const question_get_all = (req, res) => {
         .select("question answers _id type")
         .exec()
         .then(docs => {
-            //docs.forEach(x => console.log(x.question));
-            //console.log(docs[0].question);
-            //console.log(docs[0].answers[0].option);
-            //docs[0].answers.forEach(x => console.log(x));
+
             if (docs.length === 0)
                 return res
                     .status(204)
@@ -102,6 +99,8 @@ const question_update_one = (req, res) => {
 };
 
 const questionCreate = (req, res) => {
+
+    console.log(req.body);
 
     const question = new Question(req.body);
     question
