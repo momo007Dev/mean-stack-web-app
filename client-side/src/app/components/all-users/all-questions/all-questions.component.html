@@ -1,35 +1,44 @@
 <app-min-nav-bar></app-min-nav-bar>
 
-<!-- navbar values -->
+<!-- All questions text -->
 <div *ngIf="questions.qns">
   <br>
   <h3 class="mb-4 font-weight-bold" style="margin-left: 60px">
     All Questions ({{(questions.qns).length}})
 
-    <!-- Create a question button  -->
-
+    <!-- Create a question div  -->
     <div class="btn-group">
+
+      <!-- create question  -->
       <button
         class="btn btn-success"
         style="margin-left: 390px; color: white;font-weight: bold;">
         <i class="fa fa-plus-circle" aria-hidden="true"></i>
         Create a new question
       </button>
+
+      <!-- delete question -->
       <button type="button" class="btn btn-success dropdown-toggle
         dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
         <span class="sr-only">Toggle Dropdown</span>
       </button>
+
+      <!-- create types of question dropdown menu -->
       <div class="dropdown-menu" style="background-color: #28A745;">
+
+        <!-- create multiple question -->
         <a class="dropdown-item" data-toggle="modal"
            data-target=".bd-example-modal-lg"
            href="#" style="font-weight: bold" id="multipleQuestion"
            (click)="questionTypeChoosen($event.target)">Multiple choice</a>
 
+        <!-- create boolean question -->
         <a class="dropdown-item" data-toggle="modal" data-target="#booleanModal"
            href="#" style="font-weight: bold" id="booleanQuestion"
            (click)="questionTypeChoosen($event.target)">Boolean</a>
 
+        <!-- create fill in the blanks question -->
         <a class="dropdown-item" data-toggle="modal" data-target="#fillInModal"
            href="#" style="font-weight: bold" id="fillInBlanksQuestion"
            (click)="questionTypeChoosen($event.target)">Fill in the blanks</a>
@@ -45,7 +54,7 @@
   </h3>
   <br>
 
-  <!-- All Question Loop -->
+  <!-- All Question Loop and pagination -->
   <ng-container *ngFor="let qn of questions.qns | paginate:
                                                     {
                                                     id: 'allQuestionsPagination',
@@ -55,7 +64,7 @@
                                                         trackBy: trackByMethod;
                                                         index as i">
 
-    <!-- Delete icon -->
+    <!-- Delete question icon -->
     <a *ngIf="deleteButton" (click)="getQuestionId($event.target)"
        style="margin-left: 50px; float: left" data-toggle="modal"
        data-target="#deleteModel" data-whatever="@mdo">
@@ -69,19 +78,28 @@
 
     <!-- Question & it's answer card -->
     <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
-      <div class="card-content">
 
+      <!-- question number and title div -->
+      <div class="card-content">
+        <!-- question number -->
         <p class="card-title" style="color: white; margin: 20px">Question {{qn["questionNumber"]}} :
 
         </p>
         <h5>
+
+          <!-- question title -->
           <p style="color: white; margin: 20px">
             <strong>{{qn.question}}</strong>
           </p>
         </h5>
       </div>
+
+      <!-- question's answers div -->
       <div class="card" style="margin: 10px;">
+
         <p class="list-group list-group-flush">
+
+          <!-- loop through all answers to the question -->
           <ng-container *ngFor="let option of qn['answers'];let j = index">
             <a class="list-group-item list-group-item-action">
               {{option.option}}
@@ -96,6 +114,8 @@
     </div>
     <br>
   </ng-container>
+
+  <!-- all questions pagination controls -->
   <div class="pagination justify-content-center pagination-lg">
     <pagination-controls id="allQuestionsPagination"
                          (pageChange)="page = ($event)"
@@ -114,10 +134,14 @@
      aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
+
+      <!-- Multiple choice question modal header -->
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">
           Create a new question
         </h5>
+
+        <!-- Multiple choice question close modal button -->
         <button (click)="closeAlert()" type="button" class="close"
                 data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -140,6 +164,7 @@
           <i style="color: red" class="fa fa-exclamation-circle"
              aria-hidden="true"></i> A question is required</small>
         <hr>
+
         <!-- Add inputs button -->
         <button style="float: left" type="button" data-toggle="tooltip"
                 class="btn btn-outline-success btn-sm m-2 rounded text-center"

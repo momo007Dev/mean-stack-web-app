@@ -1,6 +1,10 @@
 <div *ngIf=" questions.qns && description">
+
+  <!-- completed text -->
 <h2 class="header mb-4 font-weight-bold"
     style="margin-left: 24px">Completed!</h2>
+
+  <!-- user results and level description -->
 <div class="card container" >
   <div class="card-body">
     <div class="row" style="margin : 10px">
@@ -12,12 +16,22 @@
       <div class="col-lg-4">
         <div>
           <br>
+
+          <!-- username -->
           <h4>{{authService.username}}</h4>
+
+          <!-- user score -->
           <h4>Your score is : {{questions.correctAnswerCount}}/10</h4>
+
+          <!-- user level -->
           <h4>Your is level is : {{description["Level"]}}</h4>
+
+          <!-- user time taken -->
           <span class="blockquote-footer" style="font-size: medium">
             Time Elapsed : {{questions.timeTaken}}</span>
         </div>
+
+        <!-- restart button card -->
         <div class="card-action">
           <hr>
           <button [routerLink]="['/questions']"
@@ -29,6 +43,7 @@
         </div>
       </div>
 
+      <!-- user level description -->
       <div class="col-lg-4">
         <div>
           <br>
@@ -55,9 +70,11 @@
 
 <br>
 
+  <!-- loop through all questions answers -->
   <ng-container *ngFor="let qn of questions.qns;let i=index">
     <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
 
+      <!-- question number and title -->
       <div class="card-content">
         <p class="card-title" style="color: white; margin: 20px">Question {{(i + 1)}} :</p>
         <h5>
@@ -66,10 +83,15 @@
           </p>
         </h5>
       </div>
+
+      <!-- question answers card -->
       <div class="card" style="margin: 10px;">
         <p class="list-group list-group-flush">
+
+          <!-- loop through all answers -->
           <ng-container *ngFor="let option of qn['answers'];let j = index">
 
+            <!-- a tag for non fill in question -->
             <a *ngIf="qn.type !== 'fill in'"
               class="list-group-item list-group-item-action">
               {{option.option}}
@@ -82,6 +104,8 @@
                     style="color: red; position: absolute; right: 135px"> incorrect answer</i>
               </span>
             </a>
+
+            <!-- a tag for fill in question -->
             <a *ngIf="qn.type === 'fill in'"
                 class="list-group-item list-group-item-action">
               ({{j+1}}) {{option.option}}
