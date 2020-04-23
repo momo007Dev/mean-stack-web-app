@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,14 +199,10 @@
       <workItem from="1587479156379" duration="35220000" />
       <workItem from="1587526275484" duration="247000" />
       <workItem from="1587526764489" duration="197000" />
-      <workItem from="1587564399281" duration="19869000" />
-    </task>
-    <task id="LOCAL-00109" summary="users table stable">
-      <created>1586218881468</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1586218881468</updated>
+      <workItem from="1587564399281" duration="21416000" />
+      <workItem from="1587626255627" duration="1480000" />
+      <workItem from="1587638135208" duration="593000" />
+      <workItem from="1587674032389" duration="1209000" />
     </task>
     <task id="LOCAL-00110" summary="created a min nav bar">
       <created>1586224543052</created>
@@ -546,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587587750411</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="added correct error messages in review ui">
+      <created>1587606073098</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1587606073098</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="updated level in the profile ui" />
     <MESSAGE value="add level descriptions in results ui" />
     <MESSAGE value="fully updated the results ui" />
     <MESSAGE value="removed a bug in level calculation in the backend" />
@@ -592,7 +592,8 @@
     <MESSAGE value="added form validation for fill in qcm questions" />
     <MESSAGE value="added comments in some heavy html pages" />
     <MESSAGE value="renamed some files" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed some files" />
+    <MESSAGE value="added correct error messages in review ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="added correct error messages in review ui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -635,10 +636,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587587747633">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587606071800">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587587747633" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587606071800" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -659,18 +660,18 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1586826922473" />
-    <state x="79" y="0" key="SettingsEditor" timestamp="1586303786517">
+    <state x="79" y="0" key="SettingsEditor" timestamp="1587606736031">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1586303786517" />
+    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1587606736031" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1587491976495">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1587491976495" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587587751884">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587606074605">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587587751884" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587606074605" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
