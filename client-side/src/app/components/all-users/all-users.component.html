@@ -100,7 +100,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
-      <!-- delete modal success alert message -->
+      <!-- update modal success alert message -->
       <div *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
            class="alert alert-success" role="alert"> {{alertMessage}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -108,13 +108,15 @@
         </button>
       </div>
 
-      <!-- delete modal failed alert message -->
+      <!-- update modal failed alert message -->
       <div *ngIf="alertMessage.includes('wrong')" class="alert alert-danger"
            role="alert"> {{alertMessage}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
+      <!-- update modal header -->
       <div class="modal-header">
 
         <h5 class="modal-title" id="exampleModalLabel">Update their profile</h5>

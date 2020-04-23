@@ -40,7 +40,8 @@
           <div *ngIf="emailInput.errors && (emailInput.invalid ||
                         emailInput.touched)">
             <small class="text-danger" *ngIf="emailInput.errors.pattern">
-              {{emailInput.value}} is not a valid email</small>
+              {{emailInput.value}} is not a valid email
+            </small>
             <small class="text-danger" *ngIf="emailInput.errors.required
                       && emailInput.touched">
               An Email is required</small>

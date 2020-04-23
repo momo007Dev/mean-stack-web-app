@@ -13,8 +13,9 @@
           <div class="md-form md-outline">
             <label for="pseudo">
             </label>
-            <input #pseudoInput="ngModel" [class.is-invalid]="pseudoInput.invalid &&
-                    pseudoInput.touched"
+            <input #pseudoInput="ngModel"
+                   [class.is-invalid]="pseudoInput.invalid && pseudoInput.touched"
+                   [class.is-valid]="!(pseudoInput.invalid && pseudoInput.untouched)"
                    class="form-control " type="text" id="pseudo"
                    [(ngModel)]="pseudo" name="pseudo"
                    placeholder="Email address or Username" required>
@@ -24,8 +25,9 @@
           <!-- Password -->
           <div  class="md-form md-outline">
             <label for="inputPassword"></label>
-            <input #passwordInput="ngModel" [class.is-invalid]="passwordInput.invalid &&
-                    passwordInput.touched"
+            <input #passwordInput="ngModel"
+                   [class.is-invalid]="passwordInput.invalid && passwordInput.touched"
+                   [class.is-valid]="!(passwordInput.invalid && passwordInput.untouched)"
                    class="form-control" type="password" id="inputPassword"
                    [(ngModel)]="password" name="password"
                    placeholder="Password" required>

@@ -15,16 +15,21 @@ export class ReviewsComponent implements OnInit {
   title: string;
   currentRate: number;
   reviewText: string;
+
   readonly: boolean = true;
   deleteId: any;
   loggedInUser: any;
+
   loggedInUserRole: any;
   updateId: any;
   date: any;
+
   reviewAuthor: any;
 
   totalItems : number;
   page:number = 1;
+
+  alertMessage: string = "";
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
@@ -75,23 +80,16 @@ export class ReviewsComponent implements OnInit {
       .toPromise()
       .then(() => {
         this.showReviews();
-        this._flashMessagesService.show("Review added successfully !", {
-          cssClass: "alert-success w-25",
-          timeout: 2000
-        });
+        this.alertMessage = "Review added successfully !";
       })
       .catch(err => {
+        this.alertMessage = "Something went wrong !";
         console.log(err);
-        this._flashMessagesService.show("Something went wrong", {
-          cssClass: "alert-danger w-25",
-          timeout: 2000,
-          navigate: `${this.router.navigate(['/reviews'])}`
-        });
       });
 
   }
 
-  modelTitle(event) {
+  chooseModalTitle(event) {
     this.updateId = event.id;
     this.reviewAuthor = event.title;
     (event.name === 'createReview') ? this.title = 'Create a new review'
@@ -108,12 +106,10 @@ export class ReviewsComponent implements OnInit {
       .toPromise()
       .then((data: any) => {
         this.showReviews();
-        this._flashMessagesService.show(`${data.message}`, {
-          cssClass: "alert-success w-25",
-          timeout: 2000
-        });
+        this.alertMessage = `${data.message}`;
       })
       .catch(err => {
+        this.alertMessage = "Something went wrong !";
         console.log(err);
       });
   }
@@ -128,12 +124,10 @@ export class ReviewsComponent implements OnInit {
       .toPromise()
       .then(() => {
         this.showReviews();
-        this._flashMessagesService.show("Review updated successfully !", {
-          cssClass: "alert-success w-25",
-          timeout: 2000
-        });
+        this.alertMessage = "Review updated successfully !";
       })
       .catch(err => {
+        this.alertMessage = "Something went wrong !";
         console.log(err);
       });
   }
@@ -145,6 +139,10 @@ export class ReviewsComponent implements OnInit {
     } else if (this.title === 'Update this review') {
       this.onUpdateReview();
     }
+  }
+
+  closeAlert() {
+    this.alertMessage = "";
   }
 
 }
