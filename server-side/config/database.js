@@ -1,17 +1,18 @@
 const mongoose = require('mongoose');
 const {success, info, error, debug} = require('consola');
 const host = process.env.DB_HOST;
+const hostCloud = process.env.MONGODB_URI;
 const dbURL = `mongodb://${host}/web_app`;
 
 //connect with the database
-mongoose.connect(dbURL,
+mongoose.connect(hostCloud || dbURL,
     {
         useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
         useFindAndModify: false
     })
     .then(() => {
         success({
-            message: `Database connected successfully to ${dbURL}`,
+            message: `Database connected successfully to ${hostCloud || dbURL}`,
             badge: true
         });
     }).catch(err => {

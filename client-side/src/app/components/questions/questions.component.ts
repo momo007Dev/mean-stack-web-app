@@ -24,7 +24,7 @@ export class QuestionsComponent implements OnInit {
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
     private router: Router,
-    private question: QuestionsService,
+    public question: QuestionsService,
     private replacePipe: ReplacePipe,
     private formBuilder: FormBuilder
   ) {

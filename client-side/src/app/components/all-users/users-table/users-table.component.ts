@@ -11,7 +11,7 @@ export class UsersTableComponent implements OnInit {
 
   private colDefs;
   private gridColumnApi;
-  private searchValue : string = "";
+  searchValue : string = "";
   private gridApi;
 
   users: any;

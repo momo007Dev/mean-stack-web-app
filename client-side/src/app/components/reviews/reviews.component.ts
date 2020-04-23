@@ -33,9 +33,9 @@ export class ReviewsComponent implements OnInit {
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router,
-    private reviews: ReviewsService
+    public reviews: ReviewsService
   ) {
   }
 

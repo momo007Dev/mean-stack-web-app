@@ -46,7 +46,7 @@ optionsArray: Array<any> = [];
     private _flashMessagesService: FlashMessagesService,
     private authService: AuthService,
     private router: Router,
-    private questions: QuestionsService,
+    public questions: QuestionsService,
     private replacePipe: ReplacePipe,
     private formBuilder: FormBuilder
   ) {
@@ -114,7 +114,7 @@ optionsArray: Array<any> = [];
     (event.checked) ? tab[event.id] = true : tab[event.id] = false;
   }
 
-  private buttonChecked(event) {
+   buttonChecked(event) {
     this.checkArray(event, this.booleanAnswer);
     this.checkArray(event, this.optionsArray);
   }

@@ -15,9 +15,9 @@ export class ResultsComponent implements OnInit {
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router,
-    private questions: QuestionsService
+    public questions: QuestionsService
   ) {
   }
 
