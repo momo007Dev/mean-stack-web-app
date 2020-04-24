@@ -53,7 +53,7 @@ app.use('/server/api/docs', (req, res) => {
 
 app.get('*', (req, res) => {
     res.sendFile(path
-        .join(__dirname + 'server-side', 'public', 'dist', 'index.html'));
+        .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
 });
 
 app.listen(process.env.PORT, () => {
