@@ -14,7 +14,7 @@ const app = express();
 // Defining the Middlewares
 app.use(cors());
 
-console.log(path.join(__dirname, 'server-side', 'public', 'dist', 'index.html'));
+//console.log(path.join(__dirname, 'server-side', 'public', 'dist', 'index.html'));
 
 // set the static folder
 if (process.env.NODE_ENV === 'production'){
@@ -33,8 +33,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // bring the passport auth strategy
-//require('config/passport')(passport);
-require('./config/passport');
+require('./config/passport')(passport);
+//require('./config/passport');
 
 app.get('/', (req, res) => {
     return res.sendFile(path
