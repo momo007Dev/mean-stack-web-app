@@ -1,10 +1,10 @@
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
-const User = require('../models/users');
+const User = require('../server-side/models/users');
 
 
 // to auth the user by JWT Startegy
-module.exports = (passport) => {
+const passport = (passport) => {
 
     // At a minimum, you must pass the `jwtFromRequest` and `secretOrKey` properties
     let opts = {};
@@ -27,3 +27,5 @@ module.exports = (passport) => {
         });
     }));
 };
+
+module.exports = passport;

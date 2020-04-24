@@ -7,6 +7,8 @@ const {success, info, error, debug} = require('consola');
 require('dotenv').config();
 require('./config/database');
 
+
+
 // Initialize the app
 const app = express();
 
@@ -27,7 +29,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // bring the passport auth strategy
-require('./server-side/config/passport')(passport);
+//require('config/passport')(passport);
+require('./config/passport');
 
 app.get('/', (req, res) => {
     return res.json({
