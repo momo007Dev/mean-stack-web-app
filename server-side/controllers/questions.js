@@ -100,8 +100,6 @@ const question_update_one = (req, res) => {
 
 const questionCreate = (req, res) => {
 
-    //console.log(req.body);
-
     const question = new Question(req.body);
     question
         .save()
