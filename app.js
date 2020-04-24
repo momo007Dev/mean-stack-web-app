@@ -61,10 +61,9 @@ app.listen(process.env.PORT, () => {
 });
 
 // catch 404 and forward to error handler
-app.use((req, res, next) => {
-    const error = new Error("Page Not found !");
-    error.status = 404;
-    next(error.message);
+app.use((req, res) => {
+    res.sendFile(path
+        .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
 });
 
 // Error Handler
