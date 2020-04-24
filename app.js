@@ -34,9 +34,8 @@ app.use(passport.session());
 require('./config/passport');
 
 app.get('/', (req, res) => {
-    return res.json({
-        message: "This is node.js backend system"
-    });
+    return res.sendFile(path
+        .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
 });
 
 // Bring in the user routers
@@ -52,7 +51,7 @@ app.use('/server/api/docs', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path
+  return res.sendFile(path
         .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
 });
 
@@ -61,9 +60,10 @@ app.listen(process.env.PORT, () => {
 });
 
 // catch 404 and forward to error handler
-app.use((req, res) => {
-    res.sendFile(path
-        .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
+app.use((req, res, next) => {
+    const error = new Error("Page Not found !");
+    error.status = 404;
+    next(error.message);
 });
 
 // Error Handler
