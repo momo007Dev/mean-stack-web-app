@@ -5,7 +5,7 @@ const hostCloud = process.env.MONGODB_URI;
 const dbURL = `mongodb://${host}/web_app`;
 
 //connect with the database
-mongoose.connect(hostCloud,
+mongoose.connect(hostCloud || dbURL,
     {
         useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
         useFindAndModify: false
