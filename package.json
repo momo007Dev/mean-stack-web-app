@@ -8,7 +8,7 @@
   "main": "app.js",
   "scripts": {
     "build": "cd client-side && npm run build",
-    "install-client": "cd client-side && npm install",
+    "install-client": "cd client-side && npm install && npm install -g @angular/cli",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
