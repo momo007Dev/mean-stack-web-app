@@ -289,7 +289,7 @@ const update_user_score = (req, res) => {
 };
 
 const get_user_by_id = (req, res) => {
-    
+
     const {userId} = req.params;
     User.findById(userId)
         .select("_id email role username level password")
