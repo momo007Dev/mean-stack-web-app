@@ -19,10 +19,17 @@
                    [class.is-invalid]="usernameInput.invalid && usernameInput.touched"
                    [class.is-valid]="!(usernameInput.invalid && usernameInput.untouched)"
                    class="form-control" type="text" id="username"
-                   [(ngModel)]="username" name="username"
+                   [(ngModel)]="username" name="username" minlength="4" maxlength="9"
                    placeholder="username" required>
-            <small class="text-danger" [class.d-none]="usernameInput.valid ||
-          usernameInput.untouched">A username is required</small>
+            <div *ngIf="usernameInput.errors && (usernameInput.invalid ||
+                        usernameInput.touched)">
+              <small class="text-danger" *ngIf="usernameInput.errors.minlength">
+                {{usernameInput.value}} username minimum length is 4
+              </small>
+              <small class="text-danger" *ngIf="usernameInput.errors.required
+                      && usernameInput.touched">
+                A username is required</small>
+            </div>
           </div>
 
           <!-- Email address -->

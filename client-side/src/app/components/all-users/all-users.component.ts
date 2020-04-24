@@ -29,11 +29,12 @@ export class AllUsersComponent implements OnInit {
 
   ngOnInit() {
 
-    if (!this.authService.getAllProfiles() || (this.authService.role !== 'admin' &&
-      this.authService.role !== 'teacher')) {
+    if (!this.authService.getAllProfiles() ||
+      (JSON.parse(localStorage.getItem('user')).role !== 'admin' &&
+        JSON.parse(localStorage.getItem('user')).role !== 'teacher')) {
       this.authService.logout();
       return this._flashMessagesService.show("", {
-        navigate: `${this.router.navigate(['/home'])}`
+        navigate: `${this.router.navigate(['/login'])}`
       });
     }
 
@@ -48,7 +49,7 @@ export class AllUsersComponent implements OnInit {
   }
 
   getUpdateId(event) {
-   // console.log(event.name);
+    // console.log(event.name);
     this.userId = event.name;
   }
 
@@ -76,7 +77,7 @@ export class AllUsersComponent implements OnInit {
     this.alertMessage = "";
   }
 
-  onDeleteUser(){
+  onDeleteUser() {
     this.authService.deleteUser(this.userId)
       .toPromise()
       .then((data: any) => {

@@ -3,7 +3,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {ReviewsService} from "../../services/reviews.service";
-import { timer } from 'rxjs';
+import {timer} from 'rxjs';
 
 @Component({
   selector: 'app-reviews',
@@ -26,8 +26,8 @@ export class ReviewsComponent implements OnInit {
 
   reviewAuthor: any;
 
-  totalItems : number;
-  page:number = 1;
+  totalItems: number;
+  page: number = 1;
 
   alertMessage: string = "";
 
@@ -42,9 +42,7 @@ export class ReviewsComponent implements OnInit {
   ngOnInit() {
     this.loggedInUser = this.authService.userEmail;
     this.loggedInUserRole = this.authService.role;
-    setInterval(() => {
-      this.showReviews();
-    }, 1000);
+    this.showReviews();
   }
 
   showReviews() {
@@ -58,9 +56,6 @@ export class ReviewsComponent implements OnInit {
           .sort((a, b) => Date.parse(b.CreatedOn) - Date.parse(a.CreatedOn))
           .forEach(x => {
             x.rating = Number(x.rating);
-            x.CreatedOn = this.reviews
-              .formatDate(this.reviews.getDate() - new Date(x.CreatedOn).getTime());
-
           });
         this.reviews.rev = tab;
         this.totalItems = this.reviews.rev.length;

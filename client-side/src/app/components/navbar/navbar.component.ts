@@ -10,8 +10,10 @@ import {ValidateService} from "../../services/validate.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
   token : any;
   userId : any;
+  username: string = "";
 
   constructor(private validateService: ValidateService,
               private _flashMessagesService: FlashMessagesService,
@@ -20,6 +22,8 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authService.role = JSON.parse(localStorage.getItem('user')).role;
+    this.authService.username = JSON.parse(localStorage.getItem('user')).username;
   }
 
   onSelect(){

@@ -37,6 +37,7 @@ import { ValidInputDirective } from './directives/valid-input.directive';
 import {AgGridModule} from "ag-grid-angular";
 import { FilterPipe } from './pipes/filter.pipe';
 import { ReplacePipe } from './pipes/replace.pipe';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -80,6 +81,7 @@ enableProdMode();
     ValidInputDirective,
     FilterPipe,
     ReplacePipe,
+    TimeAgoPipe
   ],
 
     imports: [

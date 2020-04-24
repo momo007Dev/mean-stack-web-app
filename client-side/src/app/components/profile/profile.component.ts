@@ -43,6 +43,8 @@ export class ProfileComponent implements OnInit {
           this.email = profile.user.email;
           this.username = profile.user.username;
           this.username = profile.user.username;
+          this.authService.username =
+            JSON.parse(localStorage.getItem('user')).username;
         },
         err => {
           console.log(err);
