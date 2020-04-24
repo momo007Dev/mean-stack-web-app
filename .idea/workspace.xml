@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/users-table/users-table.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/users-table/users-table.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/users-table/users-table.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/users-table/users-table.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/images/mongodb-naming.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/images/mongodb-naming.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/images/mongoose-url.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/images/mongoose-url.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/images/mongoose.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/images/mongoose.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/images/questions-collection.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/images/questions-collection.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/images/reviews-collection.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/images/reviews-collection.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/images/users-collection.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/images/users-collection.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/package.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,14 +205,7 @@
       <workItem from="1587626255627" duration="1480000" />
       <workItem from="1587638135208" duration="593000" />
       <workItem from="1587674032389" duration="3524000" />
-      <workItem from="1587677749294" duration="6046000" />
-    </task>
-    <task id="LOCAL-00111" summary="pagination working">
-      <created>1586291412465</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1586291412466</updated>
+      <workItem from="1587677749294" duration="6897000" />
     </task>
     <task id="LOCAL-00112" summary="email change">
       <created>1586291849908</created>
@@ -565,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587675272901</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="push app to heroku">
+      <created>1587685935537</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1587685935537</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +571,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fully updated the results ui" />
     <MESSAGE value="removed a bug in level calculation in the backend" />
     <MESSAGE value="added multiple choices type of questions in question ui" />
     <MESSAGE value="added check validation in create question ui" />
@@ -611,7 +595,8 @@
     <MESSAGE value="renamed some files" />
     <MESSAGE value="added correct error messages in review ui" />
     <MESSAGE value="about to run prod" />
-    <option name="LAST_COMMIT_MESSAGE" value="about to run prod" />
+    <MESSAGE value="push app to heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="push app to heroku" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -654,10 +639,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587685834767">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587685934358">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587685834767" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587685934358" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -686,10 +671,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1587491976495" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587675274835">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587685937534">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587675274835" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587685937534" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
