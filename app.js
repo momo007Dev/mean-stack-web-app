@@ -17,8 +17,11 @@ app.use(cors());
 console.log(path.join(__dirname, 'server-side', 'public', 'dist', 'index.html'));
 
 // set the static folder
+if (process.env.NODE_ENV === 'production'){
     app.use(express.static(path
         .join(__dirname, 'server-side', 'public', 'dist')));
+}
+
 
 
 
