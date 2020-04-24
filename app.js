@@ -8,7 +8,6 @@ require('dotenv').config();
 require('./config/database');
 
 
-
 // Initialize the app
 const app = express();
 
@@ -16,7 +15,7 @@ const app = express();
 app.use(cors());
 
 // set the static folder
-if (process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, './server-side/public/dist')));
 }
 
@@ -32,12 +31,6 @@ app.use(passport.session());
 //require('config/passport')(passport);
 require('./config/passport');
 
-app.get('/', (req, res) => {
-    return res.json({
-        message: "This is node.js backend system"
-    });
-});
-
 // Bring in the user routers
 const reviews = require('./server-side/routes/reviews');
 const users = require('./server-side/routes/users');
@@ -50,7 +43,7 @@ app.use('/server/api/docs', (req, res) => {
     res.sendFile(path.join(__dirname + '../../docs/index.html'));
 });
 
-app.get('*', (req, res) =>{
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + './server-side/public/dist/index.html'));
 });
 
