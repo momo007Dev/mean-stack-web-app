@@ -73,7 +73,7 @@
       <recent name="C:\Users\morga\Documents\mean-stack-web-app\client-side\vendor\bootstrap" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.app.js">
+  <component name="RunManager" selected="npm.heroku-postbuild">
     <configuration name="E2E Tests (client-side)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/client-side/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -99,6 +99,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="heroku-postbuild" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="heroku-postbuild" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="watch" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/server-side/package.json" />
       <command value="run" />
@@ -109,6 +119,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.heroku-postbuild" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
