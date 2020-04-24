@@ -14,10 +14,12 @@ const app = express();
 // Defining the Middlewares
 app.use(cors());
 
+console.log(path.join(__dirname, 'server-side', 'public', 'dist', 'index.html'));
+
 // set the static folder
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, './server-side/public/dist')));
-}
+    app.use(express.static(path
+        .join(__dirname, 'server-side', 'public', 'dist')));
+
 
 
 // BodyParser Midlleware
@@ -30,6 +32,12 @@ app.use(passport.session());
 // bring the passport auth strategy
 //require('config/passport')(passport);
 require('./config/passport');
+
+app.get('/', (req, res) => {
+    return res.json({
+        message: "This is node.js backend system"
+    });
+});
 
 // Bring in the user routers
 const reviews = require('./server-side/routes/reviews');
@@ -44,7 +52,8 @@ app.use('/server/api/docs', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + './server-side/public/dist/index.html'));
+    res.sendFile(path
+        .join(__dirname + 'server-side', 'public', 'dist', 'index.html'));
 });
 
 app.listen(process.env.PORT, () => {
