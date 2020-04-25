@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-users-table',
@@ -22,14 +23,13 @@ export class UsersTableComponent implements OnInit {
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
   }
 
   ngOnInit() {
-
-    console.log(this.searchValue);
-
+    
     this.colDefs = [
       {headerName : "Usernames", field : "username", width : 150},
       {headerName : "Email", field : "email", width : 160},

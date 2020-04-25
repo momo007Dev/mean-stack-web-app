@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="build for register">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,14 +220,7 @@
       <workItem from="1587674032389" duration="3524000" />
       <workItem from="1587677749294" duration="6897000" />
       <workItem from="1587734539542" duration="1432000" />
-      <workItem from="1587737616530" duration="27762000" />
-    </task>
-    <task id="LOCAL-00115" summary="questions ui stable">
-      <created>1586299385729</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1586299385729</updated>
+      <workItem from="1587737616530" duration="28896000" />
     </task>
     <task id="LOCAL-00116" summary="questions ui stable but question pagination to be worked on">
       <created>1586299694819</created>
@@ -564,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587776401888</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="added a new register page ui">
+      <created>1587782869822</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1587782869823</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added boolean question ui" />
     <MESSAGE value="updated one check validation check" />
     <MESSAGE value="added a type in question model" />
     <MESSAGE value="added boolean question creation ui" />
@@ -610,7 +610,8 @@
     <MESSAGE value="pushing prod branch" />
     <MESSAGE value="removed some refresh pages bugs" />
     <MESSAGE value="made some pages responsive" />
-    <option name="LAST_COMMIT_MESSAGE" value="made some pages responsive" />
+    <MESSAGE value="added a new register page ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a new register page ui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -653,10 +654,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587776395567">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587783454517">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587776395567" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587783454517" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -685,10 +686,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1587491976495" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587776403394">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587782871160">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587776403394" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587782871160" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

@@ -40,6 +40,7 @@ export class ReviewsComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.loggedInUser = this.authService.userEmail;
     this.loggedInUserRole = this.authService.role;
     this.showReviews();
