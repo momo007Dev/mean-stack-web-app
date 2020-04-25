@@ -3,45 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/3rdpartylicenses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/Mean-Stack-Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/Mean-Stack-Logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/login.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/no-profile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/rihanna.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/rihannaa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/trophy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.674f50d287a8c48dc19b.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.912ec66d7572ff821749.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.af7ae505a9eed503f8b8.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.b06871f281fee6b241d6.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.fee66e712a8a08eef580.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.2a60fa2b182b3dadc363.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.2a60fa2b182b3dadc363.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/polyfills-es2015.5b10b8fd823b6392f1fd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/polyfills-es5.3e8196928d184a6e5319.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/runtime-es2015.c5fa8325f89fc516600b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/runtime-es5.c5fa8325f89fc516600b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/scripts.23aa742c21d8986e2732.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/styles.00eef741aecaa1742a2a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,14 +219,7 @@
       <workItem from="1587674032389" duration="3524000" />
       <workItem from="1587677749294" duration="6897000" />
       <workItem from="1587734539542" duration="1432000" />
-      <workItem from="1587737616530" duration="21526000" />
-    </task>
-    <task id="LOCAL-00114" summary="edwin working very hard !!!!!">
-      <created>1586292269561</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1586292269561</updated>
+      <workItem from="1587737616530" duration="27762000" />
     </task>
     <task id="LOCAL-00115" summary="questions ui stable">
       <created>1586299385729</created>
@@ -600,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587754076725</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="made some pages responsive">
+      <created>1587776401888</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1587776401888</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -621,7 +585,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added check validation in create question ui" />
     <MESSAGE value="added boolean question ui" />
     <MESSAGE value="updated one check validation check" />
     <MESSAGE value="added a type in question model" />
@@ -646,7 +609,8 @@
     <MESSAGE value="push app to heroku" />
     <MESSAGE value="pushing prod branch" />
     <MESSAGE value="removed some refresh pages bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed some refresh pages bugs" />
+    <MESSAGE value="made some pages responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="made some pages responsive" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -689,10 +653,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587754074347">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587776395567">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587754074347" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587776395567" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -721,10 +685,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1587491976495" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587754084465">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587776403394">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587754084465" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587776403394" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

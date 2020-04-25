@@ -1,116 +1,128 @@
 <br>
-<body>
-<div class="container">
-  <div class="row d-flex justify-content-center align-items-center">
-    <div class="col-md-7">
-      <div class="form d-flex justify-content-between">
-        <div class="image">
-          <img src="../../../assets/img/login.jpg"  alt="">
-        </div>
-        <form #signUpForm="ngForm" class="my-form" (submit)="onRegisterSubmit()">
-          <h4 class="font-weight-bold mb-3">Create an Account</h4>
-          <p class="mdb-color-text">It's free and anyone can join!</p>
-
-          <!-- Username -->
-          <div class="md-form md-outline">
-            <label for="username">
-            </label>
-            <input #usernameInput="ngModel"
-                   [class.is-invalid]="usernameInput.invalid && usernameInput.touched"
-                   [class.is-valid]="!(usernameInput.invalid && usernameInput.untouched)"
-                   class="form-control" type="text" id="username"
-                   [(ngModel)]="username" name="username" minlength="4" maxlength="9"
-                   placeholder="username" required>
-            <div *ngIf="usernameInput.errors && (usernameInput.invalid ||
-                        usernameInput.touched)">
-              <small class="text-danger" *ngIf="usernameInput.errors.minlength">
-                {{usernameInput.value}} username minimum length is 4
-              </small>
-              <small class="text-danger" *ngIf="usernameInput.errors.required
-                      && usernameInput.touched">
-                A username is required</small>
-            </div>
-          </div>
-
-          <!-- Email address -->
-          <div class="md-form md-outline">
-            <label for="inputEmail">
-            </label>
-            <input #emailInput="ngModel"
-                   pattern="^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$"
-                   [class.is-invalid]="emailInput.invalid && emailInput.touched"
-                   [class.is-valid]="!(emailInput.invalid && emailInput.untouched)"
-                   class="form-control" type="email" id="inputEmail"
-                   [(ngModel)]="email" name="email"
-                   placeholder="Email address" required>
-          </div>
-          <div *ngIf="emailInput.errors && (emailInput.invalid ||
-                        emailInput.touched)">
-            <small class="text-danger" *ngIf="emailInput.errors.pattern">
-              {{emailInput.value}} is not a valid email
-            </small>
-            <small class="text-danger" *ngIf="emailInput.errors.required
-                      && emailInput.touched">
-              An Email is required</small>
-          </div>
-
-          <!-- Password -->
-          <div class="md-form md-outline">
-            <label for="inputPassword"></label>
-            <input #passwordInput="ngModel"
-                   [class.is-invalid]="passwordInput.invalid && passwordInput.touched"
-                   [class.is-valid]="!(passwordInput.invalid && passwordInput.untouched)"
-                   class="form-control" type="password" id="inputPassword"
-                   [(ngModel)]="password" name="password"
-                   placeholder="Password" required>
-            <small class="text-danger" [class.d-none]="passwordInput.valid ||
-          passwordInput.untouched">A password is required</small>
-          </div>
-
-          <!-- Confirm Password -->
-          <div class="form-group">
-            <label for="PasswordConfirm" class="col-form-label"></label>
-            <input #inputConfirmPassword="ngModel" pattern="{{passwordInput.value}}"
-                   [class.is-invalid]="inputConfirmPassword.invalid &&
-                   inputConfirmPassword.touched"
-                   [class.is-valid]="!(inputConfirmPassword.invalid &&
-                   inputConfirmPassword.untouched)"
-                   class="form-control" type="text" id="PasswordConfirm"
-                   [(ngModel)]="confirmPassword" name="confirmPassword"
-                   placeholder="Confirm password" required>
-
-            <div *ngIf="inputConfirmPassword.errors && (inputConfirmPassword.invalid ||
-                        inputConfirmPassword.touched)">
-              <small class="text-danger" *ngIf="inputConfirmPassword.errors.pattern">
-                Passwords do not match</small>
-              <small class="text-danger" *ngIf="inputConfirmPassword.errors.required
-                      && inputConfirmPassword.touched">
-                Please confirm your password</small>
-            </div>
-          </div>
-          <div class="space">
-            <div class="float-right">
-              <button [disabled]="signUpForm.form.invalid" class="btn btn-rounded" type="submit">Sign Up</button>
-            </div>
-            <div class="float-left">
-              <a class="nav-link"
-                 style="text-decoration: underline; text-align: center;
-                 color: #6582B0"
-                 [routerLink]="['/login']">Already have an account ? Login</a>
-            </div>
-          </div>
-          <br>
-          <hr>
-          <a class="link" href="#">Forgot password? Click here.</a>
-        </form>
-      </div>
+<div class="container w-50 register-form rounded">
+  <div class="form rounded">
+    <div class="note bg-dark">
+      <h3 class="font-weight-bolder mb-3">Create an Account</h3>
+      <p class="font-weight-bold">It's free and anyone can join!</p>
     </div>
+
+    <form #signUpForm="ngForm" class="form-content rounded my-form" (submit)="onRegisterSubmit()">
+
+      <!-- Username -->
+      <div class="row justify-content-center col-12">
+        <label for="username">
+        </label>
+        <input #usernameInput="ngModel"
+               [class.is-invalid]="usernameInput.invalid && usernameInput.touched"
+               [class.is-valid]="!(usernameInput.invalid && usernameInput.untouched)"
+               class="form-control" type="text" id="username"
+               [(ngModel)]="username" name="username" minlength="4" maxlength="9"
+               placeholder="username" required>
+        <div *ngIf="usernameInput.errors && (usernameInput.invalid ||
+                        usernameInput.touched)">
+          <small class="text-danger" *ngIf="usernameInput.errors.minlength">
+            {{usernameInput.value}} username minimum length is 4
+          </small>
+          <small class="text-danger" *ngIf="usernameInput.errors.required
+                      && usernameInput.touched">
+            A username is required</small>
+        </div>
+      </div>
+      <br>
+
+      <!-- email -->
+      <div class="row justify-content-center col-12">
+        <label for="inputEmail">
+        </label>
+        <input #emailInput="ngModel"
+               pattern="^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$"
+               [class.is-invalid]="emailInput.invalid && emailInput.touched"
+               [class.is-valid]="!(emailInput.invalid && emailInput.untouched)"
+               class="form-control" type="email" id="inputEmail"
+               [(ngModel)]="email" name="email"
+               placeholder="Email address" required>
+        <div *ngIf="emailInput.errors && (emailInput.invalid ||
+                        emailInput.touched)">
+          <small class="text-danger" *ngIf="emailInput.errors.pattern">
+            {{emailInput.value}} is not a valid email
+          </small>
+          <small class="text-danger" *ngIf="emailInput.errors.required
+                      && emailInput.touched">
+            An Email is required</small>
+        </div>
+      </div>
+      <br>
+
+      <!-- password -->
+      <div class="row justify-content-center col-12">
+        <label for="inputPassword"></label>
+        <input #passwordInput="ngModel"
+               [class.is-invalid]="passwordInput.invalid && passwordInput.touched"
+               [class.is-valid]="!(passwordInput.invalid && passwordInput.untouched)"
+               class="form-control" type="password" id="inputPassword"
+               [(ngModel)]="password" name="password"
+               placeholder="Password" required>
+        <small class="text-danger" [class.d-none]="passwordInput.valid ||
+          passwordInput.untouched">A password is required</small>
+      </div>
+      <br>
+
+      <!-- confirm password -->
+      <div class="row justify-content-center col-12">
+        <label for="PasswordConfirm" class="col-form-label"></label>
+        <input #inputConfirmPassword="ngModel" pattern="{{passwordInput.value}}"
+               [class.is-invalid]="inputConfirmPassword.invalid &&
+                   inputConfirmPassword.touched"
+               [class.is-valid]="!(inputConfirmPassword.invalid &&
+                   inputConfirmPassword.untouched)"
+               class="form-control" type="text" id="PasswordConfirm"
+               [(ngModel)]="confirmPassword" name="confirmPassword"
+               placeholder="Confirm password" required>
+
+        <div *ngIf="inputConfirmPassword.errors && (inputConfirmPassword.invalid ||
+                        inputConfirmPassword.touched)">
+          <small class="text-danger" *ngIf="inputConfirmPassword.errors.pattern">
+            Passwords do not match</small>
+          <small class="text-danger" *ngIf="inputConfirmPassword.errors.required
+                      && inputConfirmPassword.touched">
+            Please confirm your password</small>
+        </div>
+      </div>
+      <br>
+
+      <!-- sign up buttton -->
+      <div class="">
+
+      </div>
+
+      <div class="d-flex">
+        <div>
+          <button [disabled]="signUpForm.form.invalid"
+                  class="btn btn-secondary btn-rounded"
+                  type="submit">Sign Up
+          </button>
+        </div>
+        <div class="ml-auto">
+          <small class="">
+            <a class="nav-link"
+               style="text-decoration: underline; color: #6582B0"
+               [routerLink]="['/login']">Already have an account ? Login</a>
+          </small>
+        </div>
+      </div>
+
+
+    </form>
+
   </div>
 </div>
-</body>
-<br>
-<br>
-<br>
-<br>
-<br>
 
+
+<!-- Confirm Password
+
+
+<div class="row justify-content-center w-100 col-12 ">
+
+</div>
+
+-->

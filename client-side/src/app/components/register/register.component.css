@@ -1,61 +1,20 @@
-
-.row {
-  height: 90vh;
-}
-.form {
-  background: #ffffff;
-  border-radius:  4px;
-  box-shadow:  10px 12px 16px -1px rgba(0,0,0,.12);
-}
-.image img {
-  width: 224px;
-  height: 100vh;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-.my-form {
-  padding: 2.5rem;
-}
-.my-form h4 {
-  color: #92aad0;
-}
-.my-form p {
-  font-size: .875rem;
-  font-weight: 400;
-}
-.btn {
-  background-color: #92aad0;
-  right: 0;
-}
-.btn:hover, .btn:active, .btn:focus {
+.note
+{
+  text-align: center;
+  height: 80px;
+  background: #343A40;
   color: #fff;
+  font-weight: bold;
 }
-a {
-  bottom: 0;
+.form-content
+{
+  padding: 5%;
+  border: 1px solid #ced4da;
+  margin-bottom: 2%;
+  border-radius:  4px;
+  box-shadow:  15px 15px 16px -1px rgba(0,0,0,.12);
 }
-.space {
-  padding-bottom: 4rem;
+.form-control{
+  border-radius:1.5rem;
 }
-.link {
-  font-size: .875rem;
-  float: right;
-  color: #6582B0;
-}
-.link:hover, .link:active {
-  color: #426193;
-}
-@-webkit-keyframes autofill {
-  to {
-    color: #666;
-    background: transparent; } }
 
-@keyframes autofill {
-  to {
-    color: #666;
-    background: transparent; } }
-
-input:-webkit-autofill {
-  -webkit-animation-name: autofill;
-  animation-name: autofill;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; }

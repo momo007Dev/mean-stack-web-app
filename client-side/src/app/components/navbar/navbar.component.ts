@@ -23,11 +23,11 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
 
-
-      this.authService.role = JSON.parse(localStorage.getItem('user')).rol;
+    if (localStorage.getItem('user')) {
+      this.authService.role = JSON.parse(localStorage.getItem('user')).role;
       this.authService.username =
         JSON.parse(localStorage.getItem('user')).username;
-
+    }
   }
 
 
