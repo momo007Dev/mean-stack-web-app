@@ -2,38 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/3rdpartylicenses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/Mean-Stack-Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/Mean-Stack-Logo1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/login.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/no-profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/rihanna.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/rihannaa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/trophy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.674f50d287a8c48dc19b.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.912ec66d7572ff821749.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.af7ae505a9eed503f8b8.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.b06871f281fee6b241d6.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.fee66e712a8a08eef580.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es2015.a8c78bddceb5eed64d9a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es5.a8c78bddceb5eed64d9a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/polyfills-es2015.5b10b8fd823b6392f1fd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/polyfills-es5.3e8196928d184a6e5319.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/runtime-es2015.c5fa8325f89fc516600b.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/runtime-es5.c5fa8325f89fc516600b.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/scripts.23aa742c21d8986e2732.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/styles.00eef741aecaa1742a2a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,6 +219,7 @@
       <workItem from="1587677749294" duration="6897000" />
       <workItem from="1587734539542" duration="1432000" />
       <workItem from="1587737616530" duration="29289000" />
+      <workItem from="1587784275235" duration="770000" />
     </task>
     <task id="LOCAL-00117" summary="testing pagination">
       <created>1586299861847</created>

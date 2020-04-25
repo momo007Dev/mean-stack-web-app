@@ -1,50 +1,51 @@
 <div *ngIf="reviews.rev">
 
-  <div class="container m-5 p-5 border border-bottom">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="container m-5 p-5 border border-bottom">
 
-    <!-- Add a review button -->
-    <div *ngIf="authService.loggedIn()" class="row">
-      <div class="col-md-12 text-center">
-        <button (click)="chooseModalTitle($event.target)" name="createReview" type="submit"
-                class="btn btn-primary text-center" data-toggle="modal"
-                data-target="#addReviewModel" data-whatever="@mdo">Add a review
-        </button>
+      <!-- Add a review button -->
+      <div *ngIf="authService.loggedIn()" class="row">
+        <div class="col-md-12 text-center">
+          <button (click)="chooseModalTitle($event.target)" name="createReview" type="submit"
+                  class="btn btn-primary text-center" data-toggle="modal"
+                  data-target="#addReviewModel" data-whatever="@mdo">Add a review
+          </button>
+        </div>
       </div>
-    </div>
-    <!-- Show all reviews section -->
-    <section>
-      <br>
-      <div class="text-center font-weight-bold">
-        <span>{{(reviews.rev).length}}</span> comments
-      </div>
+      <!-- Show all reviews section -->
+      <section>
+        <br>
+        <div class="text-center font-weight-bold">
+          <span>{{(reviews.rev).length}}</span> comments
+        </div>
 
 
-      <!-- Loop through all reviews and paginate -->
-      <ng-container *ngFor="let review of reviews.rev | paginate:
+        <!-- Loop through all reviews and paginate -->
+        <ng-container *ngFor="let review of reviews.rev | paginate:
                                                     { id: 'reviewsPagination',
                                                         itemsPerPage: 4,
                                                         currentPage: page,
                                                         totalItems: totalItems };
                                                         let i = index">
-        <div class="media d-block d-md-flex mt-4">
+          <div class="media d-block d-md-flex mt-4">
 
-          <!-- user image -->
-          <img class="card-img-64 d-flex mx-auto mb-3"
-               src="../../../assets/img/1.jpg"
-               style="width: 10%" alt="Generic placeholder image">
+            <!-- user image -->
+            <img class="card-img-64 d-flex mx-auto mb-3"
+                 src="../../../assets/img/1.jpg"
+                 style="width: 10%" alt="Generic placeholder image">
 
-          <!-- user/review info -->
-          <div class="media-body text-center text-md-left ml-md-3 ml-0">
+            <!-- user/review info -->
+            <div class="media-body text-center text-md-left ml-md-3 ml-0">
 
 
-            <div id="test" class="font-weight-bold my-0">
+              <div id="test" class="font-weight-bold my-0">
 
-              <!-- review author -->
-              <div class="d-flex justify-content-between">
-                <div>
-                  {{review["author"]}}
-                </div>
-                <div>
+                <!-- review author -->
+                <div class="d-flex justify-content-between">
+                  <div>
+                    {{review["author"]}}
+                  </div>
+                  <div>
 
                 <span *ngIf="authService.loggedIn()
                   && review['author'] === loggedInUser || loggedInUserRole === 'admin'
@@ -74,43 +75,43 @@
                        style="color: red"></i>
                   </a>
                 </span>
+                  </div>
                 </div>
+
+                <!-- Riview rating -->
+                Rating :
+                <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"></ngb-rating>
               </div>
 
-              <!-- Riview rating -->
-              Rating :
-              <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"></ngb-rating>
+              <!-- review date / time -->
+              <p class="blockquote-footer my-0">
+                {{review["CreatedOn"] | timeAgo}}
+              </p>
+
+              <!-- review text -->
+              {{review["reviewText"]}}
             </div>
-
-            <!-- review date / time -->
-            <p class="blockquote-footer my-0">
-              {{review["CreatedOn"] | timeAgo}}
-            </p>
-
-            <!-- review text -->
-            {{review["reviewText"]}}
           </div>
-        </div>
-        <hr>
-      </ng-container>
-    </section>
+          <hr>
+        </ng-container>
+      </section>
 
-    <!-- review pagination controls -->
-    <div class="pagination justify-content-center pagination-lg">
-      <pagination-controls id="reviewsPagination"
-                           (pageChange)="page = ($event)"
-                           maxSize="{{totalItems}}"
-                           directionLinks="true"
-                           autoHide="true"
-                           responsive="true"
-                           previousLabel="Previous"
-                           nextLabel="Next"
-                           screenReaderPaginationLabel="Pagination"
-                           screenReaderPageLabel="page"
-                           screenReaderCurrentLabel="You're on page">
-      </pagination-controls>
+      <!-- review pagination controls -->
+      <div class="pagination justify-content-center pagination-lg">
+        <pagination-controls id="reviewsPagination"
+                             (pageChange)="page = ($event)"
+                             maxSize="{{totalItems}}"
+                             directionLinks="true"
+                             autoHide="true"
+                             responsive="true"
+                             previousLabel="Previous"
+                             nextLabel="Next"
+                             screenReaderPaginationLabel="Pagination"
+                             screenReaderPageLabel="page"
+                             screenReaderCurrentLabel="You're on page">
+        </pagination-controls>
+      </div>
     </div>
-
   </div>
 
 </div>
