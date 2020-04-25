@@ -11,8 +11,8 @@ import {ValidateService} from "../../services/validate.service";
 })
 export class NavbarComponent implements OnInit {
 
-  token : any;
-  userId : any;
+  token: any;
+  userId: any;
   username: string = "";
 
   constructor(private validateService: ValidateService,
@@ -22,25 +22,30 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.role = JSON.parse(localStorage.getItem('user')).role;
-    this.authService.username = JSON.parse(localStorage.getItem('user')).username;
+
+
+      this.authService.role = JSON.parse(localStorage.getItem('user')).rol;
+      this.authService.username =
+        JSON.parse(localStorage.getItem('user')).username;
+
   }
 
-  onSelect(){
-      this.authService.getProfile().subscribe(
-        (profile: any) => {
-          `${this.router.navigate(['/profile', profile.user.username])}`
-        },
-        err => {
-          console.log(err);
-          return false;
-        }
-      );
-    }
+
+  onSelect() {
+    this.authService.getProfile().subscribe(
+      (profile: any) => {
+        `${this.router.navigate(['/profile', profile.user.username])}`
+      },
+      err => {
+        console.log(err);
+        return false;
+      }
+    );
+  }
 
   onLogOutClick() {
 
-    if(!Object.keys(localStorage).includes('id_token')) {
+    if (!Object.keys(localStorage).includes('id_token')) {
       this.authService.logout();
       this._flashMessagesService.show("Please log in first", {
         cssClass: "alert-danger w-25",

@@ -3,54 +3,72 @@
 <!-- All questions text -->
 <div *ngIf="questions.qns">
   <br>
-  <h3 class="mb-4 font-weight-bold" style="margin-left: 60px">
-    All Questions ({{(questions.qns).length}})
 
-    <!-- Create a question div  -->
-    <div class="btn-group">
 
-      <!-- create question  -->
-      <button
-        class="btn btn-success"
-        style="margin-left: 390px; color: white;font-weight: bold;">
-        <i class="fa fa-plus-circle" aria-hidden="true"></i>
-        Create a new question
-      </button>
+  <div class="d-flex">
 
-      <!-- delete question -->
-      <button type="button" class="btn btn-success dropdown-toggle
+      <h3 class="mb-4 font-weight-bold ml-3">
+        All Questions ({{(questions.qns).length}})
+      </h3>
+
+
+    <div class="ml-auto">
+
+      <!-- Create a question div  -->
+      <div class="btn-group">
+
+        <!-- create question  -->
+        <button
+          class="btn btn-success"
+          style="color: white;font-weight: bold;">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          Create a new question
+        </button>
+
+        <!-- delete question -->
+        <button type="button" class="btn btn-success dropdown-toggle
         dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
+                aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
 
-      <!-- create types of question dropdown menu -->
-      <div class="dropdown-menu" style="background-color: #28A745;">
+        <!-- create types of question dropdown menu -->
+        <div class="dropdown-menu" style="background-color: #28A745;">
 
-        <!-- create multiple question -->
-        <a class="dropdown-item" data-toggle="modal"
-           data-target=".bd-example-modal-lg"
-           href="#" style="font-weight: bold" id="multipleQuestion"
-           (click)="questionTypeChoosen($event.target)">Multiple choice</a>
+          <!-- create multiple question -->
+          <a class="dropdown-item" data-toggle="modal"
+             data-target=".bd-example-modal-lg"
+             href="#" style="font-weight: bold" id="multipleQuestion"
+             (click)="questionTypeChoosen($event.target)">Multiple choice</a>
 
-        <!-- create boolean question -->
-        <a class="dropdown-item" data-toggle="modal" data-target="#booleanModal"
-           href="#" style="font-weight: bold" id="booleanQuestion"
-           (click)="questionTypeChoosen($event.target)">Boolean</a>
+          <!-- create boolean question -->
+          <a class="dropdown-item" data-toggle="modal" data-target="#booleanModal"
+             href="#" style="font-weight: bold" id="booleanQuestion"
+             (click)="questionTypeChoosen($event.target)">Boolean</a>
 
-        <!-- create fill in the blanks question -->
-        <a class="dropdown-item" data-toggle="modal" data-target="#fillInModal"
-           href="#" style="font-weight: bold" id="fillInBlanksQuestion"
-           (click)="questionTypeChoosen($event.target)">Fill in the blanks</a>
+          <!-- create fill in the blanks question -->
+          <a class="dropdown-item" data-toggle="modal" data-target="#fillInModal"
+             href="#" style="font-weight: bold" id="fillInBlanksQuestion"
+             (click)="questionTypeChoosen($event.target)">Fill in the blanks</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Delete a question button  -->
-    <button (click)="deleteClicked()" class="btn btn-danger"
-            style="margin-left: 30px; color: white;font-weight: bold;">
-      <i class="fa fa-trash" aria-hidden="true"></i>
-      Delete question(s)
-    </button>
+      <!-- Delete a question button  -->
+      <button (click)="deleteClicked()" class="btn btn-danger ml-2 mr-2"
+              style="color: white;font-weight: bold;">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+        Delete question(s)
+      </button>
+    </div>
+  </div>
+
+
+
+  <h3 class="mb-4 font-weight-bold" style="margin-left: 60px">
+
+
+
+
   </h3>
   <br>
 

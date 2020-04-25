@@ -1,13 +1,15 @@
 <app-min-nav-bar></app-min-nav-bar>
 
-<form class="form-inline" style="float: right; margin-right: 20px">
-  <label for="search"></label>
-  <input #searcch="ngModel"
-     class="form-control" type="search" id="search"
-     [(ngModel)]="searchValue" name="username"
-     placeholder="Filter" aria-label="Search" >
-</form>
-
+<!-- Filter Input -->
+<div class="d-flex">
+  <div class="ml-auto">
+    <label for="search"></label>
+    <input
+      class="form-control" type="search" id="search"
+      [(ngModel)]="searchValue" name="username"
+      placeholder="Filter" aria-label="Search">
+  </div>
+</div>
 
 <!-- User Table -->
 <div class="container text-center my-3">
@@ -78,19 +80,3 @@
   <!-- Table  -->
 
 </div>
-
-
-<!-- User Table
-<br><br>
-<div class="container">
-  <ag-grid-angular
-    style="width: 580px; height: 232px; font-size: medium" class="ag-theme-balham"
-    [columnDefs]="colDefs" [animateRows]="true" (gridReady)="onGridReady($event)">
-
-  </ag-grid-angular>
-</div>
-
-
-<br><br>
-
--->

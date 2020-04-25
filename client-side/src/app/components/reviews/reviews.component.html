@@ -3,20 +3,21 @@
   <div class="container m-5 p-5 border border-bottom">
 
     <!-- Add a review button -->
-    <div *ngIf="authService.loggedIn()">
-      <button (click)="chooseModalTitle($event.target)" name="createReview" type="submit"
-              class="btn btn-primary text-center" data-toggle="modal"
-              data-target="#addReviewModel" data-whatever="@mdo"
-              style="width:165px; margin-left:455px; margin-top: 0">Add a review
-      </button>
+    <div *ngIf="authService.loggedIn()" class="row">
+      <div class="col-md-12 text-center">
+        <button (click)="chooseModalTitle($event.target)" name="createReview" type="submit"
+                class="btn btn-primary text-center" data-toggle="modal"
+                data-target="#addReviewModel" data-whatever="@mdo">Add a review
+        </button>
+      </div>
     </div>
-
     <!-- Show all reviews section -->
     <section>
       <br>
       <div class="text-center font-weight-bold">
         <span>{{(reviews.rev).length}}</span> comments
       </div>
+
 
       <!-- Loop through all reviews and paginate -->
       <ng-container *ngFor="let review of reviews.rev | paginate:
@@ -35,38 +36,46 @@
           <!-- user/review info -->
           <div class="media-body text-center text-md-left ml-md-3 ml-0">
 
-            <!-- review author -->
+
             <div id="test" class="font-weight-bold my-0">
-              {{review["author"]}}
 
-              <span *ngIf="authService.loggedIn() && review['author'] === loggedInUser
-              || loggedInUserRole === 'admin' || loggedInUserRole === 'teacher'">
+              <!-- review author -->
+              <div class="d-flex justify-content-between">
+                <div>
+                  {{review["author"]}}
+                </div>
+                <div>
 
-                <!-- Select a title for update & create review modal -->
-                <a (click)="chooseModalTitle($event.target)" data-toggle="modal"
-                   data-target="#addReviewModel" data-whatever="@mdo">
+                <span *ngIf="authService.loggedIn()
+                  && review['author'] === loggedInUser || loggedInUserRole === 'admin'
+                  || loggedInUserRole === 'teacher'">
 
-                  <!-- update review icon -->
-                  <i id="{{review['_id']}}" name="updateReview" title="{{review['author']}}"
-                     class="fa fa-pencil"
-                     aria-hidden="true" onmousemove="this.style.cursor = 'pointer';
+                  <!-- Select a title for update & create review modal -->
+                  <a class="" (click)="chooseModalTitle($event.target)"
+                     data-toggle="modal" data-target="#addReviewModel"
+                     data-whatever="@mdo">
+
+                    <!-- update review icon -->
+                    <i id="{{review['_id']}}" name="updateReview"
+                       title="{{review['author']}}" class="fa fa-pencil"
+                       aria-hidden="true" onmousemove="this.style.cursor = 'pointer';
+                     this.style.fontSize= '4.7vh'"
+                       onmouseout="this.style.fontSize= ''" style="color: blue"></i>
+                  </a>
+
+                  <!-- delete review a tag -->
+                  <a class="ml-2" (click)="getDeleteId($event.target)" data-toggle="modal"
+                     data-target="#deleteModel" data-whatever="@mdo">
+
+                    <!-- delete review icon -->
+                    <i title="{{review['_id']}}" id="{{review['author']}}" class="fa fa-trash"
+                       aria-hidden="true" onmousemove="this.style.cursor = 'pointer';
                      this.style.fontSize= '4.7vh'" onmouseout="this.style.fontSize= ''"
-                     style="color: blue; margin-left: 690px"></i>
-                </a>
-
-                <!-- delete review a tag -->
-                <a (click)="getDeleteId($event.target)" data-toggle="modal"
-                   data-target="#deleteModel" data-whatever="@mdo">
-
-                  <!-- delete review icon -->
-                  <i title="{{review['_id']}}" id="{{review['author']}}" class="fa fa-trash"
-                     aria-hidden="true" onmousemove="this.style.cursor = 'pointer';
-                     this.style.fontSize= '4.7vh'" onmouseout="this.style.fontSize= ''"
-                     style="color: red; margin-left: 30px"></i>
-                </a>
-              </span>
-
-              <br>
+                       style="color: red"></i>
+                  </a>
+                </span>
+                </div>
+              </div>
 
               <!-- Riview rating -->
               Rating :

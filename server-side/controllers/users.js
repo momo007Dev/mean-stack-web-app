@@ -11,6 +11,13 @@ const user_signup = (req, res) => {
                 success: false,
                 message: "All fields required"
             });
+    } else if ((req.body.username).length < 4 || (req.body.username).length > 9) {
+        return res
+            .status(400)
+            .json({
+                success: false,
+                message: "Username's min length is 4 and max 9 !"
+            });
     }
 
     User.find({
@@ -20,7 +27,6 @@ const user_signup = (req, res) => {
     })
         .exec()
         .then(user => {
-            console.log(user);
             if (user.length >= 1) {
                 return res
                     .status(409)
@@ -53,8 +59,7 @@ const user_signup = (req, res) => {
                                             userId: result._id,
                                             username: result.username,
                                             userEmail: result.email,
-                                            role: result.role,
-                                            userPassword: result.password
+                                            role: result.role
                                         }
                                     });
                             })
@@ -296,7 +301,6 @@ const get_user_by_id = (req, res) => {
         .exec()
         .then(doc => {
             if (doc) {
-                console.log(doc);
                 res
                     .status(200)
                     .json({
